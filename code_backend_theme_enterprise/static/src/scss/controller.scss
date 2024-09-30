@@ -1,0 +1,76 @@
+// web/login
+//////////////
+
+$form_bg_color: white;
+$label_color: black;
+$span_label_color: white;
+$inputs_font_color: black;
+$inputs_outline: rgb(155, 155, 155);
+$inputs_outline_hover: #26857F;
+$login_buttons_bg: #26857F;
+$login_buttons_bg_hover: #1a5a56;
+$buttons_font_color: white;
+$buttons_font_color_hover: white;
+$login_bg_img: url(../../img/login.webp);
+
+
+// Apps Home page
+//////////////////
+
+// $apps_bg_img: url(../../img/saudi-authority3.png);
+
+$app_name_color: white;
+$app_hover_bg_color: rgba(255, 255, 255, 0.2);
+
+// Navbar
+//////////
+
+$navbar_bg_color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+$navbar_toggle: #29479b;
+
+$slection_app_color: white;
+$selection_app_bg_hover: #26857F;
+
+$navbar_left_ul_color: white;
+$navbar_left_ul_bg_color_hover: #26857F;
+$navbar_left_ul_dropdown_bg_color: white;
+$navbar_left_ul_dropdown_item_color: #26857F;
+$navbar_left_ul_dropdown_item_bg_color: white;
+$navbar_left_ul_dropdown_item_color_hover: white;
+$navbar_left_ul_dropdown_item_hover_color: #26857F;
+
+$navbar_right_ul_li_hover_bg_color: #26857F;
+$navbar_right_ul_li_icons_color: black;
+$navbar_right_ul_li_icons_border_color: black;
+$navbar_ul_show_bg_color: #26857F;
+$navbar_right_ul_dropdown_bg_color: white;
+$navbar_right_ul_dropdown_item_color: #26857F;
+$navbar_right_ul_dropdown_item_bg_color: white;
+$navbar_right_ul_dropdown_item_color_hover: white;
+$navbar_right_ul_dropdown_item_hover_color: #26857F;
+
+// Dashboard Content
+
+////////// SideBr ///////////////
+$filter_icon_bg_color: #26857F;
+
+$sidebar_categories_icon_color: #26857F;
+$sidebar_categories_item_color: black;
+$sidebar_categories_item_bg_color: black;
+$sidebar_categories_item_hover_active_color: white;
+$sidebar_categories_item_bg_hover_active_color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+
+////////// Apps Window //////////
+$apps_more_info: #26857F;
+$apps_install_color: white;
+$apps_install_bg_color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+$apps_upgrade_color: white;
+$apps_upgrade_bg_color: linear-gradient(270deg, rgba(0,158,153,1) 0%, rgba(150,215,213,1) 100%);
+
+////////// Setting Module //////////
+$sections_titles_color: white;
+$sections_titles_bg: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+
+
+
+

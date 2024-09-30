@@ -1,0 +1,2234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"/> -->
+<templates id="template" xml:space="preserve">
+    <t t-name="Chrome" t-inherit="point_of_sale.Chrome" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos-topheader')]" position="before">
+            <PosDrawer/>
+        </xpath>
+        <xpath expr="//div[hasclass('search-bar-portal')]" position="before">
+            <t t-if="env and env.pos and env.pos.config and env.pos.config.enable_pos_theme">
+                <OrderSelectorButtons/>
+            </t>
+        </xpath>
+        <xpath expr="//Portal" position="replace">
+            <Portal target="'.pos .status-buttons-portal'">
+                <div class="status-buttons">
+                    <t t-if="!env.isMobile">
+                        <CashierName />
+                    </t>
+                    <OrderManagementButton t-if="env.pos.config.manage_orders" />
+                    <SaleDetailsButton t-if="env.pos.proxy.printer" />
+                    <ProxyStatus t-if="env.pos.config.use_proxy" />
+                    <ClientScreenButton t-if="clientScreenButtonIsShown" />
+                    <SyncNotification />
+                    <HeaderButton />
+                    <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                        <HeaderButtonTheme />
+                    </t>
+                </div>
+            </Portal>
+        </xpath>
+        <xpath expr="//div[hasclass('subwindow-container-fix') and hasclass('screens')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div class="subwindow-container-fix-theme screens" t-attf-class="{{env.pos.config and env.pos.config.enable_pos_theme and env.pos.config.drawer_closed ? '' : 'pos-subwindow-container-fix-dwr-expanded' }}">
+                    <t isShown="!tempScreen.isShown" t-component="mainScreen.component"
+                        t-props="mainScreenProps" t-key="mainScreen.name" />
+                    <t t-if="tempScreen.isShown" t-component="tempScreen.component"
+                        t-props="tempScreenProps" t-key="tempScreen.name" />
+                </div>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <div class="subwindow-container-fix screens">
+                    <t isShown="!tempScreen.isShown" t-component="mainScreen.component"
+                        t-props="mainScreenProps" t-key="mainScreen.name" />
+                    <t t-if="tempScreen.isShown" t-component="tempScreen.component"
+                        t-props="tempScreenProps" t-key="tempScreen.name" />
+                </div>
+            </t>
+        </xpath>
+    </t>
+
+    <!-- <t t-name="CashierName" t-inherit="point_of_sale.CashierName" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('header-button') and hasclass('close_button')]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+    </t> -->
+
+    <t t-name="OrderSelectorButtons" owl="1">
+        <div class="order-selector">
+            <span class="orders touch-scrollable">                
+                <t t-foreach="get_order_list" t-as="order">
+					<t t-if="(env.pos.config.wk_max_order_shows) > order_index">
+						<t t-if='order === env.pos.get_order()'>
+							<span style="width: 150px;" class="order-button select-order selected" t-att-data-uid="order.uid" t-on-click="clickOrder(order)">
+								<p style="margin-top: 0px">
+                                    <t t-if="order.get_client_name()">
+                                        <t t-esc="order.get_client_name()" />
+                                    </t>
+                                    <t t-if="!order.get_client_name()">
+                                        Customer Name
+                                    </t>
+                                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+								</p>
+							</span>
+						</t>
+						<t t-if='order !== env.pos.get_order()'>
+							<!-- <span style="width: 113px;"  -->
+							<!-- <span style="width: 172px;"  -->
+							<span style="width: 150px;" 
+                                class="order-button select-order" t-att-data-uid="order.uid" t-on-click="clickOrder(order)">
+								<p style="margin: 0px;">
+                                    <t t-if="order.get_client_name()">
+                                        <t t-esc="order.get_client_name()" />
+                                    </t>
+                                    <t t-if="!order.get_client_name()">
+                                        Customer Name
+                                    </t>
+                                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+								</p>
+							</span>
+						</t>
+					</t>
+				</t>
+            </span>
+            <t t-if="get_order_list.length > env.pos.config.wk_max_order_shows">
+				<div id='order_select'>
+					<center>
+                        <span style="background: #FFFFFF; border: 1px solid #a5a5a5; box-sizing: border-box;
+                            border-radius: 10px; display: block; width: 38px; height: 38px">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true" style="font-size: 25px; color: #C4C4C4; margin-top: 7px;"></i>
+                        </span>
+					</center>
+					<div id="order_dropdown" class="touch-scrollable" >
+						<div id="dropdown" style="position: fixed;z-index: 999;max-height: 330px !important;width: 13%;
+                            overflow: scroll;background: #FFFFFF; box-shadow: 0px 4px 4px #FFFFFF;
+                            border-radius: 10px;">
+							<ul>
+								<t t-foreach="get_order_list" t-as="order">
+									<t t-if="order_index > (env.pos.config.wk_max_order_shows-1)">
+                                        <t t-if='order === env.pos.get_order()'>
+                                            <li class="dropdown-order-selected" id="order_name" t-att-data-uid="order.uid" t-on-click="clickOrder(order)">
+                                                <center>
+                                                    <t t-if="order.get_client_name()">
+                                                        <t t-esc="order.get_client_name()" />
+                                                    </t>
+                                                    <t t-if="!order.get_client_name()">
+                                                        Customer Name
+                                                    </t>
+                                                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                                </center>
+                                            </li>
+                                        </t>
+                                        <t t-if='order !== env.pos.get_order()'>
+                                            <li id="order_name"  t-att-data-uid="order.uid" t-on-click="clickOrder(order)">
+                                                <center>
+                                                    <t t-if="order.get_client_name()">
+                                                        <t t-esc="order.get_client_name()" />
+                                                    </t>
+                                                    <t t-if="!order.get_client_name()">
+                                                        Customer Name
+                                                    </t>
+                                                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                                </center>
+                                            </li>
+                                        </t>
+									</t>
+								</t>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</t>
+            <span class="order-button square neworder-button" t-on-click="clickAddNewOrder">
+                <i class='fa fa-plus' style="color: white;" role="img" aria-label="New order" title="New order"/>
+            </span>
+            <span class="order-button square deleteorder-button" t-on-click="clickDeleteOrder">
+                <i class='fa fa-minus' style="color: white; margin-left: 0px;" role="img" aria-label="Delete order" title="Delete order"/>
+            </span>
+        </div>
+    </t>
+
+    <t t-name="HeaderButtonTheme" owl="1">
+        <div class="oe_status" style="border:0px; background:white; padding-top:13px; font-family:Noto Sans; color:#000000; font-style:normal;
+                font-weight:500; font-size:14px; text-transform:uppercase;" t-att-class="{ confirm: state.label === 'CONFIRM' }" t-on-click="onClick">
+            <t t-esc="translatedLabel"/> 
+            <img class="plate_img" style="top: 3px; position: relative; margin-left: 5px; width: 20%;" src="/pos_theme_divine/static/src/img/logout.png"/>
+        </div>
+    </t>
+
+    <t t-name="CashierName" t-inherit="point_of_sale.CashierName" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('username')]" position="inside">
+            <img class="plate_img" style="top: 5px; position: relative; margin-left: 8px; width: 15%;" src="/pos_theme_divine/static/src/img/username.png"/>
+        </xpath>
+    </t>
+
+    <t t-name="PosDrawer" owl="1">
+        <!-- <t t-if="!env.isMobile">
+        </t>
+        <t t-else="">
+        </t> -->
+        <nav class="pos-drawer" t-attf-class="{{env.pos and env.pos.config and env.pos.config.drawer_closed ? 'drawer-collapsed' : '' }}">
+            <ul style="overflow-y: scroll; height: 90%; overflow-x: inherit;">
+                <li class="drawer-menu dwr-user-menu">
+                    <div>
+                        <div class="drawer-btn-img">
+                            <t t-if="!get_logo">
+                                <img style="margin-left: 0px; margin-top: 0px; vertical-align: middle; height: 50%; 
+                                width: auto;background: gray;" src="/point_of_sale/static/src/img/logo.png"/>
+                            </t>
+                            <t t-else="">
+                                <img style="height: 70%; margin-left: 0px; margin-top: 0px; vertical-align: middle;
+                                background: #f94078;" t-att-src="get_logo"/>
+                            </t>
+                        </div>
+                        <span class="nav-text selected-user-info" style="font-family: Noto Sans; font-style: normal;
+                            font-weight: bold; font-size: 16px; line-height: 22px; color: #000000;">
+                            <t t-if="env.pos and env.pos.company">
+                                <t t-esc="env.pos.company.name"/>
+                            </t>
+                        </span>
+                    </div>
+                </li>
+                <li class="drawer-menu dwr-home-menu drawer-btn-selected" t-on-click="spaceClickProductScreen">
+                    <div>
+                        <div class="drawer-btn-img">
+                            <span>
+                                <img class="plate_img" src="/pos_theme_divine/static/src/img/home.png"/>
+                            </span>
+                        </div>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </div>
+                </li>
+                <li class="drawer-menu dwr-customer-menu" t-on-click="spaceClickCustomerScreen">
+                    <div>
+                        <div class="drawer-btn-img">
+                            <span>
+                                <img class="plate_img" src="/pos_theme_divine/static/src/img/User.png"/>
+                            </span>
+                        </div>
+                        <span class="nav-text">
+                            Customers
+                        </span>
+                    </div>
+                </li>
+                <li class="drawer-menu dwr-products-menu" t-on-click="spaceClickProductListScreen">
+                    <div>
+                        <div class="drawer-btn-img">
+                            <span>
+                                <img class="plate_img" src="/pos_theme_divine/static/src/img/Products.png"/>
+                            </span>
+                        </div>
+                        <span class="nav-text">
+                            Products
+                        </span>
+                    </div>
+                </li>
+                <t t-if="env.pos and env.pos.config and env.pos.config.use_pricelist and env.pos.pricelists and env.pos.pricelists.length > 1">
+                    <li class="drawer-menu dwr-pricelist-menu" t-on-click="spaceClickPricelist">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-th-list" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                                <t t-if="env.pos.get_order() and env.pos.get_order().pricelist">
+                                    <t t-esc="env.pos.get_order().pricelist.name"/>
+                                </t>
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.fiscal_positions and env.pos.fiscal_positions.length > 1">
+                    <li class="drawer-menu dwr-fiscal-position-menu" t-on-click="spaceClickFiscalPosition">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                                <t t-if="env.pos.get_order() and env.pos.get_order().fiscal_position">
+                                    <t t-esc="env.pos.get_order().fiscal_position.name"/>
+                                </t>
+                                <t t-if="env.pos.get_order() and !env.pos.get_order().fiscal_position">
+                                    Fiscal Position
+                                </t>
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceOrderlineNote">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-tag" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Note
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant and env.pos.config.iface_floorplan">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickTransfer">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Transfer
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant and env.pos.printers and env.pos.printers.length">
+                    <li class="drawer-menu dwr-note-menu" t-att-class="addedClasses" t-on-click="spacePrintKitchenOrder">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Order
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_discount and env.pos.config.discount_product_id">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickDiscount">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-tag" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Discount
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickGuests">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <t t-esc="nGuests" />
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Guests
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant and env.pos.config.iface_printbill">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickPrintBill">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-print" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Bill
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant and env.pos.config.iface_splitbill">
+                    <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickSplitBill">
+                        <div>
+                            <div class="drawer-btn-img">
+                                <span>
+                                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span class="nav-text">
+                               Split
+                            </span>
+                        </div>
+                    </li>
+                </t>
+                <t t-if="env.pos and env.pos.config and env.pos.config.module_pos_restaurant and env.pos.config.tip_product_id">
+                    <t t-if="env.pos and env.pos.get_order() and env.pos.get_order().get_screen_data() and env.pos.get_order().get_screen_data().name == 'PaymentScreen'">
+                        <li class="drawer-menu dwr-note-menu" t-on-click="spaceClickTip">
+                            <div>
+                                <div class="drawer-btn-img">
+                                    <span>
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <span class="nav-text">
+                                Tip
+                                </span>
+                            </div>
+                        </li>
+                    </t>
+                </t>
+            </ul>
+            <ul class="drawer-footer">
+                <li class="drawer-menu drawer-footer-menu dwr-help-menu" style="background: #E7E7E7;" t-on-click="spaceClickCollapseSlider">
+                    <div>
+                        <t t-if="env.pos and env.pos.config and env.pos.config.drawer_closed">
+                            <div class="drawer-btn-img" stye="letter-spacing: -5px; font-size: 30px; transform: scale(.5, 1);">
+                                &gt;&gt;
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="drawer-btn-img" stye="letter-spacing: -5px; font-size: 30px; transform: scale(.5, 1);">
+                                &lt;&lt;
+                            </div>
+                        </t>
+                        <span class="nav-text">
+                            Collapse Slider
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </t>
+
+    <t t-name="ProductsWidgetControlPanel" t-inherit="point_of_sale.ProductsWidgetControlPanel" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('rightpane-header')]" position="inside">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div class="search-box" style="font-size: medium; position: relative; display: flex;align-items: center; margin: 0 15px;
+                float: right; right: 0px;position: absolute; margin-right: 65px; margin-top: 7px;">
+                    <input style="font-size: medium; height: 30px; border: none; color: #63717f; padding-left: 15px; 
+                        margin-right: 0px;padding-right: 38px; border-radius: 5px;
+                        background: #FFFFFF; border: 1px solid #F4F4F4; border-radius: 10px;"         
+                            t-ref="search-word-input" type="text" placeholder="Search" t-on-keyup="updateSearch" />
+                    <span class="icon" style="position: absolute; right: 15px; margin-left: 12px; z-index: 1; color: #4f5b66;">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+                <span class="wk-cart-items" t-on-click="clickCart" style="border-radius: 2px !important; width: 48px !important; cursor: pointer; right: 0px;
+        color: black; height: 35px; font-size: medium; position: relative; display: flex; align-items: center; margin: 5px 15px; float: right; right: 0px; position: absolute;">
+                    <i class="fa fa-shopping-cart" style="font-size: 25px; margin-left: 10px;" aria-hidden="true"></i>
+                    <div class='cart_items' style="position: absolute; font-size: 12px; float: right; right: 0px; top: 0px; color: white;
+        margin-top: 5%; border: 2px solid white; border-radius: 28px; height: 13px; width: 20px; background: #DB1914; border-radius: 5px;">
+                        <p class="cart_count" style="font-size: 12px;margin-top: 0%;text-align: center;">
+                            <t t-esc="get_items_count"/>
+                        </p>
+                    </div>
+                </span>
+            </t>
+        </xpath>
+    </t>
+
+    <t t-name="ProductScreen" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('product-screen') and hasclass('screen')]//div[hasclass('screen-full-width')]" position="replace">
+            <t t-if="env.pos and env.pos.config and env.pos.config.enable_pos_theme">
+                <div class="leftpane-theme">
+                    <div class="product-filters">
+                        <div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <t t-if="state.cashControl">
+                            <CashBoxOpening cashControl="state"/>
+                        </t>
+                        <t t-else="">
+                            <ProductsWidget />
+                        </t>
+                    </div>
+                </div>
+                <div class="rightpane-theme" style="background: #FFFFFF; box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.15); display: none;">
+                    <div class='window wk-second-window'>
+                        <div class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix'>
+                                    <CartSummaryWidget /> 
+                                    <OrderCartWidget />
+                                </div>
+                            </div>
+                        </div>
+                        <div class='subwindow collapsed'>
+                            <div class='subwindow-container'>
+                                <div class="control-buttons oe_hidden"></div>
+                                <div class='subwindow-container-fix pads'>
+                                    <PosActionPadWidget />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <t t-if="env.pos and env.pos.config and !env.pos.config.enable_pos_theme">
+                <div class="screen-full-width">
+                    <div class="leftpane" t-if="!env.isMobile || mobile_pane === 'left'">
+                        <t t-if="state.cashControl">
+                            <CashBoxOpening cashControl="state"/>
+                        </t>
+                        <t t-else="">
+                            <OrderWidget/>
+                                <div class="pads">
+                                <div class="control-buttons">
+                                    <t t-foreach="controlButtons" t-as="cb" t-key="cb.name">
+                                        <t t-component="cb.component" t-key="cb.name" />
+                                    </t>
+                                </div>
+                                    <div class="subpads">
+                                    <ActionpadWidget client="client"/>
+                                    <NumpadWidget activeMode="state.numpadMode" />
+                                </div>
+                            </div>
+                                <t t-if="env.isMobile">
+                                <MobileOrderWidget pane="mobile_pane" t-on-switchpane="switchPane"/>
+                            </t>
+                        </t>
+                    </div>
+                    <div class="rightpane" t-if="!env.isMobile || mobile_pane === 'right'">
+                        <ProductsWidget t-if="!state.cashControl"/>
+                        <t t-if="env.isMobile">
+                            <MobileOrderWidget pane="mobile_pane" t-on-switchpane="switchPane"/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+
+    <t t-name="PosActionPadWidget" owl="1">
+        <div class="wk-action-pad">
+            <div class='wk-action-button-section'>
+                <div class="wk-action-button wk-total">
+                    <span class="wk-action-btn-content-labels">
+                        Subtotal-<br/>
+                        Tax-
+                    </span>
+                    <span class="wk-action-btn-content-values">
+                        <t t-esc="get_subtotal"/><br/>
+                        <t t-esc="get_tax"/>
+                    </span>
+                </div>
+            </div>
+            <div class="wk-payment-section">
+                <div class="wk-amount-summary">
+                    <span style="float: left;font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 16px;
+                                line-height: 64.77%; color: #000000;">
+                        Grand Total<br/>
+                    </span>
+                    <span style="float: right;" class="wk-grand-total">
+                        <t t-esc="get_grand_total"/>
+                    </span>
+                </div>
+                <br/>
+                <div class="wk-payment-btn" t-on-click="onClickPayment">
+                    Proceed To Payment
+                </div>
+                <t t-if="env.pos and env.pos.config and env.pos.config.manual_discount">
+                    <div class="wk-discount-btn" t-on-click="onClickDiscount">
+                        Discount
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="wk-discount-btn" t-on-click="onClickDiscount" style="opacity: 0.4; pointer-events: none; background: gray; color: black;">
+                        Discount
+                    </div>
+                </t>
+            </div> 
+        </div>
+    </t>
+
+    <t t-name="OrderlineDiscountPopup" owl="1">
+		<div class="modal-dialog" id="sunny-test">
+			<div class="popup popup-textinput" style="height:400px !important; background: white;">
+				<div class="title" style="height:3% !important;margin-bottom:0px;">
+					<div>
+						<p style="position: absolute;height: 27px;width: 354px;margin-top: -8px;">
+							<t t-esc=" props.title || 'Discount List' " />
+						</p>
+						<t t-if="env.pos.config.allow_custom_discount">
+							<div class="button customize" t-on-click="click_customize" style="position: absolute;margin-left: 321px;height: 41px;margin-top: -16px;width:150px;">
+								<i class="fa fa-tags"></i> Custom Discount
+							</div>
+						</t>
+					</div>
+				</div>
+				<div style="height:71%;overflow-y: scroll;background: #FFFFFF;">
+					<div class="wk_popup_body">
+						<t t-if="!env.pos.all_discounts.length">
+							<div style="margin:12%">
+								No discount is available for current POS Session, please add discount from configuration or create a custom discount.
+							</div>
+						</t>
+						<t t-foreach="env.pos.all_discounts" t-as="item" t-key="item.id">
+							<span class='wk_product_discount' t-on-click="click_wk_product_discount" t-att-id="item.id" >
+								<div class="discount_percent" t-att-id="item.id">
+									<t t-if="item.discount_percent%1!=0">
+										<t t-esc="env.pos.format_currency_no_symbol(item.discount_percent)"/>%
+									</t>
+									<t t-if="item.discount_percent%1==0">
+										<t  t-esc="item.discount_percent "/>%
+									</t>
+								</div> 	
+								<div style="margin-top: 9px; height: 15px; width: 118px; font-family: Noto Sans; font-style: normal;
+                                            font-weight: normal; font-size: 12px; color: #000000;">
+								<t t-esc="item.name"/>
+								</div>
+							</span>  
+						</t>
+					</div>
+				</div>
+				<div id="discount_error" style="background:#ffa566;height:22px;display:none" >
+					   <span style="color:brown"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i >   Please select a discount</span>
+				</div>
+				<div class="footer">
+					<div class="button apply" style="border-radius: 10px;" t-on-click="click_apply">
+						Selected Line
+					</div>
+					<div class="button apply_complete_order" style="border-radius: 10px;" t-on-click="click_apply_complete_order">
+						 Whole Order
+					</div>
+					<div class="button cancel" style="background: #E1E1E1; border-radius: 10px; color: #383838;" t-on-click="cancel">
+						Cancel
+					</div>
+		   		</div>
+			</div>
+		</div>	  
+	</t>
+
+    <t t-name="WebkulErrorPopup" owl="1">
+		<div class="modal-dialog">
+			<div class="popup popup-textinput" style="background: white;">
+				<p class="title"><t t-esc="props.title || '' " /></p>
+				<p class="body"><t t-esc="props.body || '' " /></p>
+				<div class="footer">
+					<div class="button" style="background: #E1E1E1; border-radius: 10px; color: #383838;" id="password_ok_button" t-on-click="click_password_ok_button">
+						OK 
+					</div>
+				</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="WkCustomDiscountPopup" owl="1">
+		<div class="modal-dialog" id="sunny-test">
+			<div class="popup popup-textinput" style="background: white; height:350px !important">
+				<p class="title"><t t-esc=" props.title || 'Customize Discount' " /></p>
+				<div class="body" style="height: 190px;">
+					<table class='receipt-total'>
+						<tr>
+							<th>Discount</th>
+							<td>
+								<input id="discount" t-on-click="click_discount" style="width: 118px;margin-left: -145px;padding-bottom: -17px;" type="number" name="discount"/>%
+							</td>
+						</tr>
+						<tr>
+							<th>Reason</th>
+							<td>
+								<textarea  id="reason" style="margin-left:20px; margin-top:4px;" rows="4" cols="26" name="custom_discount_reason"></textarea>
+							</td>
+						</tr>						
+					</table>
+					<div id="error_div" style="background:#ffa566;height:20px;padding:10px;display:none" >
+					   <span id="customize_error" style="color:brown"></span>
+					</div>
+				</div>
+				<div class="footer">					
+					<div class="button current_product" style="border-radius: 10px;" t-on-click="click_current_product">
+						Selected line
+					</div>
+					<div class="button whole_order" style="border-radius: 10px;" t-on-click="click_whole_order">
+						Whole Order
+					</div>
+					<div class="button custom_cancel" style="background: #E1E1E1; border-radius: 10px; color: #383838;" t-on-click="cancel">
+						Cancel
+					</div>
+		   		</div>
+			</div>
+		</div>
+	</t>
+
+    <t t-name="OrderCartWidget" owl="1">
+        <div class="order-container-theme">
+            <div class="order-scroller-theme touch-scrollable" style="height: 60%; width: 100%; overflow: scroll; position: absolute;">
+                <div class="order">
+                    <t t-if="orderlinesArray.length === 0">
+                        <div class='order-empty'>
+                            <i class='fa fa-shopping-cart' />
+                            <h1>Your shopping cart is empty</h1>
+                        </div>
+                    </t>
+                    <t t-foreach="orderlinesArray" t-as="orderline" t-key="orderline.id">
+                        <CartOrderline line="orderline" />
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="CartSummaryWidget" owl="1">
+        <div class="wk-cart-summary">
+            <span class="wk-items-summary">
+                Cart
+            </span>
+            <div class="wk-clear_cart" t-on-click="onClickClearCart">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="CartOrderline" owl="1">
+        <li class="wk-orderline" t-attf-class="{{props.line.selected ? 'selected' : '' }}">
+            <div class="wk-product-detail-section" t-on-click="wk_click_line">
+                <img style="width: 20%;" class='wk-product-img' t-att-src="get_product_image_url(props.line.product)"/> 
+                <span class="wk-product-name">
+                    <t t-esc="props.line.get_full_product_name()"/>
+                </span><br/>
+                <span class="wk-product-price">
+                    1 <t t-if="props.line.get_unit()"><t t-esc="props.line.get_unit().name" /></t> <t t-if="!props.line.get_unit()">Qty</t> = 
+                    <span class="wk-orderline-price" t-on-click="onClickUpdateOrderline">
+                        <t t-esc="env.pos.format_currency(props.line.get_unit_display_price())"/>
+                        <i class="fa fa-pencil" style="margin-left:4px;" aria-hidden="true"></i>
+                    </span>
+                    
+                    <t t-if="props.line.get_product().tracking and props.line.get_product().tracking!=='none'">
+                        <i class="oe_link_icon fa fa-list oe_icon line-lot-icon oe_green" style="position:absolute;margin-left: 8px;
+    margin-top: 6px;" t-if="props.line.has_valid_product_lot()"
+                            aria-label="Valid product lot" role="img" title="Valid product lot"/>
+                        <i class="oe_link_icon fa fa-list oe_icon line-lot-icon oe_red" style="position:absolute;margin-left: 8px;
+    margin-top: 6px;" t-if="!props.line.has_valid_product_lot()"
+                            aria-label="Invalid product lot" role="img" title="Invalid product lot"/>
+                    </t>
+                </span><br/>
+                <t t-if="props.line.get_discount_str() !== '0'">
+                    <span class="wk-product-discount">
+                        With <t t-esc="props.line.get_discount_str()"/>% of Discount
+                    </span>
+                </t>
+                <t t-if="props.line.get_note()">
+                    <br/>
+                    <span class="wk-product-discount">
+                        <i class="fa fa-tag" role="img" aria-label="Note" title="Note"/> 
+                        <t t-esc="props.line.get_note()"/>
+                    </span>
+                </t>
+            </div>
+            <div class="wk-price-detail-section" t-on-click="wk_click_line">
+                <span class="wk-line-total">
+                    <i class="fa fa-minus-square" t-on-click="clickDecreaseQty" style="border: 1px solid #2b2b2b; box-sizing: border-box; border-radius: 6px;
+                                                            background: #2b2b2b; color: white;"></i>
+                        <span style="margin: 0px 10px;">
+                            <t t-esc="props.line.get_quantity_str()" />
+                        </span>
+                    <i class="fa fa-plus-square" t-on-click="clickIncreaseQty" style="background: white; border-radius: 6px;"></i>
+                </span>
+            </div>
+            <span class="wk-remove-line pos-sprite pos-remove-orderline-icon" t-on-click="remove_orderline">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </li>
+    </t>
+
+    <t t-name="OrderlinePriceUpdatePopup" owl="1">
+        <div style="left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; padding: 10px;
+    border-radius: 3px; font-family: sans-serif; box-shadow: 0px 10px 40px rgba(0,0,0,0.4); position: absolute;
+    height: 100%; overflow: auto;">
+            <div class="orderline-popup popup-textinput">
+                <div class="orderline-popup-tabs-panel">
+                    <div class="orderline-update-popup-tab price-tab" t-on-click="switch_to_price_tab" style="margin-top: 10px;">
+                        <span class="tabs-content" style="left: -8px !important;">Price</span>
+                    </div>
+                </div>
+                <div class="orderline-popup-product-section">
+                    <div class="orderline-popup-product-name">
+                        <span class="popup-product-name-content">
+                            <t t-esc="props.orderline and props.orderline.product.display_name"/>
+                        </span>
+                    </div>
+                </div>
+                <div class="orderline-popup-price-input-section price-update-section">
+                    <div class="price-input">
+                        <span style="font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 14px; text-align: right;
+                            color: #333333; margin-top: 8px; margin-left: 15px; position: absolute; ">Price : </span>
+                        <input onClick="this.select();" type="number" class='wk-line-price' placeholder='Price.' t-att-value="props.orderline and props.orderline.price"/>
+                    </div>
+                </div>
+                <div class="orderline-popup-price-section price-update-section price-cancel close-popup" style="margin-left: 130px; width: 120px; color:black; background: #E1E1E1 !important; border-radius: 10px;" t-on-click="cancel">
+                    <span class="add-price-text" style="font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 14px; color: black;">
+                        Cancel
+                    </span>
+                </div>
+                <div class="orderline-popup-price-section price-update-section add-price" style="margin:25px; width: 120px; border-radius: 10px;" t-on-click="add_price">
+                    <span class="add-price-text" style="font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 14px; color: #FFFFFF;">
+                        Change Price
+                    </span>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ProductListScreenWidget" owl="1">
+        <div class="productlist-screen clientlist-screen screen">
+            <div class="screen-content-theme">
+                <section class="top-content-theme">
+                    <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                                    margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                                    cursor: pointer; transition: all 150ms linear;width: 30px;padding-left: 0px;" t-on-click="back">
+                            <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <t t-if="!env.isMobile">
+                        <div class="product-page-name" style="left: 60px; top: 15px; position: absolute; border-radius: 10px; font-family: Noto Sans; font-style: normal;
+                            font-weight: 600; font-size: 20px; color: #000000; text-align: left;">
+                            Products<br/>
+                                <span style="font-family: Noto Sans; font-style: normal; font-weight: normal; font-size: 14px; line-height: 64.77%;
+                                            color: #777777;"> Products available in POS</span>
+                        </div>
+                    </t>
+                    <div class="searchbox-client top-content-center search-productlist-container" style="padding: 0px; margin-top: -2px;
+                            margin-bottom: 0px">
+                        <input class='wk-productlist-search-box' style="width: 160px; padding: 8px 20px; font-size: 15px;" placeholder='Search' t-on-keyup="updateProductList"/>
+                        <t t-if="!env.isMobile">
+                            <span class="icon" style="position: relative; z-index: 1; color: #4f5b66; right: 25px; font-size: 15px;">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </t>
+                        <t t-else="">
+                            <span class="icon" style="right: 30px !important; top: 10px !important;position: relative; z-index: 1; color: #4f5b66; font-size: 15px;">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </t>
+                    </div>
+                    <t t-if="!env.isMobile">
+                        <span class="wk-create-product-btn" t-on-click="create_product">
+                            <i class="fa fa-plus-square" style="position: relative; top: 8px; width: 29px; right: 3px;
+                                font-style: normal; font-weight: 500; font-size: 14px;" aria-hidden="true"></i>
+                                <span class="create-customer-label">Add Product</span>
+                        </span>
+                    </t>
+                    <t t-else="">
+                        <span class="wk-create-product-btn" style="width: 40px; font-size: 30px;" t-on-click="create_product">
+                            <i class="fa fa-plus"></i>
+                        </span>
+                    </t>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='client-list-theme table table-hover product-list product-listview' style="display: inline-table;">
+                                        <thead>
+                                            <tr style="font-family: Noto Sans; font-style: normal; font-weight: 600; font-size: 14px;">
+                                                <th t-if="!env.isMobile">Image</th>
+                                                <th>Name</th>
+                                                <th t-if="!env.isMobile">Price</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='client-list-contents'>
+                                            <t t-foreach="clients" t-as="partner"
+                                                t-key="partner.id">
+                                                    <ProductLine product="partner"/>
+                                                </t>
+                                        </tbody>
+                                    </table>
+                                    <div class="client-list-theme product-list product-kanbanview">
+                                        <t t-foreach="clients" t-as="partner" t-key="partner.id">
+                                            <!-- <ProductKanban product="partner"/> -->
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ProductLine" owl="1">
+        <tr class='wk-product-line' style="font-family: Noto Sans; font-style: normal; font-weight: normal; font-size: 14px;" t-att-data-id='props.product.id'>
+            <td t-if="!env.isMobile">
+                <span class="productlist-img-container">
+                    <img class="productlist-img" t-att-src="imageUrl" t-att-alt="props.product.display_name"/>
+                </span>
+            </td>
+            <td>
+                <t t-esc="props.product.display_name"/>
+            </td>
+            <td t-if="!env.isMobile">
+                <t t-esc="price"/>
+            </td>
+            <td>
+                <span t-att-data-id='props.product.id' style="font-family: Noto Sans;
+                    font-style: normal; font-weight: normal; font-size: 14px;" t-on-click="spaceClickProductAction">View Details</span>
+            </td>
+        </tr>
+    </t>
+
+
+
+    <t t-name="ProductList" t-inherit="point_of_sale.ProductList" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('product-list')]" position="replace">
+            <div t-if="props.products.length != 0" class="product-list">
+                <t t-foreach="props.products" t-as="product" t-key="product.id">
+                    <t t-if="env.pos.config.enable_pos_theme">
+                        <ProductItemTheme product="product" />
+                    </t>
+                    <t t-if="!env.pos.config.enable_pos_theme">
+                        <ProductItem product="product" />
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="ProductItemTheme" owl="1">
+        <article class="product" tabindex="0" t-on-keypress="spaceClickProduct"
+                 t-on-click="trigger('click-product', props.product)"
+                 t-att-data-product-id="props.product.id"
+                 t-attf-aria-labelledby="article_product_{{props.product.id}}">
+            <div class="product-img" t-attf-style="background: {{ env.pos.config.product_background_color }} !important;">
+                <img t-att-src="imageUrl" t-attf-style="background: {{ env.pos.config.product_background_color }} !important;" t-att-alt="props.product.display_name" />
+                <span class="price-tag">
+                    <t t-esc="price" />
+                </span>
+                <!-- <span class="boxed-product-name"> -->
+                <span class="boxed-product-name">
+                    <t t-esc="props.product.display_name" />
+                </span>
+            </div>
+        </article>
+    </t>
+
+    <t t-name="ClientListScreen" t-inherit="point_of_sale.ClientListScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('top-content')]//div[hasclass('searchbox-client') and hasclass('top-content-center')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div t-if="!state.detailIsShown" class="searchbox-client top-content-center">
+                    <input placeholder="Search" size="1" style="padding-left: 20px; width: 160px; font-size: 15px;
+                    right: 165px; position: absolute;" t-on-keyup="updateClientList" />
+                    <span class="icon" style="position: absolute; z-index: 1; color: #4f5b66; right: 180px; font-size: 15px; top: 25px">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+            </t>
+            <t t-else="">
+                <div t-if="!state.detailIsShown" class="searchbox-client top-content-center">
+                    <input placeholder="Search Customers" size="1" t-on-keyup="updateClientList" />
+                    <span class="search-clear-client"></span>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('button') and hasclass('new-customer')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div t-if="!state.detailIsShown &amp;&amp; !state.selectedClient" class="button new-customer"
+                        role="img" aria-label="Add a customer"
+                        t-on-click="trigger('activate-edit-mode', { isNewClient: true })"
+                        title="Add a customer">
+                    <t t-if="!env.isMobile">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/add_customer.png"/>
+                        Add Customer
+                    </t>
+                    <t t-else="">
+                        <i class="fa fa-plus"></i>
+                    </t>
+                </div>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <div t-if="!state.detailIsShown &amp;&amp; !state.selectedClient" class="button new-customer" role="img" aria-label="Add a customer"
+                        t-on-click="trigger('activate-edit-mode', { isNewClient: true })"
+                        title="Add a customer">
+                    <t t-if="!env.isMobile">
+                        Create
+                    </t>
+                    <t t-else="">
+                        <i class="fa fa-plus"></i>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('top-content')]" position="inside">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <t t-if="!env.isMobile">
+                    <div style="left: 80px; top: 15px; position: absolute; border-radius: 10px; font-family: Noto Sans; font-style: normal;
+                                font-weight: 600; font-size: 20px; color: #000000; text-align: left;">
+                        Customers<br/>
+                            <span style="font-family: Noto Sans; font-style: normal; font-weight: normal; font-size: 14px; line-height: 64.77%;
+                                        color: #777777;"> Add and set customer</span>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('button') and hasclass('back')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                                        margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                                        cursor: pointer; transition: all 150ms linear;" t-on-click="back">
+                        <i class="fa fa-arrow-left"></i>
+                </div>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <div class="button back" t-on-click="back">
+                    <t t-if="!env.isMobile">Discard</t>
+                    <t t-else="">
+                        <i class="fa fa-undo"></i>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//table[hasclass('client-list')]//tr//th[5]" position="replace">
+            <th>Action</th>
+        </xpath>
+        <xpath expr="//table[hasclass('client-list')]//tr//th[4]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="ClientLine" t-inherit="point_of_sale.ClientLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr//td[4]" position="replace">
+            <td>
+                <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                    <span class="view-details-text" t-on-click.stop="view_customer_details" t-att-data-id='props.partner.id' style="font-family: Noto Sans;
+                        font-style: normal; font-weight: normal; font-size: 14px; line-height: 64.77%; left: 0px;top: 0px;">
+                    View Details
+                    </span>
+                </t>
+                <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                    <t t-esc="props.partner.email or ''" />
+                    <span t-if="highlight"><br/></span>
+                </t>
+            </td>
+        </xpath>
+        <xpath expr="//tr//td[5]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('edit-client-button')]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="ClientDetailScreenWidget" owl="1">
+        <div class="client-detail-screen screen">
+            <div class="screen-content">
+                <section class="top-content-theme">
+                    <div class="back" t-on-click="clickBack" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                            margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px; cursor: pointer; 
+                            transition: all 150ms linear;width: 30px;padding-left: 0px;">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <span class="wk-customer-edit" style="margin-right: 150px;" t-on-click="clickEditCustomer">
+                        <span class="create-customer-label" stye='Color'>Edit</span>
+                    </span>
+                    <span class="wk-create-product-btn" t-on-click="clickSetCustomer">
+                        <span class="create-customer-label">Set Customer</span>
+                    </span>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <img class='customer-image' t-att-src="imageUrl"/>
+                                    <div class='customer-detail-section'>
+                                        <table class="client-detail-left">
+                                            <tr>
+                                                <td class="client-detail-label">Name -</td>
+                                                <td class="client-detail-value">
+                                                <t t-esc="props.partner.name or '-'"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-detail-label">Email -</td>
+                                                <td class="client-detail-value">
+                                                <t t-esc="props.partner.email or '-'"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-detail-label">Address -</td>
+                                                <td class="client-detail-value">
+                                                <t t-esc="props.partner.address or '-'"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-detail-label">Phone -</td>
+                                                <td class="client-detail-value">
+                                                <t t-esc="props.partner.phone or '-'"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="client-detail-right">
+                                            <tr>
+                                                <td class="client-detail-label">No. of POS Sales -</td>
+                                                <td class="client-detail-value"><t t-esc="props.partner.pos_order_count"/> Sales</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-detail-label">Language -</td>
+                                                <td class="client-detail-value"><t t-esc="props.partner.lang and env.pos.lang_dict[props.partner.lang] or 'N/A'"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-detail-label">Sales Pricelist -</td>
+                                                <td class="client-detail-value"><t t-esc="props.partner.property_product_pricelist and props.partner.property_product_pricelist[1] or 'N/A'"/></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ClientEditScreen" owl="1">
+        <div class="wk-client-edit client-edit-screen screen">
+            <div class="screen-content" style="display: block;">
+                <section class="top-content-theme">
+                    <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                                    margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                                    cursor: pointer; transition: all 150ms linear;width: 30px;padding-left: 0px;" t-on-click="clickBack">
+                            <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <span class="product-cancel-btn" t-on-click="clickBack">
+                        <span class="create-customer-label">Cancel</span>
+                    </span>
+                    <span class="wk-create-product-btn" t-on-click="clickSaveClientDetails">
+                        <span class="create-customer-label">Save</span>
+                    </span>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <div class="client-picture" style="width: 20%; margin-left: 10%; position: absolute; float: left;">
+                                        <t t-if="partnerImageUrl">
+                                            <img t-att-src="partnerImageUrl" t-on-change="captureChange" alt="Partner"
+                                                style="background: white; border-radius: 6px;width: 64px; height: 64px; object-fit: cover;" />
+                                        </t>
+                                        <t t-else="">
+                                            <i class="fa fa-camera" role="img" aria-label="Picture" title="Picture"></i>
+                                        </t>
+                                        <input type="file" style="position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 64px;
+    height: 64px;cursor: pointer;" class="image-uploader" t-on-change="uploadImage" />
+                                    </div>
+                                    <div class="client-details-box clearfix" style="width: 80%;
+    float: right;">
+                                        <div class="client-details-left">
+                                            <div class="client-detail">
+                                                <span class="label">Name : </span>
+                                                <input class="detail client-name wk-customer-edit-input" name="name" t-att-value="props.partner.name"
+                                                    placeholder="Name" t-on-change="captureChange" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Email : </span>
+                                                <input class="detail client-email wk-customer-edit-input" name="email" type="email"
+                                                    t-on-change="captureChange"
+                                                    t-att-value="props.partner.email || ''" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Street : </span>
+                                                <input class="detail client-address-street wk-customer-edit-input" name="street"
+                                                    t-on-change="captureChange" t-att-value="props.partner.street || ''"
+                                                    placeholder="Street" />
+                                                <br/>
+                                                <span class="label"></span>
+                                                <input class="detail client-address-city wk-customer-edit-input" name="city"
+                                                    t-on-change="captureChange" t-att-value="props.partner.city || ''"
+                                                    style="width: 100px;margin-top: 10px;" placeholder="City" />
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 190px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;" class="detail client-address-states needsclick" name="state_id"
+                                                        t-on-change="captureChange">
+                                                    <option value="">None</option>
+                                                    <t t-foreach="env.pos.states" t-as="state" t-key="state.id">
+                                                        <option t-if="props.partner.country_id[0] == state.country_id[0]"
+                                                                t-att-value="state.id"
+                                                                t-att-selected="props.partner.state_id ? ((state.id === props.partner.state_id[0]) ? true : undefined) : undefined">
+                                                            <t t-esc="state.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                                <input class="detail client-address-zip wk-customer-edit-input" name="zip"
+                                                    t-on-change="captureChange" t-att-value="props.partner.zip || ''"
+                                                    style="width: 100px;" placeholder="ZIP" />
+                                                <br/>
+                                                <span class="label"></span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;margin-top: 10px;" class="detail client-address-country needsclick" name="country_id"
+                                                        t-on-change="captureChange">
+                                                    <option value="">None</option>
+                                                    <t t-foreach="env.pos.countries" t-as="country" t-key="country.id">
+                                                        <option t-att-value="country.id"
+                                                                t-att-selected="props.partner.country_id ? ((country.id === props.partner.country_id[0]) ? true : undefined) : undefined">
+                                                            <t t-esc="country.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Language : </span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;" class="detail client-lang needsclick" name="lang"
+                                                        t-on-change="captureChange">
+                                                    <t t-foreach="env.pos.langs" t-as="lang" t-key="lang.id">
+                                                        <option t-att-value="lang.code"
+                                                                t-att-selected="props.partner.lang ? ((lang.code === props.partner.lang) ? true : undefined) : lang.code === env.pos.user.lang? true : undefined">
+                                                            <t t-esc="lang.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Phone : </span>
+                                                <input class="detail client-phone wk-customer-edit-input" name="phone" type="tel"
+                                                    t-on-change="captureChange"
+                                                    t-att-value="props.partner.phone || ''" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Barcode : </span>
+                                                <input class="detail barcode wk-customer-edit-input" name="barcode" t-on-change="captureChange"
+                                                    t-att-value="props.partner.barcode || ''" />
+                                            </div>
+                                            <div t-if="env.pos.pricelists.length gt 1" class="client-detail">
+                                                <span class="label">Pricelist : </span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;" class="detail needsclick" name="property_product_pricelist"
+                                                        t-on-change="captureChange">
+                                                    <t t-foreach="env.pos.pricelists" t-as="pricelist"
+                                                    t-key="pricelist.id">
+                                                        <option t-att-value="pricelist.id"
+                                                                t-att-selected="props.partner.property_product_pricelist ? (pricelist.id === props.partner.property_product_pricelist[0] ? true : false) : false">
+                                                            <t t-esc="pricelist.display_name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ClientAddScreen" owl="1">
+        <div class="wk-client-add client-edit-screen screen">
+            <div class="screen-content" style="display: block;">
+                <section class="top-content-theme">
+                    <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                                    margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                                    cursor: pointer; transition: all 150ms linear;width: 30px;padding-left: 0px;" t-on-click="clickBack">
+                            <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <span class="product-cancel-btn" t-on-click="clickBack">
+                        <span class="create-customer-label">Cancel</span>
+                    </span>
+                    <span class="wk-create-product-btn" t-on-click="clickCreateCustomer">
+                        <span class="create-customer-label">Save</span>
+                    </span>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <div class="client-picture" style="width: 20%; margin-left: 10%; position: absolute; float: left;">
+                                        <t t-if="partnerImageUrl">
+                                            <img t-att-src="partnerImageUrl" alt="Partner"
+                                                style="background: white; border-radius: 6px;width: 70px; height: 70px; object-fit: cover;" />
+                                        </t>
+                                        <t t-else="">
+                                            <i class="fa fa-camera" style="font-size: 50px;" role="img" aria-label="Picture" title="Picture"></i>
+                                        </t>
+                                        <input type="file" style="position: absolute; z-index: 1000; top: 0; left: 0; right: 0; bottom: 0;
+                                            opacity: 0; width: 64px; height: 64px;cursor: pointer;" class="image-uploader" t-on-change="uploadImage" />
+                                    </div>
+                                    <div class="client-details-box clearfix" style="width: 80%; float: right;">
+                                        <div class="client-details-left">
+                                            <div class="client-detail">
+                                                <span class="label">Name : </span>
+                                                <input class="detail client-name wk-customer-edit-input" name="name" 
+                                                    placeholder="Name" t-on-change="captureChange" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Email : </span>
+                                                <input class="detail client-email wk-customer-edit-input" name="email" type="email"
+                                                    t-on-change="captureChange" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Street : </span>
+                                                <input class="detail client-address-street wk-customer-edit-input" name="street"
+                                                    t-on-change="captureChange" placeholder="Street" />
+                                                <br/>
+                                                <span class="wk-state-label label"></span>
+                                                <input class="detail client-address-city wk-customer-edit-input" name="city"
+                                                    t-on-change="captureChange"
+                                                    style="width: 100px;margin-top: 10px;" placeholder="City" />
+                                                <select style="border-radius: 3px; border: 1px solid #cccccc; height: 42px; width: 190px;
+                                                    font-size: 13px; color: #565656; padding-left: 4px; padding-right: 4px;
+                                                    cursor: pointer; position: relative; z-index: 1; white-space: nowrap;
+                                                    text-overflow: ellipsis;" class="detail client-address-states needsclick" name="state_id"
+                                                        t-on-change="captureChange">
+                                                    <option value="">None</option>
+                                                    <t t-foreach="env.pos.states" t-as="state" t-key="state.id">
+                                                        <option t-att-value="state.id" >
+                                                            <t t-esc="state.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                                <input class="detail client-address-zip wk-customer-edit-input" name="zip"
+                                                    t-on-change="captureChange"
+                                                    style="width: 100px;" placeholder="ZIP" />
+                                                <br/>
+                                                <span class="label"></span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;margin-top: 10px;" class="detail client-address-country needsclick" name="country_id"
+                                                        t-on-change="captureChange">
+                                                    <option value="">None</option>
+                                                    <t t-foreach="env.pos.countries" t-as="country" t-key="country.id">
+                                                        <option t-att-value="country.id">
+                                                            <t t-esc="country.name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Language : </span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;" class="detail client-lang needsclick" name="lang"
+                                                        t-on-change="captureChange">
+                                                    <t t-foreach="env.pos.langs" t-as="lang" t-key="lang.id">
+                                                        <!-- <option t-att-value="lang.code"
+                                                                t-att-selected="props.partner.lang ? ((lang.code === props.partner.lang) ? true : undefined) : lang.code === env.pos.user.lang? true : undefined">
+                                                            <t t-esc="lang.name" />
+                                                        </option> -->
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Phone : </span>
+                                                <input class="detail client-phone wk-customer-edit-input" name="phone" type="tel"
+                                                    t-on-change="captureChange" />
+                                            </div>
+                                            <div class="client-detail">
+                                                <span class="label">Barcode : </span>
+                                                <input class="detail barcode wk-customer-edit-input" name="barcode" 
+                                                    t-on-change="captureChange"/>
+                                            </div>
+                                            <div t-if="env.pos.pricelists.length gt 1" class="client-detail">
+                                                <span class="label">Pricelist : </span>
+                                                <select style="border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 42px;
+    width: 400px;
+    font-size: 13px;
+    color: #565656;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;" class="detail needsclick" name="property_product_pricelist"
+                                                        t-on-change="captureChange">
+                                                    <t t-foreach="env.pos.pricelists" t-as="pricelist"
+                                                    t-key="pricelist.id">
+                                                        <option t-att-value="pricelist.id">
+                                                            <t t-esc="pricelist.display_name" />
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="PaymentScreen" t-inherit="point_of_sale.PaymentScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('payment-screen') and hasclass('screen')]//div[hasclass('screen-content')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div class="screen-content">
+                    <div class='payment-leftpane'>
+                        <div class='window wk-second-window'>
+                            <div class='subwindow'>
+                                <div class='subwindow-container'>
+                                    <div class='subwindow-container-fix'>
+                                        <div class="wk-payment-cart-count-container">
+                                            <span class="wk-payment-cart-count">
+                                                Cart
+                                            </span>
+                                        </div>
+                                        <div class="payment-order-container">
+                                            <div class="payment-order-scroller touch-scrollable">
+                                                <div class="order">
+                                                    <t t-if="orderlinesArray.length === 0">
+                                                        <div class='order-empty'>
+                                                            <i class='fa fa-shopping-cart' />
+                                                            <h1>Your shopping cart is empty</h1>
+                                                        </div>
+                                                    </t>
+                                                    <t t-if="orderlinesArray.length > 0">
+                                                        <t t-foreach="orderlinesArray" t-as="line" t-key="line.id">
+                                                            <li class="wk-orderline">
+                                                                <div class="wk-product-detail-section2">
+                                                                    <img style="width: 20%;" class='wk-product-img' t-att-src="get_product_image_url(line.product)"/> 
+                                                                    <span class="wk-product-name">
+                                                                        <t t-esc="line.get_full_product_name()"/>
+                                                                    </span><br/>
+                                                                    <span class="wk-product-price">
+                                                                        1 <t t-if="line.get_unit()"><t t-esc="line.get_unit().name" /></t> <t t-if="!line.get_unit()">Qty</t> = <t t-esc="env.pos.format_currency(line.get_unit_display_price(),'Product Price')" />
+                                                                    </span>
+                                                                </div>
+                                                                <div class="wk-price-detail-section2">
+                                                                    <span class="wk-line-total">
+                                                                        <t t-esc="env.pos.format_currency(line.get_display_price())"/><br/>
+                                                                        <!-- <span class="wk-line-item-count">
+                                                                            <t t-esc="line.get_quantity_str()" />Pcs.
+                                                                        </span> -->
+                                                                        <!-- <i class="fa fa-minus-square" style="border: 1px solid black; box-sizing: border-box; border-radius: 6px;
+                                                                                                            background: black; color: white;"></i>
+                                                                            <span style="margin: 0px 10px;">
+                                                                                <t t-esc="line.get_quantity_str()" />
+                                                                            </span>
+                                                                        <i class="fa fa-plus-square" style="background: white; border-radius: 6px; color: #FC4078;"></i> -->
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <PaymentCartSummary />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='payment-rightpane'>
+                        <div class='window wk-second-window'>
+                            <div class='subwindow'>
+                                <div class='subwindow-container'>
+                                    <div class='subwindow-container-fix'>
+                                        <div class="payment-top-action-section">
+                                            <span class="wk-payment-back back" t-on-click="back">
+                                                <i class="fa fa-arrow-left" style="font-style: normal;font-size: 25px;line-height: 64.77%;
+                                                                        color: #000000; margin-top: 15%;" aria-hidden="true"></i>
+                                            </span>
+                                            <span style="border-radius: 4px; left: 70px; top: 20px; width: 35px; padding-top: 3px;
+                                                height: 31px; position: absolute; cursor: pointer; font-family: Noto Sans;font-style: normal;
+                                                font-weight: bold; font-size: 26px; line-height: 64.77%; color: #000000; margin-top: 1%;">
+                                                Payment
+                                            </span>
+                                        </div>
+                                        <PaymentListenerWidget />
+                                        <div class="payment-bottom-action-section" style="text-align:center;">
+                                            <span class="wk-payment-scrn-btn wk-add-payment" style="border-radius: 10px;" t-on-click="add_payment_line">
+                                                Add payment
+                                            </span> 
+                                            <div class="wk-options-button">
+                                                <span class='wk-payment-scrn-btn wk-generate-invoice' t-on-click="generate_invoice">
+                                                    <span class="pos-sprite pos-generate-invoice-icon"></span>
+                                                    <span class="generate-invoice-label">Generate Invoice</span>
+                                                </span>
+                                                <span class="wk-payment-scrn-btn wk-complete-order" t-on-click="validateOrder(false)">
+                                                    Complete Order
+                                                </span>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <t t-if="!env.isMobile">
+                        <div class="top-content">
+                            <div class="button back"
+                                t-on-click="showScreen('ProductScreen')">
+                                <i class="fa fa-angle-double-left fa-fw"></i>
+                                <span class="back_text">Back</span>
+                            </div>
+                            <div class="button next" t-att-class="{ highlight: currentOrder.is_paid() }"
+                                t-on-click="validateOrder(false)">
+                                <span class="next_text">Validate</span>
+                                <i class="fa fa-angle-double-right fa-fw"></i>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <div class="screen-content">
+                    <t t-if="!env.isMobile">
+                        <div class="top-content">
+                            <div class="button back"
+                                t-on-click="showScreen('ProductScreen')">
+                                <i class="fa fa-angle-double-left fa-fw"></i>
+                                <span class="back_text">Back</span>
+                            </div>
+                            <div class="top-content-center"><h1>Payment</h1></div>
+                            <div class="button next" t-att-class="{ highlight: currentOrder.is_paid() }"
+                                t-on-click="validateOrder(false)">
+                                <span class="next_text">Validate</span>
+                                <i class="fa fa-angle-double-right fa-fw"></i>
+                            </div>
+                        </div>
+                    </t>
+                    <div class="main-content">
+                        <div class="left-content">
+                            <t t-if="env.isMobile">
+                                <section class="paymentlines-container">
+                                    <PaymentScreenStatus paymentLines="paymentLines" />
+                                </section>
+                            </t>
+                            <div class="paymentmethods-container">
+                                <PaymentScreenPaymentLines paymentLines="paymentLines" />
+                                <div class="paymentmethods">
+                                    <t t-foreach="env.pos.payment_methods" t-as="paymentMethod"
+                                    t-key="paymentMethod.id">
+                                        <PaymentMethodButton paymentMethod="paymentMethod" />
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <t t-if="!env.isMobile">
+                                <section class="paymentlines-container">
+                                    <PaymentScreenStatus paymentLines="paymentLines" />
+                                </section>
+                            </t>
+
+                            <div class="payment-buttons-container">
+                                <section class="payment-numpad">
+                                    <PaymentScreenNumpad />
+                                </section>
+
+                                <div class="payment-buttons">
+                                    <div class="customer-button">
+                                        <div class="button" t-on-click="selectClient">
+                                            <i class="fa fa-user" role="img" aria-label="Customer"
+                                            title="Customer" />
+                                            <span class="js_customer_name">
+                                                <t t-if="env.pos.get_client()">
+                                                    <t t-esc="env.pos.get_client().name" />
+                                                </t>
+                                                <t t-if="!env.pos.get_client()">
+                                                    Customer
+                                                </t>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="payment-controls">
+                                        <div t-if="env.pos.config.module_account" class="button js_invoice"
+                                            t-att-class="{ highlight: currentOrder.is_to_invoice() }"
+                                            t-on-click="toggleIsToInvoice">
+                                            <i class="fa fa-file-text-o" /> Invoice
+                                        </div>
+                                        <div t-if="env.pos.config.tip_product_id" class="button js_tip"
+                                            t-on-click="addTip">
+                                            <i class="fa fa-heart" /> Tip
+                                        </div>
+                                        <div t-if="env.pos.config.iface_cashdrawer" class="button js_cashdrawer"
+                                            t-on-click="openCashbox">
+                                            <i class="fa fa-archive" /> Open Cashbox
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-if="env.isMobile">
+                        <div class="switchpane">
+                            <button class="btn-switchpane" t-att-class="{ secondary: !currentOrder.is_paid() }" t-on-click="validateOrder(false)">
+                                <h1>Validate</h1>
+                            </button>
+                            <button class="btn-switchpane secondary" t-on-click="showScreen('ProductScreen', {mobile_pane: 'left'})">
+                                <h1>Review</h1>
+                            </button>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    
+    <t t-name="PaymentCartSummary" owl="1">
+        <div class="wk-payment-cart-total-smry-container">
+            <div class='payment-subtotal-section'>
+                <div class="payment-subtotal-section-line">
+                    <span class="payment-total-section-label">
+                        Subtotal -
+                    </span>
+                    <span class="payment-total-section-value payment-screen-smry-subtotal">
+                        <t t-esc="get_subtotal"/>
+                    </span>
+                </div><br/>
+                <div class="payment-subtotal-section-line">
+                    <span class="payment-total-section-label">
+                        Tax -
+                    </span>
+                    <span class="payment-total-section-value payment-screen-smry-tax">
+                        <t t-esc="get_tax"/>
+                    </span>
+                </div><br/>
+                <div class="wk-amount-summary" style="margin-top: 10px;">
+                    <span style="float: left;font-family: Noto Sans; font-style: normal; font-weight: bold; font-size: 16px;
+                                line-height: 64.77%; color: #000000;">
+                        Grand Total<br/>
+                    </span>
+                    <span style="float: right;" class="wk-grand-total">
+                        <t t-esc="get_grand_total"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="PaymentListenerWidget" owl="1">
+        <div class="payment-listener-widget" style="text-align:center;">
+            <span class="payment-grand-total-label">
+                Grand Total
+            </span>
+            <div class="payment-grand-total">
+                <span class="grand-total-value">                    
+                    <t t-esc="get_total_with_tax"/>
+                </span>
+            </div>
+            <div class="payment-updated-summary-container">
+                <span class="payment-summary-section">
+                    <span style="float: left;" class="payment-summary-section-label">Payment Due</span>
+                    <span style="float: right;" class="payment-summary-section-value wk-payment-due">
+                        <t t-esc="get_due"/>
+                    </span>
+                </span>
+                <br/>
+                <span class="payment-summary-section">
+                    <span style="float: left;" class="payment-summary-section-label">Change</span>
+                    <span style="float: right;" class="payment-summary-section-value wk-payment-change">
+                        <t t-esc="get_change"/>
+                    </span>
+                </span>
+            </div>
+            <div class="payment-lines-container touch-scrollable">
+                <!-- <PaymentScreenPaymentLine /> -->
+                <t t-if="paymentlines.length != 0" >
+                    <t t-foreach="paymentlines" t-as="line" t-key="line.id">
+                        <t t-if='line.selected'>
+                            <div class="payment-line-div">
+                                <table class="wk-payment-line wk-paymentline-table-selected" t-att-data-cid='line.cid' >
+                                    <tr id="wk-payment-line-tr">
+                                        <td style="width: 50%;border-right: 1px #f0eeee solid;background: #f0eeee;
+                    border-radius: 6px 0px 0px 6px;" class="wK_line_input_td" t-att-data-cid='line.cid' t-on-click="trigger('select-payment-line', { cid: line.cid })">
+                                            <input style="border-radius: 5px 0px 0px 5px;border: none;cursor: pointer;height: 40px;font-family: poppins 400;
+                width: 98%;padding-left: 6px;font-size: 20px;outline: none;color: black;
+                text-shadow: 0 0 0 #504f4f;" class="wk_line_input" t-on-click="paymentlinefocusout" type="text" pattern="[0-9 _,]*" t-att-value="env.pos.format_currency_no_symbol(convert_string(line.amount))" />
+                                        </td>
+                                        <td class="wk-line-type-td">
+                                            <div class="line-type-container">
+                                                <div class="wk-line-type" t-att-data-cid='line.cid' t-on-click="show_payment_types">
+                                                    <span class="journal-name">
+                                                        <t t-esc='line.name'/>
+                                                    </span>
+                                                    <span class="payment-line-type-combo-box-icon">
+                                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                                <ul t-attf-class='journal-dropdown'>
+                                                    <t t-foreach="env.pos.payment_methods" t-as="payment_methods" t-key="payment_methods.id">
+                                                        <li class="journal-dropdown-item" t-att-data-payment_methods-id='payment_methods.id' t-att-data-cid='line.cid' t-on-click="set_payment_method">
+                                                            <span class="journal-dropdown-item-name">
+                                                                <t t-esc='payment_methods.name'/>
+                                                            </span>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <span class="wk-line-rem" t-att-data-cid='line.cid' t-on-click="trigger('delete-payment-line', { cid: line.cid })">
+                                    <span class="pos-sprite pos-del-paymentline-icon">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </span> 
+                                </span>
+                            </div>
+                        </t>
+                        <t t-if='!line.selected'>
+                            <div class="payment-line-div">
+                                <table class="wk-payment-line" t-att-data-cid='line.cid'>
+                                    <tr id="wk-payment-line-tr" style="border: 1px solid gray;">
+                                        <td style="width: 50%;border-right: 1px #f0eeee solid;background: #f0eeee;
+                    border-radius: 6px 0px 0px 6px;" class="wK_line_input_td" t-att-data-cid='line.cid' t-on-click="trigger('select-payment-line', { cid: line.cid })">
+                                            <input style="border-radius: 5px 0px 0px 5px;border: none;cursor: pointer;height: 40px;font-family: poppins 400;
+                width: 98%;padding-left: 6px;font-size: 20px;outline: none;color: black;
+                text-shadow: 0 0 0 #504f4f;" class="wk_line_input" t-on-click="paymentlinefocusout" type="text" pattern="[0-9 _,]*" t-att-value="env.pos.format_currency_no_symbol(convert_string(line.amount))" />
+                                        </td>
+                                        <td class="wk-line-type-td">
+                                            <div class="line-type-container">
+                                                <div class="wk-line-type" t-att-data-cid='line.cid' t-on-click="show_payment_types">
+                                                    <span class="journal-name">
+                                                        <t t-esc='line.name'/>
+                                                    </span>
+                                                    <span class="payment-line-type-combo-box-icon">
+                                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                                <ul class="journal-dropdown">
+                                                    <t t-foreach="env.pos.payment_methods" t-as="payment_methods" t-key="payment_methods.id">
+                                                        <li class="journal-dropdown-item" t-att-data-payment_methods-id='payment_methods.id' t-att-data-cid='line.cid' t-on-click="set_payment_method">
+                                                            <span class="journal-dropdown-item-name">
+                                                                <t t-esc='payment_methods.name'/>
+                                                            </span>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <span class="wk-line-rem" t-att-data-cid='line.cid' t-on-click="trigger('delete-payment-line', { cid: line.cid })">
+                                    <span class="pos-sprite pos-del-paymentline-icon">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </span> 
+                                </span>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </div>  
+        </div>
+    </t>
+
+    <t t-name="ProductAddScreen" owl="1">
+        <div class="client-edit-screen screen">
+            <div class="screen-content" style="display:block;">
+                <section class="top-content-theme">
+                    <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                                    margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                                    cursor: pointer; transition: all 150ms linear;width: 30px;padding-left: 0px;" t-on-click="back">
+                            <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <span class="product-cancel-btn" t-on-click="back">
+                        <span class="create-customer-label">Cancel</span>
+                    </span>
+                    <span class="wk-create-product-btn" t-on-click="save_product_data">
+                        <span class="create-customer-label">Save</span>
+                    </span>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                
+                                    <div class='product-edit-section'>
+                                        <table class="client-edit-left">
+                                            <tr>
+                                                <td class="client-edit-label">Name:</td>
+                                                <td class="client-edit-value" colspan="3">
+                                                    <input name="name" class='product-name-input product-edit-input wk-product-edit-input' placeholder="Name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Price:</td>
+                                                <td class="client-edit-value" colspan="3">
+                                                    <input name="name" type="number" class='product-price-input product-edit-input wk-product-edit-input' />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Barcode:</td>
+                                                <td class="client-edit-value" colspan="3">
+                                                    <input name="name" type="number" class='product-barcode-input product-edit-input wk-product-edit-input' />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Internal Ref.:</td>
+                                                <td class="client-edit-value" colspan="3">
+                                                    <input name="name" class='product-internal-ref-input product-edit-input wk-product-edit-input' />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Cost Price:</td>
+                                                <td class="client-edit-value" colspan="3">
+                                                    <input name="name" type="number" class='product-cost-input product-edit-input wk-product-edit-input'/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="client-edit-right">
+                                            <tr>
+                                                <td class="client-edit-label">POS Category:</td>
+                                                <td class="client-edit-value">
+                                                    <div class="product-category-dropdown" t-on-click="product_category_dropdown">
+                                                        <span class="client-language-text" t-att-lang_key="env.pos.wk_categories[0].id">
+                                                            <t t-esc="env.pos.wk_categories[0].name"/>
+                                                        </span>
+                                                        <ul class="wk-category-list pos-category-dropdown-element">
+                                                            <li t-att-lang_key="0"  class='wk-category-li' t-on-click="select_product_category">
+                                                                <div style="display:inline-block;width: 100%;">
+                                                                    <span style="display:block;float:left">N/A</span>
+                                                                </div>    
+                                                            </li>
+                                                            <t t-foreach="env.pos.wk_categories" t-as="lang" t-key="lang">
+                                                                <li t-att-lang_key="lang['id']" class='wk-category-li' t-on-click="select_product_category">
+                                                                    <div style="display:inline-block;width: 100%;">
+                                                                        <span style="display:block;float:left"><t t-esc="lang['name']"/></span>
+                                                                    </div>
+                                                                </li>
+                                                            </t>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Product Type:</td>
+                                                <td class="client-edit-value">
+                                                    <div class="product-type-dropdown" t-on-click="product_type_dropdown">
+                                                        <span class="product-type-text" value='consu'>
+                                                            <t t-esc="'Consumable'"/>
+                                                        </span>
+                                                        <ul class="wk-product-type-list pos-product-type-dropdown-element">
+                                                            <li value='consu' class='wk-product-type-li' t-on-click="select_product_type">Consumable</li>
+                                                            <li value='service' class='wk-product-type-li' t-on-click="select_product_type">Service</li>
+                                                            <li value='product' class='wk-product-type-li' t-on-click="select_product_type">Stockable Product</li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="client-edit-label">Product Category:</td>
+                                                <td class="client-edit-value">
+                                                    <div class="product-categ-dropdown" t-on-click="product_categ_dropdown">
+                                                        <span class="product-categ-text" t-att-lang_key="env.pos.product_categories[0].id">
+                                                            <t t-esc="env.pos.product_categories[0].name"/>
+                                                        </span>
+                                                        <span class="pos-sprite pos-client-language-combo-box-icon"></span>
+                                                        <ul class="wk-product-categ-list product-categ-dropdown-element">
+                                                            <t t-foreach="env.pos.product_categories" t-as="lang" t-key="lang">
+                                                                <li t-att-lang_key="lang['id']" class='wk-produc-categ-li' t-on-click="select_product_categ"><t t-esc="lang['name']"/></li>
+                                                            </t>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ProductFormScreen" owl="1">
+        <div class="product-form-screen screen">
+            <div class="screen-content" style="display: block;">
+                <section class="top-content-theme">
+                    <div class="back" style="line-height: 32px; padding: 3px 13px; font-size: 20px; margin-top: 12px;
+                            margin-bottom: 12px; margin-left: 6px; margin-right: 6px; border-radius: 3px;
+                            cursor: pointer; transition: all 150ms linear;width: 30px;padding-left: 0px;" t-on-click="back">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <img class='product-image' t-att-src="imageUrl" t-att-alt="props.product.display_name" />
+                                    <div class='product-detail-section'>
+                                        <t t-if="props.product">
+                                            <table class="product-detail-left">
+                                                <tr>
+                                                    <td class="product-detail-label">Name : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.display_name or '-'"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">Product Type : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.type and product_type_dict[props.product.type] or '-'"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">Internal Reference : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.default_code or '-'"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">POS Category : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.pos_categ_id[1] or '-'"/></td>
+                                                </tr>
+                                            </table>
+                                            <table class="product-detail-right">
+                                                <tr>
+                                                    <td class="product-detail-label">Remaining Stock : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.qty_available"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">Barcode  : </td>
+                                                    <td class="product-detail-value"><t t-esc="props.product.barcode or '-'"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">Sale Price : </td>
+                                                    <td class="product-detail-value"><t t-esc="price"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-detail-label">Cost : </td>
+                                                    <td class="product-detail-value"><t t-esc="cost_price"/></td>
+                                                </tr>
+                                            </table>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('top-content-center')]//h1" position="attributes">
+            <!-- <t t-if="env.pos.config and env.pos.config.enable_pos_theme"> -->
+                <attribute name="t-att-hidden">true</attribute>
+            <!-- </t> -->
+        </xpath>
+        <xpath expr="//div[hasclass('top-content')]//div[hasclass('button') and hasclass('next')]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('top-content')]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('default-view')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <div class='receipt-screen-content'>
+                    <div class="wk-next-order next" style="text-align:center;" t-on-click="orderDone">
+                        Continue Selling
+                    </div>
+                    <div class="pos-receipt-container-theme" style="height: 400px;margin-bottom: 5px;">
+                        <div class="pos-receipt-container">
+                            <OrderReceipt order="currentOrder" t-ref="order-receipt" />
+                        </div>
+                    </div>
+                    <div class="wk-print-receipt print button" t-on-click="printReceipt" style="text-align: center; height: 27px;padding-top: 10px;">
+                        <i class="fa fa-print" style="padding-right: 5px;" aria-hidden="true"></i>
+                        <span class="print-receipt-label">Print Receipt</span>
+                    </div>
+                    <div class="default-view">
+                        <div class="actions" style="margin: 0;">
+                            <form t-on-submit.prevent="onSendEmail" class="send-email">
+                                <div class="email-icon" style="padding: 0.7rem;"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                                <div class="input-email">
+                                    <input type="email" placeholder="Email Receipt" t-model="orderUiState.inputEmail" style="padding-left: 0.7rem;"/>
+                                    <button class="send" t-att-class="{ highlight: is_email(orderUiState.inputEmail) }" type="submit" style="padding: 0.7rem 10px;">Send</button>
+                                </div>
+                            </form>
+                            <t t-if="orderUiState.emailSuccessful !== null">
+                                <div class="notice" t-attf-class="{{ orderUiState.emailSuccessful ? 'successful' : 'failed' }}">
+                                    <t t-esc="orderUiState.emailNotice"></t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <div class="pos-receipt-container">
+                    <OrderReceipt order="currentOrder" t-ref="order-receipt" />
+                </div>
+                <div class="actions">
+                    <h1>How would you like to receive your receipt?</h1>
+                    <div class="buttons">
+                        <div class="button print" t-on-click="printReceipt">
+                            <i class="fa fa-print"></i> Print Receipt
+                        </div>
+                    </div>
+                    <form t-on-submit.prevent="onSendEmail" class="send-email">
+                        <div class="email-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                        <div class="input-email">
+                            <input type="email" placeholder="Email Receipt" t-model="orderUiState.inputEmail" />
+                            <button class="send" t-att-class="{ highlight: is_email(orderUiState.inputEmail) }" type="submit">Send</button>
+                        </div>
+                    </form>
+                    <t t-if="orderUiState.emailSuccessful !== null">
+                        <div class="notice" t-attf-class="{{ orderUiState.emailSuccessful ? 'successful' : 'failed' }}">
+                            <t t-esc="orderUiState.emailNotice"></t>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    
+    <t t-name="TableWidget" t-inherit="pos_restaurant.TableWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('table-seats')]" position="after">
+            <t t-if="env.pos.config.enable_pos_theme">
+                <t t-if="props.table.shape == 'round'">
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 0px; z-index: 5;
+        margin-left: 0px; line-height: 10px; top: 45px; left: 20px">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 18.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 0px; z-index: 5;
+        right:20px; line-height: 10px; top: 45px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 19.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 30px; z-index: 5;
+        margin-left: 0px; line-height: 10px; left: 25px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 19.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 30px; z-index: 5;
+        right: 25px; line-height: 20px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 18.png"/>
+                    </span>
+                </t>
+                <t t-if="props.table.shape != 'round'">
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 0px; z-index: 5;
+        margin-left: 0px; line-height: 10px; top: 5px; left: 5px">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 18.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 0px; z-index: 5;
+        right:5px; line-height: 10px; top: 5px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 19.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 5px; z-index: 5;
+        margin-left: 0px; line-height: 10px; left: 5px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 19.png"/>
+                    </span>
+                    <span style="display: block; max-height: 100%; overflow: hidden; position: absolute; bottom: 5px; z-index: 5;
+        right:5px; line-height: 10px;">
+                        <img class="plate_img" src="/pos_theme_divine/static/src/img/Group 18.png"/>
+                    </span>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//span[hasclass('table-seats')]" position="attributes">
+            <attribute name="t-att-hidden">true</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="FloorScreen" t-inherit="pos_restaurant.FloorScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//TableWidget" position="before">
+            <t t-if="env.pos.config.enable_pos_theme">
+                <t t-if='table.id !== state.selectedTableId'>
+                    <div class="table topleft" t-att-style='table_background'>
+                        <div style="bottom: 0px; position: absolute; right: 0px; color: black; text-align: center; width: 100%; height: 40%;">
+                            <t t-if="table.shape != 'round'">
+                                <span class="table-seats table-seats-theme" style="border-radius: 40px; opacity: 1;
+                                        width: 65%; left: 20%; height: 20%; padding: 4%;">
+                                    <t t-esc="table.seats" /> Seats
+                                </span>
+                            </t>
+                            <t t-if="table.shape == 'round'">
+                                <span class="table-seats table-seats-theme" style="border-radius: 40px; opacity: 1;
+                                        width: 60%; left: 20%; height: 20%; padding: 4%; margin-bottom:10px;">
+                                    <t t-esc="table.seats" /> Seats
+                                </span>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="table topleft" t-att-style='table_style_str_topleft'>
+                        <svg width="28" height="28" class="chair_svg" t-att-style='style_chair' viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 3L3 25" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="table topright" t-att-style='table_style_str_topright'>
+                        <svg width="27" height="28" class="chair_topright" t-att-style='style_chair' viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 3L24.5 25" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="table bottonright" t-att-style='table_style_str_bottomright'>
+                        <svg width="27" height="27" class="chair_bottomright" t-att-style='style_chair' viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 24.5L24.5 2.5" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="table bottonleft" t-att-style='table_style_str_bottonleft'>
+                        <svg width="28" height="27" class="chair_bottomleft" t-att-style='style_chair' viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 24.5L3 2.5" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//span[hasclass('edit-button') and hasclass('editing')]" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <span t-if="env.pos.user.role == 'manager'" class="edit-button editing" style="width: 140px;" t-att-class="{ active: state.isEditMode }" t-on-click.stop="toggleEditMode">
+                    Customize
+                    <i class="fa fa-pencil" role="img" aria-label="Edit" title="Edit"></i>
+                </span>
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <span t-if="env.pos.user.role == 'manager'" class="edit-button editing" t-att-class="{ active: state.isEditMode }" t-on-click.stop="toggleEditMode">
+                    <i class="fa fa-pencil" role="img" aria-label="Edit" title="Edit"></i>
+                </span>
+            </t>
+        </xpath>
+        <xpath expr="//EditBar" position="replace">
+            <t t-if="env.pos.config and env.pos.config.enable_pos_theme">
+                <EditBarTheme t-if="state.isEditMode" selectedTable="selectedTable" />
+            </t>
+            <t t-if="env.pos.config and !env.pos.config.enable_pos_theme">
+                <EditBar t-if="state.isEditMode" selectedTable="selectedTable" />
+            </t>
+        </xpath>
+    </t>
+
+    <t t-name="EditBarTheme" owl="1">
+        <div class="edit-bar" style="right: 0px; top: 35px; width: 250px; height: 90%; background: white; text-align: left;">
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-on-click.stop="trigger('create-table')">
+                <i class="fa fa-plus" role="img" aria-label="Add" title="Add"></i>
+                Add
+            </span>
+            <br/>
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-att-class="{ disabled: !props.selectedTable }" t-on-click.stop="trigger('duplicate-table')">
+                <i class="fa fa-files-o" role="img" aria-label="Duplicate" title="Duplicate"></i>
+                Duplicate
+            </span>
+            <br/>
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-att-class="{ disabled: !props.selectedTable }" t-on-click.stop="trigger('rename-table')">
+                <i class="fa fa-font" role="img" aria-label="Rename" title="Rename"></i>
+                Rename
+            </span>
+            <br/>
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-att-class="{ disabled: !props.selectedTable }" t-on-click.stop="trigger('change-seats-num')">
+                <i class="fa fa-user" role="img" aria-label="Seats" title="Seats"></i>
+                Seats
+            </span>
+            <br/>
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-att-class="{ disabled: !props.selectedTable }" t-on-click.stop="trigger('change-shape')">
+                <span t-if="!props.selectedTable or props.selectedTable.shape == 'square'" class="button-option square">
+                    <i class="fa fa-square-o" role="img" aria-label="Square Shape" title="Square Shape"></i>
+                    Square
+                </span>
+                <span t-else="" class="button-option round">
+                    <i class="fa fa-circle-o" role="img" aria-label="Round Shape" title="Round Shape"></i>
+                    Round
+                </span>
+            </span>
+            <br/>
+            <span class="edit-button" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-on-click.stop="state.isColorPicker = !state.isColorPicker">
+                <i class="fa fa-tint" role="img" aria-label="Tint" title="Tint"></i>
+                Tint
+            </span>
+            <div t-if="state.isColorPicker and props.selectedTable" class="color-picker fg-picker">
+                <div  class="close-picker" title="Close" role="img" aria-label="Close" t-on-click.stop="state.isColorPicker = false">
+                    <i class="fa fa-times" />
+                </div>
+                <span class="color tl"  style="background-color:#EB6D6D" role="img" aria-label="Red" title="Red" t-on-click.stop="trigger('set-table-color', '#EB6D6D')" />
+                <span class="color"     style="background-color:#35D374" role="img" aria-label="Green" title="Green" t-on-click.stop="trigger('set-table-color', '#35D374')" />
+                <span class="color tr"  style="background-color:#6C6DEC" role="img" aria-label="Blue" title="Blue" t-on-click.stop="trigger('set-table-color', '#6C6DEC')" />
+                <span class="color"     style="background-color:#EBBF6D" role="img" aria-label="Orange" title="Orange" t-on-click.stop="trigger('set-table-color', '#EBBF6D')" />
+                <span class="color"     style="background-color:#EBEC6D" role="img" aria-label="Yellow" title="Yellow" t-on-click.stop="trigger('set-table-color', '#EBEC6D')" />
+                <span class="color"     style="background-color:#AC6DAD" role="img" aria-label="Purple" title="Purple" t-on-click.stop="trigger('set-table-color', '#AC6DAD')" />
+                <span class="color bl"  style="background-color:#6C6D6D" role="img" aria-label="Grey" title="Grey" t-on-click.stop="trigger('set-table-color', '#6C6D6D')" />
+                <span class="color"     style="background-color:#ACADAD" role="img" aria-label="Light grey" title="Light grey" t-on-click.stop="trigger('set-table-color', '#ACADAD')" />
+                <span class="color br"  style="background-color:#4ED2BE" role="img" aria-label="Turquoise" title="Turquoise" t-on-click.stop="trigger('set-table-color', '#4ED2BE')" />
+            </div>
+            <div t-if="state.isColorPicker and !props.selectedTable" class="color-picker bg-picker">
+                <div  class="close-picker" title="Close" role="img" aria-label="Close" t-on-click.stop="state.isColorPicker = false">
+                    <i class="fa fa-times" />
+                </div>
+                <span class="color tl"  style="background-color:rgb(244, 149, 149)" role="img" aria-label="Red" title="Red" t-on-click.stop="trigger('set-floor-color', 'rgb(244, 149, 149)')" />
+                <span class="color"     style="background-color:rgb(130, 233, 171)" role="img" aria-label="Green" title="Green" t-on-click.stop="trigger('set-floor-color', 'rgb(130, 233, 171)')" />
+                <span class="color tr"  style="background-color:rgb(136, 137, 242)" role="img" aria-label="Blue" title="Blue" t-on-click.stop="trigger('set-floor-color', 'rgb(136, 137, 242)')" />
+                <span class="color"     style="background-color:rgb(255, 214, 136)" role="img" aria-label="Orange" title="Orange" t-on-click.stop="trigger('set-floor-color', 'rgb(255, 214, 136)')" />
+                <span class="color"     style="background-color:rgb(254, 255, 154)" role="img" aria-label="Yellow" title="Yellow" t-on-click.stop="trigger('set-floor-color', 'rgb(254, 255, 154)')" />
+                <span class="color"     style="background-color:rgb(209, 171, 210)" role="img" aria-label="Purple" title="Purple" t-on-click.stop="trigger('set-floor-color', 'rgb(209, 171, 210)')" />
+                <span class="color bl"  style="background-color:rgb(75, 75, 75)"    role="img" aria-label="Grey" title="Grey" t-on-click.stop="trigger('set-floor-color', 'rgb(75, 75, 75)')" />
+                <span class="color"     style="background-color:rgb(210, 210, 210)" role="img" aria-label="Light grey" title="Light grey" t-on-click.stop="trigger('set-floor-color', 'rgb(210, 210, 210)')" />
+                <span class="color br"  style="background-color:rgb(127, 221, 236)" role="img" aria-label="Turquoise" title="Turquoise" t-on-click.stop="trigger('set-floor-color', 'rgb(127, 221, 236)')" />
+            </div>
+            <br/>
+            <span class="edit-button trash" style="width: 100%; padding: 3%; border-bottom: 1px solid black;" t-att-class="{ disabled: !props.selectedTable }" t-on-click.stop="trigger('delete-table')">
+                <i class="fa fa-trash" role="img" aria-label="Delete" title="Delete"></i>
+                Delete
+            </span>
+        </div>
+    </t>
+
+</templates>

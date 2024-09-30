@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sh_helpdesk_form_view" model="ir.ui.view">
+        <field name="name">sh.quick.reply</field>
+        <field name="model">sh.quick.reply</field>
+        <field name="arch" type="xml">
+            <form string="Send Quick Reply Mail Template">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}" />
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="sh_user_id" />
+                            <field name="commom_for_all" />
+                        </group>
+                        <group>
+                            <field name="active" invisible="1" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="sh_description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sh_helpdesk_tree_view" model="ir.ui.view">
+        <field name="name">sh.quick.reply</field>
+        <field name="model">sh.quick.reply</field>
+        <field name="arch" type="xml">
+            <tree string="Send Quick Reply Mail Template">
+                <field name="name" />
+                <field name="sh_user_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="sh_helpdesk_action" model="ir.actions.act_window">
+        <field name="name">Send Quick Reply Mail Template</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.quick.reply</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    	<!-- <menuitem id="helpdesk_dashboard_menu" name="Dashboard" parent="helpdesk.menu_helpdesk_root" sequence="1" action="sh_action_ticket_dashboard" /> -->
+
+    <menuitem id="sh_send_quick_reply_menu" name="Send Quick Reply" parent="helpdesk.menu_helpdesk_root" groups="sh_all_in_one_helpdesk.group_send_quick_reply" sequence="14" action="sh_helpdesk_action" />
+</odoo>

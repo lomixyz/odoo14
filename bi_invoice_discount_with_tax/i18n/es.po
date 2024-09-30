@@ -1,0 +1,225 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_invoice_discount_with_tax
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-18 07:02+0000\n"
+"PO-Revision-Date: 2021-10-18 07:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.view_account_invoice_discount_form
+msgid "(Apply)"
+msgstr "(Solicitar)"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_amt
+msgid "- Discount"
+msgstr "- Descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_amt_line
+msgid "- Line Discount"
+msgstr "- Descuento de línea"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<span class=\"oe_inline\">&amp;nbsp;%</span>"
+msgstr "<span class=\"oe_inline\">&amp;nbsp;%</span>"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<strong> Discount Amount</strong>"
+msgstr "<strong> Importe de descuento</strong>"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<strong> Discount Method</strong>"
+msgstr "<strong> Método de descuento</strong>"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<strong>Discount Amount</strong>"
+msgstr "<strong>Importe de descuento</strong>"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<strong>Discount Method</strong>"
+msgstr "<strong>Método de descuento</strong>"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "<strong>Discount Type:</strong>"
+msgstr "<strong>Tipo de descuento:</strong>"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model,name:bi_invoice_discount_with_tax.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model,name:bi_invoice_discount_with_tax.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model,name:bi_invoice_discount_with_tax.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuraciones de configuración"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_account__discount_account
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_account_id
+msgid "Discount Account"
+msgstr "Cuenta de descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_amount
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move_line__discount_amount
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "Discount Amount"
+msgstr "Importe de descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_config_settings__tax_discount_policy
+msgid "Discount Applies On"
+msgstr "El descuento se aplica a"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_type
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move_line__discount_type
+msgid "Discount Applies to"
+msgstr "El descuento se aplica a"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move_line__discount_amt
+msgid "Discount Final Amount"
+msgstr "Importe final del descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_amount_line
+msgid "Discount Line"
+msgstr "Línea de descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__discount_method
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move_line__discount_method
+msgid "Discount Method"
+msgstr "Método de descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.res_config_settings_view_form_discount
+msgid "Discount Setting"
+msgstr "Ajuste de descuento"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move__discount_method__fix
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move_line__discount_method__fix
+msgid "Fixed"
+msgstr "Reparada"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move__discount_type__global
+msgid "Global"
+msgstr "Global"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__is_line
+msgid "Is a line"
+msgstr "Es una linea"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model,name:bi_invoice_discount_with_tax.model_account_move
+msgid "Journal Entries"
+msgstr "Entradas de diario"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model,name:bi_invoice_discount_with_tax.model_account_move_line
+msgid "Journal Item"
+msgstr "Artículo de diario"
+
+#. module: bi_invoice_discount_with_tax
+#: model_terms:ir.ui.view,arch_db:bi_invoice_discount_with_tax.report_invoice_discount_inherit
+msgid "Line Discount"
+msgstr "Descuento de línea"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move__discount_type__line
+msgid "Order Line"
+msgstr "Fila para ordenar"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move__discount_method__per
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__account_move_line__discount_method__per
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: bi_invoice_discount_with_tax
+#: code:addons/bi_invoice_discount_with_tax/models/account_move.py:0
+#, python-format
+msgid "Please define an purchase discount account for this company."
+msgstr "Defina una cuenta de descuento de compra para esta empresa."
+
+#. module: bi_invoice_discount_with_tax
+#: code:addons/bi_invoice_discount_with_tax/models/account_move.py:0
+#, python-format
+msgid "Please define an sale discount account for this company."
+msgstr "Defina una cuenta de descuento de venta para esta empresa."
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_company__purchase_account_id
+msgid "Purchase Account"
+msgstr "Cuenta de compra"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_config_settings__purchase_account_id
+msgid "Purchase Discount Account"
+msgstr "Cuenta de descuento de compra"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_company__sale_account_id
+msgid "Sale Account"
+msgstr "Cuenta de venta"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_config_settings__sale_account_id
+msgid "Sale Discount Account"
+msgstr "Cuenta de descuento de venta"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__amount_untaxed
+msgid "Subtotal"
+msgstr "Total parcial"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__amount_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__res_company__tax_discount_policy__tax
+msgid "Tax Amount"
+msgstr "Importe del impuesto"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_res_company__tax_discount_policy
+msgid "Tax Discount Policy"
+msgstr "Política de descuento fiscal"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields,field_description:bi_invoice_discount_with_tax.field_account_move__amount_total
+msgid "Total"
+msgstr "Total"
+
+#. module: bi_invoice_discount_with_tax
+#: model:ir.model.fields.selection,name:bi_invoice_discount_with_tax.selection__res_company__tax_discount_policy__untax
+msgid "Untax Amount"
+msgstr "Importe sin impuestos"

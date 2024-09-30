@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherit_helpdesk_stage_view_form" model="ir.ui.view">
+        <field name="name">helpdesk.stages.form.view.inherit</field>
+        <field name="model">helpdesk.stage</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_stage_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fold']" position="after">
+                <field name="is_cancel_button_visible" />
+                <field name="is_done_button_visible" />
+            </xpath>
+            <xpath expr="//field[@name='description']" position="after">
+                <field name="sh_next_stage" />
+                <field name="sh_group_ids" widget="many2many_tags" />
+            </xpath>
+            <xpath expr="//field[@name='template_id']" position="after">
+                <field name="mail_template_ids" widget="many2many_tags" />
+            </xpath>
+        </field>
+    </record>
+    <!-- <record id="helpdesk_stages_form_view" model="ir.ui.view">
+        <field name="name">helpdesk.stages.form.view</field>
+        <field name="model">helpdesk.stages</field>
+        <field name="arch" type="xml">
+            <form string="Stage">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="mail_template_ids" widget="many2many_tags" />
+                            <field name="is_cancel_button_visible" />
+                            <field name="is_done_button_visible" />
+                        </group>
+                        <group>
+                            <field name="sh_next_stage" />
+                            <field name="sh_group_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="helpdesk_stages_tree_view" model="ir.ui.view">
+        <field name="name">helpdesk.stages.tree.view</field>
+        <field name="model">helpdesk.stages</field>
+        <field name="arch" type="xml">
+            <tree string="Stage">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="helpdesk_stages_action" model="ir.actions.act_window">
+        <field name="name">Helpdesk Stages</field>
+        <field name="res_model">helpdesk.stages</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a New Stage</p>
+        </field>
+    </record>
+    <record id="sequence_helpdesk_stages_seq" model="ir.sequence">
+        <field name="name">Helpdesk Stages Sequence</field>
+        <field name="code">helpdesk.stages</field>
+        <field eval="1" name="number_next" />
+        <field eval="1" name="number_increment" />
+    </record>
+    <menuitem id="helpdesk_stages_menu" name="Helpdesk Stages" parent="helpdesk.helpdesk_menu_config" action="helpdesk_stages_action" sequence="5" /> -->
+</odoo>

@@ -1,0 +1,199 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_account_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-06 06:17+0000\n"
+"PO-Revision-Date: 2022-07-06 06:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_account_account
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__hierarchy_based_on__account
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account"
+msgstr "帳戶"
+
+#. module: sh_account_parent
+#: model:ir.actions.client,name:sh_account_parent.sh_display_account_hierarchy
+msgid "Account Hierarchy"
+msgstr "帳戶層次結構"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account Hierarchy Not found"
+msgstr "未找到帳戶層次結構"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account Hierarchy Report for"
+msgstr "帳戶層次結構報告"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_account_account_type
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__hierarchy_based_on__account_type
+msgid "Account Type"
+msgstr "帳戶類型"
+
+#. module: sh_account_parent
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__target_moves__all_entries
+msgid "All Entries"
+msgstr "所有條目"
+
+#. module: sh_account_parent
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__target_moves__all_posted_entries
+msgid "All Posted Entries"
+msgstr "所有發布的條目"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__auto_unfold
+msgid "Auto Unfold"
+msgstr "自動展開"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Balance"
+msgstr "平衡"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_wizard_view_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: sh_account_parent
+#: model:ir.actions.act_window,name:sh_account_parent.sh_account_hierarchy_wizard_action
+#: model:ir.ui.menu,name:sh_account_parent.sh_account_hierarchy_wizard_menu
+msgid "Chart of Accounts Hierarchy"
+msgstr "帳戶層次結構圖"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Code"
+msgstr "代碼"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_wizard_view_form
+msgid "Confirm"
+msgstr "確認"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__create_uid
+msgid "Created by"
+msgstr "由...製作"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__create_date
+msgid "Created on"
+msgstr "創建於"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Credit"
+msgstr "信用"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Debit"
+msgstr "借方"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__display_name
+msgid "Display Name"
+msgstr "顯示名稱"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__end_date
+msgid "End Date"
+msgstr "結束日期"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__hierarchy_based_on
+msgid "Hierarchy Based On"
+msgstr "基於層次結構"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__include_zero_amount_transaction
+msgid "Include Zero Amount Transaction"
+msgstr "包括零金額交易"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard____last_update
+msgid "Last Modified on"
+msgstr "最後修改"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__write_uid
+msgid "Last Updated by"
+msgstr "最後更新"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__write_date
+msgid "Last Updated on"
+msgstr "最後更新"
+
+#. module: sh_account_parent
+#. openerp-web
+#: code:addons/sh_account_parent/static/src/xml/print_report_buttons.xml:0
+#, python-format
+msgid "PRINT PDF"
+msgstr "打印PDF"
+
+#. module: sh_account_parent
+#. openerp-web
+#: code:addons/sh_account_parent/static/src/xml/print_report_buttons.xml:0
+#, python-format
+msgid "PRINT XLS"
+msgstr "打印XLS"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_account_account__sh_parent_id
+msgid "Parent Account"
+msgstr "家長帳戶"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__start_date
+msgid "Start Date"
+msgstr "開始日期"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__target_moves
+msgid "Target Moves"
+msgstr "目標移動"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,help:sh_account_parent.field_account_account_type__type
+msgid ""
+"The 'Internal Type' is used for features available on different types of "
+"accounts: liquidity type is for cash or bank accounts, payable/receivable is"
+" for vendor/customer accounts."
+msgstr "Endor/客戶帳戶。"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_account_account_type__type
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Type"
+msgstr "類型"
+
+#. module: sh_account_parent
+#: model:account.account.type,name:sh_account_parent.data_account_type_view
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__account_account_type__type__view
+msgid "View"
+msgstr "看法"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_sh_account_hierarchy_wizard
+msgid "sh.account.hierarchy.wizard"
+msgstr "sh.account.hierarchy.wizard"

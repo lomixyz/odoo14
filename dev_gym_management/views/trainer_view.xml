@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_trainer" model="ir.ui.view">
+        <field name="name">form.trainer</field>
+        <field name="model">gym.trainer</field>
+        <field name="arch" type="xml">
+            <form string="Trainer Form View">
+                <header>
+                    <button string="Trainer Joined" type="object" name="trainer_joined" class="oe_highlight" states="waiting"/>
+                    <button string="Trainer Left" type="object" name="trainer_left" class="oe_highlight" states="joined"/>
+                    <button string="Back to waiting" type="object" name="left_to_waiting" states="left"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="photo" widget="image" class="oe_avatar" options="{&quot;preview_photo&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name" required="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="trainer_sequence" readonly="1"/>
+                            <field name="user_id" required="1" options="{'no_create': True}"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="dob"/>
+                            <field name="age"/>
+                            <field name="skill_ids" widget="many2many_tags"/>
+                            <field name="join_date" attrs="{'invisible': [('state', '=', 'waiting')]}" readonly="1"/>
+                            <field name="left_date" attrs="{'invisible': [('state', '!=', 'left')]}" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--tree-->
+    <record id="tree_trainer" model="ir.ui.view">
+        <field name="name">tree.trainer</field>
+        <field name="model">gym.trainer</field>
+        <field name="arch" type="xml">
+            <tree string="Trainer Tree View">
+                <field name="name"/>
+                <field name="skill_ids" widget="many2many_tags"/>
+                <field name="user_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Search-->
+    <record id="search_trainer" model="ir.ui.view">
+        <field name="name">Gym Trainer - Search</field>
+        <field name="model">gym.trainer</field>
+        <field name="arch" type="xml">
+            <search string="Gym Trainer Search">
+                <field name="name"/>
+                <filter name="state_waiting_member" string="Waiting" domain="[('state','=','waiting')]"/>
+                <filter name="state_joined_member" string="Joined" domain="[('state','=','joined')]"/>
+                <filter name="state_left_member" string="Left" domain="[('state','=','left')]"/>
+                <group expand="0" string="Group By">
+		         	<filter name="user_trainer_search" string="User" context="{'group_by':'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--kanban-->
+    <record id="kanban_trainer" model="ir.ui.view">
+        <field name="name">trainer.kanban</field>
+        <field name="model">gym.trainer</field>
+        <field name="priority">50</field>
+        <field name="arch" type="xml">
+            <kanban class="o_hr_employee_kanban">
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                            <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('gym.trainer', 'photo', record.id.raw_value)})" role="img"/>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                        <span class="o_kanban_record_subtitle" style="margin-top: 10px;">
+                                            Mobile : <field name="mobile"/>
+                                        </span>
+                                        <span class="o_kanban_record_subtitle">
+                                            Email : <field name="email"/>
+                                        </span>
+                                        <span class="o_kanban_record_subtitle">
+                                            Age : <field name="age"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="action_trainer" model="ir.actions.act_window">
+        <field name="name">Trainer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gym.trainer</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!--Menus-->
+    <menuitem name="Trainer"
+              id="menu_trainer"
+              parent="menu_gym_management_members"
+              action="action_trainer"
+              sequence="5"
+              groups="dev_gym_management.gym_trainer"/>
+</odoo>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="tree_hr_documents" model="ir.ui.view">
+		<field name="name">tree.hr.documents</field>
+		<field name="model">hr.documents</field>
+		<field name="arch" type="xml">
+			<tree string="Employee Documents">
+				<field name="name"/>
+                <field name="employee_id"/>
+                <field name="attachment_ids" widget="many2many_binary"/>
+                <field name="expiry_date"/>
+                <field name="state" decoration-success="state == 'running'" decoration-info="state == 'new'" decoration-danger="state == 'expired'" widget="badge"/> 
+			</tree>
+		</field>
+	</record>
+    <record id="kanban_hr_documents" model="ir.ui.view">
+        <field name="name">kanban.hr.documents</field>
+        <field name="model">hr.documents</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" quick_create="0" colors="red:state == 'expired'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="attachment_ids"/>
+                <field name="expiry_date"/>
+                <field name="state"/>
+                <field name="email_sent"/>
+                <field name="tech_notify_before"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="d-flex flex-column p-0 oe_kanban_content o_kanban_get_form" t-attf-style="background-color:#{'white'};">
+                            <div class="o_kanban_content p-0 m-0 position-relative row d-flex flex-fill">
+                                <t attrs="{'invisible':[('state','=','expired')]}">
+                                    <div class="col-4 bg-info p-2 text-center d-flex flex-column justify-content-center" attrs="{'invisible':[('email_sent','=',True)]}">
+                                        <b attrs="{'invisible':[('state','=','expired')]}">Expires on:</b>
+                                        <b attrs="{'invisible':[('state','!=','expired')]}">Expired on:</b>
+                                        <div t-esc="record.expiry_date.raw_value.getDate()" class="o_event_fontsize_20" />
+                                        <div>
+                                            <t t-esc="moment(record.expiry_date.raw_value).format('MMM')" />
+                                            <t t-esc="record.expiry_date.raw_value.getFullYear()" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4 bg-danger p-2 text-center d-flex flex-column justify-content-center" attrs="{'invisible':[('email_sent','=',False)]}">
+                                        <b>Expires on:</b>
+                                        <div t-esc="record.expiry_date.raw_value.getDate()" class="o_event_fontsize_20" />
+                                        <div>
+                                            <t t-esc="moment(record.expiry_date.raw_value).format('MMM')" />
+                                            <t t-esc="record.expiry_date.raw_value.getFullYear()" />
+                                        </div>
+                                        <b class="o_event_fontsize_20">after : <field name="tech_notify_before"/> Days</b>
+                                    </div>
+                                </t>
+                                 <t attrs="{'invisible':[('state','!=','expired')]}">
+                                    <div class="col-4 bg-danger p-2 text-center d-flex flex-column justify-content-center" attrs="{'invisible':[('email_sent','=',True)]}">
+                                        <b attrs="{'invisible':[('state','=','expired')]}">Expires on:</b>
+                                        <b attrs="{'invisible':[('state','!=','expired')]}">Expired on:</b>
+                                        <div t-esc="record.expiry_date.raw_value.getDate()" class="o_event_fontsize_20" />
+                                        <div>
+                                            <t t-esc="moment(record.expiry_date.raw_value).format('MMM')" />
+                                            <t t-esc="record.expiry_date.raw_value.getFullYear()" />
+                                        </div>
+                                    </div>
+                                </t>
+
+
+                                
+                                
+                                <div class="col-8 py-2 px-3 d-flex flex-column justify-content-between pt-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <strong style="font-size: 16px;">
+                                                <field name="name" string="Name" />
+                                            </strong>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <field name="attachment_ids" widget="many2many_binary" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="oe_kanban_bottom_right float-right">
+                                                <strong><field name="employee_id" string="Employee"/></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="form_hr_documents" model="ir.ui.view">
+		<field name="name">form.hr.documents</field>
+		<field name="model">hr.documents</field>
+		<field name="arch" type="xml">
+			<form string="Employee Documents">
+				<header>
+                    <button name="action_submit" string="Submit" class="btn btn-primary" type="object" states="new"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Expired" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'expired')]}"/>
+                    <div class="oe_title">
+                        <h1 class="d-flex">
+                            <field name="name" placeholder="Document's Name" required="1"/>
+                        </h1>
+                        <h2>
+                            <field name="employee_id" placeholder="Employee.." required="1"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group string="Documents">
+                            <field name="attachment_ids" widget="many2many_binary" required="1"/>
+                            <field name="submit_date"/>
+                        </group>
+                        <group string="Expiry">
+                            <field name="expiry_date" required="1"/>
+                            <field name="notify_before"/>
+                        </group>
+                    </group>
+                </sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_hr_documents" model="ir.actions.act_window">
+		<field name="name">Employee Documents</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">hr.documents</field>
+		<field name="view_mode">tree,form,kanban</field>
+	</record>
+	<menuitem id="menu_hr_documents" name="Documents" parent="hr.menu_hr_root" sequence="5"/>
+    <menuitem id="submenu_hr_documents" name="Employee Documents" action="action_hr_documents" parent="menu_hr_documents" />
+</odoo>

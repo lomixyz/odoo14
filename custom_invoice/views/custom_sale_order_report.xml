@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_custom_sale_order_tem">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size: 12px;font-family:Janna LT;direction:ltr;">
+                        <h4>
+                            <center style="text-decoration: underline;margin-top:0em;!important;">
+                                <strong>QUOTATAION</strong>
+                            </center>
+                        </h4>
+                        <br/>
+                        <table style="width: 100%; direction:rtl;">
+                            <tbody>
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width:25%;text-align: left;border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>-: From</span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>-: To</span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%;!important;text-align: left;background-color:white;padding:2px;">
+                                        <strong>
+                                            <span t-field="o.date_order"></span>
+                                            <span>-: Date</span>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span t-field="o.user_id.company_id"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span t-field="o.partner_id.name"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%;!important; text-align: left;background-color:white;">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Mr.</span>
+                                            <span t-field="o.user_id"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Attention: -Mr.</span>
+                                            <span t-field="o.partner_id"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%; !important ;text-align: left ;background-color:white;padding:2px;">
+                                        <span>QUOTATAION REF #:-</span>
+                                        <span t-field="o.name"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Tel:-</span>
+                                            <span t-field="o.user_id.phone"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Tel:-</span>
+                                            <span t-field="o.partner_id.phone"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%;!important;text-align: left;padding:2px;background-color:white;">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>GSM: -</span>
+                                            <span t-field="o.user_id.mobile"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>GSM: -</span>
+                                            <span t-field="o.partner_id.mobile"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%;!important;text-align: left;background-color:white;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Email: -</span>
+                                            <span t-field="o.user_id.email"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:25%;text-align: left; border-bottom: thin solid;padding:2px;">
+                                        <strong>
+                                            <span>Email: -</span>
+                                            <span t-field="o.partner_id.email"></span>
+                                        </strong>
+                                    </td>
+                                    <td style="width:15%;!important;text-align: left;background-color:white;">
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <br/>
+                        <div style="width:100%; text-align: left; font-size: 12px;height:auto;">
+                            Dear Mr.
+                            <span t-field="o.partner_id"></span>
+                            <br/>
+                            We would like to thank you for giving us an opportunity to quote for the following
+                            requirement. As per your request, please find below our best offer for your kind review
+                            and approval.
+                        </div>
+                        <ol type="1">
+                            <table style="width: 100%;table-layout: fixed;direction:ltr;">
+                                <t t-set="i" t-value="1"/>
+
+                                <thead class="thead-light">
+
+
+                                    <tr>
+                                        <th class="text-center" style="width:2.5%;!important;" rowspan="1">#</th>
+                                        <th style="width:36%;!important; padding:2px;text-align: left" colspan="1">
+                                            Description
+                                        </th>
+                                        <th class="text-center" style="width:10%;!important;" colspan="1">QTY</th>
+                                        <th class="text-center" style="width:10%;!important;" rowspan="1">Unit Price
+                                        </th>
+                                        <th class="text-center" style="width:10%;!important;" rowspan="1">Amount</th>
+                                        <!-- <th class="text-center" rowspan="1">Total VAT 15%</th>
+                          <th class="text-center" rowspan="1">VAT Net Amount</th> -->
+
+                                    </tr>
+                                </thead>
+                                <tbody class="qut_tbody">
+
+                                    <t t-foreach="o.order_line" t-as="line">
+                                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''"
+                                            style="border-bottom: thin solid;">
+                                            <t t-if="not line.display_type">
+                                                <td style="vertical-align : middle;text-align:center;">
+                                                    <span t-esc="i"/>
+                                                </td>
+                                                <td style="width:30%;text-align: left;">
+                                                    <div style="width:11cm;height:auto; text-align: left;padding:2px;">
+                                                        <span t-field="line.product_id.name" class="text-center"/>
+                                                    </div>
+
+
+                                                </td>
+
+                                                <td style="vertical-align : middle;text-align:center;">
+                                                    <span t-field="line.product_uom_qty"/>
+                                                </td>
+                                                <td style="vertical-align : middle;text-align:center;">
+                                                    <span t-field="line.price_unit"/>
+                                                </td>
+                                                <td style="vertical-align : middle;text-align:center;">
+                                                    <span t-esc="'{:,.2f}'.format(line.price_subtotal)"/>
+                                                </td>
+                                            </t>
+                                            <t t-if="line.display_type == 'line_note'">
+                                                <td></td>
+                                                <td name="td_note_line"
+                                                    style="border:1px; border-bottom: thin solid;text-align:left;padding:2px;"
+                                                    colspan="4">
+                                                    <span t-field="line.name"/>
+                                                </td>
+
+
+                                            </t>
+                                        </tr>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+
+                                    <tr style="border:1px; width:100%; border-bottom: thin solid;">
+
+                                        <th></th>
+                                        <th></th>
+                                        <th style="visibility: hidden;">-</th>
+                                        <th></th>
+                                        <th></th>
+
+                                    </tr>
+                                    <tr style="border:1px;border-bottom: thin solid;">
+
+                                        <th></th>
+                                        <th class="text-center">Sub Total (SR)</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th class="text-center">
+                                            <span t-esc="'{:,.2f}'.format(o.amount_untaxed)" class="text-center"></span>
+                                        </th>
+                                    </tr>
+                                    <tr style="border:1px; border-bottom: thin solid;">
+
+                                        <th></th>
+                                        <th class="text-center">Value Added Tax (VAT) @ 15% (SAR)</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th class="text-center">
+                                            <span t-esc="'{:,.2f}'.format(o.amount_tax)" class="text-center"></span>
+                                        </th>
+                                    </tr>
+                                    <tr style="border:1px; border-bottom: thin solid;">
+
+                                        <th></th>
+                                        <th class="text-center">Grand Total (SR)</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th class="text-center">
+                                            <span t-esc="'{:,.2f}'.format(o.amount_total)"/>
+                                        </th>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </ol>
+
+                        <div style="text-align: left; font-size: 12px;height:auto;">
+                            <span style="text-decoration: underline;">General Terms and Conditions: -</span>
+                            <br/>
+                            • Prices Currency in Saudi Riyal.
+                            <br/>
+                            •
+                            <span t-field="o.note"/>
+                            <br/>
+                            • Payment Terms: -
+                            <span t-field="o.payment_term_id"></span>
+                            <br/>
+                            • Delivery: <span t-field="o.commitment_date"></span>.
+                        </div>
+
+                        <div style="text-align: left;font-size: 12px;height:auto;">
+                            <span style="text-decoration: underline;">Payment Information : -</span>
+                            <br/>
+                            <br/>
+                            <table style="width:100%;">
+                                <tbody>
+                                    <tr style="border:0.5px; border-bottom: thin solid;">
+                                        <td style="width:25%;padding:2px;">
+                                            <span class="text-center">Account Name : -</span>
+                                        </td>
+                                        <td style="width:100%;padding:2px;">
+                                            <span>Clarity of Vision Information Technology شركة وضوح الرؤية لتقنية
+                                                المعلومات/
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:0.5px; border-bottom: thin solid;">
+                                        <td style="width:25%;padding:2px;">
+                                            <span class="text-center">Bank Name : -</span>
+                                        </td>
+                                        <td style="width:100%;padding:2px;">
+                                            <span>ALRAJHI BANK</span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:0.5px; border-bottom: thin solid;">
+                                        <td style="width:25%;padding:2px;">
+                                            <span class="text-center">Account Number: -</span>
+                                        </td>
+                                        <td style="width:100%;padding:2px;">
+                                            <span>504 6080 1009 4093</span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:0.5px; border-bottom: thin solid;">
+                                        <td style="width:25%;padding:2px;">
+                                            <span class="text-center">IBAN Number: -</span>
+                                        </td>
+                                        <td style="width:100%;padding:2px;">
+                                            <span>SA74 8000 0504 6080 1009 4093</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <!--Report for quot details -->
+    <report id="report_custom_sale_order"
+            model="sale.order"
+            string="Customer Sale Order"
+            name="custom_invoice.report_custom_sale_order_tem"
+            file="custom_invoice.report_custom_sale_order_tem"
+            report_type="qweb-pdf"/>
+
+</odoo>

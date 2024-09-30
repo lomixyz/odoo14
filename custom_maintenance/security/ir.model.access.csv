@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_location_location,location_location,model_location_location,,1,1,1,1
+access_wiz_update_reason,wiz_update_reason,model_wiz_update_reason,,1,1,1,1

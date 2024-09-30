@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+
+    <record id="view_move_form_inherited" model="ir.ui.view">
+        <field name="name">account.move.form.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_reference']" position="after">
+              <field name="cash" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="shabaka" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="transfer" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="credit" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_reverse']" position="attributes">
+                <attribute name="groups">payment_custom.group_account_invoice_credit_note</attribute>
+            </xpath>
+     </field>
+    </record>
+    <record id="view_move_form_debit_inherited" model="ir.ui.view">
+        <field name="name">account.move.form.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+
+        <xpath expr="//button[@name='%(account_debit_note.action_view_account_move_debit)d']"  position="attributes">
+            <attribute name="groups">payment_custom.group_account_invoice_debit_note</attribute>
+        </xpath>
+     </field>
+    </record>
+    
+    <record id="view_out_invoice_tree" model="ir.ui.view">
+        <field name="name">account.move.form.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed_signed']" position="after">
+              <field name="cash" sum="Total" optional="hide" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="shabaka" sum="Total" optional="hide" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="transfer" sum="Total" optional="hide" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <field name="credit" sum="Total" optional="hide" attrs="{'invisible': [('move_type', 'not in', ('out_invoice'))],'readonly': [('state', '!=', 'draft')]}"/>
+              <!--   -->
+            </xpath>
+        </field>
+    </record>
+    
+  </data>
+</odoo>

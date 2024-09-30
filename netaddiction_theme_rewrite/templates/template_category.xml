@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- FRONTEND -->
+	<template id="category_info" inherit_id="website_sale.products">
+		<xpath expr="//div[hasclass('products_pager')][2]" position="after">
+			<t t-if="category">
+				<div>
+					<!-- INSERISCO GLI SLIDER NEL FOOTER -->
+					<t t-if="bestseller_list">
+						<section data-name="Title style 3" class="o_colored_level undefined o_cc">
+							<div class="container">
+								<div class="row s_nb_column_fixed">
+									<div class="col-lg-12 te_title_3 pt32 o_colored_level">
+										<div class="te_title_sub_div">
+											<h4 class="te_s_title_default te_title_style3">
+												I più venduti
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="pt8 pb8 o_colored_level undefined o_cc" data-snippet="p_slider" data-name="Product Snippet Builder">
+							<t t-set="products_bestseller_ids" t-value="''" />
+							<t t-foreach="bestseller_list" t-as="product">
+								<t t-set="products_bestseller_ids" t-value="products_bestseller_ids + str(product['id']) + ','" />
+							</t>
+							<t t-set="products_bestseller_ids" t-value="products_bestseller_ids[:-1]" />
+							<div class="js_slider_snippet" name="manual-configuration" data-isemipro="true" data-name="manual-configuration" t-attf-data-item_ids="{{products_bestseller_ids}}" data-style="2" data-ui_option="shopping_cart,wishlist,quick_view,sale_label,ratings" data-slider_type="slider" t-attf-data-limit="20" />
+						</section>
+					</t>
+					<t t-if="preorder_list">
+						<section data-name="Title style 3" class="o_colored_level undefined o_cc">
+							<div class="container">
+								<div class="row s_nb_column_fixed">
+									<div class="col-lg-12 te_title_3 pt32 o_colored_level">
+										<div class="te_title_sub_div">
+											<h4 class="te_s_title_default te_title_style3">
+												Prossime uscite
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="pt8 pb8 o_colored_level undefined o_cc" data-snippet="p_slider" data-name="Product Snippet Builder">
+							<t t-set="products_preorder_ids" t-value="''" />
+							<t t-foreach="preorder_list" t-as="product">
+								<t t-set="products_preorder_ids" t-value="products_preorder_ids + str(product['id']) + ','" />
+							</t>
+							<t t-set="products_preorder_ids" t-value="products_preorder_ids[:-1]" />
+							<div class="js_slider_snippet" name="manual-configuration" data-isemipro="true" data-name="manual-configuration" t-attf-data-item_ids="{{products_preorder_ids}}" data-style="2" data-ui_option="shopping_cart,wishlist,quick_view,sale_label,ratings" data-slider_type="slider" t-attf-data-limit="20" />
+						</section>
+					</t>
+					<t t-if="newest_list">
+						<section data-name="Title style 3" class="o_colored_level undefined o_cc">
+							<div class="container">
+								<div class="row s_nb_column_fixed">
+									<div class="col-lg-12 te_title_3 pt32 o_colored_level">
+										<div class="te_title_sub_div">
+											<h4 class="te_s_title_default te_title_style3">
+												Nuovi arrivi
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="pt8 pb8 o_colored_level undefined o_cc" data-snippet="p_slider" data-name="Product Snippet Builder">
+							<t t-set="products_newest_ids" t-value="''" />
+							<t t-foreach="newest_list" t-as="product">
+								<t t-set="products_newest_ids" t-value="products_newest_ids + str(product['id']) + ','" />
+							</t>
+							<t t-set="products_newest_ids" t-value="products_newest_ids[:-1]" />
+							<div class="js_slider_snippet" name="manual-configuration" data-isemipro="true" data-name="manual-configuration" t-attf-data-item_ids="{{products_newest_ids}}" data-style="2" data-ui_option="shopping_cart,wishlist,quick_view,sale_label,ratings" data-slider_type="slider" t-attf-data-limit="20" />
+						</section>
+					</t>
+				</div>
+			</t>
+		</xpath>
+	</template>
+
+	<template id="custom_prod_item" inherit_id="website_sale.products_item">
+		<xpath expr="//div[hasclass('oe_product_image')]" position="replace" priority="30">
+			<t t-set="image_holder" t-value="product._get_image_holder()"/>
+			<t t-if="combination_info">
+                <div t-attf-class="special_price_label_container {{'' if combination_info['has_discounted_price'] else 'd-none'}}">
+                    <t t-set="difference" t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
+                    <t t-set="discount"
+                    t-value="round(difference*100/combination_info['list_price']) if combination_info['list_price'] &gt; 0 else 0"/>
+                    <div class="special_price_label" t-if="discount">
+                        <span t-esc="'-'+ str(discount) + '%'"/>
+                    </div>
+                </div>
+            </t>
+			<t t-if="product.product_variant_ids and category and len(product.product_variant_ids) &gt; 1">
+				<t t-set="variant_array" t-value="[]"/>
+				<t t-foreach="product.product_variant_ids" t-as="variant">
+					<t t-if="category in variant.public_categ_ids">
+						<t t-set="variant_array" t-value="variant_array+[variant]"/>
+					</t>
+				</t>
+				<t t-if="len(variant_array) == 1">
+					<t t-set="product_href" t-value="keep(variant_array[0].website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" />
+					<t t-set="image_holder" t-value="variant_array[0]._get_image_holder()"/>
+				</t>
+			</t>	
+			<div class="card-body p-1 oe_product_image">
+				<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+				<a t-att-href="product_href" class="d-block h-100" itemprop="url">
+					<span t-field="image_holder.image_1920"
+						t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}"
+						class="new_span d-flex h-100 justify-content-center align-items-center"/>
+				</a>
+			</div>
+		</xpath>
+    </template>
+</odoo>

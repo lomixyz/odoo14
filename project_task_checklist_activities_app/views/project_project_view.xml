@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_activity_count_kanban" model="ir.ui.view">
+        <field name="name">project.project.kanban</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_project_kanban_boxes']" position="inside">    
+            	<field name="activities_count" invisible="1"/>  
+            	<field name="label_act" invisible="1"/>           
+                <a class="o_project_kanban_box" name="open_activites" type="object"  >
+                    <div>
+                        <span class="o_value"><t t-esc="record.activities_count.value"/></span>
+                        <span class="o_label"><t t-esc="record.label_act.value"/></span>
+                    </div>
+                    </a>
+            </xpath>   
+        </field>
+    </record>
+
+    <record id="project_activity_count_form" model="ir.ui.view">
+        <field name="name">project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='attachment_tree_view']" position="after">             
+                <button class="oe_stat_button" type="object" name="open_activites" icon="fa-tasks">
+                    <field string="Activity" name="activities_count" widget="statinfo" options="{'label_field': 'label_act'}"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+
+

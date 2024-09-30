@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website_sale.assets_frontend">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/netaddiction_website_stock_notify/static/src/js/website_sale_notify.js"></script>
+        </xpath>
+    </template>
+
+    <template id="netaddiction_website_stock_notify_button" name='stock product notification' inherit_id="website_sale.product" priority="8">
+        <xpath expr="//a[@id='add_to_cart']" position="after">
+
+            <t t-set="current" t-value="datetime.datetime.now()"/>
+            <t t-if="product.out_date">
+                <t t-set="out_date" t-value="datetime.datetime.strptime(str(product.out_date) + ' 00:00:00.00000', '%Y-%m-%d %H:%M:%S.%f')"/>
+            </t>
+
+            <div id="notify-my-mail"></div>
+        </xpath>
+    </template>
+
+</odoo>

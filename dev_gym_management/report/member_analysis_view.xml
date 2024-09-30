@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+    <record id="action_member_analysis_pivot_Report" model="ir.actions.act_window">
+        <field name="name">Member Analysis</field>
+        <field name="res_model">member.analysis</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id"></field>  <!-- force empty -->
+    </record>
+
+	<!--  Menu Items-->
+    <menuitem name="Member Analysis"
+              id="menu_member_analysis_report"
+              parent="dev_gym_management.menu_gym_management_reporting"
+              action="action_member_analysis_pivot_Report"
+              sequence="1"/>
+</odoo>

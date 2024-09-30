@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="form_session_cancel_popup" model="ir.ui.view">
+        <field name="name">form.session.cancel.popup</field>
+        <field name="model">session.cancel</field>
+        <field name="arch" type="xml">
+            <form string="Session Cancel Popup">
+                <field name="reason" placeholder="please specify why you are cancelling the session . . ."/>
+                <footer>
+                    <button string="Cancel" name="cancel_session" type="object" class="oe_highlight"/>&#160;&#160;or&#160;&#160;
+                    <button string="Close Window" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+	<record id="action_session_cancel_popup" model="ir.actions.act_window">
+        <field name="name">Cancel Special Session</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">session.cancel</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_session_cancel_popup"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

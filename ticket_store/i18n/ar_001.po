@@ -1,0 +1,529 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ticket_store
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 09:22+0000\n"
+"PO-Revision-Date: 2021-11-23 09:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ticket_store
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_store_from
+msgid "<span class=\"o_stat_text\">All Tickets</span>"
+msgstr "التذاكر"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__access_warning
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_needaction
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_exception_decoration
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_state
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_type_icon
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_attachment_count
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__bill_id
+msgid "Bill"
+msgstr "فاتورة الشراء"
+
+#. module: ticket_store
+#: model:ir.model.fields.selection,name:ticket_store.selection__tickets_store__state__confirm
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: ticket_store
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_store_from
+msgid "Confirm Ticket"
+msgstr "تأكيد"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__create_uid
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__create_date
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__access_url
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__date_ticket
+msgid "Date"
+msgstr "تاريخ إصدار التذاكر"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__date_ticket
+msgid "Date OF Ticket"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__description_ticket
+msgid "Description"
+msgstr "الوصف"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_account_move__display_name
+#: model:ir.model.fields,field_description:ticket_store.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:ticket_store.field_sale_order__display_name
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__display_name
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: ticket_store
+#: model:ir.model.fields.selection,name:ticket_store.selection__tickets_store__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__email_cc
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__email_cc
+msgid "Email cc"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__first_ticket
+msgid "First Ticket"
+msgstr "رقم أول تذكرة"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_follower_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_channel_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_partner_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__activity_type_icon
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__from_ticket
+msgid "From"
+msgstr "من"
+
+#. module: ticket_store
+#: model:ir.model.fields.selection,name:ticket_store.selection__tickets_store__state__done
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_store_from
+msgid "Generate Tickets"
+msgstr "توليد أرقام التذاكر"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_account_move__id
+#: model:ir.model.fields,field_description:ticket_store.field_purchase_order__id
+#: model:ir.model.fields,field_description:ticket_store.field_sale_order__id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_exception_icon
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__activity_exception_icon
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_needaction
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_unread
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_needaction
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_has_error
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_has_sms_error
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_has_error
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__invoice_id
+msgid "Invoice"
+msgstr "فاتورة المبيعات"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_is_follower
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__is_purchase
+msgid "Is Purchase"
+msgstr "شراء"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__is_sale
+msgid "Is Sale"
+msgstr "بيع"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_purchase_order__is_select
+#: model:ir.model.fields,field_description:ticket_store.field_sale_order__is_select
+msgid "Is Select"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model,name:ticket_store.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_account_move____last_update
+#: model:ir.model.fields,field_description:ticket_store.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:ticket_store.field_sale_order____last_update
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store____last_update
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__last_ticket
+msgid "Last Ticket"
+msgstr "رقم اخر تذكرة"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__write_uid
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__write_date
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__email_cc
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__email_cc
+msgid "List of cc from incoming emails."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_main_attachment_id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_has_error
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ticket_store
+#: code:addons/ticket_store/models/models.py:0
+#: code:addons/ticket_store/models/models.py:0
+#: code:addons/ticket_store/models/models.py:0
+#: code:addons/ticket_store/models/models.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_date_deadline
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_summary
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_type_id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__number_of_ticket
+msgid "Number OF Tickets"
+msgstr "عدد التذاكر"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_needaction_counter
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_has_error_counter
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_needaction_counter
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_has_error_counter
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__message_unread_counter
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ticket_store
+#: code:addons/ticket_store/models/inherit_models.py:0
+#, python-format
+msgid "Please define an accounting purchase journal for the company %s (%s)."
+msgstr ""
+
+#. module: ticket_store
+#: code:addons/ticket_store/models/inherit_models.py:0
+#, python-format
+msgid "Please define an accounting sales journal for the company %s (%s)."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__access_url
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__purchase_id
+msgid "Purchase"
+msgstr "شراء"
+
+#. module: ticket_store
+#: model:ir.model,name:ticket_store.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__activity_user_id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_has_sms_error
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__sale_id
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_list
+msgid "Sale"
+msgstr "مبيعات"
+
+#. module: ticket_store
+#: model:ir.model,name:ticket_store.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__access_token
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.ui.menu,name:ticket_store.action_country_state_menu
+msgid "State"
+msgstr "المدن"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__activity_state
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.actions.act_window,name:ticket_store.ticket_action_window
+#: model:ir.model.fields,field_description:ticket_store.field_account_bank_statement_line__ticket_id
+#: model:ir.model.fields,field_description:ticket_store.field_account_move__ticket_id
+#: model:ir.model.fields,field_description:ticket_store.field_account_payment__ticket_id
+#: model:ir.model.fields,field_description:ticket_store.field_purchase_order__ticket_id
+#: model:ir.model.fields,field_description:ticket_store.field_sale_order__ticket_id
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__ticket_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__ticket
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_store_from
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_tickets_from
+msgid "Ticket"
+msgstr "التذكرة"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__name
+msgid "Ticket Reference"
+msgstr "التسلسل"
+
+#. module: ticket_store
+#: model:ir.actions.act_window,name:ticket_store.ticket_store_action_window
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__ticket_store
+#: model:ir.ui.menu,name:ticket_store.ticket_store_menu_root
+msgid "Ticket Store"
+msgstr "مخزن التذاكر"
+
+#. module: ticket_store
+#: model:ir.model,name:ticket_store.model_tickets_store
+msgid "TicketStore main model"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model,name:ticket_store.model_tickets_tickets
+msgid "TicketTickets"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.actions.act_window,name:ticket_store.action_fltickets_view
+#: model:ir.ui.menu,name:ticket_store.Ticket_menu
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_store_from
+msgid "Tickets"
+msgstr "التذاكر"
+
+#. module: ticket_store
+#: model:ir.ui.menu,name:ticket_store.ticket_store_menu
+msgid "Tickets Store"
+msgstr "مخزن التذاكر"
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__to_ticket
+msgid "To"
+msgstr "إلى"
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__activity_exception_decoration
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_unread
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__message_unread_counter
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_store__website_message_ids
+#: model:ir.model.fields,field_description:ticket_store.field_tickets_tickets__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ticket_store
+#: model:ir.model.fields,help:ticket_store.field_tickets_store__website_message_ids
+#: model:ir.model.fields,help:ticket_store.field_tickets_tickets__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: ticket_store
+#: code:addons/ticket_store/models/models.py:0
+#, python-format
+msgid "You can not delete Ticket Store in Confirm or Done states."
+msgstr "لا يمكنك حذف مخزن تذاكر فى الحالة مؤكدة أو منتهية"
+
+#. module: ticket_store
+#: model_terms:ir.ui.view,arch_db:ticket_store.ticket_list
+msgid "purchase"
+msgstr "شراء"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--tree-->
+	<record id="tree_trainer_skill" model="ir.ui.view">
+		<field name="name">tree.trainer.skill</field>
+		<field name="model">trainer.skill</field>
+		<field name="arch" type="xml">
+		    <tree string="Trainer Skill Tree" editable="bottom">
+                <field name="name"/>
+                <field name="experience"/>
+ 		    </tree>
+		</field>
+	</record>
+
+	<!--Action-->
+	<record id="action_trainer_skill" model="ir.actions.act_window">
+        <field name="name">Trainer Skill</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">trainer.skill</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_trainer_skill"/>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Trainer Skill"
+              id='menu_trainer_skill'
+              parent="dev_gym_management.menu_gym_management_configuration"
+              action="action_trainer_skill"
+              sequence="1"/>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+
+		<record id="reciept_voucher_form_view" model="ir.ui.view">
+			<field name="name">Reciept Voucher</field>
+			<field name="model">reciept.voucher</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+
+						<group>
+							<field name='amount' />
+							<field name='date' />
+						</group>
+						<group>
+							<field name='note' />
+							</group>
+					</group>
+					<footer>
+						<button class="oe_highlight" name='create_payment' type='object'
+							string='Create' />
+						<button class="oe_link" special="cancel" string='Cancel' />
+					</footer>
+
+				</form>
+
+			</field>
+		</record>
+
+		<act_window id="reciept_voucher_action"
+			res_model="reciept.voucher" view_mode="form" name="Reciept Voucher"
+			target='new' />
+	</data>
+</odoo>
+
+

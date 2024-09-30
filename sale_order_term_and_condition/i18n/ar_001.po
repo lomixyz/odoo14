@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_term_and_condition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201004\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-27 22:54+0000\n"
+"PO-Revision-Date: 2021-12-27 22:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.res_config_settings_view_inhert_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"role=\"img\"/>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid ""
+"<span>  تم إبرام هذا العقد بين  :</span>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>الرقم الضريبي</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>الطرف الثاني</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>الطرف اﻷول</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>رقم الجوال</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>رقم جوال العميل</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>رقم هاتف الشركة</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>رقم هاتف العميل</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>رقم</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>عنوان الشركة</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<span>عنوان العميل</span>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "<strong>عقد الحجز</strong>"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.actions.report,name:sale_order_term_and_condition.report_sale_contract
+msgid "Contract Report"
+msgstr "تقرير العقد"
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_res_config_settings__use_terms
+msgid "Default Terms & Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_move__display_name
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order__hijiri_date
+msgid "Hijiri Date"
+msgstr "التاريخ الهجري"
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_move__id
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.res_config_settings_view_inhert_form
+msgid "Insert your terms & conditions here..."
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model,name:sale_order_term_and_condition.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_move____last_update
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.res_config_settings_view_inhert_form
+msgid "Show standard terms &amp; conditions on invoices/orders"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order__notes
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.res_config_settings_view_inhert_form
+msgid "Term And Conditions"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.sale_renting_inherit_form_view
+msgid "Term and Condition"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_res_config_settings__note
+msgid "Terms & Conditions"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_bank_statement_line__text_amount
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_move__text_amount
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_account_payment__text_amount
+msgid "Total In Words"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model,name:sale_order_term_and_condition.model_sale_order
+msgid "sale order new custom tab"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model,name:sale_order_term_and_condition.model_res_config_settings
+msgid "sale order term and condition customize"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model:ir.model.fields,field_description:sale_order_term_and_condition.field_sale_order__sale_order
+msgid "sale_order"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "الشروط والاحكام"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "الموافق"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "بمبلغ قدره"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid "كتابة ,"
+msgstr ""
+
+#. module: sale_order_term_and_condition
+#: model_terms:ir.ui.view,arch_db:sale_order_term_and_condition.report_contract
+msgid ""
+"وافق الطرفان علي إقامة حفل زواج في القاعات التالية, قسم الرجال , وذلك يوم "
+"الجمعة"
+msgstr ""

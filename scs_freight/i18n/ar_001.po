@@ -1,0 +1,2334 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* scs_freight
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-25 09:08+0000\n"
+"PO-Revision-Date: 2021-12-25 14:38+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: scs_freight
+#: model:mail.template,body_html:scs_freight.custom_clearence_agent
+msgid ""
+"\n"
+"                 <p>\n"
+"                    Hello <b>${object.agent_id and object.agent_id.name or "
+"''} </b>,\n"
+"                 </p>\n"
+"                 <p>\n"
+"                    We need an Custom Clearance for us one Freight "
+"operation.\n"
+"                    Operation related Information and documents are bellow "
+"please find it. \n"
+"                  </p>\n"
+"                      <p><b> Clearance Detail : </b></p>\n"
+"                        <table width=\"50%\" border=\"1\">\n"
+"                        \t<tr>\n"
+"\t                            <th>From </th>\n"
+"\t                            <th>To,</th>\n"
+"\t                            <th>Transport Type</th>\n"
+"\t                        </tr>\n"
+"\t                        <tr>\n"
+"\t                        \t<td>${object.operation_id.loading_port_id.name "
+"or ''}</td>\n"
+"\t                        \t<td>${object.operation_id.discharg_port_id."
+"name or ''}</td>\n"
+"\t                        \t<td>${object.operation_id.transport}</td>\n"
+"\t                        </tr>\n"
+"\t                    </table>\n"
+"                    Thank You.\n"
+"                "
+msgstr ""
+"\n"
+"                 <p>مرحبا <b>${object.agent_id و object.agent_id.name أو "
+"''} </b>,                 </p>\n"
+"                 <p>نحن بحاجة إلى تصريح مخصص لنا عملية شحن واحدة.\n"
+"                    المعلومات المتعلقة بالعملية والوثائق أدناه يرجى العثور "
+"عليه.                  </p>\n"
+"                      <p><b> تفاصيل التخليص : </b></p>\n"
+"                        <table width=\"50%\" border=\"1\">\n"
+"                        \t<tr>\n"
+"\t                            <th>من </th> <th>إلى،</th><th>نوع النقل</"
+"th>\n"
+"\t                            \n"
+"\t                            \n"
+"\t                        </tr>\n"
+"\t                        <tr>\n"
+"\t                        \t<td>${object.operation_id.loading_port_id.name "
+"أو ''}</td>\n"
+"\t                        \t<td>${object.operation_id.discharg_port_id."
+"name أو ''}</td>\n"
+"\t                        \t<td>${object.operation_id.transport}</td>\n"
+"\t                        </tr>\n"
+"\t                    </table>شكرًا لك.                "
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"%s Container's Volume Capacity is %s !!\n"
+"You planned more volume then containercapacity!!"
+msgstr ""
+"%s حاوية حجمها هو %s !!\n"
+"هل كنت تخطط لحجم أكثر "
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"%s Container's Volume Capacity is %s! \n"
+"                     You planned more volume then container capacity!!"
+msgstr ""
+"%s سعة حاوية الحجم %s! \n"
+"                    هل كنت تخطط لحجم أكثر من سعة الحاوية!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"%s Container's Weight Capacity is %s !!\n"
+"You planned more weight then containercapacity!!"
+msgstr ""
+"%s حاوية الوزن القدرة %s!!\n"
+"هل كنت تخطط لمزيد من الوزن"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"%s Container's Weight Capacity is %s! \n"
+"                     You planned more weight then container capacity!!"
+msgstr ""
+"%s سعة وزن الحاوية %s! \n"
+"                     هل كنت تخطط لمزيد من الوزن ثم سعة الحاوية!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_custom_clearance.py:0
+#, python-format
+msgid "%s have already custom activity."
+msgstr "%s نشاط مخصص بالفعل."
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "%s is not avilable!!"
+msgstr "%s غير موجود!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "%s port have no air route!"
+msgstr "%s م ليس له طريق جوي!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "%s port have no land route!"
+msgstr "%s الميناء ليس له طريق بري!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "%s port have no ocean route!"
+msgstr "ميناء %s ليس له طريق المحيط!"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+msgid "<b>Bill Payment Details</b>"
+msgstr "<b>تفاصيل دفعات الفواتير</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+msgid "<b>Bill Payment Receipt</b>"
+msgstr "<b>إيصال دفع فاتورة المورد</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "<b>Invoice Payment Details</b>"
+msgstr "<b>تفاصيل مدفوعات الفواتير</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "<b>Invoice Payment Receipt</b>"
+msgstr "<b>إيصال دفع الفاتورة</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "<b>Orders:</b>"
+msgstr "<b>الأوامر:</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "<b>Routes:</b>"
+msgstr "<b>الطرق: </b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "<b>Services:</b>"
+msgstr "<b>الخدمات</b>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+msgid "<span class=\"o_stat_text\">Revision</span>"
+msgstr "<span class=\"o_stat_text\">مراجعة</span>"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Accounts"
+msgstr "الحسايات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__act_bill_payment
+msgid "Act Pay Payment"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__act_inv_payment
+msgid "Act Rec Payment"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__active
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__active
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__activity
+msgid "Activity"
+msgstr "نشاط"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__act_payment_margin
+msgid "Actual Margin"
+msgstr "هامش الربح الفعلي"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__act_bill_payment
+msgid "Actual Payable Payment"
+msgstr "الدفع الفعلي المستحق"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__act_rec_date
+msgid "Actual Receive Date"
+msgstr "تاريخ الاستلام الفعلي"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__act_rec_date
+msgid "Actual Received Date"
+msgstr "تاريخ الاستلام الفعلي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Actual Received Date:"
+msgstr "تاريخ الاستلام الفعلي:"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "Actual Received date should be greater orequals to Order Date !!"
+msgstr "يجب أن يكون تاريخ الاستلام الفعلي أكبر من أو يساوي تاريخ الطلب !!"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__act_inv_payment
+msgid "Actual Recivable Payment"
+msgstr "الدفع الفعلي المستحق"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__act_send_date
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__act_send_date
+msgid "Actual Send Date"
+msgstr "تاريخ الإرسال الفعلي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Actual Send Date:"
+msgstr "تاريخ الإرسال الفعلي:"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "Actual Send date should be greater orequals to Order Date !!"
+msgstr "يجب أن يكون تاريخ الإرسال الفعلي أكبر من أو يساوي تاريخ الطلب !!"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_custom_clearance_reason_view
+msgid "Add Reason for Revision"
+msgstr "أضف سبب المراجعة"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "Add at least one order Line !!"
+msgstr "أضف سطر طلب واحد على الأقل !!"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__agent_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__agent_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__agent_id
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__agent_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.inherit_res_partner_search_view
+msgid "Agent"
+msgstr "الوكيل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__is_air
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__transport__air
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_vessels__transport__air
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__transport__air
+#: model:ir.model.fields.selection,name:scs_freight.selection__shipping_operation_report__transport__air
+msgid "Air"
+msgstr "جو"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__airline_id
+msgid "Air Line"
+msgstr "شركة طيران"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.airline_config_form_view
+msgid "Airline"
+msgstr "شركة طيران"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_airline
+msgid "Airline Details"
+msgstr "تفاصيل شركة الطيران"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.airline_config_action
+#: model:ir.ui.menu,name:scs_freight.airline_menu
+#: model_terms:ir.ui.view,arch_db:scs_freight.airline_config_tree_view
+msgid "Airlines"
+msgstr "الخطوط الجوية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__amount
+msgid "Amount"
+msgstr "قيمة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Amount Due"
+msgstr "المبلغ المستحق"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_ir_attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_container__state__available
+msgid "Available"
+msgstr "متوفرة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+msgid "BILL TOTAL"
+msgstr "إجمالي الفاتورة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__bill_count
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__bill_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__bill_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Bill"
+msgstr "فاتورة مورد"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Bill (Payable)"
+msgstr "فاتورة (مستحقة الدفع)"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__bill_payment
+msgid "Bill Amount"
+msgstr "مبلغ الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__bill_amount_due
+msgid "Bill Amount Due"
+msgstr "مبلغ الفاتورة المستحق"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+msgid "Bill Date:"
+msgstr "تاريخ الفاتورة:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__bill_line_id
+msgid "Bill Line"
+msgstr "فاتورة"
+
+#. module: scs_freight
+#: model:ir.actions.report,name:scs_freight.bill_payment_receipt_details_report
+msgid "Bill Payment Receipt"
+msgstr "إيصال دفع الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__billing_on
+msgid "Billing On"
+msgstr "الفواتير على"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_open_direct_shipment_bills
+msgid "Bills"
+msgstr "الفواتير"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__cancel
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_custom__state__cancel
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_custom_clearance_reason_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_set_shipping_date_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__opp_party_id
+msgid "Carrier"
+msgstr "النــــاقل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Carrier:"
+msgstr "النــــاقل:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__cartons
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Cartons NO"
+msgstr "عدد الكراتين"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__code
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__code
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__code
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__code
+msgid "Code"
+msgstr "كود"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__commission_ids
+msgid "Commission"
+msgstr "عمولة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Commissions"
+msgstr "عمولات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__company_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_freight_config
+msgid "Configuration"
+msgstr "إعداد"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__confirm
+msgid "Confirm"
+msgstr "تم التأكيد"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__consignee_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Consignee"
+msgstr "المرسل إليه"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Consignee:"
+msgstr "المرسل إليه:"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__container_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.container_config_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.container_config_tree_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Container"
+msgstr "الحاوية"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_container
+msgid "Container Details"
+msgstr "تفاصيل الحاوية"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.container_config_action
+#: model:ir.ui.menu,name:scs_freight.container_menu
+msgid "Containers"
+msgstr "حاويات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__cost_total
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__cost_price
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__exp_bill_payment
+msgid "Cost Amount"
+msgstr "قيمة التكلفة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__cost_total
+msgid "Cost Total"
+msgstr "إجمالي التكلفة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__country_id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__country_id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__country_id
+msgid "Country"
+msgstr "دولة"
+
+#. module: scs_freight
+#: model_terms:ir.actions.act_window,help:scs_freight.action_open_direct_shipment_invoices
+msgid "Create a customer invoice"
+msgstr "إنشاء فاتورة عميل"
+
+#. module: scs_freight
+#: model_terms:ir.actions.act_window,help:scs_freight.action_open_direct_shipment_bills
+msgid "Create a vendor bill"
+msgstr "إنشاء فاتورة مورد"
+
+#. module: scs_freight
+#: model_terms:ir.actions.act_window,help:scs_freight.action_open_direct_shipment_invoices
+msgid ""
+"Create invoices, register payments and keep track of the discussions with "
+"your customers."
+msgstr "قم بإنشاء الفواتير وسجل المدفوعات وتتبع المناقشات مع عملائك."
+
+#. module: scs_freight
+#: model_terms:ir.actions.act_window,help:scs_freight.action_open_direct_shipment_bills
+msgid ""
+"Create invoices, register payments and keep track of the discussions with "
+"your vendors."
+msgstr "قم بإنشاء الفواتير وسجل المدفوعات وتتبع المناقشات مع مورديك."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__create_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__create_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__create_date
+msgid "Created on"
+msgstr "انشأ فى"
+
+#. module: scs_freight
+#: code:addons/scs_freight/report/payment_receipt_report.py:0
+#, python-format
+msgid "Current Shipping order have no Bill!!"
+msgstr "أمر الشحن الحالي ليس له فاتورة !!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/report/payment_receipt_report.py:0
+#, python-format
+msgid "Current Shipping order have no Invoice!!"
+msgstr "أمر الشحن الحالي ليس له فاتورة !!"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__custom
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Custom"
+msgstr "مخصص"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_custom_activity
+msgid "Custom Activity"
+msgstr "نشاط مخصص"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_operation_custom
+#: model:ir.model,name:scs_freight.model_operation_custom
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_custom
+#: model:ir.ui.menu,name:scs_freight.menu_custom_clearance
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_tree
+msgid "Custom Clearance"
+msgstr "التخليص الجمركي"
+
+#. module: scs_freight
+#: model:mail.template,subject:scs_freight.custom_clearence_agent
+msgid "Custom Clearance For Freight Operation"
+msgstr "التخليص الجمركي لعمليات الشحن"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_operation_custom_revision
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_tree
+msgid "Custom Clearance Revision"
+msgstr "مراجعة التخليص الجمركي"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_operation_custom_revision
+msgid "Custom Clearance Rivision"
+msgstr "مراجعة التخليص الجمركي"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.menu_custom_revision
+msgid "Custom Revision"
+msgstr "مراجعة التخليص الجمركي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__customer_id
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__customer_id
+#: model:ir.ui.menu,name:scs_freight.menu_customer
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "Customer Name:"
+msgstr "اسم العميل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Customer:"
+msgstr "العميل:"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_customer_partner
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__clearance_no
+msgid "Customs Clearance Number"
+msgstr "رقم البوليصة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Customs Clearance Number:"
+msgstr "رقم البوليصة:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__customs_date
+msgid "Customs declaration Date"
+msgstr "تاريخ البيان الجمركي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Customs declaration Date:"
+msgstr "تاريخ البيان الجمركي:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__customs_no
+msgid "Customs declaration number"
+msgstr "رقم البيان الجمركي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Customs declaration number:"
+msgstr "رقم البيان الجمركي:"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "DUE AMOUNT"
+msgstr "المبلغ المستحق"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__date
+#: model:ir.model.fields,field_description:scs_freight.field_tracking_status__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__delivered
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__route_operation__delivery
+msgid "Delivery"
+msgstr "توصيل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__name
+#: model:ir.model.fields,field_description:scs_freight.field_tracking_status__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__goods_desc
+msgid "Description of Goods"
+msgstr "وصف البضاعة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__dest_location_id
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__dest_location
+msgid "Dest Location"
+msgstr "موقع الوجهة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__dest_location
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Destination Location"
+msgstr "موقع الوجهة"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_operation_tracking
+msgid "Detail for track order"
+msgstr "تفاصيل تتبع الطلب"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Dilevred"
+msgstr "تم التوصيل"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"Direct Shipment have No any Service Line for Bill\n"
+"Please add service line first to Generate Bill."
+msgstr ""
+"الشحنة المباشرة لا تحتوي على أي خدمات للفاتورة\n"
+"الرجاء إضافة الخدمة أولاً لإنشاء الفاتورة."
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_freight_operation
+#: model:ir.ui.menu,name:scs_freight.freight_direct_shipping_menu
+msgid "Direct Shipping"
+msgstr "الشحن المباشر"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__direction
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__direction
+msgid "Direction"
+msgstr "نوع الشحن"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Direction:"
+msgstr ":نوع الشحن"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__discharg_port_id
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__discharg_port_id
+msgid "Discharging Port"
+msgstr "ميناء التفريغ"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Discharging Port:"
+msgstr "ميناء التفريغ:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_account_move__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_product_product__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_bill_payment_receipt_report__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_inv_payment_receipt_report__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_res_partner__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__display_name
+#: model:ir.model.fields,field_description:scs_freight.field_tracking_status__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__name
+msgid "Doc Name"
+msgstr "اسم الملف"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_form
+msgid "Document"
+msgstr "ملف"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__attachment_ids
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__attachment_ids
+msgid "Documents"
+msgstr "ملفات"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_custom__state__done
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+msgid "Done"
+msgstr "تم"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_custom__state__draft
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.container_config_form_view
+msgid "Enter Volume in M3."
+msgstr "أدخل الحجم بالمتر المكعب."
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.container_config_form_view
+msgid "Enter Weight in KG."
+msgstr "أدخل الوزن بالكيلو جرام."
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Enter Your Order Number..."
+msgstr "أدخل رقم طلبك ..."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__exp_payment_margin
+msgid "Expected Margin"
+msgstr "هامش الربح المتوقع"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Expected Payment"
+msgstr "الدفع المتوقع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__exp_rec_date
+msgid "Expected Receive Date"
+msgstr "تاريخ الاستلام المتوقع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__arrival_date
+msgid "Arrival Date"
+msgstr "تاريخ وصول الشحنة للميناء"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__exp_rec_date
+msgid "Expected Received Date"
+msgstr "تاريخ الاستلام المتوقع"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Expected Received Date:"
+msgstr "تاريخ الاستلام المتوقع:"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "Expected Received date should be greater orequals to Order Date !!"
+msgstr "يجب أن يكون تاريخ الاستلام المتوقع أكبر من أو يساوي تاريخ الطلب !!"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__exp_send_date
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__exp_send_date
+msgid "Expected Send Date"
+msgstr "تاريخ الإرسال المتوقع"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Expected Send Date:"
+msgstr "تاريخ الإرسال المتوقع:"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "Expected Send date should be greater orequals to Order Date !!"
+msgstr "يجب أن يكون تاريخ الإرسال المتوقع أكبر من أو يساوي تاريخ الطلب !!"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation_line__exp_vol
+msgid "Expected Volume in m3 Measure"
+msgstr " الحجم المتوقع بالمتر المكعب."
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation_line__exp_gross_weight
+msgid "Expected Weight in kg."
+msgstr "الوزن المتوقع بالكيلو جرام"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__direction__export
+#: model:ir.model.fields.selection,name:scs_freight.selection__shipping_operation_report__direction__export
+msgid "Export"
+msgstr "تصدير"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__ocean_shipping__fcl
+msgid "FCL"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__ocean_shipping
+msgid ""
+"FCL: Full Conteiner Load.                                             LCL: "
+"Less Conteiner Load."
+msgstr "FCL: تحميل محتوي كامل. LCL: تحميل أقل."
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__land_shipping__ftl
+msgid "FTL"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__land_shipping
+msgid ""
+"FTL: Full Truckload.\n"
+"                                            LTL: Less Then Truckload."
+msgstr ""
+"FTL: حمولة شاحنة كاملة.\n"
+"                                            LTL: أقل من حمولة الشاحنة."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__freight_id
+#: model:ir.model.fields,field_description:scs_freight.field_tracking_status__freight_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Freight"
+msgstr "شحن"
+
+#. module: scs_freight
+#: model:res.groups,name:scs_freight.freight_operation_admin
+msgid "Freight Admin"
+msgstr "إدارة الشحن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_commission
+msgid "Freight Commission"
+msgstr "عمولة الشحن"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__operation_id
+#: model:ir.module.category,name:scs_freight.special_right
+msgid "Freight Operation"
+msgstr "عملية الشحن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_operation_route
+msgid "Freight Operation Routes"
+msgstr "مسارات عمليات الشحن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_operation
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_set_shipping_date_view
+msgid "Freight Operations"
+msgstr "عمليات الشحن"
+
+#. module: scs_freight
+#: model:res.groups,name:scs_freight.freight_user
+msgid "Freight User"
+msgstr "مستخدم الشحن"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.root_menu_freight
+msgid "Freights"
+msgstr "الشحنات"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+msgid "From"
+msgstr "من"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "General"
+msgstr "عام"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__product_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Goods"
+msgstr "البضاعة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_operation_line_form_view
+msgid "Goods Description"
+msgstr "وصف البضاعة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__exp_gross_weight
+msgid "Gross Weight"
+msgstr "الوزن الإجمالي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__icao
+msgid "ICAO"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_account_move__id
+#: model:ir.model.fields,field_description:scs_freight.field_account_move_line__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__id
+#: model:ir.model.fields,field_description:scs_freight.field_hr_payslip__id
+#: model:ir.model.fields,field_description:scs_freight.field_ir_attachment__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__id
+#: model:ir.model.fields,field_description:scs_freight.field_product_product__id
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_bill_payment_receipt_report__id
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_inv_payment_receipt_report__id
+#: model:ir.model.fields,field_description:scs_freight.field_res_partner__id
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__id
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__id
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__id
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__id
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "INVOICE TOTAL"
+msgstr "إجمالي الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_needaction
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_has_error
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__image_1920
+msgid "Image"
+msgstr "صورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__direction__import
+#: model:ir.model.fields.selection,name:scs_freight.selection__shipping_operation_report__direction__import
+msgid "Import"
+msgstr "استيراد"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__in_progress
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "In Progress"
+msgstr "تحت الإجراء"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__in_transit
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "In Transit"
+msgstr "تحت النقل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Information"
+msgstr "معلومات"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_airline__icao
+msgid "International Civil Aviation Organization"
+msgstr "منظمة الطيران المدني الدولية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__invoice_count
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__invoice_id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__invoice_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__invoice_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Invoice"
+msgstr "فاتورة عميل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Invoice (Receivable)"
+msgstr "فاتورة (مستحقة القبض)"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__inv_payment
+msgid "Invoice Amount"
+msgstr "مبلغ الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__inv_amount_due
+msgid "Invoice Amount Due"
+msgstr "مبلغ الفاتورة المستحق"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "Invoice Date:"
+msgstr "تاريخ الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__inv_line_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__inv_line_id
+msgid "Invoice Line"
+msgstr "فاتورة"
+
+#. module: scs_freight
+#: model:ir.actions.report,name:scs_freight.inv_payment_receipt_details_report
+msgid "Invoice Payment Receipt"
+msgstr " إيصال دفع فاتورة العميل"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_open_direct_shipment_invoices
+msgid "Invoices"
+msgstr "فواتير"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_res_partner__agent
+#: model:ir.model.fields,field_description:scs_freight.field_res_users__agent
+msgid "Is Agent?"
+msgstr "هل وكيل؟"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__is_container
+msgid "Is Container?"
+msgstr "هل حاوية؟"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__route_service
+msgid "Is Route Service"
+msgstr "هل خدمة طريق"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__ocean_shipping__lcl
+msgid "LCL"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__land_shipping__ltc
+msgid "LTL"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__is_land
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__transport__land
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_vessels__transport__land
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__transport__land
+#: model:ir.model.fields.selection,name:scs_freight.selection__shipping_operation_report__transport__land
+msgid "Land"
+msgstr "برى"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__land_shipping
+msgid "Land Shipping"
+msgstr "الشحن البرى"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_account_move____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_product_product____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_bill_payment_receipt_report____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_report_scs_freight_inv_payment_receipt_report____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_res_partner____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date____last_update
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__write_uid
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_commission__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__write_date
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__loading_port_id
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__loading_port_id
+msgid "Loading Port"
+msgstr "ميناء الشحن"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Loading Port:"
+msgstr "ميناء الشحن:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسى"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__route_operation__main_carrige
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Main Carriage"
+msgstr "النقل الرئيسي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Margin"
+msgstr "هامش الربح"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_master_data
+msgid "Master Data"
+msgstr "البيانات الرئيسية"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_container__size
+msgid "Maximum Size Handling Capacity"
+msgstr "قدرة التعامل مع الحجم الأقصى"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_container__volume
+msgid "Maximum Volume(M3) Handling Capacity"
+msgstr "الحجم الأقصى (متر مكعب) قدرة المناولة"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_container__weight
+msgid "Maximum Weight(KG) Handling Capacity"
+msgstr "الحجم الأقصى (كيلو جرام) قدرة المناولة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_airline__name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__name
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__name
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__name
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__name
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_price_list_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_form
+msgid "Name"
+msgstr "الاسم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__need_document
+msgid "Need Document?"
+msgstr "بحاجة الى وثيقة؟"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__draft
+msgid "New"
+msgstr "جديد"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__note
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__note
+#: model_terms:ir.ui.view,arch_db:scs_freight.vessels_config_form_view
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.vessels_config_form_view
+msgid "Notes...."
+msgstr "ملاحظات...."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__is_ocean
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__transport__ocean
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_vessels__transport__ocean
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__transport__ocean
+#: model:ir.model.fields.selection,name:scs_freight.selection__shipping_operation_report__transport__ocean
+msgid "Ocean"
+msgstr "محيط"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__ocean_shipping
+msgid "Ocean Shipping"
+msgstr "الشحن عبر المحيطات"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__route_operation__oncarrige
+msgid "On Carriage"
+msgstr "تحت النقل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_account_bank_statement_line__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_account_move__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_account_payment__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_ir_attachment__custom_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__custom_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__operation_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__operation_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_search
+msgid "Operation"
+msgstr "عملية"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_operation_price_list
+msgid "Operation Price Listing"
+msgstr "قائمة الأسعار"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_operation_service
+msgid "Operation Sevices"
+msgstr "خدمات العملية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__operator_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__operator_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Operator"
+msgstr "المشغل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Operator:"
+msgstr "المشغل:"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__operation_line_ids
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Order"
+msgstr "الطلب"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__order_date
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__order_date
+msgid "Order Date"
+msgstr "تاريخ الطلب"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Order Date:"
+msgstr "تاريخ الطلب:"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_operation_line
+msgid "Order Line"
+msgstr "طلب"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__order_number
+msgid "Order Number"
+msgstr "رقم الطلب"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.hr_payslip_commission_form_inherit_view
+msgid "Other"
+msgstr "اخرى"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "PAID AMOUNT"
+msgstr "المبلغ المدفوع"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "PAYMENT AMOUNT"
+msgstr "المبلغ المستحق"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "PAYMENT DATE"
+msgstr "تاريخ الدفع"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+#: model_terms:ir.ui.view,arch_db:scs_freight.inv_payment_receipt
+msgid "PAYMENT METHOD"
+msgstr "طريقة الدفع"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال المرتب"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_operation_price_list__weight_price
+msgid "Per KG Weight Price"
+msgstr "سعر وزن كجم"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_operation_price_list__volume_price
+msgid "Per m3 Volume Price"
+msgstr "سعر حجم المتر المكعب"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__route_operation__picking
+msgid "Picking"
+msgstr "شحن"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_config.py:0
+#, python-format
+msgid "Please Check at least one port !!"
+msgstr "يرجى التحقق من منفذ واحد على الأقل !!"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.ports_config_action
+#: model:ir.ui.menu,name:scs_freight.ports_menu
+#: model_terms:ir.ui.view,arch_db:scs_freight.ports_config_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.ports_config_tree_view
+msgid "Ports"
+msgstr "الموانئ"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_port
+msgid "Ports Details"
+msgstr "تفاصيل الموانئ"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_route__route_operation__precarrige
+msgid "Pre Carriage"
+msgstr "قبل النقل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__price
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation_line__billing_on__price
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Price"
+msgstr "السعر"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_price_list_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_price_list_tree_view
+msgid "Price Listing"
+msgstr "قائمة الأسعار"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__price_list_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Pricing"
+msgstr "التسعير"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_operation_price_list
+#: model:ir.ui.menu,name:scs_freight.operation_price_list_menu
+msgid "Pricing List"
+msgstr "قائمة الأسعار"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_product_product
+msgid "Product"
+msgstr "المنتج"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__qty
+msgid "QTY"
+msgstr "الكمية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__qty
+msgid "Qty"
+msgstr "الكمية"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__reason
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_custom_clearance_reason__reason
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_revision_form
+msgid "Reason"
+msgstr "سبب"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__recived
+#: model:ir.model.fields.selection,name:scs_freight.selection__wiz_set_shipping_date__ship_type__recived
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+msgid "Received"
+msgstr "استلام"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__recived_date
+msgid "Received Date"
+msgstr "تاريخ الاستلام"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_report_scs_freight_bill_payment_receipt_report
+msgid "Report Bill Payment Reciept"
+msgstr "تقرير استلام دفع الفاتورة"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_report_scs_freight_inv_payment_receipt_report
+msgid "Report Invoice Payment Reciept"
+msgstr "تقرير إيصال دفع الفاتورة"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_reporting
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_container__state__reserve
+msgid "Reserve"
+msgstr "احتياطي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم المسؤول"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__revision_count
+#: model:ir.model.fields,field_description:scs_freight.field_revision_doc__revision_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_operation_custom_form
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_custom_clearance_reason_view
+msgid "Revision"
+msgstr "مراجعة"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_revision_doc
+msgid "Revision Document Lists"
+msgstr "قوائم المستندات المراجعة"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_wiz_custo_clearance_reason
+msgid "Revision Reason"
+msgstr "سبب المراجعة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom_revision__revision_doc_ids
+msgid "Revisions"
+msgstr "مراجعات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__route_id
+msgid "Route"
+msgstr "طريق"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Route Operation"
+msgstr "طريق العملية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__route_operation
+msgid "Route Operations"
+msgstr "طرق العمليات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__routes_ids
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Routes"
+msgstr "طرق"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__saber
+msgid "Saber"
+msgstr ""
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Saber:"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__sale_total
+msgid "Sale"
+msgstr "مبيعات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__exp_inv_payment
+msgid "Sale Amount"
+msgstr "مبلغ البيع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__sale_price
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__list_price
+msgid "Sale Price"
+msgstr "سعر البيع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__sale_total
+msgid "Sale Total"
+msgstr "إجمالي البيع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__date
+msgid "Send Date"
+msgstr "تاريخ الإرسال"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_account_move_line__service_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__product_id
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Service"
+msgstr "الخدمة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__service_count
+msgid "Service Count"
+msgstr "عدد الخدمات"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_oper_service_frieght
+#: model:ir.actions.act_window,name:scs_freight.action_operation_service
+#: model:ir.actions.act_window,name:scs_freight.product_action
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__service_ids
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__service_ids
+#: model:ir.ui.menu,name:scs_freight.menu_services
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_service_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_service_tree_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_set_shipping_date_view
+msgid "Set"
+msgstr "تعيين"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_wiz_set_shipping_date
+msgid "Set Received / Delivered Date on Shipping"
+msgstr "حدد تاريخ الاستلام / التسليم عند الشحن"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.menu_set_shipping_date
+msgid "Set Shipping Date"
+msgstr "حدد تاريخ الشحن"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Set to Draft"
+msgstr "تعيين إلى مسودة"
+
+#. module: scs_freight
+#: code:addons/scs_freight/wizard/wiz_order_track.py:0
+#, python-format
+msgid "Shipment Order is not available with this [ %s ] number.!!"
+msgstr "طلب الشحن غير متوفر بهذا الرقم  [ %s ]. !!"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_freight_shipping
+#: model:ir.ui.menu,name:scs_freight.menu_shipping_analysis
+msgid "Shipping"
+msgstr "الشحن"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_freight_shipping_analysis_report
+msgid "Shipping Analysis"
+msgstr "تحليل الشحن"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_shipping_operation
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_set_shipping_date_view
+msgid "Shipping Operation"
+msgstr "عملية الشحن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_shipping_operation_report
+msgid "Shipping Operation Report"
+msgstr "تقرير عملية الشحن"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__operation_ids
+msgid "Shipping Operations"
+msgstr "عمليات الشحن"
+
+#. module: scs_freight
+#: model:ir.actions.report,name:scs_freight.freight_shipping_order_report
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Shipping Order"
+msgstr "أمر الشحن"
+
+#. module: scs_freight
+#: code:addons/scs_freight/wizard/wiz_set_shipping_date.py:0
+#, python-format
+msgid "Shipping Order %s is export you can'tset received date."
+msgstr "طلب الشحن %s  هو تصدير لا يمكنك ضبط تاريخ الاستلام."
+
+#. module: scs_freight
+#: code:addons/scs_freight/wizard/wiz_set_shipping_date.py:0
+#, python-format
+msgid "Shipping Order %s is import you can't set delivered date."
+msgstr "طلب الشحن %s  هو توريد لا يمكنك ضبط موعد التسليم."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_set_shipping_date__ship_type
+msgid "Shipping_type"
+msgstr "نوع الشحن"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__size
+msgid "Size"
+msgstr "الحجم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__size_uom_id
+msgid "Size UOM"
+msgstr "وحدة قياس الحجم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__source_location
+#: model:ir.model.fields,field_description:scs_freight.field_operation_tracking__source_location_id
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__source_location
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__state
+#: model:ir.model.fields,field_description:scs_freight.field_freight_port__state_id
+#: model:ir.model.fields,field_description:scs_freight.field_operation_custom__state
+msgid "State"
+msgstr "ولاية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__state
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__status
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_search
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Status"
+msgstr "الحالة"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: scs_freight
+#: code:addons/scs_freight/wizard/wiz_order_track.py:0
+#, python-format
+msgid "Still no Activity for this order !!"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__vendor_id
+msgid "Supplier Company"
+msgstr "الشركة الموردة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "TIN:"
+msgstr "رقم التعريف الضريبي:"
+
+#. module: scs_freight
+#: code:addons/scs_freight/wizard/wiz_order_track.py:0
+#, python-format
+msgid "This order was Cancelled. !!"
+msgstr "تم إلغاء هذا الطلب. !!"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+msgid "To"
+msgstr "إلى"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_amount_commission
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_hr_payslip__total_amount_commission
+msgid "Total Commission Amount"
+msgstr "إجمالي مبلغ العمولة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_operation_lin_tree_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Total Price"
+msgstr "السعر الكلي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.operation_route_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Total Sale"
+msgstr "إجمالي البيع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_service
+msgid "Total Services"
+msgstr "إجمالي الخدمات"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_volume
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_operation_lin_tree_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Total Volume"
+msgstr "الحجم الكلي"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_weight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_operation_lin_tree_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Total Weight"
+msgstr "الوزن الكلي"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Track"
+msgstr "تتبع"
+
+#. module: scs_freight
+#: model:ir.ui.menu,name:scs_freight.main_menu_track_order
+msgid "Track Order"
+msgstr "طلب التتبع"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_track_operation
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Track Shipping Order"
+msgstr "تتبع طلب الشحن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_wiz_track_operation
+msgid "Track operation"
+msgstr "عملية التتبع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__tracking_ids
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Tracking"
+msgstr "تتبع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__tracking_ids
+msgid "Trackings"
+msgstr "التتبع"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__transport
+#: model:ir.model.fields,field_description:scs_freight.field_freight_vessels__transport
+#: model:ir.model.fields,field_description:scs_freight.field_operation_route__transport
+#: model:ir.model.fields,field_description:scs_freight.field_shipping_operation_report__transport
+#: model:ir.model.fields,field_description:scs_freight.field_wiz_track_operation__transport
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Transport"
+msgstr "نوع النقل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.wiz_track_operation_view
+msgid "Transport Carriage"
+msgstr "تحت النقل"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Transport:"
+msgstr "نوع النقل:"
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__uom_id
+msgid "Unit of Mesure"
+msgstr "وحدة القياس"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_service__vendor_id
+#: model:ir.model.fields,field_description:scs_freight.field_product_product__vendor_id
+#: model:ir.ui.menu,name:scs_freight.menu_vendor
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.bill_payment_receipt
+msgid "Vendor Name:"
+msgstr "اسم المورد"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.action_agent_partner
+msgid "Vendors"
+msgstr "موردين"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__vessel_id
+msgid "Vessel"
+msgstr "سفينة"
+
+#. module: scs_freight
+#: model:ir.actions.act_window,name:scs_freight.vessels_config_action
+#: model:ir.ui.menu,name:scs_freight.vessels_menu
+#: model_terms:ir.ui.view,arch_db:scs_freight.vessels_config_form_view
+#: model_terms:ir.ui.view,arch_db:scs_freight.vessels_config_tree_view
+msgid "Vessels"
+msgstr "السفن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_freight_vessels
+msgid "Vessels(Boat) Details."
+msgstr "تفاصيل السفن (القوارب)."
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__volume
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__exp_vol
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation_line__billing_on__volume
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Volume"
+msgstr "الحجم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__volume_price
+msgid "Volume Price"
+msgstr "سعر الحجم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,help:scs_freight.field_freight_operation__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_container__weight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation_line__billing_on__weight
+#: model_terms:ir.ui.view,arch_db:scs_freight.freight_shipping_order
+msgid "Weight"
+msgstr "الوزن"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_operation_price_list__weight_price
+msgid "Weight Price"
+msgstr "سعر الوزن"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_wiz_custom_clearance_reason
+msgid "Wizard Custom Clearance Reason"
+msgstr "التخليص الجمركي"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_wiz_set_shipping_date
+msgid "Wizard set Received Date"
+msgstr ""
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid ""
+"You can't delete this Shipping Operation.\n"
+"Please set it Cancel before delete."
+msgstr ""
+"لا يمكنك حذف عملية الشحن هذه.\n"
+"يرجى تعيينها ملغاء قبل الحذف."
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "You can't enter Negative QTY for services!!"
+msgstr "لا يمكنك إدخال الكمية بالسالب للخدمات !!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_config.py:0
+#, python-format
+msgid "You can't enter negative value!!"
+msgstr "لا يمكنك إدخال قيمة سالبة !!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "You can't enter volume in Negative value!!"
+msgstr "لا يمكنك إدخال الحجم في قيمة سالبة !!"
+
+#. module: scs_freight
+#: code:addons/scs_freight/models/freight_operations.py:0
+#, python-format
+msgid "You can't enter weight in Negative value!!"
+msgstr "لا يمكنك إدخال الوزن بالقيمة السالبة !!"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__operation_custom__state__confirm
+msgid "confirm"
+msgstr "تأكيد"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__wiz_set_shipping_date__ship_type__delivered
+msgid "delivered"
+msgstr "تم التوصيل"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation_line__package
+msgid "Package NO"
+msgstr "حجم الحاوية"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__vendor_bill
+msgid "Supplier Bill"
+msgstr "فاتورة المورد"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_package
+msgid "Total Package"
+msgstr "مجموع عدد الطرود"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__total_cartons
+msgid "Total Cartons"
+msgstr "مجموع عدد الكراتين"
+
+#. module: scs_freight
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Send Email Rating"
+msgstr "إرسال إيميل التقييم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__rating_template_id
+msgid "Rating Email Template"
+msgstr "قالب إيميل التقييم"
+
+#. module: scs_freight
+#: model:ir.model.fields.selection,name:scs_freight.selection__freight_operation__state__in_ordering
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "In Ordering"
+msgstr "تحت الطلب"
+
+#. module: scs_freight
+#: model:ir.model,name:scs_freight.model_tracking_status
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__tracking_status_ids
+#: model_terms:ir.ui.view,arch_db:scs_freight.view_freight_operation_form
+msgid "Tracking Status"
+msgstr "تتبع الحالة"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_tracking_status__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__arrival_port
+msgid "Arrival Port"
+msgstr "ميناء الوصول"
+
+#. module: scs_freight
+#: model:ir.model.fields,field_description:scs_freight.field_freight_operation__customer_direction
+msgid "Customer Direction"
+msgstr "الوجهة"

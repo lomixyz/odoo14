@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="all_in_one_helpdesk_assets_backend" name="helpdesk assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sh_all_in_one_helpdesk/static/src/js/helpdesk_ticket_kanban_examples.js"></script>
+            <script type="text/javascript" src="/sh_all_in_one_helpdesk/static/src/js/helpdesk_ticket_dasboard.js"></script>
+        </xpath>
+    </template>
+</odoo>

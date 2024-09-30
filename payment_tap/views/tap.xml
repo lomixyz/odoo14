@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="acquirer_form_tap" model="ir.ui.view">
+        <field name="name">acquirer.form.tap</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form" />
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='inside'>
+                <group attrs="{'invisible': [('provider', '!=', 'tap')]}">
+                    <field name="tap_secret_key" attrs="{'required':[('provider','=','tap'),('state','!=','disabled')]}" password="True" />
+                    <field name="tap_publishable_key" attrs="{'required':[('provider','=','tap'),('state','!=','disabled')]}" />
+                    <field name="tap_payment_options" attrs="{'required':[('provider','=','tap'),('state','!=','disabled')],'invisible':[('payment_flow','=','s2s')]}" />
+                    <field name="tap_use_3d_secure" attrs="{'required':[('provider','=','tap'),('state','!=','disabled')]}" />
+                    <div class="mt8 oe_inline">
+                        <a href='https://tappayments.api-docs.io/2.0/testing' target="_blank"><i class="fa fa-arrow-right"/> Test Credentials</a>
+                    </div>
+                </group>
+                <span class="text-muted font-weight-bold">
+                    <p>**********************************************************************************************************</p>
+                    <p style="font-size: 18px;" class="text-center">Supported Currencies</p>
+                    <p/>
+                    <p>Card Payment = "AED", "BHD", "EGP", "EUR", "GBP", "KWD", "OMR", "QAR", "SAR", "USD"</p>
+                    <p>KNET Payment = "KWD"</p>
+                    <p>MADA Card Payment = "SAR"</p>
+                    <p>BENEFIT Payment = "BHD"</p>
+                    <p>Oman Net Payment = "OMR"</p>
+                    <p>Apple Pay = "It supports only with the pre-configured apple pay devices"</p>
+                    <p>**********************************************************************************************************</p>
+                </span>
+            </xpath>
+        </field>
+    </record>
+    <record id="transaction_form_tap" model="ir.ui.view">
+        <field name="name">acquirer.transaction.form.tap</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.transaction_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_void']" position="after">
+                <button type="object" name="action_refund" states="done" string="Refund Transaction" confirm="Are you sure you want to refund the done transaction?"/>
+            </xpath>
+            <xpath expr="//field[@name='state_message']//.." position="before">
+                <group string='Charge Details' attrs="{'invisible': [('provider', '!=', 'tap')]}">
+                    <field name="tap_payment_method" readonly="1" />
+                </group>
+                <group string='Refund Details' attrs="{'invisible': ['|', ('provider', '!=', 'tap'), ('state', 'not in', ['refund_initiate', 'refunded'])]}">
+                    <field name="refund_acquirer_reference" readonly="1" />
+                    <field name="refund_initiated_date" readonly="1" />
+                    <field name="refund_date" readonly="1" attrs="{'invisible': [('state', '!=', 'refunded')]}" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+     <record id="payment_token_form_view_tap" model="ir.ui.view">
+        <field name="name">acquirer.token.form.tap</field>
+        <field name="model">payment.token</field>
+        <field name="inherit_id" ref="payment.payment_token_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="provider" invisible="1" />
+            </xpath>
+            <xpath expr="//field[@name='acquirer_ref']" position="after">
+                <field name="tap_customer_id" attrs="{'invisible': [('provider', '!=', 'tap')]}" />
+                <field name="tap_card_token_id" attrs="{'invisible': [('provider', '!=', 'tap')]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

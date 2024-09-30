@@ -1,0 +1,6 @@
+<odoo>
+  <data>
+   <!-- Track And Trace Menu Root -->
+   <menuitem id="track_and_trace_menu_root" name="Track And Trace"/>
+  </data>
+</odoo>

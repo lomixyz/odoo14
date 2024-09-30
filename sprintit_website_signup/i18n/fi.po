@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sprintit_website_signup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 16:29+0000\n"
+"PO-Revision-Date: 2020-09-14 16:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/models/res_users.py:30
+#, python-format
+msgid "<b>%s User Approved by %s</b>"
+msgstr "<b>%s Käyttäjän hyväksymä %s</b>"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/models/res_users.py:45
+#, python-format
+msgid "<b>%s User Rejected by %s</b>"
+msgstr "<b>%s Käyttäjä hylkäsi %s</b>"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/controllers/controllers.py:66
+#, python-format
+msgid "<b>Please review signup request of user %s</b><br/>Find it under Settings -> Users -> To be Approve Users"
+msgstr "<b>Tarkista käyttäjän %s rekisteröintipyyntö</b><br/> Löydä se kohdasta Asetukset -> Käyttäjät -> Käyttäjien hyväksyminen"
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_account_rejected
+msgid "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>\n"
+"                    Your account has been Rejected! , For more detail contact us.\n"
+"                </p>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"        "
+msgstr "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Rakas ${object.name},</p>\n"
+"                <p>\n"
+"                    Tilisi on hylätty! , Ota yhteyttä meihin.\n"
+"                </p>\n"
+"                <p>Parhain terveisin,</p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_account_approved
+msgid "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>\n"
+"                    Your account has been approved!\n"
+"                </p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"/web/login?${ctx['auth_login']}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">\n"
+"                        Go to My Account\n"
+"                    </a>\n"
+"                </div>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"        "
+msgstr "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Rakas ${object.name},</p>\n"
+"                <p>\n"
+"                    Tilisi on hyväksytty!\n"
+"                </p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"/web/login?${ctx['auth_login']}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">\n"
+"                        Siirry Oma tili -sivulle\n"
+"                    </a>\n"
+"                </div>\n"
+"                <p>Parhain terveisin,</p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_approval
+msgid "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear Approval Team,</p>\n"
+"                <p>\n"
+"                    New user <strong>${object.name}</strong> with email <strong>${object.email}</strong> is signup.Review his profile and take appropriate action.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr "<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Hyvä hyväksymisryhmä,</p>\n"
+"                <p>\n"
+"                    Uusi käyttäjä <strong>${object.name}</strong> sähköpostilla <strong>${object.email}</strong> on rekisteröityminen.Tarkista hänen profiilinsa ja ryhdy tarvittaviin toimiin.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_account_rejected
+msgid "Account Rejected"
+msgstr "Tili hylätty"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_view_inherited
+msgid "Approve Login"
+msgstr "Hyväksy kirjautuminen"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__approved_date
+msgid "Approved Date"
+msgstr "Hyväksytty päivämäärä"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__action_by_user_id
+msgid "Approved or Rejected By"
+msgstr "Hyväksynyt tai hylännyt"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.fieldsExt
+msgid "Company Name"
+msgstr "Yrityksen nimi"
+
+#. module: sprintit_website_signup
+#: model:ir.model,name:sprintit_website_signup.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguraatio-asetukset"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__for_approval_menu
+msgid "For Approval Menu"
+msgstr "Hyväksyntä-valikko"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.actions.act_window,help:sprintit_website_signup.action_res_users_for_approval
+msgid "Here system list all the users which are signup through website (B2C) and need approval."
+msgstr "Tässä järjestelmässä luetellaan kaikki käyttäjät, jotka ovat kirjautuneet verkkosivuston (B2C) kautta ja tarvitsevat hyväksynnän."
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_config_settings_inherited
+msgid "Is Signup Approval Needed for B2C users?"
+msgstr "Tarvitaanko rekisteröinnin hyväksyntä B2C-käyttäjille?"
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_approval
+msgid "New User ${object.name} has Signup waiting for Approval"
+msgstr "Uuden käyttäjän ${object.name} rekisteröinti odottaa hyväksyntää"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_view_inherited
+msgid "Reject Login"
+msgstr "Hylkää kirjautuminen"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_config_settings__auth_signup_approval
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_config_settings_inherited
+msgid "Signup Approval Needed?"
+msgstr "Tarvitaanko rekisteröinnin hyväksyntä?"
+
+#. module: sprintit_website_signup
+#: model:res.groups,name:sprintit_website_signup.group_approval_channel
+msgid "Signup Approval User"
+msgstr "Rekisteröinnin hyväksynnän käyttäjä"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/controllers/controllers.py:74
+#, python-format
+msgid "Thank you, We get your signup request, We will contact you shortly.."
+msgstr "Kiitos, saamme ilmoittautumispyyntösi, otamme sinuun yhteyttä pian .."
+
+#. module: sprintit_website_signup
+#: model:ir.actions.act_window,name:sprintit_website_signup.action_res_users_for_approval
+#: model:ir.ui.menu,name:sprintit_website_signup.menu_action_res_users
+msgid "To Be Approve Users"
+msgstr "Hyväksyä käyttäjät"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_search_inherited
+msgid "To be Approve"
+msgstr "Hyväksyä"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/controllers/controllers.py:66
+#: code:addons/sprintit_website_signup/models/res_users.py:30
+#: model:mail.channel,name:sprintit_website_signup.channel_for_approval_users
+#, python-format
+msgid "User Approval"
+msgstr "Käyttäjän hyväksyntä"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/models/res_users.py:45
+#, python-format
+msgid "User Rejected"
+msgstr "Käyttäjä hylätty"
+
+#. module: sprintit_website_signup
+#: model:ir.model,name:sprintit_website_signup.model_res_users
+msgid "Users"
+msgstr "Käyttäjät"
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_account_approved
+msgid "Welcome to ${object.company_id.name}!"
+msgstr "Tervetuloa ${object.company_id.name}!"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/controllers/controllers.py:28
+#, python-format
+msgid "You can login only after your login get approved..!"
+msgstr "Voit kirjautua sisään vasta, kun kirjautumistunnuksesi on hyväksytty ..!"
+
+#. module: sprintit_website_signup
+#: code:addons/sprintit_website_signup/controllers/controllers.py:32
+#, python-format
+msgid "Your login will continue after it approved again..!"
+msgstr "Kirjautumistasi jatketaan, kun se on hyväksytty uudelleen!"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.fieldsExt
+msgid "e.g. SprintIT"
+msgstr "e.g. SprintIT"
+

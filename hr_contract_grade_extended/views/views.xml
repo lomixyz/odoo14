@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+ 
+    <record model="ir.ui.view" id="hr_contract_form_inherited_grade_2">
+      <field name="name">hr.contract.form.inherited.grade2</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract_grade_base.hr_contract_view_form_inherited"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='wage']" position="replace">
+        </xpath>
+        <xpath expr="//field[@name='basic']" position="before">
+          <field name="wage" readonly="0"/>
+          <field name="basic_percentage"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grade_conf_form_view_inherit">
+      <field name="name">hr.grade.configuration.form.inherit</field>
+      <field name="model">hr.grade.configuration</field>
+      <field name="inherit_id" ref="hr_contract_grade_base.Grade_conf_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='basic']" position="replace">
+          <field name="wage"/>
+          <field name="basic_percentage"/>
+          <field name="basic"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

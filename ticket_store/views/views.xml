@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_fltickets_view" model="ir.actions.act_window">
+            <field name="name">Tickets</field>
+            <field name="res_model">tickets.tickets</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ticket_store', '=', active_id)]</field>
+        </record>
+
+        <record model="ir.ui.view" id="ticket_store_list">
+            <field name="name">TicketStoreList</field>
+            <field name="model">tickets.store</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date_ticket"/>
+                    <field name="first_ticket"/>
+                    <field name="last_ticket"/>
+                    <field name="number_of_ticket"/>
+                    <field name="state" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="ticket_list">
+            <field name="name">TicketStoreList</field>
+            <field name="model">tickets.tickets</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ticket"/>
+                    <field name="is_purchase" string="purchase"/>
+                    <field name="is_sale" string="Sale"/>
+                    <field name="bill_id"/>
+                    <field name="invoice_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="ticket_store_from">
+            <field name="name">ticket_store form</field>
+            <field name="model">tickets.store</field>
+            <field name="arch" type="xml">
+                <form string="Ticket" class="o_form_project_tasks">
+                    <field name="state" invisible="1"/>
+                    <header>
+                        <field name="state" widget="statusbar" tatusbar_visible="draft,confirm,done"/>
+                        <button name="create_ticket" string="Generate Tickets" type="object" class="oe_highlight"
+                                attrs="{'invisible' : [('state', 'in', ['draft','done'])]}"/>
+                        <button name="action_confirm" string="Confirm Ticket" type="object" class="oe_highlight"
+                                attrs="{'invisible' : [('state',  'in', ['confirm','done'])]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="%(action_fltickets_view)d" type="action" class="oe_stat_button"
+                                    icon="fa-repeat">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="number_of_ticket" widget="statinfo" nolabel="1"/>
+                                        Tickets
+                                    </span>
+                                    <span class="o_stat_text">All Tickets</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title pr-0">
+                            <h1 class="d-flex flex-row justify-content-between">
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_ticket" attrs="{'readonly':[('state','in', ['confirm','done'])]}"/>
+                                <field name="number_of_ticket" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="first_ticket" attrs="{'readonly':[('state','in', ['confirm','done'])]}"/>
+                                <field name="last_ticket" attrs="{'readonly':[('state','in', ['confirm','done'])]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description_ticket" attrs="{'readonly':[('state','in', ['confirm','done'])]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="ticket_tickets_from">
+            <field name="name">Tickets form</field>
+            <field name="model">tickets.tickets</field>
+            <field name="arch" type="xml">
+                <form string="Ticket" class="o_form_project_tasks">
+                    <sheet>
+                        <div class="oe_title pr-0">
+                            <h1 class="d-flex flex-row justify-content-between">
+                                <field name="ticket"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="purchase_id" domain="[('is_ticket', '=',False )]"/>
+                                <field name="sale_id" domain="[('is_ticket', '=',False )]"/>
+                            </group>
+                            <group>
+                                <field name="bill_id"/>
+                                <field name="invoice_id"/>
+                            </group>
+                            <group>
+                                <field name="from_ticket"/>
+                                <field name="to_ticket"/>
+                                <field name="date_ticket"/>
+                            </group>
+                            <group>
+                                <field name="is_purchase" invisible="1"/>
+                                <field name="is_sale" invisible="1"/>
+                                <field name="ticket_store"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="ticket_store_action_window">
+            <field name="name">Ticket Store</field>
+            <field name="res_model">tickets.store</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="ticket_action_window">
+            <field name="name">Ticket</field>
+            <field name="res_model">tickets.tickets</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Ticket Store" id="ticket_store_menu_root" web_icon="ticket_store,static/description/icon.png"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Tickets Store" id="ticket_store_menu" action="ticket_store_action_window"
+                  parent="ticket_store_menu_root"/>
+
+        <menuitem name="Tickets" id="Ticket_menu" action="ticket_action_window"
+                  parent="ticket_store_menu_root"/>
+
+        <menuitem name="State" id="action_country_state_menu" action="base.action_country_state"
+                  parent="ticket_store_menu_root"/>
+
+    </data>
+</odoo>

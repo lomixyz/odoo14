@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tft</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="30"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('settings')]" position="inside" >
+                    <div class="app_settings_block" data-string="Traccar Settings" string="Traccar Settings" data-key="traccar_fleet_tracking" name="traccar_fleet_tracking">
+                        <h2>Traccar Integration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-12 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <p>Visit the <a href="https://www.traccar.org/" target="_blank">Traccar homepage</a> for more information on how to setup it.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Traccar Settings</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-12 o_setting_box" style="margin-bottom: 48px;">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Server Setup</span>
+                                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                    <div class="text-muted">
+                                        Enter Traccar server credentials
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="row mt16 ml4">
+                                            <label for="traccar_server_url" string="Server URL" class="col-lg-3 o_light_label"/>
+                                            <field name="traccar_server_url" placeholder="e.g. http://traccar-url.com:8082"/>
+
+                                            <label for="traccar_username" string="Username" class="col-lg-3 o_light_label"/>
+                                            <field name="traccar_username" />
+
+                                            <label for="traccar_password" string="Password" class="col-lg-3 o_light_label"/>
+                                            <field name="traccar_password" password="True" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="add_to_odometer"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Auto Odometer</span>
+                                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                    <div class="text-muted">
+                                        Automatically increase vehicle odometer from GPS data
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="do_reverse_geocoding" />
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Reverse Geocoding</span>
+                                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                    <div class="text-muted">
+                                        Retrieve an address after every location change (reverse geocoding - beware that this consumes a lot of GMaps API calls)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" name="inactivity_period">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Inactivity Period</span>
+                                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                    <div class="text-muted">
+                                        Inactivity Period Duration (in Minutes)
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="row mt16 ml4">
+                                            <field name="inactivity_period_duration"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+    <record id="action_traccar_fleet_tracking_config_settings" model="ir.actions.act_window">
+        <field name="name">Traccar Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'traccar_fleet_tracking'}</field>
+    </record>
+
+    <menuitem id="menu_traccar_fleet_tracking_general_settings" name="Traccar Settings" parent="fleet.fleet_configuration"
+        sequence="1" action="action_traccar_fleet_tracking_config_settings" groups="base.group_system"/>
+
+    <record id="traccar_scheduler_act" model="ir.actions.act_window">
+        <field name="name">Fleet Tracking Scheduler</field>
+        <field name="res_model">ir.cron</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="[('id', 'in', [ref('traccar_fleet_tracking.fleet_tracking_scheduler')])]"/>
+        <field name="view_id" ref="base.ir_cron_view_tree"/>
+    </record>
+
+    <menuitem name="Fleet Tracking Scheduler" action="traccar_scheduler_act" id="menu_traccar_scheduler" parent="fleet.fleet_configuration"  sequence="99"/>
+
+</odoo>

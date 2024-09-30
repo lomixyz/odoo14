@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_activity_report" model="ir.ui.view">
+        <field name="name">form.activity.report</field>
+        <field name="model">activity.report.window</field>
+        <field name="arch" type="xml">
+            <form string="Activity Report Form">
+                <group>
+                    <group>
+                        <field name="start_date"/>
+                    </group>
+                    <group>
+                        <field name="end_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Print" name="print_gym_activity_report" type="object" class="oe_highlight" icon="fa-print"/>
+                    &#160;or&#160;
+                    <button string="Close Window" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--action-->
+    <record id="action_activity_report" model="ir.actions.act_window">
+        <field name="name">Gym Activity Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">activity.report.window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_activity_report"/>
+        <field name="target">new</field>
+    </record>
+    <!--Menus-->
+    <menuitem name="Gym Activity Report"
+              id="menu_activity_report"
+              parent="dev_gym_management.menu_gym_management_reporting"
+              sequence="3"
+              action="action_activity_report"/>
+</odoo>

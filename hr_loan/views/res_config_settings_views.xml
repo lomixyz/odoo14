@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="res_config_settings_view_form" model="ir.ui.view">
+		<field name="name">res_config_settings_loan_view_form</field>
+		<field name="model">res.config.settings</field>
+		<field name="priority" eval="150" />
+		<field name="inherit_id"
+			ref="hr_payroll_community.res_config_settings_view_form_payroll" />
+			
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='hr_payroll_accountant']"
+				position="after">
+				<div id="hr_loan_config_settings">
+					<h2>
+						Loans
+						<span class="fa fa-lg fa-building-o"
+							title="Values set here are company-specific."
+							groups="base.group_multi_company" />
+					</h2>
+					<div class="row mt16 o_settings_container">
+						<div class="col-12 col-lg-6 o_setting_box">
+							<div class="o_setting_left_pane" />
+							<div class="o_setting_right_pane">
+								<div class="content-group">
+									<div class="mt16">
+										<label for="loan_account_type" string="Accounting Policy" class="o_light_label" />
+										<field name="loan_account_type" class="oe_inline" />
+										<div class="mt16"
+											attrs="{'invisible': [('loan_account_type','!=', 'once')], 'required': [('loan_account_type','=', 'once')]}">
+											<label string="Loan Account" for="loan_account_id" class="o_light_label" />
+											<field name="loan_account_id" domain="[('company_id', '=', company_id), ('deprecated', '=', False)]" />
+										</div>
+										<div class="mt16" attrs="{'invisible': [('loan_account_type','!=', 'once')], 'required': [('loan_account_type','=', 'once')]}">
+											<label string="Reference Employee In Journal Entries" for="reference_employee_in_journal_entries" class="o_light_label"/>
+											<field name="reference_employee_in_journal_entries" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="o_setting_right_pane">
+							<div class="content-group">
+							<label string="Users To Notify" for="loan_user_notify" />
+							<field name="loan_user_notify" options="{'no_create': True,'no_quick_create': True,'no_open':True, 'no_create_edit': True}"
+								widget="many2many_tags" class="oe_inline" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

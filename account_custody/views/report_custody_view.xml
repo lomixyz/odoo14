@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <report
+            id="action_custom_report_custody"
+            model="report.account_custody.report_custody_view "
+            string="Custody Report"
+            menu="False"
+            report_type="qweb-html"
+            name="account_custody.report_custody_view"
+            file="account_custody.report_custody_view"
+            />
+
+    <template id="report_custody_view">
+        <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+        <t t-translation="off">
+            <div class="page" style="font-family:Amiri,scheherazade,Verdana,Arial,sans,Lucida Grande,Calibri;">
+                    <h3 class="text-center">تقرير العهدة المالية</h3>
+                    <p/>
+                <div class="row mt32 mb32" style="direction:rtl;">
+                    <div class="col-3" style="direction:rtl;">
+                        <strong>الإسم :</strong>
+                        <span t-esc="data['form'].get('employee_id')[1]"/>
+                    </div>
+                </div>
+
+
+                <table class="table table-condensed table-bordered" style="width: 100%; direction:rtl;" >
+                    <thead>
+                        <tr>
+                            <th>العهدة</th>
+                            <th>رقم القيد</th>
+                            <th>الوصف</th>
+                            <th>التاريخ</th>
+                            <th>المبلغ</th>
+                            <th>المبلغ المتبقي</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-set="Total" t-value="0.0"/>
+                        <t t-set="Remain" t-value="0.0"/>
+                        <tr t-foreach="docs" t-as="o">
+                            <td><span t-esc="o['Custody']"/></td>
+                            <td><span t-esc="o['Entry Number']"/></td>
+                            <td><span t-esc="o['Description']"/></td>
+                            <td><span t-esc="o['Date']"/></td>
+                            <td><span t-esc="o['Amount']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                            <td><span t-esc="o['Remaining']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                            <t t-set="Total" t-value="Total +o['Amount']"/>
+                            <t t-set="Remain" t-value="Remain +o['Remaining']"/>
+                        </tr>
+                        <tr class="border-black o_total">
+                            <td><strong>Total</strong></td>
+                            <td><strong> </strong></td>
+                            <td><strong> </strong></td>
+                            <td><strong> </strong></td>
+                            <td class="text-left"><strong><span t-esc="Total" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></strong></td>
+                            <td class="text-left"><strong><span t-esc="Remain" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></strong></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </t>
+        </t>
+        </t>
+    </template>
+
+</odoo>
+
+
+
+

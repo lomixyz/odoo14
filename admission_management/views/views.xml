@@ -1,0 +1,620 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record id="act_admission_contract_payments" model="ir.actions.act_window">
+            <field name="name">payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('admission_request_id','=', active_id)]</field>
+        </record>
+
+    <record model="ir.ui.view" id="admission__management_form">
+      <field name="name">admission.request form</field>
+      <field name="model">admission.request</field>
+      <field name="arch" type="xml">
+
+         <form string="admission request" >
+                <header>
+                    <button name="action_verify" type="object" string="verify"  states="draft" class="oe_highlight"/>
+                    <button name="action_confirm" string="recieve payment" type="object" states="verify" class="oe_highlight"/>
+                    <button name="action_done" type="object" string="worker Arrival" states="confirm" class="oe_highlight"/>
+                    <button name="action_unlock" type="object" string="Unlock" states="verify,cancel" class="oe_highlight"/>
+                    <button name="action_cancel" string="cancel" type="object" states="verify,confirm" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verify,confirm,done,paid,cancel"/>
+                </header>
+                <sheet>
+                <div class="oe_button_box" name="button_box">
+                            <button name="%(act_admission_contract_payments)d"
+                            class="oe_stat_button"
+                            icon="fa-book"
+                            type="action">
+                            <field name="payments_count" widget="statinfo" string="Payments"/>
+                        </button>
+                        </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                    <group string="Customer">
+                        <field name="partner_id"/>
+                        <field name="identification"/>
+                        <field name="user_id" readonly="1"/>
+                    </group>
+                        <group string="Contract Info">
+                            <field name="contract_no" readonly="1"/>
+                            <field name="contract_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="number_of_days" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="arrival_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="worker Info">
+                            <field name="worker_inarabic" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="worker_inenglish" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="is_worker_sent" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="mission_date" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="mission_no" attrs="{'readonly':[('state','=','done')]}"/>
+                        </group>
+
+                         <group string="Contract accounting">
+                            <field name="total_cost" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="additions" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="discount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="vat_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="contract_vat_amount"/>
+                            <field name="total_contract_with_vat"/>
+                            <field name="contract_net_amount"/>
+                            <field name="total_paid"/>
+                            <field name="total_remain"/>
+                            <field name="is_invoiced" invisible="1"/>
+                            <field name="invoice_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="assesstant">
+                            <field name="assesstant_ids"  attrs="{'readonly':[('state','=','done')]}">
+                                    <tree string="assesstant" editable="top">
+                                        <field name="assesstant_no"/>
+                                        <field name="assesstant_date"  />
+                                        <field name="assesstant_status"  />
+                                        <field name="assesstant_profission" />
+                                        <field name="assesstant_nationality"/>
+                                        <field name="assesstant_religous"/>
+                                        <field name="assesstant_salary"  />
+                                        <field name="assesstant_period"  />
+                                        <field name="assesstant_arrival_station" />
+                                        <field name="assesstant_visa_no"/>
+
+                                        <field name="assesstant_visa_date"/>
+                                        <field name="assesstant_visa_cost"  />
+                                        <field name="assesstant_visa_fees"  />
+                                        <field name="assesstant_ahala" />
+                                        <field name="admission_request_id" invisible="1"/>
+                                    </tree>
+                            </field>
+                        </page>
+                        <page string="Official Documents">
+                            <field name="docs"  attrs="{'readonly':[('state','=','done')]}">
+                                    <tree string="Documents" editable="top">
+                                        <field name="name"/>
+                                        <field name="doc_id" invisible="1" />
+                                        <field name="binary_fname" invisible="1" class="oe_inline oe_right" />
+                                        <field name="attach_ids" filename="binary_fname" widget="binary"/>
+                                        <field name="doc_date"/>
+                                    </tree>
+                            </field>
+                        </page>
+                    </notebook>
+         </sheet>
+            <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+      </field>
+    </record>
+
+       <record model="ir.ui.view" id="admission__management_list">
+      <field name="name">admission.request list</field>
+      <field name="model">admission.request</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="identification"/>
+          <field name="state"/>
+          <field name="user_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="admission_request_graph">
+            <field name="name">admission.request.graph</field>
+            <field name="model">admission.request</field>
+            <field name="arch" type="xml">
+                <graph string="admission request">
+                    <field name="partner_id"/>
+                    <field name="total_contract_with_vat" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+    <!-- admission request Kanban View  -->
+        <record model="ir.ui.view" id="view_admission_request_kanban">
+            <field name="name">admission.request.kanban</field>
+            <field name="model">admission.request</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="total_contract_with_vat"/>
+                    <field name="state"/>
+                    <field name="contract_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_top mb16">
+                                    <div class="o_kanban_record_headings mt4">
+                                        <strong class="o_kanban_record_title"><span><t t-esc="record.partner_id.value"/></span></strong>
+                                    </div>
+                                    <strong><field name="total_contract_with_vat" widget="monetary"/></strong>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <span><t t-esc="record.name.value"/> <t t-esc="record.contract_date.value and record.contract_date.value.split(' ')[0] or False"/></span>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'cancel': 'default', 'paid': 'success', 'done': 'warning'}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+      </record>
+
+      <record id="view_admission_search" model="ir.ui.view">
+            <field name="name">admission.request.search</field>
+            <field name="model">admission.request</field>
+            <field name="arch" type="xml">
+                <search string="Announcements">
+                    <field name="contract_no" />
+                    <field name="identification"/>
+                    <field name="partner_id"/>
+                    <field name="worker_inarabic"/>
+                    <field name="total_cost"/>
+                    <field name="contract_date"/>
+                    <field name="state" string="State"/>
+                    <separator/>
+                    <filter string="Status" name="Status" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="partner" name="partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                </search>
+            </field>
+        </record>
+
+       <record id="act_rent_contract_payments" model="ir.actions.act_window">
+            <field name="name">payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('rent_contract_id','=', active_id)]</field>
+        </record>
+
+        
+
+
+      <record model="ir.ui.view" id="rent__management_form">
+      <field name="name">rent.workers.management form</field>
+      <field name="model">rent.workers.management</field>
+      <field name="arch" type="xml">
+
+         <form string="rent Contract" >
+                <header>
+                    <button name="action_verify" type="object" string="verify"  states="draft" class="oe_highlight"/>
+                    <button name="action_invoice" type="object" string="create invoice" states="verify" class="oe_highlight"/>
+                    <button name="action_confirm" string="recieve payment" type="object" states="done" class="oe_highlight"/>
+                    <button name="action_insurance_payment" string="recieve insurance" type="object" states="done,paid" class="oe_highlight"/>
+                    <button name="action_unlock" type="object" string="Unlock" states="cancel" class="oe_highlight"/>
+                    <button name="action_cancel" string="cancel" type="object" states="verify,confirm" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verify,confirm,done,paid,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                            <button name="%(act_rent_contract_payments)d"
+                            class="oe_stat_button"
+                            icon="fa-book"
+                            type="action">
+                            <field name="payments_count" widget="statinfo" string="Payments"/>
+                        </button>
+                        </div>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                    <group string="Customer">
+                        <field name="partner_id"/>
+                        <field name="identification" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/> 
+                        <field name="employee_id" attrs="{'readonly':[('state','not in',['draft','verify'])]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                        <field name="employee_image" widget="image" class="oe_avatar"/>
+                        <field name="user_id" readonly="1" />
+                    </group>
+                        <group string="Contract Info">
+                            <field name="contract_date" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="contract_date_from" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="contract_date_to" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="rent_days" /> 
+                            <field name="days_remain"/>
+                        </group>
+                    </group>
+                    <group>
+                         <group string="Contract accounting">
+                           <field name="is_insurance_paid" invisible="1"/>
+                            <field name="total_cost" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="insurance_amount" attrs="{'readonly':[('is_insurance_paid','=', True)]}"/>
+                            <field name="additions" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="discount" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="vat_id" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                         </group>
+                        <group>
+                            <field name="contract_vat_amount"/>
+                            <field name="total_contract_with_vat"/>
+                            <field name="contract_net_amount"/>
+                            <field name="total_paid"/>
+                            <field name="total_remain"/>
+                            <field name="is_invoiced" invisible="1"/>
+                            <field name="invoice_id" readonly="1"/>
+                            <field name="insurance_payment_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Internal Notes" >
+                            <field name="note" attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+
+                        </page>
+                        <page string="Other" >
+                            <field name="is_from_website" readonly="1"/>
+                        </page>
+                    </notebook>
+
+         </sheet>
+            <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+      </field>
+    </record>
+
+       <record model="ir.ui.view" id="rent__management_list">
+      <field name="name">rent.workers.management list</field>
+      <field name="model">rent.workers.management</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="identification"/>
+          <field name="employee_id"/>
+          <field name="contract_date_from"/> 
+          <field name="contract_date_to"/> 
+          <field name="days_remain"/>
+          <field name="state"/>
+          <field name="user_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="rent_cancel_management_form">
+      <field name="name">rent.cancel form</field>
+      <field name="model">rent.cancel</field>
+      <field name="arch" type="xml">
+
+         <form string="rent Contract" > 
+                <header>
+                    <button name="action_verify" type="object" string="verify"  states="draft" class="oe_highlight"/>
+                    <button name="done" string="confirm" type="object" states="verify" class="oe_highlight"/>
+                    <button name="action_cancel" string="cancel" type="object" states="verify" class="oe_highlight"/>
+                    <button name="%(account.action_view_account_move_reversal)d" type='action' states="done" string='انشاء اشعار دائن' class="oe_highlight" /> 
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verify,done,invoiced,cancel"/>
+                </header>
+                <sheet>
+                    
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>   
+                        </h1>
+                    </div>
+                    <group>
+                    <group string="Customer">
+                        <field name="contract_id" attrs="{'readonly':[('state','!=','draft')]}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                        <field name="partner_id"/>
+                        <field name="identification"/>
+                        <field name="employee_id" />
+                        <field name="employee_image" widget="image" class="oe_avatar"/>
+                        <field name="user_id" readonly="1"/>
+                    </group>
+                        <group string="Contract Info">
+                            <field name="last_contract_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="contract_date_from" />
+                            <field name="contract_date_to" />
+                            <field name="rent_days" /> 
+                            <field name="paid_amount" attrs="{'readonly':[('state','in',['cancel','done'])]}"/> 
+                            <field name="cancel_payment_id" string="القيد" invisible="1"/> 
+                            <field name="invoice_id" string="الفاتورة" /> 
+                        </group>
+                    </group>
+         </sheet>
+            <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+      </field>
+    </record>
+
+       <record model="ir.ui.view" id="rent_cancel_management_list">
+      <field name="name">rent.cancel list</field>
+      <field name="model">rent.cancel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="identification"/>
+          <field name="employee_id"/>
+          <field name="state"/>
+          <field name="user_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="rent_request_graph">
+            <field name="name">rent.workers.management.graph</field>
+            <field name="model">rent.workers.management</field>
+            <field name="arch" type="xml">
+                <graph string="admission request">
+                    <field name="partner_id"/>
+                    <field name="total_contract_with_vat" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+    <!-- rent request Kanban View  -->
+        <record model="ir.ui.view" id="view_rent_request_kanban">
+            <field name="name">rent.workers.management.kanban</field>
+            <field name="model">rent.workers.management</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="total_contract_with_vat"/>
+                    <field name="state"/>
+                    <field name="contract_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_top mb16">
+                                    <div class="o_kanban_record_headings mt4">
+                                        <strong class="o_kanban_record_title"><span><t t-esc="record.partner_id.value"/></span></strong>
+                                    </div>
+                                    <strong><field name="total_contract_with_vat" widget="monetary"/></strong>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <span><t t-esc="record.name.value"/> <t t-esc="record.contract_date.value and record.contract_date.value.split(' ')[0] or False"/></span>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'cancel': 'default', 'paid': 'success', 'done': 'warning'}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+      </record>
+
+      <record id="view_rent_search" model="ir.ui.view">
+            <field name="name">rent.workers.management.search</field>
+            <field name="model">rent.workers.management</field>
+            <field name="arch" type="xml">
+                <search string="Announcements">
+                    <field name="name" />
+                    <field name="identification"/>
+                    <field name="partner_id"/>
+                    <field name="employee_id"/>
+                    <field name="contract_date_from"/> 
+                    <field name="contract_date_to"/>
+                    <field name="state" string="State"/>
+                    <separator/>
+                    <filter string="Status" name="Status" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="partner" name="partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="employee" name="employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                </search>
+            </field>
+        </record>
+
+
+      <record model="ir.ui.view" id="hr_employee_rent_inherit_form_view">
+            <field name="name">hr.employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <field name="address_home_id" position="after">
+
+                    <field name="is_worker" />
+                    <field name="is_available" attrs="{'invisible':[('is_worker','!=',True)]}"/>
+                    <field name="rent_contract_date_from" attrs="{'invisible':[('is_worker','!=',True)],'readonly': True}" />
+                    <field name="rent_contract_date_to" attrs="{'invisible':[('is_worker','!=',True)],'readonly': True}" />
+
+                </field>
+
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="partner_rent_inherit_form_view">
+            <field name="name">res.partner.inherit.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="lang" position="after">
+                    <field name="is_website_customer" />
+                </field>
+
+            </field>
+        </record>
+
+
+
+
+      <record model="ir.ui.view" id="admission__setting_form">
+      <field name="name">admission.request.setting form</field>
+      <field name="model">admission.request.setting</field>
+      <field name="arch" type="xml">
+
+         <form string="admission request" class="o_sale_order">
+                <sheet>
+                    <group string="accounts">
+                        <field name="addmission_income_account_id"/>
+                        <field name="rent_income_account_id"/>
+                        <field name="insurance_account_id"/>
+                    </group>
+                 </sheet>
+                </form>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="admission__setting_list">
+      <field name="name">admission.request.setting.list</field>
+      <field name="model">admission.request.setting</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="addmission_income_account_id"/>
+            <field name="rent_income_account_id"/>
+            <field name="insurance_account_id"/>
+        </tree>
+      </field>
+    </record>
+
+      <record id=">hr_expense_view_form_inherit" model="ir.ui.view">
+        <field name="name">>hr.expense.view.form.inherit.hr</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="expense_type" />
+                <field name="supplier" attrs="{'invisible':[('expense_type','=','employee')],'required':[('expense_type','=','supplier')]}" />
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="admission_request_id"  options="{'no_quick_create':True,'no_create_edit':True}" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id=">hr_expense_sheet_view_form_inherit" model="ir.ui.view">
+        <field name="name">>hr.expense.sheet.form.inherit.hr</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="expense_type" />
+                <field name="supplier" attrs="{'invisible':[('expense_type','=','employee')],'required':[('expense_type','=','supplier')]}" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id=">account_invoice_view_form_inherit" model="ir.ui.view">
+        <field name="name">>account.move.form.admission.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/> 
+        <field name="arch" type="xml">    
+            <xpath expr="//field[@name='ref']" position="after"> 
+                <field name="admission_request_id"  attrs="{'invisible':[('rent_contract_id','!=',False)],'readonly':True}" />
+                <field name="rent_contract_id"  attrs="{'invisible':[('admission_request_id','!=',False)],'readonly':True}" />
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="admission__management_action_window">
+      <field name="name">Admission Management</field>
+      <field name="res_model">admission.request</field>
+      <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="Rent__management_action_window">
+      <field name="name">Rent Management</field>
+      <field name="res_model">rent.workers.management</field>
+      <field name="domain">[('is_cancel','=', False)]</field>
+      <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="Rent_cancelled_management_action_window">
+      <field name="name">cancelled contracts</field>
+      <field name="res_model">rent.workers.management</field>
+      <field name="domain">[('is_cancel','=', True)]</field>
+      <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="Rent_cancel_management_action_window"> 
+      <field name="name">Rent cancel</field>
+      <field name="res_model">rent.cancel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="admission__setting_action_window">
+      <field name="name">admission.request.setting</field>
+      <field name="res_model">admission.request.setting</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Admission Management" id="admission__management_menu_root" web_icon="admission_management,static/description/icon.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Admission Requests" id="admission__management_menu_1"  sequence="1" parent="admission__management_menu_root"/>
+    <menuitem name="Rental Contract" id="rental_contract_menu_1"  sequence="2" parent="admission__management_menu_root"/>
+    <menuitem name="Expenses"  id="hr_expense.menu_hr_expense_root" sequence="3"  parent="admission__management_menu_root"/>
+    <menuitem name="accounts setting" id="admission__setting_menu_2"  sequence="4" parent="admission__management_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="admission Requests" id="admission__management_menu_1_list" parent="admission__management_menu_1"
+              action="admission__management_action_window"/>
+
+    <menuitem name="Rent Contracts" id="rent__management_menu_1_list" parent="rental_contract_menu_1"
+              action="Rent__management_action_window"/>
+    
+    <menuitem name="Cancelled Contracts" id="rent_cancelled_management_menu_1_list" parent="rental_contract_menu_1"
+              action="Rent_cancelled_management_action_window"/>
+
+    <menuitem name="cancel Rent Contracts" id="rent_cancel_management_menu_1_list" parent="rental_contract_menu_1"
+              action="Rent_cancel_management_action_window"/>
+
+    <menuitem name="accounts setting" id="admission__setting_menu_list" parent="admission__setting_menu_2"
+              action="admission__setting_action_window"/>
+
+
+  </data>
+</odoo>

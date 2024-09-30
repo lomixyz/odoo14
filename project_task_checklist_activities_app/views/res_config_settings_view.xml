@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_config_settings_bug_tracking_view">
+            <field name="name">Sale settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='project']//div[1]//div" position="after" >
+                    <div class="row mt16 o_settings_container"> 
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Restriction To Task Progress</span><br/>
+                                <div class="text-muted">
+                                    Task Progress Restriction Before All Checklist <br/> Either Cancelled Or Completed.
+                                </div>
+                                <br/>
+                                <div>
+                                    <field name = "task_progress_restriction" widget="radio"/>
+                                </div>
+                        </div>
+                    </div>                      
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

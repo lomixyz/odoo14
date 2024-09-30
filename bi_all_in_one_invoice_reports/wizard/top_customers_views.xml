@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="top_customer_wizard_form" model="ir.ui.view">
+        <field name="name">top.customer.wizard.form</field>
+        <field name="model">top.customer.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Wizard">
+                <group>
+                    <field name="report_type" widget="radio" />
+                </group>
+                <group>
+                    <group>
+                        <field name="from_date"  required="1"/>
+                        <field name="to_date"  required="1"/>
+                        <field name="no_item" />
+                    </group>
+                    <group>
+                        <field name="compare_from_date"
+                            attrs="{'invisible':[('report_type','!=','compare')],'required':[('report_type','=','compare')]}" />
+                        <field name="compare_to_date"
+                            attrs="{'invisible':[('report_type','!=','compare')],'required':[('report_type','=','compare')]}" />
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="total_amount" />
+                        <field name="company_ids" widget="many2many_tags" />
+                        <field name="invoices_channel_ids" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="top_customer_pdf_report" class="btn btn-primary" string="Print"
+                        type="object" />
+                    <button name="top_customer_xls_report" class="btn btn-primary"
+                        string="Print Xls" type="object" />
+                    <button special="cancel" string="Cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="top_customer_action" model="ir.actions.act_window">
+        <field name="name">Top Customers</field>
+        <field name="res_model">top.customer.wizard</field>
+        <field name="view_id" ref="top_customer_wizard_form" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="top_customer_action" name="Top Customer Product Report" id="top_customer_detail_wizard"
+        parent="my_account_new_menu"  groups="bi_all_in_one_invoice_reports.report_menu_group"  sequence="5" />
+
+</odoo>

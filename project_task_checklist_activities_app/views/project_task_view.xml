@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_task_form_view" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">                    
+                <field name = "checklist_id"/>
+            </xpath>
+            <xpath expr="//page[@name='extra_info']" position="after">
+                <page string="Checklist">
+                    <div class="row mt16 o_settings_container">
+                        <div class="o_setting_left_pane" width="70%" >
+                        <field name="checklist_master_ids" nolabel="1">
+                            <tree editable="bottom" decoration-info="stage_sequence != 11 and stage != 10 and stage_sequence != 1 and stage_sequence != 9" decoration-danger="stage_sequence == 11" decoration-success="stage_sequence == 10 or stage_sequence == 9" create="false">
+                                <field name = "stage_sequence" invisible="1"/>
+                                <field name="project_task_id" invisible="1"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="user_id"/> 
+                                <button name="is_check" type="object"
+                                class="fa fa-check" style="color:green" attrs="{'invisible': ['|','|',('stage_sequence', '=', 11),('stage_sequence', '=', 10),('stage_sequence', '=', 9)]}"/>  
+                                <button name="is_right" type="object"
+                                class="fa fa-chevron-circle-down" style="color:green" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=', 10)]}"/>
+                                <button name="is_close" type="object"
+                                class="fa fa-close" style="color:red" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=',10)]}"/>
+                                <button name="is_refresh" type="object"
+                                class="fa fa-refresh" style="color:yellow" attrs="{'invisible': ['|',('stage_sequence', '!=', 11),('stage_sequence', '=', 10)]}"/>
+                                <field name="stage" invisible="1"/>
+                                <field name="stage_id" invisible="1"/> 
+                                <field name="related_stage"/>       
+                            </tree>
+                            <form>
+                                <header>
+                                    <field name = "stage_sequence" invisible="1"/>
+                                    <button string="Approve And Next Stage" type="object" name="is_check" style="color:green" class="fa fa-check" attrs="{'invisible': ['|','|',('stage_sequence', '=', 11),('stage_sequence', '=', 10),('stage_sequence', '=', 9)]}"/>
+                                    <button string="Mark Completed" type="object" name="is_right" style="color:green" class="fa fa-chevron-circle-down" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=', 10)]}"/>
+                                    <button string="Mark Cancelled" type="object" name="is_close" style="color:red" class="fa fa-close" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=', 10)]}"/>
+                                    <button string="Reset" type="object" name="is_refresh" style="color:yellow" class="fa fa-refresh" attrs="{'invisible': ['|',('stage_sequence', '!=', 11),('stage_sequence', '=',10)]}"/>
+                                    <field name="stage_id" widget="statusbar"/>
+                                </header>
+                                <group>
+                                    <group>
+                                        <field name="name" />
+                                        <field name="description"/>
+                                    </group>   
+                                    <group>
+                                        <field name="user_id"/>
+                                        <field name="stage" invisible="1"/>
+                                    </group>  
+                                </group>                       
+                            </form>
+                    </field>
+                    </div>
+                    <div class="o_setting_right_pane" width="30%">
+                        <field name="task_activity" widget="gauge" options="{ 'style': 'width:300px; height: 200px;margin-left:20px'}"  nolabel="1"/>
+                    </div>
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_task_kanban_view" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_kanban_content']" position="after">  
+            <div>         
+                <field name = "task_activity" widget="percentpie" nolabel="1" attrs="{'invisible': [('task_activity', '=', 0.0)]}"/>
+            </div>
+            </xpath>    
+        </field>
+    </record>
+    <record id="project_task_tree_view" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="after">                    
+                <field name = "task_activity" widget="progressbar" attrs="{'invisible': [('task_activity', '=', 0.0)]}"/>
+            </xpath> 
+        </field>
+    </record>
+
+    <menuitem id="project.project_checklist" name="Checklist" parent="project.menu_project_config" sequence="111"/>
+
+    <menuitem id="project.project_checklist_activity_stage" name="Activity Stages" parent="project.project_checklist"  action="action_checklist_activity_stage"/>
+
+    <menuitem id="project.project_task_checklist" name="Checklist Activity" parent="project.project_checklist"  action="action_task_checklist"/>
+
+    <menuitem name="All Tasks" id="project.menu_project_all_task" parent="project.menu_project_management" action="project.action_view_task"/>
+
+    <menuitem id="project.project_checklist_activities" name="Task Checklist Activities" parent="project.menu_project_management"  action="action_checklist_alltask_activities"/>
+
+</odoo>
+
+
+
+

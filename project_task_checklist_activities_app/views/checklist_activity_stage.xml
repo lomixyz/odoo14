@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="checklist_activity_stage_tree_view" model="ir.ui.view">
+        <field name="name">checklist.activity.stage.tree</field>
+        <field name="model">checklist.activity.stage</field>
+        <field name="arch" type="xml">
+            <tree string = "Stages">
+              <field name = "name"/>
+              <field name = "sequence"/>
+              <field name = "default_stage"/>
+            </tree>
+        </field>
+      </record>
+
+    <record id="checklist_activity_stage_form_view" model="ir.ui.view">
+        <field name="name">checklist.activity.stage.form</field>
+        <field name="model">checklist.activity.stage</field>
+        <field name="arch" type="xml">
+          <form string="Stages">
+            <sheet>
+              <div class="oe_title">
+                <h1>
+                    <field name="name" placeholder="Stage"/>
+                </h1>
+              </div>
+              <group> 
+                  <group>
+                    <field name = "is_dft_stage" invisible="1"/>
+                    <field name="sequence" attrs="{'readonly': [('is_dft_stage', '=', True)]}"/>
+                  </group>
+                  <group>
+                    <field name = "default_stage"/>
+                  </group> 
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_checklist_activity_stage">
+        <field name="name">Activity Stages</field>
+        <field name="res_model">checklist.activity.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    </data>
+</odoo>
+

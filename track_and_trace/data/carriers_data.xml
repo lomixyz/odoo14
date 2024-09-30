@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--  Carriers Data -->
+        <record id="carriers_0" model="track.and.trace.carriers">
+            <field name="number">0</field>
+            <field name="name">GLS</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_1" model="track.and.trace.carriers">
+            <field name="number">1</field>
+            <field name="name">PostNord</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_2" model="track.and.trace.carriers">
+            <field name="number">2</field>
+            <field name="name">DHL</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_3" model="track.and.trace.carriers">
+            <field name="number">3</field>
+            <field name="name">United Broker</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_4" model="track.and.trace.carriers">
+            <field name="number">4</field>
+            <field name="name">Consignor</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_5" model="track.and.trace.carriers">
+            <field name="number">5</field>
+            <field name="name">AfterShip</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_6" model="track.and.trace.carriers">
+            <field name="number">6</field>
+            <field name="name">Bring</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_7" model="track.and.trace.carriers">
+            <field name="number">7</field>
+            <field name="name">Posti</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_8" model="track.and.trace.carriers">
+            <field name="number">8</field>
+            <field name="name">Carelog</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_9" model="track.and.trace.carriers">
+            <field name="number">9</field>
+            <field name="name">TNT</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_10" model="track.and.trace.carriers">
+            <field name="number">10</field>
+            <field name="name">Logika</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_11" model="track.and.trace.carriers">
+            <field name="number">11</field>
+            <field name="name">Schenker</field>
+        </record>
+        <!--    *******************************    -->
+        <record id="carriers_12" model="track.and.trace.carriers">
+            <field name="number">12</field>
+            <field name="name">Fastway</field>
+        </record>
+        <!--    *******************************    -->
+
+    </data>
+</odoo>

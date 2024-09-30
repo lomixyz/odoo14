@@ -1,0 +1,176 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* invoice_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210404\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-18 09:20+0000\n"
+"PO-Revision-Date: 2021-04-18 09:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "<strong>Total:</strong>"
+msgstr "المجموع "
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "<strong>Total</strong>"
+msgstr "المجموع"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__account_id
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Account"
+msgstr "الحساب"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Account :"
+msgstr " الحساب"
+
+#. module: invoice_custom
+#: model:ir.actions.act_window,name:invoice_custom.act_wizard_statement
+#: model:ir.actions.report,name:invoice_custom.action_custom_report_statement
+#: model:ir.model,name:invoice_custom.model_account_statement_report_wizard
+#: model:ir.ui.menu,name:invoice_custom.menu_report_wizard
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.statement_report_wizard
+msgid "Account Statement Report"
+msgstr "كشف العملاء"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Analytic Account"
+msgstr "حساب تحليلي"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.statement_report_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__create_date
+msgid "Created on"
+msgstr "أنشي في"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Credit"
+msgstr "دائن"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Debit"
+msgstr "مدين"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__display_name
+#: model:ir.model.fields,field_description:invoice_custom.field_report_invoice_custom_report_statement_view__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Entry NO."
+msgstr "رقم القيد"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Entry No"
+msgstr "رقم القيد"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.statement_report_wizard
+msgid "Get Report"
+msgstr "طباعة التقرير"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__id
+#: model:ir.model.fields,field_description:invoice_custom.field_report_invoice_custom_report_statement_view__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Journal Entry"
+msgstr "قيد يومية"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Label"
+msgstr "تسمية"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard____last_update
+#: model:ir.model.fields,field_description:invoice_custom.field_report_invoice_custom_report_statement_view____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Name :"
+msgstr ": الإسم "
+
+#. module: invoice_custom
+#: model:ir.model.fields,field_description:invoice_custom.field_account_statement_report_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+#: model_terms:ir.ui.view,arch_db:invoice_custom.report_statement_view
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: invoice_custom
+#: model:ir.actions.report,name:invoice_custom.journal_entry_report_id
+msgid "Print Journal Entries"
+msgstr "قيد اليومية"
+
+#. module: invoice_custom
+#: model_terms:ir.ui.view,arch_db:invoice_custom.journal_entry_template_report_view
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: invoice_custom
+#: model:ir.model,name:invoice_custom.model_report_invoice_custom_report_statement_view
+msgid "report.invoice_custom.report_statement_view"
+msgstr "كشف العملاء"

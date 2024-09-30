@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+public_holiday_officer,public holiday officer,model_hr_public_holidays,hr_holidays.group_hr_holidays_user,1,1,1,1
+public_holiday_employee,public holiday employee,model_hr_public_holidays,base.group_user,1,0,0,0
+hr_leave_plan_officer,hr leave plan officer,model_hr_leave_plan,hr_holidays.group_hr_holidays_user,1,1,1,1
+hr_leave_plan_employee,hr leave plan employee,model_hr_leave_plan,base.group_user,1,0,0,0
+hr_leave_plan_line_officer,hr leave plan line officer,model_hr_leave_plan_line,hr_holidays.group_hr_holidays_user,1,1,1,1
+hr_leave_plan_line_internal_user,Hr leave plan line internal user,model_hr_leave_plan_line,base.group_user,1,1,1,
+hr_leave_transfer_employee,hr leave transfer employee,model_hr_leave_transfer,base.group_user,1,1,1,0
+hr_leave_transfer_officer,hr leave transfer officer,model_hr_leave_transfer,hr_holidays.group_hr_holidays_user,1,1,1,1

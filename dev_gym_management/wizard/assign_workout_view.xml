@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="form_assign_workout" model="ir.ui.view">
+        <field name="name">form.assign.workout</field>
+        <field name="model">assign.workout</field>
+        <field name="arch" type="xml">
+            <form string="Assign Workout Plan">
+                <gorup>
+                    <group>
+                        <field name="member_ids" widget="many2many_tags" domain="[('state','=','joined')]" options="{'no_create': True}"/>
+                        <field name="workout_plan_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </gorup>
+                <footer>
+                    <button string="Assign" name="assign_workout_plans" type="object" class="oe_highlight" icon="fa-print" />&#160;&#160;
+                    <button string="Close Window" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--action-->
+	<record id="action_assign_workout" model="ir.actions.act_window">
+        <field name="name">Assign Workout Plan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">assign.workout</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_assign_workout"/>
+        <field name="target">new</field>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Assign Workout Plan"
+              id="menu_assign_workout"
+              parent="menu_gym_management_workout"
+              action="action_assign_workout"
+              sequence="4"
+              groups="dev_gym_management.gym_trainer"/>
+</odoo>

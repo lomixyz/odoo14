@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ClientDetailsEdit" t-inherit="point_of_sale.ClientDetailsEdit" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('client-details-left')]" position="inside">
+            <div class="client-detail">
+                <span class="label">Points</span>
+                <input class="detail client-address-zip" name="pos_loyalty_point" disabled="disabled" t-att-value="props.partner.pos_loyalty_point || '0'" placeholder="Points" />
+            </div>
+            <!-- <div class="client-detail">
+                <span class="label">Tags</span>
+                <select class="detail client-address-tag needsclick" name="category_id" t-on-change="captureChange">
+                    <option value="">None</option>
+                    <t t-foreach="env.pos.partner_tags" t-as="tag" t-key="tag.id">
+                        <option t-att-value="[(0,0,[tag.id])]" >
+                            <t t-esc="tag.name" />
+                        </option>
+                    </t>
+                </select>
+            </div> -->
+
+            <!-- <div class="client-detail">
+                <span class='label'>Tags</span>
+                <select class='form-control' t-on-change="OnChange" name='tag'>
+                    <t t-foreach='env.pos.partner_tags' t-as='partner_tag'>
+                        <option t-att-value='partner_tag.id'>
+                            <t t-esc='partner_tag.name'/>
+                        </option>
+                    </t>
+                </select>
+            </div> -->
+        </xpath>
+    </t>
+
+</templates>
+        

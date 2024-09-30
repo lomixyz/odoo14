@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Wizard From view -->
+
+    <record id="sh_stock_valuation_wizard_view" model="ir.ui.view">
+        <field name="name">Stock Valuation Wizard</field>
+        <field name="model">sh.stock.valuation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Stock Valuation Report">
+                <group>
+                    <group>
+                        <field name="sh_from_date" />
+                        <field name="sh_company_id" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}" />
+                        <field name="sh_domain_warehouse" invisible="1" />
+                        <field name="sh_select_product_cat" />
+                    </group>
+                    <group>
+                        <field name="sh_to_date" />
+                        <field name="sh_warehouse_id" domain="sh_domain_warehouse" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}" />
+                        <field name="sh_product_ids" widget="many2many_tags" attrs="{'invisible' :[('sh_select_product_cat' ,'=' ,'category' )]}" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}" />
+                        <field name="sh_category_ids" widget="many2many_tags" attrs="{'invisible' :[('sh_select_product_cat' ,'=' ,'product' )]}" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="sh_print_stock_valuation_report" string="Print Pdf Report" class="oe_highlight" type="object" />
+                    <button name="sh_xls_stock_valuation_report" string="Print Xls Report" class="oe_highlight" type="object" />
+                    <button name="sh_view_stock_valuation_report" string="View Report" class="oe_highlight" type="object" />
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="sh_stock_valuation_wizard_action" model="ir.actions.act_window">
+        <field name="name">Stock Valuation Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.stock.valuation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu item -->
+    <menuitem name="Stock Valuation Report" parent="stock.menu_warehouse_report" action="sh_stock_valuation_wizard_action" id="sh_stock_valuation_report_id"  sequence=" 5" />
+
+
+</odoo>

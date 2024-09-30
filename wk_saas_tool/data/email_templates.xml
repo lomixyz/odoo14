@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate="1">
+        <record id="wk_saas_tool.update_req_tmpl" model="mail.template">
+            <field name="name">Upate Request Template</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="subject">New Update Released</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="body_html"><![CDATA[
+                <p>Greetings of the Day.</p>
+                <p>New version of your instance released.</p>
+
+                <p>Request for update: >> <a href="http://www.wk.pharmacistplace.com/update/request/confirm?token=${object.signup_token}">Confirm</a></p>
+                <br/>
+                <p>Update Later: >> <a href="#">Ignore</a></p>
+
+                <p>Thank you</p>
+                <p style="color:#888888;">
+                % if object.user_id and object.user_id.signature:
+                    ${object.user_id.signature | safe}
+                % endif
+                </p>
+
+                ]]>
+            </field>
+        </record>
+
+        <record id="wk_saas_tool.image_update_req_tmpl" model="mail.template">
+            <field name="name">Instance Upate Request Template</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="subject">System Update Available</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="body_html"><![CDATA[
+                <p>Greetings of the Day.</p>
+                <p>New system update is available for your instance. It may contain some bug fixes and improvements.</p>
+
+                <p>Request for update: >> <a href="http://www.wk.pharmacistplace.com/image/update/request/confirm?token=${object.signup_token}">Confirm</a></p>
+                <br/>
+                <p>Update Later: >> <a href="#">Ignore</a></p>
+
+                <p>Thank you</p>
+                <p style="color:#888888;">
+                % if object.user_id and object.user_id.signature:
+                    ${object.user_id.signature | safe}
+                % endif
+                </p>
+
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

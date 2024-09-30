@@ -1,0 +1,2664 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* admission_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-23 10:47+0000\n"
+"PO-Revision-Date: 2021-01-23 10:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid " Invoice is Already Exist"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.report,print_report_name:admission_management.report_rent_contract_report_temp
+msgid "'Contract- %s' % (object.name)"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "* دفعة مقدمة تعادل ثلاثه اشهر من التكلفة الشهرية بواقع مبلغ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "* سداد التكلفة كل ثلاثة اشهر مقدم بواقع مبلغ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "1. تقديم خدمات العامل المذكور اعلاه للطرف الثاني :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "1. سداد التكلفة المتفق عليها بالفقرة (1) من البند ثالثا هذا العقد ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"1. يدفع الطرف الثاني للطرف الاول تكلفة شهرية مقابل تقديم خدمات العامل "
+"المنزلي , وفقا للتكلفة الشهرية"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"1. ﻳﻠﺘﺰﻢ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ بإبرام ﻋﻘﺪ ﻋﻤﻞ ﻣﻊ ﺍﻟﻌﺎﻣﻞ ﻭﻓﻖ ﺍﻟﻨﻤﻮﺬﺝ ﺍﻟﻤﻌﺪ ﻣﻦ ﻗﺒﻞ "
+"ﺍﻟﻮﺰﺍﺭﺓ ، ﻭﺫﻟﻚ للمدة ﺍﻟﻤﺘﺒﻘﻴﺔ ﻣﻦ ﻋﻘﺪ ﺍﻟﻌﻤﻞ لدى ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ، ﻋﻠﻰ ﺃﻻ ﻳﻘﻞ ﺍﻷﺟﺮ "
+"ﺍﻟﺸﻬﺮﻲ ﻟﻠﻌﺎﻣﻞ ﻋﻦ ﺍﻷﺟﺮ ﺍﻷﺧﻴﺮ ﺍﻟﺬﻲ ﻳﺪﻓﻌﻪ ﺍﻟﻄﺮﻒ ﺍﻻﻮﻝ ﻟﻠﻌﺎﻣﻞ , ﻭﺫﻟﻚ ﺑﻤﺒﻠﻎ "
+"(.............)ﺭﻳﺎﻞ سعودي."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "1. ﻳﻨﺘﻬﻲ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﺑﺎﻧﺘﻬﺎء ﺍﻟﻤﺪﺔ ﺍﻟﻤﺘﻔﻖ ﻋﻠﻴﻬﺎ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"1. ﻻ ﻳﺠﻮﺰ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺍﻟﻘﻴﺎﻢ ﺑﺈﻋﺎﺪﺓ ﺗﻘﺪﻳﻢ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﻷﻲ ﻃﺮﻒ ﺁﺧﺮ ﺳﻮﺎﺀ "
+"ﺑﻄﺮﻳﻘﺔ ﻣﺒﺎﺷﺮﺔ ﺃﻭ ﻏﻴﺮ ﻣﺒﺎﺷﺮﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"10. "
+"......................................................................................"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"10. ﺇﺑﻼﻎ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻛﺘﺎﺑﻴﺎ ﻓﻲ ﺣﺎﻞ ﺗﻐﻴﺐ ﺍﻟﻌﺎﻣﻞ ﻋﻦ ﺍﻟﻌﻤﻞ ﺃﻭ ﺭﻓﻀﻪ ﺍﻟﻌﻤﻞ ﺧﻼﻞ "
+"(24) ﺳﺎﻋﺔ ﻣﻦ ﻭﻗﺖ ﺍﻟﺘﻐﻴﺐ ﺃﻭ ﺍﻟﺮﻓﺾ ﺍﻟﻌﻤﺎﻟﺔ ﻣﻊ ﺗﺴﻠﻴﻢ ﺟﻤﻴﻊ ﻣﺘﻌﻠﻘﺎﺖ ﺍﻟﻌﺎﻣﻞ ﻟﻠﻄﺮﻒ "
+"ﺍﻷﻮﻝ ، ﻭﻛﺬﻟﻚ ﻓﻲ ﺣﺎﻞ ﻋﻮﺪﺓ ﺍﻟﻌﺎﻣﻞ ﻳﺸﻌﺮ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻛﺘﺎﺑﻴﺎ ﺑﺎﻟﻌﻮﺪﺓ "
+"ﻣﺤﺪﺪﺍ ﺳﺎﻋﺔ ﻭﺗﺎﺮﻳﺦ ﻋﻮﺪﺓ ﺍﻟﻌﺎﻣﻞ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"11. إﻋﺎدﺓ ﺍﻟﻌﺎﻣﻞ ﻋﻨﺪ ﺍﻧﺘﻬﺎء ﻣﺪته ﺗﻘﺪﻳﻢ ﺧﺪﻣﺎﺗﻪ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭ ﻓﻲ ﺣﺎﻞ ﻋﺪﻢ "
+"التزام ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺬﻟﻚ ، ﻓﺈﻧﻪ ﻳﻌﻮﺾ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﺑﻤﺎ ﻳﻌﺎﺪﻝ (100) ﻣﺎﺋﺔ ﺭﻳﺎﻞ "
+"سعودي ﻋﻦ ﻛﻞ ﻳﻮﻢ ﺗﺄﺧﻴﺮ ﻣﻊ ﻗﻴﻤﺔ ﺍﻟﺘﻜﻠﻔﺔ ﺍﻟﻴﻮﻣﻴﺔ ﻟﻠﻌﺎﻣﻞ ﺍﻟﻤﻘﺪﻣﺔ ﺧﺪﻣﺎﺗﻪ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"12. "
+"......................................................................................"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"13. "
+"......................................................................................"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2.  ضمان  اللياقة الطبية للعامل و خلوه من الامراض المعدية و المزمنة و "
+"العاهات الجسيمة و كل ما يكون من شانه عدم القدرة علي تنفيذ العمل المطلوب منه "
+", و تقديم الرعاية الطبية للعامل اثناء سريان هذا العقد بموجب تأمين صحي طبقا "
+"لنظام الضمان الصحي التعاوني ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2. ان يعامل العامل بالاحترام اللائق , و ان يمتنع عن كل قول او فعل يمس كرامته"
+" و دينه"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2. في حال نقل خدمة العامل للطرف الثاني قبل نهاية هذا العقد تكون تكلفة نقل "
+"الخدمة للشهر الواحد مبلغ و قدره(..............) ريال سعودي بحيث يدفع الطرف "
+"الثاني للطرف الاول مقابل نقل خدمة العامل إليه و فق المعادلة التالية :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2. يدفع الطرف الثاني عند التوقيع علي هذا العقد مبلغ يعادل تكلفة شهرين بواقع "
+"يعادل"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2. ﻳﺠﻮﺰ ﻟﻠﻄﺮﻓﻴﻦ ﺍﻻﺗﻔﺎﻖ ﻋﻠﻰ ﺇﻧﻬﺎء ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻗﺒﻞ ﺍﻧﺘﻬﺎء ﻣﺪﺗﻪ ﺑﺎﻟﺘﺮﺎﺿﻲ ، ﺑﺸﺮﻂ "
+"ﺃﻥ ﻳﻜﻮﻦ ﺍﻻﺗﻔﺎﻖ ﻋﻠﻰ ﺍﻹﻧﻬﺎء ﻣﻜﺘﻮﺐ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"2. ﻳﺮﺗﺒﻂ ﺍﻟﻌﺎﻣﻞ ﻣﻊ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﺑﻌﻘﺪ ﻋﻤﻞ ﻭﻳﻌﻤﻞ ﺗﺤﺖ ﺇﺷﺮﺎﻓﻪ ﻭ ﺇﺩﺍﺭﺗﻪ ﻭﻓـﻘ ًﺎ "
+"ﻟﻨﻈﺎﻢ ﺍﻟﻌﻤﻞ ، ﻭﻟﻴﺲ ﻷﻲ ﻣﻨﻬﻤﺎ ﻣﻄﺎﻟﺒﺔ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺄﻲ ﺣﻘﻮﻖ ﻣﺎﻟﻴﺔ ﺃﻭ ﻋﻤﺎﻟﻴﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3 . دفع راتب العامل الشهري له من خلال تحويل بنكي علي الحساب البنكي للعامل , "
+"و لا يتحمل الطرف الاول اي مبالغ مصروفة من قبل الطرف الثاني للعامل بشكل مباشر"
+" ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3.  في حال نقل خدمة العامل المقدمة خدماته فيلتزم الطرف الثاني بدفع تكلفة نقل"
+" الخدمة , وفقا للتكلفة المعلنة - في تاريخ نقل طلب نقل الخدمة - بالموقع "
+"اللالكتروني مساند التابع لوزارة العمل ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3. تمكين العامل من الوصول الي اقرب فرع بنك او جهاز صراف الي لاستلام مرتبه "
+"الشهري و مساعدته لتحويل اية مبالغ لذويه."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3. ﻓﻲ ﺣﺎﻞ ﻭﺟﻮﺪ ﻣﺒﺎﻟﻎ ﻟﺪﻰ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻣﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻛﺪﻓﻌﺎﺖ ﻣﻘﺪﻣﺔ ﺃﻭ "
+"ﺿﻤﺎﻦ ، ﻓﻴﺘﻢ ﻋﻤﻞ ﻣﻘﺎﺻﺔ ﻋﻨﺪ ﻧﻘﻞ ﺍﻟﺨﺪﻣﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3. ﻳﺤﻖ ﻷﻲ ﻣﻦ ﺍﻟﻄﺮﻓﻴﻦ ﺇﻧﻬﺎء ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻓﻲ ﺣﺎﻞ ﺇﺧﻼﻞ ﺍﻟﻄﺮﻒ ﺍﻵﺧﺮ ﺑﺄﻲ ﺑﻨﺪ ﻣﻦ "
+"ﺑﻨﻮﺪﻩ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"3. ﻳﺨﻀﻊ ﺍﻟﻌﺎﻣﻞ ﻟﺘﻌﻠﻴﻤﺎﺖ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ، ﻭﻋﻠﻴﻪ ﺍﻟﺤﻔﺎﻆ ﻋﻠﻰ ﺃﺳﺮﺎﺭ ﺃﻋﻤﺎﻟﻪ ﻭﺃﺳﺮﺎﺭ "
+"ﺃﺳﺮﺗﻪ ، ﻭﻳﻜﻮﻦ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺣﻖ ﺗﻮﺟﻴﻬﻪ ﺣﺴﺐ ﻣﻘﺘﻀﻴﺎﺖ ﺍﻟﻌﻤﻞ ﻟﺪﻳﻪ ، ﻭ ﻭﻓﻘﺎ ﻟﻸﻧﻈﻤﺔ "
+"ﺍﻟﺴﺎﺮﻳﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"4. الحصول علي الموافقة خطية من العامل للعمل لدي الطرف الثاني , و نقل خدماته "
+"اليه و ذلك قبل تقديم خدماته للطرف الثاني ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"4. ان يكون مسؤولا عن اية تجاوزات تلحق اضرارا بالعامل في مواجهة الطرف الاول و"
+" العامل ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"4. في حال تجديد هذا العقد و موافقة العامل علي الاستمرار في العمل لدي الطرف "
+"الثاني . يدفع الطرف الثاني للطرف الاول تكلفة شهرية مقابل تقديم خدمات العامل "
+"المنزلي للمدة الجديدة تعادل تكلفة الشهرية السابقة ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"4. ﺇﺫﺍ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻋﻦ ﺳﺪﺎﺩ ﻣﺒﻠﻎ ﺍﻟﺘﻜﻠﻔﺔ ﻋﻦ ﺍﻟﻤﻮﻋﺪ ﺍﻟﻤﺤﺪﺪ ﻟﺬﻟﻚ ﺃﻛﺜﺮ ﻣﻦ "
+"ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ﻳﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "4. ﻳﺘﺤﻤﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺭﺳﻮﻢ ﻧﻘﻞ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻴﺔ ﺇﻟﻴﻪ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"4. ﻳﻠﺘﺰﻢ ﺍﻟﻄﺮﻓﺎﻦ ﺑﺘﻮﺛﻴﻖ ﺍﻟﻌﻼﻗﺔ ﺍﻟﺘﻌﺎﻗﺪﻳﺔ ﺍﻹﻟﻜﺘﺮﻮﻧﻴﺔ ﻭﻓﻖ ﺃﻧﻈﻤﺔ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ "
+"ﺍﻹﻟﻜﺘﺮﻮﻧﻴﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"5. إشعار الطرف الاول بأية مخالفات او اخطاء يرتكبها العامل لاتخاذ ما يلزم من "
+"اجراءات بحقه."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"5. اذا كان العامل بمهنة سائق فبجب ان يتحول رخصة قيادة سعودية سارية المفعول ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"5. ﺃﻱ ﺷﺮﻮﻁ ﺇﺿﺎﻓﻴﺔ ﺗﺘﻌﺎﺮﺽ ﻣﻊ ﻧﻈﺎﻢ ﺍﻟﻌﻤﻞ ﺃﻭ ﻻﺋﺤﺘﻪ ﺃﻭ ﺍﻟﻘﺮﺎﺭﺍﺕ ﺍﻟﺼﺎﺪﺭﺓ ﺗﻨﻔﻴﺬﺎ "
+"ﻟﻪ ﺗﻌﺘﺒﺮ ﺑﺎﻃﻠﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "5. ﺗﺨﻀﻊ ﻋﻤﻠﻴﺔ ﻧﻘﻞ ﺍﻟﺨﺪﻣﺎﺖ ﻟﻤﻮﺎﻓﻘﺔ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ ، ﻭ ﺍﻟﺠﻬﺎﺖ ﺍﻟﻤﺨﺘﺼﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"5.ﻓﻲ ﺣﺎﻟﺔ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻋﻦ ﺗﻘﺪﻳﻢ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﺘﻔﻖ ﻋﻠﻴﻬﺎ ﻓﻲ ﺍﻟﺘﺎﺮﻳﺦ "
+"ﺍﻟﻤﺤﺪﺪ ﻟﺴﺮﻳﺎﻦ ﺍﻟﻌﻘﺪ ﻟﻤﺪﺔ ﺃﻗﺼﺎﻫﺎ ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ، ﻓﻴﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ "
+"ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭ ﻳﻠﺘﺰﻢ ﺑﺪﻓﻊ ﺗﻌﻮﻳﻀﺎ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ"
+" ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ ، ﻣﻊ ﺇﻋﺎﺪﺓ ﺍﻟﻤﺒﺎﻟﻎ ﺍﻟﻤﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻛﺎﻣﻠﺔ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"6. تقديم عامل بديل عن العامل المقدم خدماته بنفس المؤهلات و الخبرات . للقبام "
+"بنفس العمل الذي طلب من اجله , و ذلك خلال (45) خمسة و اربعين يوما من تاريخ "
+"ابلاغ الطرف الثاني للطرف الاول بذلك ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"6. عدم تشغيل العامل في اعمال تختلف عن المهنة المرخص له بها سواء بطريقة "
+"مباشره او غير مباشرة."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"6. ﻓﻲ ﺣﺎﻟﺔ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻋﻦ ﺗﻘﺪﻳﻢ ﺍﻟﻌﺎﻣﻞ ﺍﻟﺒﺪﻳﻞ ﻋﻦ ﺍﻟﻔﺘﺮﺔ ﺍﻟﻤﺤﺪﺪﺓ ﻓﻲ "
+"ﺍﻟﻔﻘﺮﺔ (5) ﻣﻦ ﺍﻟﺒﻨﺪ )ﺭﺍﺑﻌﺎ( ، ﻓﻴﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ "
+"ﺍﻷﻮﻝ ، ﻭ ﻳﻠﺘﺰﻢ ﺑﺪﻓﻊ ﺗﻌﻮﻳﻀﺎ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ ، ﻣﻊ "
+"ﺇﻋﺎﺪﺓ ﺍﻟﻤﺒﺎﻟﻎ ﺍﻟﻤﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻣﺤﺴﻮﻣﺎ ﻣﻨﻬﺎ ﻣﺎ ﻳﻌﺎﺪﻝ ﺍﻟﺘﻜﻠﻔﺔ ﺍﻟﺸﻬﺮﻳﺔ "
+"ﻟﻠﻌﺎﻣﻞ ﺍﻟﻤﻘﺪﻣﺔ ﺧﺪﻣﺎﺗﻪ ﺑﻨﺴﺒﺔ ﻣﺎ ﻗﻀﺎﻪ ﻟﺪﻰ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"6. ﻻ ﺗﺘﻢ ﻋﻤﻠﻴﺔ ﻧﻘﻞ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺇﻻ ﺑﻌﺪ ﻣﻀﻲ ﺗﺴﻌﻴﻦ ﻳﻮﻣﺎ "
+"ﻣﻦ ﺗﺎﺮﻳﺦ ﻋﻤﻞ ﺍﻟﻌﺎﻣﻞ ﻟﺪﻳﻪ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"7. عدم استبدال العامل المقدم خدماته الا بعد اخذ الموافقة الكتابية من الطرف "
+"الثاني ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"7. يشترط اذا كانت مهنة العامل سائق ان تكون السيارة المسلمة له مؤمن عليها "
+"تأمين ضد الغير علي الأقل ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"7. ﻓﻲ ﺣﺎﻞ ﻓﺴﺦ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻭﻷﺳﺒﺎﺐ ﻻ ﺗﻌﻮﺪ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ، ﻓﻴﻠﺘﺰﻢ"
+" ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺪﻓﻊ ﺗﻌﻮﻳﺾ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"8. تعويض الطرف الثاني مقابل ما يتسبب العامل في فقده او اتلافه او تدميره من "
+"ممتلكات الطرف الثاني بعد ثبوت ذلك من الجهات المختصة ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "8. توفير السكن المناسب للعامل المقدم خدماته خلال مدة العقد ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"9. توفير وسيلة نقل العامل الي اقرب مركز طبي معتمد في شبكة المراكز الطبية "
+"لشركة التأمين المعتمدة لدي الطرف الاول اذا كان العامل في حاجة للرعاية الطبية"
+" . ﻭﻓﻲ ﺣﺎﻞ ﻋﺪﻢ ﺗﻮﻓﺮ ﻣﺮﺎﻛﺰ ﻃﺒﻴﺔ ﻣﻌﺘﻤﺪﺔ ﻟﺪﻰ ﺷﺮﻛﺔ ﺍﻟﺘﺄﻣﻴﻦ ﻳﺘﻢ ﻋﻼﺞ ﺍﻟﻌﺎﻣﻞ ﻣﻦ ﻗﺒﻞ"
+" ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﻤﺎ ﻳﺘﻮﺎﻓﻖ ﻣﻊ ﻗﻴﻤﺔ ﺑﻮﻟﻴﺼﺔ ﺍﻟﺘﺄﻣﻴﻦ ,  ﻭ ﻃﺒﻘﺎ ﻟﻠﺪﺮﺟﺔ ﺍﻟﻤﺨﺼﺼﺔ "
+"ﻟﻠﻌﺎﻣﻞ، ﺑﺤﻴﺚ ﻳﺘﻢ ﺗﻘﺪﻳﻢ ﺃﺻﻮﻞ ﺍﻟﻔﻮﺎﺗﻴﺮ ﻭﺍﻟﺘﻘﺎﺮﻳﺮ ﺍﻟﻄﺒﻴﺔ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ﺧﻼﻞ (30) "
+"ﻳﻮﻢ ﻣﻦ ﺗﺎﺮﻳﺦ ﺍﻟﻔﺎﺗﻮﺮﺓ ﻟﺘﻘﺪﻳﻤﻬﺎ ﻟﺸﺮﻛﺔ ﺍﻟﺘﺄﻣﻴﻦ ﻟﻄﻠﺐ ﺍﻟﺘﻌﻮﻳﺾ ﺑﺤﺴﺐ ﺑﻮﻟﻴﺼﺔ ﺷﺮﻛﺔ "
+"ﺍﻟﺘﺄﻣﻴﻦ."
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "الحركة العكسية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_needaction
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_needaction
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_needaction
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.admission__management_action_window
+#: model:ir.ui.menu,name:admission_management.admission__management_menu_root
+msgid "Admission Management"
+msgstr "اﻹستقدام وتأجير العمالة"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.menu_admission_report
+msgid "Admission Management Report"
+msgstr "تقارير اﻹستقدام والتأجير"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.menu_admission_report_main
+msgid "Admission Report"
+msgstr "تقرير الاستقدام"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.admission__management_menu_1
+msgid "Admission Requests"
+msgstr "طلبات الإستقدام"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.view_admission_search
+#: model_terms:ir.ui.view,arch_db:admission_management.view_rent_search
+msgid "Announcements"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_status
+msgid "Assesstant Status"
+msgstr "حالة مساند"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_attachment_count
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_attachment_count
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_attachment_count
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_attachment_count
+msgid "Attachment Count"
+msgstr "العدد المرفق"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__binary_fname
+msgid "Binary Name"
+msgstr "الاسم"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__name
+msgid "Cancel Contract Reference"
+msgstr "المرجع"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.rent_cancelled_management_menu_1_list
+msgid "Cancelled Contracts"
+msgstr "العقود الملغاه"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__company
+msgid "Company"
+msgstr "الشركة"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__confirm
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__confirm
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__confirm
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "Contract Info"
+msgstr "معلومات العقد"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "Contract accounting"
+msgstr "المحاسبة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__contract_ids
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__create_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__create_uid
+msgid "Created by"
+msgstr "تم انشاء بواسطة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__create_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__create_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__create_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__create_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__create_date
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__create_date
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__create_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__create_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__create_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__create_date
+msgid "Created on"
+msgstr "انشاء في"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__partner_id
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__partner_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__partner_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__partner_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__partner_id
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+#, python-format
+msgid "Customer"
+msgstr "العميل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Customer Credit Note"
+msgstr "إشعار خصم لعميل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Customer Payment"
+msgstr "سداد العميل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "Date To"
+msgstr "الي تاريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_request_setting__addmission_income_account_id
+msgid "Default addmission income Account"
+msgstr "حساب ايراد الاستقدام"
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_request_setting__insurance_account_id
+#: model:ir.model.fields,help:admission_management.field_admission_request_setting__rent_income_account_id
+msgid "Default rent income Account"
+msgstr "حساب ايراد اﻹيجار"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__display_name
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__display_name
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__display_name
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__display_name
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__display_name
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__display_name
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__display_name
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__display_name
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__display_name
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__display_name
+msgid "Display Name"
+msgstr "اسم"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__name
+msgid "Document name"
+msgstr "اسم الملف"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__docs
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+msgid "Documents"
+msgstr "الملفات"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__done
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__done
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_cancel__state__done
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__done
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_workers_management__state__done
+msgid "Done"
+msgstr "تم"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__draft
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__draft
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_cancel__state__draft
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__draft
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_workers_management__state__draft
+msgid "Draft"
+msgstr "مبدئية"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form
+msgid "Email"
+msgstr "ايميل"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_hr_employee
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__employee_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__employee_id
+#: model:ir.model.fields.selection,name:admission_management.selection__hr_expense__expense_type__employee
+#: model:ir.model.fields.selection,name:admission_management.selection__hr_expense_sheet__expense_type__employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_hr_expense
+msgid "Expense"
+msgstr "المصروف"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_hr_expense_sheet
+msgid "Expense Report"
+msgstr "تقرير المصروف"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_expense__expense_type
+#: model:ir.model.fields,field_description:admission_management.field_hr_expense_sheet__expense_type
+msgid "Expense Type"
+msgstr "نوع المصروف"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_follower_ids
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_follower_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_follower_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_channel_ids
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_channel_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_channel_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعين"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_partner_ids
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_partner_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_partner_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "Get Report Data"
+msgstr "إنشاء التقرير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__id
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__id
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__id
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__id
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__id
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__id
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__id
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__id
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__id
+msgid "ID"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_needaction
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_unread
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_needaction
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_unread
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_needaction
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_unread
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_needaction
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_has_error
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_has_sms_error
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_has_error
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_has_sms_error
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_has_error
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_has_sms_error
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_has_error
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__note
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "Internal Notes"
+msgstr "ملاحظات داخلية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_is_follower
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_is_follower
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_is_follower
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__is_invoiced
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__is_invoiced
+msgid "Is Invoiced"
+msgstr "تم الفوترة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_res_partner__is_website_customer
+#: model:ir.model.fields,field_description:admission_management.field_res_users__is_website_customer
+msgid "Is Website Customer"
+msgstr "هل عميل من الموقع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__is_worker_sent
+msgid "Is Worker Sent"
+msgstr "هل تم ارسال العامل"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_employee__is_available
+msgid "Is available"
+msgstr "هل متاح"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_employee__is_worker
+msgid "Is worker"
+msgstr "هل هو عامل للتأجير"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_account_move
+msgid "Journal Entries"
+msgstr "القيود اليومية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report____last_update
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line____last_update
+#: model:ir.model.fields,field_description:admission_management.field_admission_request____last_update
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document____last_update
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting____last_update
+#: model:ir.model.fields,field_description:admission_management.field_assesstant____last_update
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line____last_update
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel____last_update
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line____last_update
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__write_uid
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__write_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__write_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__write_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__write_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__write_date
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__write_date
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__write_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__write_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__write_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__line_state
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__line_state
+msgid "Line State"
+msgstr "الحالة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_main_attachment_id
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_main_attachment_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفقات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_has_error
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_has_error
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_has_error
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_ids
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "New Expense Report"
+msgstr "تقرير مصروف جديد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "No Home Address found for the employee %s, please configure one."
+msgstr "لم يُعثر على عنوان منزل للموظف %s, برجاء إعداد واحد."
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "No credit account found for the %s journal, please configure one."
+msgstr "لم يُعثر علي حساب دائن لدفتر اليومية %s، برجاء إعداد واحد."
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__line_state__not
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__line_state__not
+msgid "Not"
+msgstr "لا"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__assesstant__assesstant_status__not_paid
+msgid "Not Paid"
+msgstr "غير مدفوع"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__is_worker_sent__not_yet
+msgid "Not Yet"
+msgstr "ليس بعد"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__worker_state__not_available
+msgid "Not available"
+msgstr "غير متاح"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_needaction_counter
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_needaction_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_needaction_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_has_error_counter
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_has_error_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_has_error_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_needaction_counter
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_needaction_counter
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_needaction_counter
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_has_error_counter
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_has_error_counter
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_has_error_counter
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__message_unread_counter
+#: model:ir.model.fields,help:admission_management.field_admission_request__message_unread_counter
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__message_unread_counter
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+msgid "Official Documents"
+msgstr "مرفقات"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Only a draft payment can be posted."
+msgstr "يمكن ترحيل مسودة الدفع فقط."
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "Other"
+msgstr "اخرى"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__line_state__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__assesstant__assesstant_status__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__line_state__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__paid
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_workers_management__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__line_state__partial
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__line_state__partial
+msgid "Partial"
+msgstr "جزئي"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_account_payment
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__payments_count
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__payments_count
+msgid "Payments Count"
+msgstr "المدفوعات"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Please Fill Cost amount field!! "
+msgstr "الرجاء اضافة التكلفة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Please configure admission income Account  !"
+msgstr "الرجاء اضافة حساب الايراد للاستقدام"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Please configure insurance liability Account  !"
+msgstr "الرجاء اضافة اضافة حساب التأمين"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Please make Credit Note for this invoice !"
+msgstr "الرجاء انشاء فاتورة استرداد لهذة الفاتورة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "Recruitment  office"
+msgstr "مكتب الاستقدام"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "Recruitment contract"
+msgstr "عقود الاستقدام"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__cancel
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__cancel
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_cancel__state__cancel
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__cancel
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_workers_management__state__cancel
+msgid "Rejected"
+msgstr "مرفوضة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__name
+msgid "Rent Contract Reference"
+msgstr "المرجع"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.rent__management_menu_1_list
+msgid "Rent Contracts"
+msgstr "عقود التأجير"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.Rent__management_action_window
+msgid "Rent Management"
+msgstr "التأجير"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.Rent_cancel_management_action_window
+msgid "Rent cancel"
+msgstr "الغاء عقد تأجير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_account_move__rent_contract_id
+msgid "Rent contract"
+msgstr "عقد التأجير"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.rental_contract_menu_1
+msgid "Rental Contract"
+msgstr "عقود التأجير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__report_id
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__report_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__report_id
+msgid "Report"
+msgstr "التقرير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__report_type
+msgid "Report Type"
+msgstr "نوع التقرير"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form
+msgid "Request"
+msgstr "طلب"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__name
+msgid "Request Reference"
+msgstr "المرجع"
+
+#. module: admission_management
+#: code:addons/admission_management/models/rent_refund.py:0
+#, python-format
+msgid "Reverse Moves"
+msgstr "الحركات العكسية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_has_sms_error
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_has_sms_error
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_has_sms_error
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form_success1
+msgid "Select your worker"
+msgstr "اختر العامل"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__is_worker_sent__sent
+msgid "Sent"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.view_admission_search
+#: model_terms:ir.ui.view,arch_db:admission_management.view_rent_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__state
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__state
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__state
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__state
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__state
+#: model_terms:ir.ui.view,arch_db:admission_management.view_admission_search
+#: model_terms:ir.ui.view,arch_db:admission_management.view_rent_search
+#, python-format
+msgid "Status"
+msgstr "الحالة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_expense__supplier
+#: model:ir.model.fields,field_description:admission_management.field_hr_expense_sheet__supplier
+#: model:ir.model.fields.selection,name:admission_management.selection__hr_expense__expense_type__supplier
+#: model:ir.model.fields.selection,name:admission_management.selection__hr_expense_sheet__expense_type__supplier
+msgid "Supplier"
+msgstr "المورد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Tax Account is not set !!!"
+msgstr "حساب الضريبة غير مضاف"
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__company
+msgid "The Company for which the report is made to"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "The payment cannot be processed because the invoice is not open!"
+msgstr "لا يمكن إتمام السداد لأن الفاتورة ليست مفتوحة!"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid ""
+"This method should only be called to process a single invoice's payment."
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__total_amount_contracts_with_vat
+msgid "Total Amount with VAT"
+msgstr "المبلغ الاجمالي مع الضريبة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__total_cost
+msgid "Total Cost"
+msgstr "التكلفة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__total_Paid
+msgid "Total Paid"
+msgstr "المبلغ المدفوع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__total_contract_with_vat
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__total_contract_with_vat
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__total_contract_with_vat
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__total_contract_with_vat
+msgid "Total contract Amount With VAT"
+msgstr "المبلغ الاجمالي مع الضريبة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Transfer from %s"
+msgstr "النقل من %s"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Transfer to %s"
+msgstr "النقل إلى %s"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "Unlock"
+msgstr "فتح"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_unread
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_unread
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_unread
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__message_unread_counter
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__message_unread_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__message_unread_counter
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__vat_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__vat_id
+msgid "VAT"
+msgstr "الضريبة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__total_amount_of_VAT
+msgid "VAT Amount"
+msgstr "مبلغ الضريبة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Vendor Credit Note"
+msgstr "إشعار خصم المورد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "Vendor Payment"
+msgstr "مدفوعات المورد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__website_message_ids
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__website_message_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__website_message_ids
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_management_report__website_message_ids
+#: model:ir.model.fields,help:admission_management.field_admission_request__website_message_ids
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__website_message_ids
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: admission_management
+#: model:website.menu,name:admission_management.menu_partner_form_new
+msgid "Worker Request"
+msgstr "طلب عاملة - عامل"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__worker_state
+msgid "Worker State"
+msgstr "حالة العامل"
+
+#. module: admission_management
+#: model:ir.model.fields,help:admission_management.field_admission_request__partner_id
+#: model:ir.model.fields,help:admission_management.field_rent_cancel__partner_id
+#: model:ir.model.fields,help:admission_management.field_rent_workers_management__partner_id
+msgid "You can find a customer by its Name, TIN, Email or Internal Reference."
+msgstr "يمكن البحث بالاسم او بالايميل او المرجع"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "You cannot delete any confirmed cancel order."
+msgstr "لايمكن مسح سجل محقق"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "You cannot report expenses for different employees in the same report."
+msgstr "لا يمكنك الإبلاغ عن مصروفات موظفين مختلفين في نفس التقرير."
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "You cannot report twice the same line!"
+msgstr "لا يمكنك الإبلاغ عن نفس البند مرتين!"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "You have to define a sequence for %s in your company."
+msgstr "يجب تعريف تسلسل %s في مؤسستك."
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__setting_form
+msgid "accounts"
+msgstr "إعدادات الحسابات"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.admission__setting_menu_2
+#: model:ir.ui.menu,name:admission_management.admission__setting_menu_list
+msgid "accounts setting"
+msgstr "إعدادات الحسابات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__additions
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__additions
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__additions
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__additions
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "additions"
+msgstr "الاضافات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__addmission_income_account_id
+msgid "addmission income Account"
+msgstr "حساب إيراد الاستقدام"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_account_move__admission_request_id
+#: model:ir.model.fields,field_description:admission_management.field_account_payment__admission_request_id
+msgid "admission"
+msgstr "مرجع الاستقدام"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.admission_management_report_action
+msgid "admission Management Report"
+msgstr "تقرير الاستقدام"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.admission__management_menu_1_list
+msgid "admission Requests"
+msgstr "طلبات الاستقدام"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_expense__admission_request_id
+msgid "admission reference"
+msgstr "المرجع"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_admission_request
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__setting_form
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_request_graph
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_request_graph
+msgid "admission request"
+msgstr "طلب الاستقدام"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_admission_management_report
+msgid "admission.management.report"
+msgstr "تقرير الاستقدام"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_admission_report_line
+msgid "admission.report.line"
+msgstr "التفاصيل"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_admission_request_document
+msgid "admission.request.document"
+msgstr "المرفقات"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.admission__setting_action_window
+#: model:ir.model,name:admission_management.model_admission_request_setting
+msgid "admission.request.setting"
+msgstr "الإعدادات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__agent_id
+msgid "agent"
+msgstr "الوكالة"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__worker_state__all
+msgid "all"
+msgstr "الكل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "amount equal zero !!"
+msgstr "المبلغ يساوي صفر"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "amount grater than contract total amount %s"
+msgstr "المبلغ اكبر من قيمة العقد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__arrival_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__arrival_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__arrival_date
+msgid "arrival date"
+msgstr "تأريخ الوصول"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_assesstant
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__assesstant_ids
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__admission_request_id
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+msgid "assesstant"
+msgstr "مساند"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_ahala
+msgid "assesstant ahala"
+msgstr "إحالة مساند"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_arrival_station
+msgid "assesstant arrival station"
+msgstr "لحظة الوصول"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_date
+msgid "assesstant date"
+msgstr "تأريخ مساند"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_nationality
+msgid "assesstant nationality"
+msgstr "الجنسسية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_no
+msgid "assesstant no"
+msgstr "رقم مساند"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_period
+msgid "assesstant period"
+msgstr "الفترة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_profission
+msgid "assesstant profission"
+msgstr "المهنة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_religous
+msgid "assesstant religous"
+msgstr "الديانة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_salary
+msgid "assesstant salary"
+msgstr "الراتب"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_visa_cost
+msgid "assesstant visa cost"
+msgstr "تكلفة التأشيرة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_visa_date
+msgid "assesstant visa date"
+msgstr "تاريخ التأشيرة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_visa_fees
+msgid "assesstant visa fees"
+msgstr "رسوم التأشيرة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_assesstant__assesstant_visa_no
+msgid "assesstant visa no"
+msgstr "رقم التأشيرة"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_availability_report_line
+msgid "availability.report.line"
+msgstr "التفاصيل"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__worker_state__available
+msgid "available"
+msgstr "متاح"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+#, python-format
+msgid "birthday"
+msgstr "تأريخ الميلاد"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "cancel"
+msgstr "الغاء"
+
+#. module: admission_management
+#: model:ir.ui.menu,name:admission_management.rent_cancel_management_menu_1_list
+msgid "cancel Rent Contracts"
+msgstr "الغاء عقد تأجير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__cancel_payment_id
+msgid "cancel payment"
+msgstr "الغاء الدفع"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.Rent_cancelled_management_action_window
+msgid "cancelled contracts"
+msgstr "العقود الملغاه"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "confirm"
+msgstr "تأكيد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__contract_id
+msgid "contract"
+msgstr "العقد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__contract_net_amount
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__contract_net_amount
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__contract_net_amount
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__contract_net_amount
+msgid "contract Net Amount"
+msgstr "المبلغ الصافي"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__contract_vat_amount
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__contract_vat_amount
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__contract_vat_amount
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__contract_vat_amount
+msgid "contract Vat"
+msgstr "مبلغ الضريبة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__contract_date
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__contract_date
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__contract_date
+msgid "contract date"
+msgstr "تأريخ العقد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_employee__rent_contract_date_from
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__contract_date_from
+msgid "contract date from"
+msgstr "من تأريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_hr_employee__rent_contract_date_to
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__contract_date_to
+msgid "contract date to"
+msgstr "الي تأريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__contract_no
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__contract_no
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__contract_no
+msgid "contract no"
+msgstr "الرقم"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "contract_vat_amount"
+msgstr "مبلغ الضريبة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "country"
+msgstr "الدولة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "create invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__date_from
+msgid "date from"
+msgstr "من تاريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__date_to
+msgid "date to"
+msgstr "الي تاريخ"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "date to less than date from !!"
+msgstr "من تاريخ اكبر من الي تاريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__days_remain
+msgid "days remain"
+msgstr "الايام المتبقية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__discount
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__discount
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__discount
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__discount
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "discount"
+msgstr "الخصم"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__doc_date
+msgid "doc date"
+msgstr "التاريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__doc_id
+msgid "document"
+msgstr "المرفق"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.view_rent_search
+msgid "employee"
+msgstr "الموظف"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__employee_image
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__employee_image
+msgid "employee Image"
+msgstr "الصورة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "eqama number"
+msgstr "رقم الاقامة"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "fill sales tax in accouning with correct data"
+msgstr "الرجاء اضافة الضريبة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__is_from_website
+msgid "from website ?"
+msgstr "من الموقع"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+#, python-format
+msgid "gender"
+msgstr "النوع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__identification
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__identification
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__identification
+msgid "identification"
+msgstr "الهوية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__insurance_amount
+msgid "insurance amount"
+msgstr "مبلغ التأمين"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "insurance amount equal zero !!"
+msgstr "مبلغ التأمين يساوي صفر"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "insurance amount has been paid !!"
+msgstr "تم الدفع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__insurance_account_id
+msgid "insurance liability Account"
+msgstr "حساب التأمين"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__insurance_payment_id
+msgid "insurance payment"
+msgstr "الدفع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__invoice_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__invoice_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__invoice_id
+msgid "invoice"
+msgstr "الفاتورة"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_cancel__state__invoiced
+msgid "invoiced"
+msgstr "الفاتورة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__is_cancel
+msgid "is cancel ?"
+msgstr "هلي تم الالغاء"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_account_payment__is_insurance
+msgid "is insurance"
+msgstr "هل تأمين"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__is_insurance_paid
+msgid "is insurance paid ?"
+msgstr "هل تم الدفع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__last_contract_date
+msgid "last contract date"
+msgstr "اخر يوم في العقد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "last contract date grater than end contract date!! "
+msgstr "التاريخ غير صحيح"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "last contract date less than first contract date!! "
+msgstr "التاريخ غير صحيح"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "last contract day"
+msgstr "اخر يوم في العقد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__mission_date
+msgid "mission date"
+msgstr "تاريخ"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__mission_no
+msgid "mission no"
+msgstr "الرقم"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "nationality"
+msgstr "الجنسية"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__contract_date_from
+msgid "new contract date from"
+msgstr "من تاريخ الجديد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__contract_date_to
+msgid "new contract date to"
+msgstr "الي تاريخ الجديد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__number_of_days
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__number_of_days
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__number_of_days
+msgid "number of days"
+msgstr "عدد الايام"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__paid_amount
+msgid "paid amount"
+msgstr "المبلغ المدفوع"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "paid amount greater than contract amount !!"
+msgstr "المبلغ المدفوع اكبر من مبلغ العقد"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "paid amount greater than remainning amount !!"
+msgstr "المبلغ المدفوع اكبر من المبلغ المتبقي"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.view_admission_search
+#: model_terms:ir.ui.view,arch_db:admission_management.view_rent_search
+msgid "partner"
+msgstr "العميل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "passport number"
+msgstr "رقم الجواز"
+
+#. module: admission_management
+#: model:ir.actions.act_window,name:admission_management.act_admission_contract_payments
+#: model:ir.actions.act_window,name:admission_management.act_rent_contract_payments
+msgid "payments"
+msgstr "المدفوعات"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "recieve insurance"
+msgstr "استقبال التأمين"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+msgid "recieve payment"
+msgstr "استقبال دفعة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__user_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__user_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__user_id
+msgid "reguest person"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "remain amount equal zero !!"
+msgstr "البلغ المتبقي يساوي صفر"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "rent Contract"
+msgstr "العقد"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__rent_contract_ids
+msgid "rent Contracts"
+msgstr "العقود"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_rent_cancel
+msgid "rent cancel"
+msgstr "الغاء العقود"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields,field_description:admission_management.field_account_payment__rent_contract_id
+#, python-format
+msgid "rent contract"
+msgstr "عقود التأجير"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "rent contracts"
+msgstr "عقود التأجير"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_rent_cancel__rent_days
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__rent_days
+msgid "rent days"
+msgstr "الايام"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_setting__rent_income_account_id
+msgid "rent income Account"
+msgstr "حساب إيراد التأجير"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_rent_workers_management
+msgid "rent workers"
+msgstr "عقود التأجير"
+
+#. module: admission_management
+#: model:ir.actions.server,name:admission_management.rent_workers_cron_ir_actions_server
+#: model:ir.cron,cron_name:admission_management.rent_workers_cron
+#: model:ir.cron,name:admission_management.rent_workers_cron
+msgid "rent workers avaliblity: make sure of availability"
+msgstr "الرجاء التأكد من اتاحه كل العاملين"
+
+#. module: admission_management
+#: model:ir.model,name:admission_management.model_rent_report_line
+msgid "rent.report.line"
+msgstr "التفاصيل"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__responsible_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__responsible_id
+msgid "responsible_id"
+msgstr "المسؤول"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "select"
+msgstr "اختيار"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "there are payments for this contract!! "
+msgstr "توجد مدفوعات"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form_success1
+msgid "to select the worker press botton bellow"
+msgstr "يجب الضغط علي الزر التالي"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__total_cost
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__total_cost
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__total_cost
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__total_cost
+msgid "total Cost"
+msgstr "التكلفة"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__total_paid
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__total_paid
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__total_paid
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__total_paid
+msgid "total paid"
+msgstr "اجمالي المدفوع"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__total_remain
+msgid "total remain"
+msgstr "اجمالي المتبقي"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__total_remain
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__total_remain
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__total_remain
+#: model:ir.model.fields,field_description:admission_management.field_rent_workers_management__total_remain
+msgid "total remaining"
+msgstr "المتبقي"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "total_contract_with_vat"
+msgstr "المبلغ الاجمالي مع الضريبة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "total_cost"
+msgstr "التكلفة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "total_paid"
+msgstr "المبلغ المدفوع"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+msgid "total_remain"
+msgstr "المبلغ المتبقي"
+
+#. module: admission_management
+#: code:addons/admission_management/models/models.py:0
+#, python-format
+msgid "upload Document"
+msgstr "تحميل"
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_report_line__state__verify
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_request__state__verify
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_cancel__state__verify
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_report_line__state__verify
+#: model:ir.model.fields.selection,name:admission_management.selection__rent_workers_management__state__verify
+msgid "verified"
+msgstr "محقق"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent__management_form
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "verify"
+msgstr "تحقيق"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "worker"
+msgstr "العامل"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+msgid "worker Arrival"
+msgstr "وصول العامل"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "worker Image"
+msgstr "الصورة"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission__management_form
+msgid "worker Info"
+msgstr "المعلومات"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__worker_inarabic
+msgid "worker in arabic"
+msgstr "الاسم بالعربي"
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request__worker_inenglish
+msgid "worker in english"
+msgstr "الاسم بالانجليزي"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "worker name"
+msgstr "اسم العامل"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "worker_inarabic"
+msgstr "الاسم بالعربي"
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__workers_ids
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_management_report_form
+#, python-format
+msgid "workers"
+msgstr "العاملين"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_details_page
+msgid "workers Details"
+msgstr "التفاصيل"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form
+msgid "your Name"
+msgstr "الاسم"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.tmp_customer_form_success
+msgid "your request sent successfully soon will reply to you ."
+msgstr "تم إرسال طلبك بنجاح وسوف يتم التواصل قريبا"
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"اتفق الطرفان على ان يقوم الطرف الاول بتوفير عامل منزلي و تقديم خدماته للطرف "
+"التاني  , وفقا لما يكلفه به في حدود مجال عمله بمهنة عامله منزلية , و بيانات "
+"العامل هي :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "اجمالي المتبقي:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "اجمالي المدفوع:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "اسم العميل"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "الإقامة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الاجمالي مع الضريبة:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الاسم"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__worker_inarabic
+msgid "الاسم بالعربي"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الاضافات"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "البريد الالكتروني"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__date
+msgid "التاريخ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "التكلفة الشهرية"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الجنس"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الجنسسية"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__employee_nationality
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الجنسية"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "الجنسية- الدولة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الجوال"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_report_line__status
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__status
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__status
+msgid "الحالة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الحمد لله وحده و بعد  ففي"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الخصم"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "الرمز البريدي"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الضريبة"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__employee_id
+#: model:ir.model.fields,field_description:admission_management.field_rent_report_line__employee_id
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "العامل"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__report_type__workers
+msgid "العاملين"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__customer_id
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "العميل"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "العميل:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "الفاتورة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "القيد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "المؤهلات و الخبرات"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "المتبقي"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "المدفوع"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"المعلنه - في تاريخ التعاقد - بالموقع اللاكتروني  مساند التابع لوزار العمل و "
+"ذلك بمبلغ و قدره"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__gender
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "النوع"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__date_to
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الي تاريخ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "الي تاريخ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_cancel_management_form
+msgid "انشاء اشعار دائن"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "اولا : موضوع العقد :-"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__installment_status
+#, python-format
+msgid "بحث بحالة الدفع"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "بموجب"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__birthday
+msgid "تأريخ الميلاد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "تاريخ الميلاد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "تاريخه"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_request_document__attach_ids
+msgid "تحميل"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.report,name:admission_management.report_admission
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+msgid "تقرير تفاصيل الاستقدام"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.report,name:admission_management.rent_report_admission_id
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "تقرير تفاصيل الايجار"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.report,name:admission_management.workers_report_admission_id
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "تقرير تفاصيل العمالة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "تكلفة العقد الاجماليه"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "تمهيد :-"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ثالثا : قيمة العقد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ثانيا : مدة العقد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+msgid "حالة الاستقدام"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "حالة الايجار"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "حاله العامل"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"حيث ان الطرف الاول مرخص له بتقديم خدمات العمالة - المنزلية. و لديه الخبرات و"
+" الامكانيات اللازمة لتوفير خدمات العمالة المنزلية . و ذلك وفق الانظمة و "
+"اللوائح و التعليمات المعمول بها في المملكة العربية السعودية و بما لا يتعارض "
+"مع احكام الشريعة الاسلامية , و لحاجة الطرف الثاني لخدمات بعض العمالة "
+"المنزلية . فقد اتفق الطرفان و هما بكامل اهليتهما المعتبرة شرعا و نظاما علي "
+"ما بلي :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "خامسا : التزامات الطرف الثاني :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "رابعا : التزامات الطرف الاول :"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__identification_id
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "رقم الاقامة"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_availability_report_line__passport_id
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "رقم الجواز"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "رقم العقد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "رقمه"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ريال سعودي , وفقا لما يلي :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ريال سعودي ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ريال سعودي عند توقيع هذا العقد ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ريال سعودي للطرف الاول كضمان يسترد عند انتهاء هذا العقد او فسخه. و يحق للطرف"
+" الاول الخصم منه وفاء للالتزامات الطرف الثاني ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ساعات العمل الفعلية اليومية"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__installment_status__full_paid
+#, python-format
+msgid "سددت"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__installment_status__partial_paid
+#, python-format
+msgid "سددت جزئيا"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "صندوق بريد"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.actions.report,name:admission_management.report_rent_contract_report_temp
+msgid "طباعة العقد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "عاملة منزلية"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "عدد الاشهر من العقد * تكلفة نقل الخدمة الشهري"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "عقد رقم"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__report_type__contract
+msgid "عقود الاستقدام"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__report_type__rent_contract
+msgid "عقود التأجير"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "عنوانه"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "غير متاح "
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "فاكس"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__installment_status__all_option
+#, python-format
+msgid "كل الدفعات"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: code:addons/admission_management/models/admission_report.py:0
+#: model:ir.model.fields.selection,name:admission_management.selection__admission_management_report__installment_status__not_paid
+#, python-format
+msgid "لم تسدد"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "م تم الاتفاق بمدينة محافظة العويقيلة بين كل من :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "مبلغ الضريبة:"
+msgstr ""
+
+#. module: admission_management
+#: code:addons/admission_management/models/admission_report.py:0
+#, python-format
+msgid "متاح"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "مدة الخدمة ﻣﺪﺔ ﺍﻟﺨﺪﻣﺔ المطلوبة"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "مدة هذا العقد (1) اربعة و عشرون شهرا تبدا من"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.workers_report_template
+msgid "مكتب الاستقدام"
+msgstr ""
+
+#. module: admission_management
+#: model:ir.model.fields,field_description:admission_management.field_admission_management_report__date_from
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "من تاريخ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "من تاريخ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.admission_report_template
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_report_template
+msgid "نوع التقرير:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ه  و تنتهي"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ه قابلة للتجديد لمدة او مدد , مماثلة بموجب إشعار مكتوب من الطرف الثاني للطرف"
+" الاول قبل نهاية مدة العقد بشهر علي الاقل ما لم يتم نقل خدمة العامل ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "هاتف"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "و يشار اليه فيما بعد ب (الطرف الاول )"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "و يشار اليه فيما بعد ب (الطرف الثاني )"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺍﺗﻔﻖ ﺍﻟﻄﺮﻓﺎﻦ ﻋﻠﻰ ﺃﻧﻪ ﻓﻲ ﺣﺎﻟﺔ ﺭﻏﺒﺔ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻧﻘﻞ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﺇﻟﻴﻪ,"
+" ﻓﻴﻠﺘﺰﻢ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ بالتنازل ﻋﻦ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﺧﻼﻞ ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ﻣﻦ "
+"ﺗﺎﺮﻳﺦ ﻃﻠﺐ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻟﺬﻟﻚ , ﻭﻓﻖ ﺍﻟﻨﻤﻮﺬﺝ ﺍﻟﻤﻌﺘﻤﺪ ﻣﻦ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ , ﻭﺫﻟﻚ ﻭﻓﻖ "
+"ﻟﻤﺎ ﻳﻠﻲ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺍﺳﻢ ﺍﻟﻄﺮﻑ ﺍﻟﺜﺎﻧﻲ : "
+".........................................................."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺍﺳﻢ ﺍﻟﻄﺮﻑ ﺍﻷﻭﻝ : ..........................................................."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺍﻟﺤﺎﺪﻱ ﻋﺸﺮ : ﻧﺴﺦ ﺍﻟﻌﻘﺪ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺍﻟﺨﺘﻢ :"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺍﻟﺼﻔﺔ : ......................................................."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺑﻄﺎﻗﺔ ﺍﺣﻮﺍﻝ"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺗﺎﺳﻌﺎ : ﺍﻹﺧﻄﺎﺮﺍﺕ ﻭﺍﻹﺷﻌﺎﺮﺍﺕ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺗﺘﻢ ﺍﻹﺧﻄﺎﺮﺍﺕ ﻭﺍﻹﺷﻌﺎﺮﺍﺕ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻛﺘﺎﺑﺔ ﻋﻦ ﻃﺮﻳﻖ ﺍﻟﺒﺮﻳﺪ ﺍﻟﻤﺴﺠﻞ ﺃﻭ ﺍﻟﺒﺮﻳﺪ "
+"ﺍﻟﻤﻤﺘﺎﺰ ﺃﻭ ﺍﻟﺒﺮﻳﺪ ﺍﻹﻟﻜﺘﺮﻮﻧﻲ، ﻭﺗـﻮﺟﻪ ﺍﻹﺧـﻄﺎﺮﺍﺕ ﻋﻠـﻲ ﺍﻟﻌـﻨﻮﺎﻥ ﺍﻟﻤﻮﺿـﺢ ﻟـﻜﻞ ﻣـﻦ"
+" ﺍﻟﻄﺮﻓـﻴﻦ ﻓـﻲ ﺻـﺪﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ , ﻭﻳﻠﺘﺰﻢ ﻛﻞ ﻃﺮﻒ ﺑﺈﺷﻌﺎﺮ ﺍﻟﻄﺮﻒ ﺍﻵﺧﺮ ﺧﻄﻴﺎ ﻓﻲ ﺣﺎﻞ "
+"ﺗﻐﻴﻴﺮﻪ ﻟﻠﻌﻨﻮﺎﻥ ﺍﻟﺨﺎﺺ ﺑﻪ ﻭﺇﻻ ﺍﻋﺘﺒﺮ ﺍﻟﻌﻨﻮﺎﻥ ﺍﻟﻤﺪﻮﻥ ﺃﻋﻼﻪ ﻫﻮ ﺍﻟﻤﻌﻤﻮﻞ ﺑﻪ ﻧﻈﺎﻣﺎ "
+"ﺩﻭﻥ ﻏﻴﺮﻪ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺗﻮﻗﻴﻊ ﺍﻟﻄﺮﻑ ﺍﻟﺜﺎﻧﻲ : "
+"..........................................................."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺗﻮﻗﻴﻊ ﺍﻟﻄﺮﻑ ﺍﻷﻭﻝ : "
+"..........................................................."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺛﺎﻣﻨﺎ : ﺍﻟﺨﻼﻓﺎﺖ ﻭ ﺍﻟﻤﻨﺎﺰﻋﺎﺖ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﺣﺮﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻦ ﻧﺴﺨﺘﻴﻦ ﺃﺻﻠﻴﺘﻴﻦ ﻭﻗﺪ ﺍﺳﺘﻠﻢ ﻛﻞ ﻃﺮﻒ ﻧـﺴﺨﺔ ﻣﻨﻪ ﻟﻠﻌﻤﻞ ﺑﻤﻮﺟﺒﻪ."
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺳﺎﺑﻌﺎ : ﺃﺣﻜﺎﻢ ﻋﺎﻣﺔ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﺳﺎﺪﺳﺎ : ﻧﻘﻞ ﺍﻟﺨﺪمة:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid "ﻋﺎﺷﺮﺎ : ﺍﻧﺘﻬﺎء ﺍﻟﻌﻘﺪ ﺃﻭ ﻓﺴﺨﻪ:"
+msgstr ""
+
+#. module: admission_management
+#: model_terms:ir.ui.view,arch_db:admission_management.rent_contract_report_temp
+msgid ""
+"ﻓﻲ ﺣﺎﻟﺔ ﺣﺪﻮﺙ ﺧﻼﻒ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻳﺘﻢ ﺍﻟﻠﺠﻮء ﻟﻤﻜﺘﺐ ﺍﻟﻌﻤﻞ ﺍﻟﻤﺨﺘﺺ ﻟﻤﺤﺎﻮﻟﺔ ﺍﻟﺘﻮﺻﻞ "
+"ﻟﺤﻞ ﻭﺩﻱ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻗﺒﻞ ﺍﻟﻨﻈﺮ ﻓﻴﻪ ﻣﻦ ﺍﻟﻤﺤﻜﻤﺔ ﺍﻟﻤﺨﺘﺼﺔ."
+msgstr ""

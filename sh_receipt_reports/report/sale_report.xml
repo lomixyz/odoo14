@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <report
+            id="action_sh_rr_sale_report"
+            string="Quotation / Order Receipt"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            name="sh_receipt_reports.sh_rr_sale_receipt"
+            file="sh_receipt_reports.sh_rr_sale_receipt"
+ 			print_report_name="(object.state in ('draft', 'sent') and 'Quotation Receipt - %s' % (object.name)) or 'Order Receipt - %s' % (object.name)"            
+            />
+
+        <record id="action_sh_rr_sale_report" model="ir.actions.report">
+            <field name="paperformat_id" ref="sh_receipt_reports.sh_rr_paperformat"/>
+        </record>
+
+</odoo>
+
+

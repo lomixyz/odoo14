@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	<record id="cron_send_doc_expiry_notification" model="ir.cron">
+		<field name="name">Notify Employees - Document Expiration</field>
+		<field name="model_id" ref="model_hr_documents" />
+		<field name="state">code</field>
+		<field name="code">model._send_doc_expiry_notification()</field>
+		<field name="interval_number">1</field>
+		<field name="interval_type">days</field>
+		<field name="numbercall">-1</field>
+		<field name="active">1</field>
+		<field name="doall" eval="False" />
+	</record>
+</odoo>

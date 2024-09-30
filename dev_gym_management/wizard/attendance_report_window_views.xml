@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_attendance_report" model="ir.ui.view">
+        <field name="name">form.attendance.report</field>
+        <field name="model">attendance.report.window</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Report Form">
+                <group>
+                    <group>
+                        <field name="attendance_of"/>
+                    </group>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Print" name="print_gym_attendance_report" type="object" class="oe_highlight" icon="fa-print"/>
+                    &#160;or&#160;
+                    <button string="Close Window" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--action-->
+    <record id="action_attendance_report" model="ir.actions.act_window">
+        <field name="name">Gym Attendance Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">attendance.report.window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_attendance_report"/>
+        <field name="target">new</field>
+    </record>
+    <!--Menus-->
+    <menuitem name="Gym Attendance Report"
+              id="menu_attendance_report"
+              parent="dev_gym_management.menu_gym_management_reporting"
+              sequence="2"
+              action="action_attendance_report"/>
+</odoo>

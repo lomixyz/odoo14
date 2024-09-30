@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="bokeh_map assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/traccar_fleet_tracking/static/src/lib/bokeh-0.13.0.min.css"/>
+            <link rel="stylesheet" href="/traccar_fleet_tracking/static/src/lib/bokeh-widgets-0.13.0.min.css"/>
+            <script type="text/javascript" src="/traccar_fleet_tracking/static/src/lib/bokeh-0.13.0.min.js"/>
+            <script type="text/javascript" src="/traccar_fleet_tracking/static/src/lib/bokeh-widgets-0.13.0.min.js"/>
+            <script type="text/javascript" src="/traccar_fleet_tracking/static/src/js/web_bokeh_map.js"/>
+            <script type="text/javascript" src="/traccar_fleet_tracking/static/src/js/calendar_prevent_create.js"/>
+        </xpath>
+    </template>
+</odoo>

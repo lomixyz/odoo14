@@ -1,0 +1,63 @@
+<odoo>
+    <template id="portal_my_home_menu_sale" name="Portal layout : sales menu entries" inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'freight_operation' " t-attf-class="breadcrumb-item #{'active ' if not sale_order else ''}">
+                <a t-if="freight_operation" t-attf-href="/my/freight_operations?{{ keep_query() }}">Direct Shipping</a>
+                <t t-else="">Direct Shipping</t>
+            </li>
+            </xpath>
+           
+    </template>
+      <template id="portal_my_home_freight_operation" name="Direct Shipping" inherit_id="portal.portal_my_home" customize_show="True" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Direct Shipping</t>
+                <t t-set="url" t-value="'/my/freight_operations'"/>
+                <t t-set="placeholder_count" t-value="'freight_operation_count'"/>
+            </t>
+        </xpath>
+    </template>
+    <template id="portal_my_freight_operation" name="My Direct Shipping">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Direct Shipping</t>
+            </t>
+            <t t-if="not freight_operations">
+                <p>There are currently no Direct Shipping for your account.</p>
+            </t>
+            <t t-if="freight_operations" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        	
+
+                        <th class="text-right">Name</th>
+                        <th class="text-right">Direction</th>
+                        <th class="text-right">Loading Port</th>
+                        <th class="text-right">Discharging Port</th>
+                        <th class="text-right">Expected Receive Date</th>
+                        <th class="text-center">State</th>
+                        <th class="text-right">Total Cartons</th>
+                    </tr>
+                </thead>
+                <t t-foreach="freight_operations" t-as="freight_operation">
+                    <tr>
+                        <td class="text-right"><span t-field="freight_operation.name"/></td>
+                        <td class="text-right"><span t-field="freight_operation.direction"/></td>
+                        <td class="text-right"><span t-field="freight_operation.loading_port_id"/></td>
+                        <td class="text-right"><span t-field="freight_operation.discharg_port_id"/></td>
+                        <td class="text-right"><span t-field="freight_operation.exp_rec_date"/></td>
+                        <td class="text-center">
+                           <span t-if="not freight_operation.state == 'cancel'" class="badge badge-pill badge-secondary"><span t-field="freight_operation.state"/></span>
+                            <span t-if="freight_operation.state == 'cancel'" class="badge badge-pill badge-secondary"><i class="fa fa-fw fa-remove"/> Cancelled</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="freight_operation.total_cartons"/>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

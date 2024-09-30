@@ -1,0 +1,1824 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gecoerp_job_costing_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210218\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-26 20:31+0000\n"
+"PO-Revision-Date: 2021-08-26 20:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__stock_moves_count
+msgid "# de Movimientos de Existencias"
+msgstr "# حركات المخزون"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_const_project_note_note_kanban
+msgid "<i class=\"fa fa-check\" title=\"Check\"/>"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_const_project_note_note_kanban
+msgid "<i class=\"fa fa-undo\" title=\"Undo\"/>"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_const_project_note_note_kanban
+msgid "<span class=\"fa fa-bars fa-lg\" title=\"Dropdown\"/>"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid ""
+"<span class=\"o_form_label\">This wizard will create subtasks of current "
+"task.</span>"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid ""
+"<span>Horas Planeadas :</span><br/>\n"
+"                                     <span>Horas Aplicadas :</span><br/>\n"
+"                                     <span>horas Restantes :</span><br/>"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Asunto </strong>"
+msgstr "الموضوع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Centro de Costos </strong>"
+msgstr "مركز الكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Cliente </strong>"
+msgstr "العميل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Cliente</strong>"
+msgstr "العميل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Compañia </strong>"
+msgstr "الشركة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Costo Total </strong>"
+msgstr "التكلفة الإجمالية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Costo Total de Gastos en General</strong>"
+msgstr "التكلفة الإجمالية للمصروفات العامة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Costo Total de Mano de Obra</strong>"
+msgstr "إجمالي تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Costo Total de Materiales</strong>"
+msgstr "التكلفة الإجمالية للمواد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Creado Por </strong>"
+msgstr "انشأ من قبل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Descripción </strong>"
+msgstr "الوصف"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Detalle del Sitio de Construcción:</strong>"
+msgstr "تفاصيل موقع البناء:"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Divisa </strong>"
+msgstr "شارة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Fecha de Cierre </strong>"
+msgstr "الموعد النهائي"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Fecha de Creación </strong>"
+msgstr "تاريخ الإنشاء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Gerente de Proyecto</strong>"
+msgstr " مدير المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Locación</strong>"
+msgstr "الموقع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Nombre </strong>"
+msgstr "إسم"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Número de Orden </strong>"
+msgstr "رقم الطلب"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Orden de Trabajo </strong>"
+msgstr "أمر العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "<strong>Proyecto </strong>"
+msgstr "مشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.note_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.purchase_requisition_inherit_project
+msgid "<strong>Proyecto</strong>"
+msgstr "مشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.purchase_requisition_inherit_project
+msgid "<strong>Tarea / Orden de Trabajo del Empleado</strong>"
+msgstr "مهمة المشروع / أمر عمل الموظف"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.purchase_requisition_inherit_project
+msgid "<strong>Tarea / Orden de Trabajor</strong>"
+msgstr "مهمة / أمر العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.note_report_id
+msgid "<strong>Tarea</strong>"
+msgstr "مهمة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Tareas:</strong>"
+msgstr "الأعمال المنزلية:"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "<strong>Tipos de Construcción</strong>"
+msgstr "أنواع البناء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.note_report_id
+msgid "<strong>Usuario Responsable</strong>"
+msgstr "المستخدم المسؤول"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__account_invoice_line_ids
+msgid "Account Invoice Line"
+msgstr "خط فاتورة الحساب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__account_invoice_line_count
+msgid "Account Invoice Line Count"
+msgstr "حساب بند فاتورة الحساب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Active"
+msgstr "نشط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_ids
+msgid "Activities"
+msgstr "النشاطات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_managmt
+msgid "Adm. Obras"
+msgstr "إدارة الأشغال"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__agricultural
+msgid "Agricultura"
+msgstr "الزراعة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__environmental
+msgid "Ambiental"
+msgstr "بيئي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "الخط التحليلي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_costing__state__approve
+msgid "Aprobado"
+msgstr "وافق"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Aprobar"
+msgstr "إعتماد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Aprobar Costo de Trabajo"
+msgstr "اعتماد تكلفة العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Archive"
+msgstr "أرشيف"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Asignado a"
+msgstr "مخصص ل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__basis
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Base"
+msgstr "يتمركز"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_costing__state__draft
+msgid "Borrador"
+msgstr "مشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "By sticky note Category"
+msgstr "حسب فئة المذكرة اللاصقة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_costing__state__cancel
+msgid "Cancelado"
+msgstr "ألغيت"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Cancelar"
+msgstr "إلغاء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Cancelar Costo de Trabajo"
+msgstr "إلغاء تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__product_qty
+msgid "Cant. Planeada"
+msgstr "الكمية المخططة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Cantidad"
+msgstr "كمية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Cantidad Comprada"
+msgstr "الكمية المشتراة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Cantidad Facturada"
+msgstr "مبلغ الفاتورة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Cantidad Total"
+msgstr "الكمية الإجمالية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Centro de Costo"
+msgstr "مركز التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__analytic_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Centro de Costos"
+msgstr "مركز التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order_line__job_cost_id
+msgid "Centro de costo de Trabajo"
+msgstr "مركز تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_picking_tree_all_const
+msgid "Click here to create a new transfer."
+msgstr "انقر هنا لإنشاء تحويل جديد."
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_partner_contractor_form
+msgid "Click to add a contact in your address book."
+msgstr "انقر لإضافة جهة اتصال في دفتر العناوين الخاص بك."
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.purchase_rfq_construction
+msgid "Click to create a request for quotation."
+msgstr "انقر لإنشاء طلب التسعيرة."
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__partner_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Cliente"
+msgstr "العميل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__actual_quantity
+msgid "Cnt. Actual de Compra"
+msgstr "الكمية الفعلية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__actual_invoice_quantity
+msgid "Cnt. Facturas de Proveedor"
+msgstr "كمية الفاتورة الحالية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__code
+msgid "Codigo"
+msgstr "الشفرة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__commercial
+msgid "Comercial"
+msgstr "تجاري"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__company_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Compañia"
+msgstr "شركة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__job_cost_line_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_move_line__job_cost_line_id
+msgid "Concepto de Obra"
+msgstr "مفهوم العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_configuration
+msgid "Configuración"
+msgstr "الضبط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_costing__state__confirm
+msgid "Confirmado"
+msgstr "مؤكد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Confirmar"
+msgstr "يتأكد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Confirmar Costo de Trabajo"
+msgstr "تأكيد تكلفة العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.edit_project_inherit_construction
+msgid "Construction Site Detail"
+msgstr "تفاصيل موقع البناء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_picking
+msgid "Consumed Materials"
+msgstr "المواد المستهلكة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_partner_contractor_form
+msgid "Contratistas"
+msgstr "المقاولون"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__jobcost_total
+msgid "Costo Total"
+msgstr "التكلفة الإجمالية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__overhead_total
+msgid "Costo Total de Gastos en General"
+msgstr "التكلفة الإجمالية للمصروفات العامة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__labor_total
+msgid "Costo Total de Mano de Obra"
+msgstr "إجمالي تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__material_total
+msgid "Costo Total de Material"
+msgstr "إجمالي تكلفة المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__cost_price
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Costo Unitario"
+msgstr "تكلفة الوحدة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_job_costing
+msgid "Costo de Empleo"
+msgstr "تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Costo de Linea de Trabajo"
+msgstr "تكلفة خط العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__subcontract_total
+msgid "Costo de Subcontrato"
+msgstr "تكلفة التعاقد الفرعي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.report,name:gecoerp_job_costing_management.job_costing_report
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__work_cost_package_total
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__product_product__boq_type__work_cost_package
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Costo de Trabajo"
+msgstr "تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Costo de Trabajo Terminado"
+msgstr "تكلفة العمل المنجز"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order_line__job_cost_line_id
+msgid "Costo por Linea de Trabajo"
+msgstr "التكلفة حسب خط العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_managmt
+msgid "Costos de Trabajo"
+msgstr "تكاليف العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__user_id
+msgid "Creado Por"
+msgstr "انشأ من قبل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid "Crear"
+msgstr "إنشاء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.open_view_project_job_all_config
+msgid "Crear un nuevo proyecto de construcción."
+msgstr "إنشاء مشروع بناء جديد."
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_subtask
+msgid "Create Subtasks"
+msgstr "إنشاء المهام الفرعية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__create_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__create_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Cuanta Analítica"
+msgstr "كم التحليلات"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Cuenta"
+msgstr "مشروع قانون"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__analytic_id
+msgid "Cuenta Análitica"
+msgstr "حساب تحليلي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__access_url
+msgid "Customer Portal URL"
+msgstr "عنوان URL لبوابة العميل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_const_project_note_note_kanban
+msgid "Delete"
+msgstr "حذف"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__description
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__description
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__description
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__description
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Descripción"
+msgstr "وصف"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__description
+msgid "Descripción de la Tarea"
+msgstr "وصف المهمة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Descuento"
+msgstr "خصم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__purchase_order_line_ids
+msgid "Detalle de Compras"
+msgstr "تفاصيل التسوق"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Detalle de Costos"
+msgstr "تفاصيل التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Detalle de Facturas de Proveedor"
+msgstr "تفاصيل فاتورة المورد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__timesheet_line_ids
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Detalle de Hoja de Tiempos"
+msgstr "تفاصيل الجدول الزمني"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_job_cost_line_custom
+msgid "Detalle de Hojas de Costo"
+msgstr "تفاصيل أوراق التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Detalle de Ordenes de Compra"
+msgstr "تفاصيل أوامر الشراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__notes_job
+msgid "Detalle de costos de Trabajos"
+msgstr "تفاصيل تكلفة الوظيفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_product_product__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__display_name
+msgid "Display Name"
+msgstr "عرض اﻹسم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__currency_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__currency_id
+msgid "Divisa"
+msgstr "شارة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Duración"
+msgstr "مدة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__is_task
+msgid "Es Una Orden de Trabajo?"
+msgstr "هل هو أمر عمل؟"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__is_project
+msgid "Es un Proyecto?"
+msgstr "هل هو مشروع؟"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__state
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Estado"
+msgstr "ولاية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Estatus"
+msgstr "حالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_stages
+msgid "Etapas"
+msgstr "مراحل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__date
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Fecha"
+msgstr "تاريخ"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Fecha de Asignación"
+msgstr "تاريخ التنازل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__complete_date
+msgid "Fecha de Cierre"
+msgstr "الموعد النهائي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__contract_date
+msgid "Fecha de Contrato"
+msgstr "تاريخ العقد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__start_date
+msgid "Fecha de Creación"
+msgstr "تاريخ الإنشاء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Fecha de Inicio"
+msgstr "تاريخ البدء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Fecha de Order"
+msgstr "تاريخ الطلب"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Fecha de Requisición"
+msgstr "تاريخ الطلب"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Fecha de Termino"
+msgstr "تاريخ الانتهاء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Firma:____________________"
+msgstr "مؤسسة:____________________"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Forma de Costo de Trabajo"
+msgstr "نموذج تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_type__job_type__overhead
+msgid "Gasto en General"
+msgstr "الإنفاق العام"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Gastos Generales"
+msgstr "المصروفات العامة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__job_overhead_line_ids
+msgid "Gastos Generales Directos"
+msgstr "المصاريف العامة المباشرة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_cost_line__job_type__overhead
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Gastos en General"
+msgstr "المصروفات العامة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.module.category,name:gecoerp_job_costing_management.module_category_construction
+msgid "Gestion de Contratación de Costos Laborales"
+msgstr "إدارة تكاليف العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_job_cost_line
+msgid "Hoja de Costos"
+msgstr "ورقة التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Hoja de Horas"
+msgstr "ورقة ساعات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__job_cost_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_move_line__job_cost_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__direct_id
+msgid "Hoja de Obra"
+msgstr "ورقة عمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__timesheet_line_ids
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Hoja de Tiempos"
+msgstr "ورقة التوقيت"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_job_costing
+msgid "Hojas de Costo"
+msgstr "أوراق التكلفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_sub_job_costing
+msgid "Hojas de Costo de Tabajo"
+msgstr "أوراق تكلفة العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__end_time
+msgid "Hora Final"
+msgstr "الساعة الأخيرة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__start_time
+msgid "Hora de Inicio"
+msgstr "وقت البدء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__hours
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Horas"
+msgstr "ساعات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__actual_hour
+msgid "Horas Aplicadas"
+msgstr "الساعات المطبقة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "Horas Esperadas"
+msgstr "الساعات المتوقعة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Horas Iniciales Planeadas"
+msgstr "الساعات الأولية المخططة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+msgid "Horas Planeadas"
+msgstr "الساعات المخططة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Horas Restantes"
+msgstr "الساعات متبقية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_move_line__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_product_product__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__notes_ids
+msgid "Id. de Nota"
+msgstr "معرف الملاحظة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__notes_ids
+msgid "Identificador de Notas"
+msgstr "معرف الملاحظات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_needaction
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_has_error
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__industrial
+msgid "Industrial"
+msgstr "صناعي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__institutional
+msgid "Institucional"
+msgstr "المؤسسية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__job_cost_ids
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__job_cost_ids
+msgid "Job Cost"
+msgstr "تكلفة الوظيفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__job_cost_count
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__job_cost_count
+msgid "Job Cost Count"
+msgstr "حساب تكلفة الوظيفة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__job_costsheet_line_count
+msgid "Job Costsheet Line Count"
+msgstr "حساب خط كلفة العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_type_form_view
+msgid "Job Type form"
+msgstr "نموذج نوع الوظيفة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_cost_project_form_view
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_cost_task_form_view
+msgid "Jobcosts"
+msgstr "تكاليف العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر المجلة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_cost_line__job_type__labour
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_type__job_type__labour
+msgid "Labor"
+msgstr "العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Labores"
+msgstr "العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_analytic_line____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_product_product____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order_line____last_update
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__write_uid
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__write_date
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Linea de Costo de Trabajo"
+msgstr "خط تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__location_id
+msgid "Locación"
+msgstr "الموقع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Línea de Costo de Trabajo"
+msgstr "خط تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__job_labour_line_ids
+msgid "Mano de Obra Directos"
+msgstr "يوجه العمال"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__equipment_machine_total
+msgid "Maquinaria / Costo de Equipo"
+msgstr "تكلفة الآلات / المعدات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__product_product__boq_type__eqp_machine
+msgid "Maquinaria / Equipo"
+msgstr "معدات آلية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__consumed_material_ids
+msgid "Mareriales Consumidos"
+msgstr "المواد المستهلكة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_cost_line__job_type__material
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_type__job_type__material
+msgid "Material"
+msgstr "المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_consumed_material
+msgid "Material Consumido"
+msgstr "المواد المستهلكة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__consumed_task_material_id
+msgid "Material Consumido y planeado en Tareas"
+msgstr "المواد المستهلكة والمخطط لها في المهام"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__material_task_id
+msgid "Material Plan Task"
+msgstr "مهمة خطة المواد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_picking
+msgid "Material Plannings"
+msgstr "التخطيط المادي"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_picking
+msgid "Material Requisitions"
+msgstr "طلبات المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_material
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Materiales"
+msgstr "المواد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.material_purchase_requisition_form_view_inherit_materials
+msgid "Materiales / BOQ Costo"
+msgstr "المواد / تكلفة BOQ"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_materials
+msgid "Materiales / Listado de Cantidades"
+msgstr "قائمة المواد / الكمية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Materiales Consumidos"
+msgstr "المواد المستهلكة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__job_cost_line_ids
+msgid "Materiales Directos"
+msgstr "المواد المباشرة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.purchase_rfq_construction
+msgid ""
+"Most propositions of purchase orders are created automatically\n"
+"                by Odoo based on inventory needs."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__move_ids
+msgid "Move"
+msgstr "نقل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__account_invoice_line_ids
+msgid "Movimientos Contables de Facturas"
+msgstr "حركات محاسبة الفواتير"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص للنشاط التالي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع للنشاط التالي"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__name
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__name
+msgid "Nombre"
+msgstr "اسم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__name
+msgid "Nombre de la Tarea"
+msgstr "اسم الواجب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_project_note_note
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_task_note_note
+#: model:ir.actions.report,name:gecoerp_job_costing_management.print_note_report
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__notes_count
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__notes_count
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Notas"
+msgstr "ملحوظات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.notes_job_project_menu
+msgid "Notas de Proyectos"
+msgstr "ملاحظات المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.notes_job_cost_task_menu
+msgid "Notas de Trabajos"
+msgstr "ملاحظات عن الأشغال"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_note_note
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_form
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.edit_project_inherit_construction
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_picking
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__number
+msgid "Número"
+msgstr "عدد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__job_number
+msgid "Número de Empleado"
+msgstr "رقم الموظف"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__heavy_civil
+msgid "Obra Civil"
+msgstr "عمل مدني"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__product_product__boq_type__worker_resource
+msgid "Obrero / Recurso"
+msgstr "عامل / مورد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_partner_contractor_form
+msgid ""
+"Odoo helps you easily track all activities related to\n"
+"            a supplier: discussions, history of purchases,\n"
+"            documents, etc."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_view_job_orders
+msgid ""
+"Odoo's Job Orders management allows you to manage the pipeline of your Jobs "
+"efficiently. You can track progress, discuss on jobs, attach documents, etc."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_view_task_subtask
+msgid ""
+"Odoo's project management allows you to manage the pipeline of your tasks "
+"efficiently. You can track progress, discuss on tasks, attach documents, "
+"etc."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Orden"
+msgstr "ترتيب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__purchase_order_id
+msgid "Orden de Compra"
+msgstr "أمر شراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__task_id
+msgid "Orden de Trabajo"
+msgstr "أمر العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__purchase_order_ids
+msgid "Ordenes de Compra"
+msgstr "طلبات الشراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__purchase_order_line_ids
+msgid "Ordenes de Compras"
+msgstr "طلبات الشراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_order
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_orders
+msgid "Ordenes de Trabajo"
+msgstr "طلبات العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.open_view_project_job_all_config
+msgid ""
+"Organize your activities (plan tasks, track issues, invoice timesheets) for "
+"internal, personal or customer construction projects."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__other
+msgid "Otro"
+msgstr "آخر"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_search_form_inherit_parenttask
+msgid "Parent Task"
+msgstr "المهمة الأصل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_material_plan
+msgid "Plan de Materiales"
+msgstr "خطة المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__material_plan_ids
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Planificación de Materiales"
+msgstr "تخطيط المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__planned_hours
+msgid "Planned Hours"
+msgstr "الساعات المخططة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Plazo"
+msgstr "شرط"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__access_url
+msgid "Portal Access URL"
+msgstr "عنوان URL للوصول إلى المدخل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Precio Unitario"
+msgstr "سعر الوحدة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_product_product
+msgid "Product"
+msgstr "المنتج"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__product_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__product_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Producto"
+msgstr "المنتج"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__product_id
+msgid "Producto o Servicio"
+msgstr "المنتج أو الخدمة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid "Proejct Subtask"
+msgstr "المهمة الفرعية للمشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_project_project
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Project"
+msgstr "المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_proejct_subtask_user_wizard
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__subtask_id
+msgid "Project User Subtask"
+msgstr "المهمة الفرعية لمستخدم المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Projecto"
+msgstr "المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.open_view_project_job_all_config
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__project_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__project_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Proyecto"
+msgstr "المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__project_id
+msgid "Proyecto de Construction"
+msgstr "مشروع بناء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_project
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_projects
+msgid "Proyectos"
+msgstr "المشاريع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.purchase_rfq_construction
+#: model:ir.model,name:gecoerp_job_costing_management.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "خط طلب الشراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__purchase_order_line_count
+msgid "Purchase Order Line Count"
+msgstr "عدد سطر طلب الشراء"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__product_uom_qty
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__product_uom_qty
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__job_costing__state__done
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Realizado"
+msgstr "متفق"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__picking_ids
+msgid "Recolección de Matreial"
+msgstr "مجموعة من المواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__worker_resource_total
+msgid "Recursos / Costo de Trabajo"
+msgstr "الموارد / تكلفة العمالة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__reference
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Referencia"
+msgstr "المرجع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__so_number
+msgid "Referencia de Venta"
+msgstr "مرجع البيع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.report,name:gecoerp_job_costing_management.project_report
+#: model:ir.actions.report,name:gecoerp_job_costing_management.task_report
+msgid "Reporte de Tareas"
+msgstr "تقرير المهمة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_material_purchase_requisition
+msgid "Requisicion de Compra"
+msgstr "طلب شراء"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Requisición de Materiales"
+msgstr "طلب مواد"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_material_purchase_requisition_job_costing
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_cost_mat_req
+msgid "Requisición de Materiales / BOQ"
+msgstr "طلب المواد / BOQ"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_picking_tree_all_const
+msgid "Requisición de Materiales / Listado de Cantidades"
+msgstr "طلب المواد / قائمة الكميات"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__project_project__type_of_construction__residential
+msgid "Residencial"
+msgstr "سكني"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__activity_user_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_form
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Restablecer a Borrador"
+msgstr "إعادة التعيين إلى المسودة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+msgid "Search Job Coasting"
+msgstr "ابحث عن فرص العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+msgid "Setup default Job Details or Technical contents."
+msgstr "قم بإعداد تفاصيل المهمة الافتراضية أو المحتويات الفنية."
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Stage"
+msgstr "مرحلة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_tree
+msgid "Stages"
+msgstr "مراحل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_picking
+msgid "Stock Moves"
+msgstr "حركة المخزون"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_purchase_order__picking_id
+msgid "Stock Picking"
+msgstr "اختيار الأسهم"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Stocks"
+msgstr "المخازن"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields.selection,name:gecoerp_job_costing_management.selection__product_product__boq_type__subcontract
+msgid "Subcontratado"
+msgstr "عقودات فرعية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.job_cost_sub_contractors
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_item_contractors
+msgid "Subcontratistas"
+msgstr "عقودات فرعية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_user_subtask
+msgid "Subtarea de Usuario"
+msgstr "المهمة الفرعية للمستخدم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_project_user_subtask
+msgid "Subtarea de Usuario del Proyecto"
+msgstr "المهمة الفرعية لمستخدم المشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid "Subtarea del Projecto"
+msgstr "المهمة الفرعية للمشروع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Subtareas"
+msgstr "المهام الفرعية"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_task_form2_inherit_subtask
+msgid "Subtasks"
+msgstr "المهام الفرعية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__total_cost
+msgid "Subtotal"
+msgstr "المجموع الفرعي"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.note_report_id
+msgid "Tag Notes :"
+msgstr "ملاحظات العلامة:"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_form
+msgid "Tags"
+msgstr "العلامات"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.project_report_id
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Tarea"
+msgstr "مهمة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__task_id
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_note_note__task_id
+msgid "Tarea / Orden de Trabajo"
+msgstr "مهمة / أمر العمل"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_purchase_requisition__task_user_id
+msgid "Tarea / Orden de Trabajo por Usuario"
+msgstr "مهمة / أمر العمل من قبل المستخدم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__parent_task_id
+msgid "Tarea Principal del Proyecto"
+msgstr "مهمة المشروع الرئيسية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_task__child_task_ids
+msgid "Tareas Secundarias"
+msgstr "المهام الثانوية"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model,name:gecoerp_job_costing_management.model_project_task
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_project_note_note_filter
+msgid "Task"
+msgstr "مهمة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_view_task_subtask
+msgid "Tasks"
+msgstr "المهام"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.purchase_rfq_construction
+msgid ""
+"The quotation contains the history of the discussion/negotiation\n"
+"                you had with your vendor. Once confirmed, a request for\n"
+"                quotation is converted into a purchase order."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__timesheet_line_count
+msgid "Timesheet Line Count"
+msgstr "عد خط الجدول الزمني"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__job_type
+msgid "Tipo"
+msgstr "شاب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_product_product__boq_type
+msgid "Tipo de BOQ"
+msgstr "نوع BOQ"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_project__type_of_construction
+msgid "Tipo de Obra"
+msgstr "طبيعة العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Tipo de Requisición"
+msgstr "نوع الطلب"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.actions.act_window,name:gecoerp_job_costing_management.action_job_type
+#: model:ir.model,name:gecoerp_job_costing_management.model_job_type
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__job_type_id
+#: model:ir.ui.menu,name:gecoerp_job_costing_management.menu_job_type
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Tipo de Trabajo"
+msgstr "نوع العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_type_tree_view
+msgid "Tipos de Trabajo"
+msgstr "أنواع العمل"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_form_view
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Total"
+msgstr "المجموع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_type__job_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_cost_line__uom_id
+msgid "Udm."
+msgstr "وحدة القياس"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Unidad de Medida"
+msgstr "وحدة قياس"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_consumed_material__product_uom
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_material_plan__product_uom
+msgid "Unit of Measure"
+msgstr "وحدة قياس"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.job_costing_search
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Usuario"
+msgstr "مستخدم"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_project_user_subtask__subtask_user_ids
+msgid "Usuario de la Subtarea del Proyecto"
+msgstr "مستخدم المهمة الفرعية للمشروع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_user_subtask__user_id
+msgid "Usuarios"
+msgstr "المستخدمون"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Vendedor"
+msgstr "مورد"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.report_job_costing
+msgid "Vendors Invoice Lines"
+msgstr "خطوط فاتورة البائعين"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,field_description:gecoerp_job_costing_management.field_job_costing__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.model.fields,help:gecoerp_job_costing_management.field_job_costing__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.actions.act_window,help:gecoerp_job_costing_management.action_picking_tree_all_const
+msgid ""
+"You can either do it immediately or mark it as Todo for future processing. "
+"Use your scanner to validate the transferred quantity quicker."
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.task_report_id
+msgid "Zona de Ubicación Destino"
+msgstr "منطقة موقع الوجهة"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid "_Cancel"
+msgstr "_يلغي"
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.view_const_project_note_note_kanban
+msgid "kanban_img1"
+msgstr ""
+
+#. module: gecoerp_job_costing_management
+#: model_terms:ir.ui.view,arch_db:gecoerp_job_costing_management.proejct_subtask_user_form_view
+msgid "or"
+msgstr "او"
+
+#. module: gecoerp_job_costing_management
+#: model:ir.aطلبات العملctions.act_window,name:gecoerp_job_costing_management.action_view_job_orders
+msgid "Órdenes de Trabajo"
+msgstr "طلبات العمل"

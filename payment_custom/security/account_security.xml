@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="module_category_custom_notes" model="ir.module.category">
+            <field name="name">Notes Groups</field>
+            <field name="description">Custom payment-related groups</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="group_account_invoice_credit_note" model="res.groups">
+            <field name="name">Credit Note</field>
+            <field name="category_id" ref="payment_custom.module_category_custom_notes"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_account_invoice_debit_note" model="res.groups">
+            <field name="name">Debit Note</field>
+            <field name="category_id" ref="payment_custom.module_category_custom_notes"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

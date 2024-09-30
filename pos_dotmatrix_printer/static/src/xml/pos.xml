@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('top-content-center')]" position="before">
+            <div class="button" t-on-click="print_dotmatrix_receipt">
+                <span> Dotmatrix Receipt</span>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('pos-receipt-container')]" position="replace">
+            <div class="pos-receipt-container">
+                <t t-if="! env.pos.config.allow_dotmatrix_printer">
+                    <OrderReceipt order="currentOrder" t-ref="order-receipt" />
+                </t>
+                <t t-if="env.pos.config.allow_dotmatrix_printer">
+                    <PosTicketFormat order="currentOrder" t-ref="order-receipt" />
+                </t>
+            </div>
+        </xpath>
+    </t>
+<t t-name="PosTicketFormat" owl="1">
+    
+<pre style="font-size: 11px;margin-left: 12px;text-align: left;background:white"><div style="" class="qrcode-matrix"></div>
+                           SALE <t t-esc="receipt.name"/>
+--------------------------------------------------------------------------------
+           Customer:<t t-esc='text_format(receipt.company.name,20)'/>Order Date: <t t-esc="receipt.formatted_validation_date"/>
+                Tel:<t t-esc='text_format(receipt.company.phone,20)'/>Served by: <t t-esc='receipt.cashier'/>
+
+
+--------------------------------------------------------------------------------
+Product                   Qty     Price Unit       Discount             Subtotal
+--------------------------------------------------------------------------------
+<t t-foreach="receipt.orderlines" t-as="orderline">
+<t t-esc="text_format(orderline.product_name_wrapped[0],25)"/><t t-esc="text_format(orderline.quantity+' '+orderline.unit_name,15)"/><t t-esc="text_format(orderline.price,15)"/><t t-esc="text_format(orderline.discount+'%',5)"/><t t-esc='text_format_left(orderline.price_display,20)'/>
+--------------------------------------------------------------------------------
+</t>
+
+                                            Untaxed Amount:<t t-esc='text_format_left(env.pos.format_currency(receipt.subtotal),20)' />
+                                                     Taxes:<t t-esc='text_format_left(receipt.total_tax,20)' />
+                                                     Total:<t t-esc='text_format_left(env.pos.format_currency(receipt.total_with_tax),20)' />
+<t t-if="env.pos.config.footnote">
+<t t-esc="env.pos.config.footnote"/>
+</t>
+</pre>
+</t>
+</templates>

@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_employee_expense_double_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-16 11:42+0000\n"
+"PO-Revision-Date: 2022-03-16 11:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_employee_expense_double_approval
+#: model:mail.template,body_html:bi_employee_expense_double_approval.email_template_hr_approved_expense_request1
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                            <p>Respected Expense Manager,</p>\n"
+"                            <p>${object.name} - Need to approve this Expense Sheet.</p>\n"
+"                            <br /><br />\n"
+"                            <p> Thank You</p>\n"
+"                        </div>\n"
+"                            \n"
+"                "
+msgstr ""
+
+#. module: bi_employee_expense_double_approval
+#: model:mail.template,body_html:bi_employee_expense_double_approval.email_template_manager_approved_expense_request
+msgid ""
+"\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Dear ${object.employee_id.parent_id.name},</p>\n"
+"                        <p>${object.name} - الرجاء الموافقة على المصروف.</p>\n"
+"                        <br /><br />\n"
+"                        <p>شكرا</p>\n"
+"                    </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: bi_employee_expense_double_approval
+#: model:mail.template,subject:bi_employee_expense_double_approval.email_template_hr_approved_expense_request1
+#: model:mail.template,subject:bi_employee_expense_double_approval.email_template_manager_approved_expense_request
+msgid "${object.name} - Expense sheet Approve "
+msgstr "${object.name} - تمت الموافقة على المصروف "
+
+#. module: bi_employee_expense_double_approval
+#: model_terms:ir.ui.view,arch_db:bi_employee_expense_double_approval.expense_sheet_form_view_inherit
+msgid "Approve By Expense Manager"
+msgstr "موافقة"
+
+#. module: bi_employee_expense_double_approval
+#: model_terms:ir.ui.view,arch_db:bi_employee_expense_double_approval.expense_sheet_form_view_inherit
+msgid "Approve By Manager"
+msgstr "إعتماد"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__approve
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__approved_manager
+msgid "Approved By Manager"
+msgstr "إعتماد"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,field_description:bi_employee_expense_double_approval.field_hr_expense_sheet__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model,name:bi_employee_expense_double_approval.model_hr_expense_sheet
+msgid "Expense Report"
+msgstr "تقرير المصروف"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,help:bi_employee_expense_double_approval.field_hr_expense_sheet__state
+msgid "Expense Report State"
+msgstr "حالة تقرير المصروف"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,field_description:bi_employee_expense_double_approval.field_hr_expense_sheet__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,field_description:bi_employee_expense_double_approval.field_hr_expense_sheet____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,field_description:bi_employee_expense_double_approval.field_hr_expense_sheet__user_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: bi_employee_expense_double_approval
+#: code:addons/bi_employee_expense_double_approval/models/second_approve.py:0
+#, python-format
+msgid "Only Managers and HR Officers can approve expenses"
+msgstr "فقط المدراء من يستطيعون الموافقة على المصروفات"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__done
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__post
+msgid "Posted"
+msgstr "مُرحل"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__cancel
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields,field_description:bi_employee_expense_double_approval.field_hr_expense_sheet__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: bi_employee_expense_double_approval
+#: model:ir.model.fields.selection,name:bi_employee_expense_double_approval.selection__hr_expense_sheet__state__submit
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+#. module: bi_employee_expense_double_approval
+#: code:addons/bi_employee_expense_double_approval/models/second_approve.py:0
+#, python-format
+msgid "The expense reports were successfully approved."
+msgstr "تمت الموافقة بنجاح"
+
+#. module: bi_employee_expense_double_approval
+#: code:addons/bi_employee_expense_double_approval/models/second_approve.py:0
+#, python-format
+msgid "There are no expense reports to approve."
+msgstr "ليس هنالك مصروفات للموافقة عليها"
+
+#. module: bi_employee_expense_double_approval
+#: code:addons/bi_employee_expense_double_approval/models/second_approve.py:0
+#, python-format
+msgid "You can only approve your department expenses"
+msgstr "تستطيع فقط الموافقة على المصروفات الخاصة بك فقط"
+
+#. module: bi_employee_expense_double_approval
+#: code:addons/bi_employee_expense_double_approval/models/second_approve.py:0
+#, python-format
+msgid "You cannot approve your own expenses"
+msgstr "لا تستطيع الموافقة على المصروف الخاص بك"

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <report
+            id="action_custom_report_custody"
+            model="report.account_custody.report_custody_view "
+            string="Custody Report"
+            menu="False"
+            report_type="qweb-html"
+            name="account_custody.report_custody_view"
+            file="account_custody.report_custody_view"
+            />
+
+    <template id="report_custody_view">
+        <t t-set="data_report_margin_top" t-value="30"/>
+        <t t-set="data_report_header_spacing" t-value="22"/>
+        <t t-set="data_report_dpi" t-value="130"/>
+        <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+
+            <div class="page" style="font-family:Amiri,scheherazade,Verdana,Arial,sans,Lucida Grande,Calibri;">
+                 <h5 class="text-center" style="padding:35px;text-decoration: underline; ">Custody Report</h5>
+                <p/>
+            
+                <div class="row mt32 mb32">
+                    <div class="col-8" t-if="data['form'].get('type') == 'specific'">
+                        <strong >Employee Name :</strong>
+                        <span t-esc="data['form'].get('employee_id')[1]"/>
+                    </div>
+                </div>
+
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Custody</th>
+                            <th t-if="data['form'].get('type') == 'all'">Name</th>
+                            <th>Entry Number</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Remaining Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-set="Total" t-value="0.0"/>
+                        <t t-set="Remain" t-value="0.0"/>
+                        <tr t-foreach="docs" t-as="o">
+                            <td><span t-esc="o['Custody']"/></td>
+                            <td t-if="data['form'].get('type') == 'all'"><span t-esc="o['Name']"/></td>
+                            <td><span t-esc="o['Entry Number']"/></td>
+                            <td><span t-esc="o['Description']"/></td>
+                            <td><span t-esc="o['Date']"/></td>
+                            <td><span t-esc="o['Amount']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                            <td><span t-esc="o['Remaining']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                            <t t-set="Total" t-value="Total +o['Amount']"/>
+                            <t t-set="Remain" t-value="Remain +o['Remaining']"/>
+                        </tr>
+                        <tr class="border-black o_total">
+                            <td><strong>Total</strong></td>
+                            <td t-if="data['form'].get('type') == 'all'"><strong> </strong></td>
+                            <td><strong> </strong></td>
+                            <td><strong> </strong></td>
+                            <td><strong> </strong></td>
+                            <td class="text-left"><strong><span t-esc="Total" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></strong></td>
+                            <td class="text-left"><strong><span t-esc="Remain" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}" /></strong></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        
+        </t>
+        </t>
+    </template>
+
+</odoo>
+
+
+
+

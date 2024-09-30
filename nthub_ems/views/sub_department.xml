@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!--define a view tree -->
+        <record id="sub_department_view_tree" model="ir.ui.view">
+            <field name="name">sub_department_view_tree</field>
+            <field name="model">sub.department</field>
+            <field name="arch" type="xml">
+                <tree multi_edit="1" string="level" editable="bottom">
+                    <field name="department_id" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="name"/>
+                    <field name="alternative_name"/>
+                </tree>
+            </field>
+        </record>
+        <!--define a view action -->
+        <record id="sub_department_action" model="ir.actions.act_window">
+            <field name="name">Division</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sub.department</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>
+

@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* code_backend_theme_enterprise
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-12 12:22+0000\n"
+"PO-Revision-Date: 2023-12-12 12:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: code_backend_theme_enterprise
+#. openerp-web
+#: code:addons/code_backend_theme_enterprise/static/src/xml/top_bar.xml:0
+#: code:addons/code_backend_theme_enterprise/static/src/xml/top_bar.xml:0
+#, python-format
+msgid "Applications"
+msgstr "التطبيقات"
+
+#. module: code_backend_theme_enterprise
+#. openerp-web
+#: code:addons/code_backend_theme_enterprise/static/src/xml/sidebar.xml:0
+#, python-format
+msgid "MENU"
+msgstr "القائمة"
+
+#. module: code_backend_theme_enterprise
+#. openerp-web
+#: code:addons/code_backend_theme_enterprise/static/src/xml/top_bar.xml:0
+#: code:addons/code_backend_theme_enterprise/static/src/xml/top_bar.xml:0
+#, python-format
+msgid "Toggle menu"
+msgstr ""
+
+#. module: code_backend_theme_enterprise
+#. openerp-web
+#: code:addons/code_backend_theme_enterprise/static/src/xml/styles.xml:0
+#, python-format
+msgid "d-flex align-items-center"
+msgstr ""
+
+#. module: code_backend_theme_enterprise
+#. openerp-web
+#: code:addons/code_backend_theme_enterprise/static/src/xml/styles.xml:0
+#, python-format
+msgid "o_search_panel_counter ml-2 small"
+msgstr ""

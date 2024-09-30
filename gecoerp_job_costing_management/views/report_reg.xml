@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="project_report" model="ir.actions.report">
+            <field name="name">Reporte de Tareas</field>
+            <field name="model">project.project</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gecoerp_job_costing_management.project_report_id</field>
+            <field name="report_file">gecoerp_job_costing_management.project_report_id</field>
+        </record>
+        <record id="task_report" model="ir.actions.report">
+            <field name="name">Reporte de Tareas</field>
+            <field name="model">project.task</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gecoerp_job_costing_management.task_report_id</field>
+            <field name="report_file">gecoerp_job_costing_management.task_report_id</field>
+        </record>
+    </data>
+</openerp>

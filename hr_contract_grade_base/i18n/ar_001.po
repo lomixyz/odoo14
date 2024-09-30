@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_contract_grade_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210419\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 06:14+0000\n"
+"PO-Revision-Date: 2021-11-09 06:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__basic
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__basic
+msgid "Basic Salary"
+msgstr "الراتب الأساسي"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__grade_line_id
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__grade_line_id
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.Grade_conf_form_view
+msgid "Benefits"
+msgstr "البدلات"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__benifit_id
+msgid "Benifit"
+msgstr "بدل"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__create_uid
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__create_date
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__display_name
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__emp_code
+msgid "Employee Code"
+msgstr "كود الموظف"
+
+#. module: hr_contract_grade_base
+#: model:ir.model,name:hr_contract_grade_base.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: hr_contract_grade_base
+#: code:addons/hr_contract_grade_base/models/models.py:0
+#, python-format
+msgid "Employee Job Position is not Allowed To Take This Grade"
+msgstr "المنصب الوظيفي للموظف غير مسموح له بأخذ هذه الدرجة"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,help:hr_contract_grade_base.field_hr_contract__wage
+msgid "Employee's monthly gross wage."
+msgstr "إجمالي المرتب الشهري للموظف."
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields.selection,name:hr_contract_grade_base.selection__hr_grade_line__type__fixed
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: hr_contract_grade_base
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.Grade_conf_form_view
+msgid "Get All Benefits"
+msgstr "عرض كل البدلات"
+
+#. module: hr_contract_grade_base
+#: model:ir.model,name:hr_contract_grade_base.model_hr_grade_configuration
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__grade_id
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__name
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__grade_id
+msgid "Grade"
+msgstr "درجة"
+
+#. module: hr_contract_grade_base
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.Grade_conf_form_view
+msgid "Grade Configuration"
+msgstr "إعداد الدرجات"
+
+#. module: hr_contract_grade_base
+#: model:ir.model,name:hr_contract_grade_base.model_hr_grade_line
+msgid "Grade Line"
+msgstr "بند الدرجات"
+
+#. module: hr_contract_grade_base
+#: model:ir.actions.act_window,name:hr_contract_grade_base.grade_conf_action
+#: model:ir.ui.menu,name:hr_contract_grade_base.grade_config
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.grade_conf_tree_view
+msgid "Grades"
+msgstr "الدرجات"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__wage
+msgid "Gross"
+msgstr "الإجمالي"
+
+#. module: hr_contract_grade_base
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.hr_contract_view_form_inherited
+msgid "Gross/Month"
+msgstr "الإجمالي\شهر"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__id
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__id
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__job_ids
+msgid "Job Positions"
+msgstr "المنصب الوظيفي"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration____last_update
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__write_uid
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__write_date
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__name
+msgid "Name"
+msgstr "الإسم"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__percentage
+msgid "Percentage (%)"
+msgstr "(%) النسبة"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields.selection,name:hr_contract_grade_base.selection__hr_grade_line__type__percentage
+msgid "Percentage (Basic)"
+msgstr "النسبة (أساسي)"
+
+#. module: hr_contract_grade_base
+#: model_terms:ir.ui.view,arch_db:hr_contract_grade_base.hr_contract_view_form_inherited
+msgid "Salary Information"
+msgstr "معلومات الراتب"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__code
+msgid "Salary Rule Code"
+msgstr "كود قاعدة الراتب"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_configuration__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: hr_contract_grade_base
+#: code:addons/hr_contract_grade_base/models/models.py:0
+#, python-format
+msgid "Sequence Should Be Unique!"
+msgstr "يجب أن يكون التسلسل فريدًا!"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_contract__total_allowance
+msgid "Total Allowance"
+msgstr "إجمالي البدلات"
+
+#. module: hr_contract_grade_base
+#: model:ir.model.fields,field_description:hr_contract_grade_base.field_hr_grade_line__type
+msgid "Type"
+msgstr "النوع"

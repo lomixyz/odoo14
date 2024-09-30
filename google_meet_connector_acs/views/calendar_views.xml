@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_calendar_event_form" model="ir.ui.view">
+        <field name="name">Calendar - Event Form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <field name="allday" position="after">
+                <field name="conference_type" attrs="{'readonly': [('hangout_url', '!=', False)]}"/>
+            </field>
+            <page name="page_misc" position="before">
+                <page name="page_hangout_details" string="Hangouts" attrs="{'invisible': [('conference_type', '=', False)]}">
+                    <group>
+                        <field name="hangout_url" readonly="1"/>
+                        <field name="meeting_code"/>
+                        <field name="request_id" invisible="1"/>
+                    </group>
+                </page>
+            </page>
+            <button name="action_open_calendar_event" position="after">
+                <button class="pull-right btn btn-sm btn-default text-center" type="object" name="join_hangouts"  attrs="{'invisible': ['|', ('conference_type', '=', False), ('hangout_url', '=', False)]}" title="hangout button" aria-label="hangout button">
+                    <i class="fa fa-phone fa-2x text-success"/>
+                </button>
+            </button>
+        </field>
+    </record>
+</odoo>

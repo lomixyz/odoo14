@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<record model="ir.rule" id="hr_loan_comp_rule">
+			<field name="name">Hr Loan multi-company</field>
+			<field name="model_id" ref="model_hr_loan" />
+			<field name="global" eval="True" />
+			<field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+		</record>
+	</data>
+</openerp>
+

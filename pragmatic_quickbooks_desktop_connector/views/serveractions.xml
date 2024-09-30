@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Server Action for importing BOM of the product-->
+        <record model="ir.actions.server" id="product_bom_import_qbd">
+            <field name="name">Import BOM of QBD product</field>
+            <field name="model_id" ref="product.model_product_template" />
+            <field name="binding_model_id" ref="product.model_product_template"/>  
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    records.product_bom_import_qbd()
+            </field>
+        </record>
+        
+     <!-- Export product to QBD -->
+     <record model="ir.actions.server" id="product_export_to_qbd">
+            <field name="name">Export Product to QBD</field>
+            <field name="model_id" ref="product.model_product_template" />
+            <field name="binding_model_id" ref="product.model_product_template"/>  
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    records.export_product_to_qbd_server_action()
+            </field>
+        </record>
+</odoo>

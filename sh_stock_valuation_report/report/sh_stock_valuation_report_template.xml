@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sh_stock_valuation_template">
+		<t t-call="web.html_container">
+			<t t-call="web.external_layout">
+				<div class="page">
+					<div class="oe_structure" />
+					<div style="text-align:center;font-size: 25px;margin-bottom:20px;">
+						<strong>Stock Valuation Report</strong>
+					</div>
+					<table class="table table-bordered" style="width:100%;text-align:center;">
+						<tr style="width:100%;text-align:center; background-color:lightgray;" >
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+								<strong style="width:100%;text-align:center;">START DATE</strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+								<strong style="width:100%;text-align:center;">END DATE</strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+								<strong style="width:100%;text-align:center;">COMPANY</strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+								<strong style="width:100%;text-align:center;">WAREHOUSE</strong>
+							</td>
+						</tr>
+						<tr style="width:100%;text-align:center;">
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+								<strong style="width:100%;text-align:center;" t-esc="sh_from_date">
+                                </strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <strong style="width:100%;text-align:center;" t-esc="sh_to_date">
+								</strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <strong style="width:100%;text-align:center;" t-esc="sh_company_id">
+                                </strong>
+							</td>
+							<td style="width:25%;text-align:center;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <strong style="width:100%;text-align:center;" t-esc="sh_warehouse_id">
+								</strong>
+							</td>
+						</tr>
+					</table>
+					<br />
+					<br />
+                    <table class="table table-bordered" style="width:100%;text-align:center;">
+                        <thead style="width:100%;text-align: center;background-color:lightgray;">
+                            <th style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Default Code</span>
+                            </th>
+                            <th style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Product Name</span>
+                            </th>
+                            <th style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Category Name</span>
+                            </th>
+                            <th style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Opening Stock</span>
+                            </th>
+                            <th style="width:7%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Sales</span>
+                            </th>
+                            <th style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Purchase</span>
+                            </th>
+                            <th style="width:11%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Adjustment</span>
+                            </th>
+                            <th style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Internal Transfer</span>
+                            </th>
+                            <th style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Closing Stock</span>
+                            </th>
+                            <th style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Costing</span>
+                            </th>
+                            <th style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                <span>Valuation</span>
+                            </th>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            <t t-if="stock_dict">
+                                <t t-foreach="stock_dict.keys()" t-as="product">
+                                    <tr  style="text-align: center;">
+                                        <td style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][0]"></span>
+                                        </td>
+                                        <td style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][1]"></span>
+                                        </td>
+                                        <td style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][2]"></span>
+                                        </td>
+                                        <td style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][3]"></span>
+                                        </td>
+                                        <td style="width:7%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][4]"></span>
+                                        </td>
+                                        <td style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][5]"></span>
+                                        </td>
+                                        <td style="width:11%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][6]"></span>
+                                        </td>
+                                        <td style="width:9%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][7]"></span>
+                                        </td>
+                                        <td style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][8]"></span>
+                                        </td>
+                                        <td style="width:8%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][9]"></span>
+                                        </td>
+                                        <td style="width:10%;vertical-align: middle;word-break: break-word;padding: 4px;">
+                                            <span t-esc="stock_dict[product][10]"></span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+				</div>
+			</t>
+		</t>
+	</template>
+
+
+    <record id="sh_stock_valuation_report_action" model="ir.actions.report">
+        <field name="name">Stock Valuation Report</field>
+        <field name="model">report.sh_stock_valuation_report.sh_stock_valuation_template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sh_stock_valuation_report.sh_stock_valuation_template</field>
+        <field name="print_report_name">'Stock Valuation Report'</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <template id="saas_kit_trial" inherit_id="website.assets_frontend">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/saas_kit_trial/static/src/js/saas_trial.js"></script>
+            <script type="text/javascript" src="/saas_kit_trial/static/src/js/saas_trial_contract_portal.js"></script>            
+        </xpath>
+    </template>
+</odoo>

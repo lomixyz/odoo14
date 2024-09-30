@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_external_layout_standard">
+            <div class="header">
+            </div>
+            <div class="article o_report_layout_standard">
+                <t t-raw="0"/>
+            </div>
+        </template>
+
+        <template id="custom_external_layout">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <t t-if="company.external_report_layout == 'background'">
+                <t t-call="admission_management.custom_external_layout_standard"><t t-raw="0"/></t>
+            </t>
+            <t t-if="company.external_report_layout == 'boxed'">
+                <t t-call="admission_management.custom_external_layout_standard"><t t-raw="0"/></t>
+            </t>
+            <t t-if="company.external_report_layout == 'clean'">
+                <t t-call="admission_management.custom_external_layout_standard"><t t-raw="0"/></t>
+            </t>
+            <t t-if="company.external_report_layout in (False, 'standard')">
+                <t t-call="admission_management.custom_external_layout_standard"><t t-raw="0"/></t>
+            </t>
+        </template>
+        <template id="rent_contract_report_temp">
+            <t t-call="web.html_container">
+                <t t-call="admission_management.custom_external_layout_standard">
+                    <t t-foreach="docs" t-as="o">
+                        <style type="text/css"> 
+                            @font-face {
+                            font-family: 'VIP_Hakm_Bold_VIP_Hakm'; 
+                            src: local('VIP_Hakm_Bold_VIP_Hakm'), local('VIP_Hakm_Bold_VIP_Hakm'),
+                            url('/admission_management/static/fonts/VIP_Hakm_Bold_VIP_Hakm.ttf') format('truetype');
+                            }
+                            *{
+                            font-family: VIP Hakm;
+                            }
+                        </style>
+                        <div class="page" dir="rtl" style="text-align:right;margin-top:0px;font-size:10pt">
+                            <p style="text-align:left;margin-top:0px;">عقد رقم <span t-esc="o.name"/>
+                            </p>
+                            <p> الحمد لله وحده و بعد  ففي    <span t-esc="o.contract_date"/>م تم الاتفاق بمدينة محافظة العويقيلة بين كل من :  </p>
+                            <p style="margin-top:0px;margin-bottom:0px">1-</p>
+                           
+                            <p style="margin-top:0px;margin-bottom:0px">و يشار اليه فيما بعد ب (الطرف الاول ) </p>
+                            <p style="margin-top:0px;margin-bottom:0px">2-</p>
+                            <table style="width: 100%;margin-top:0px;" dir="rtl">
+                                <tbody>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25% ">
+                                            اسم العميل
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.name"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            صندوق بريد
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            الجنسية
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.comment"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            الرمز البريدي
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.zip"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            بموجب
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            ﺑﻄﺎﻗﺔ ﺍﺣﻮﺍﻝ
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            هاتف
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.phone"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            رقمه
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.identification"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            الجوال
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.mobile"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            تاريخه
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            فاكس
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            عنوانه
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.street"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px;font-size:0.8em;font-weight:bold;background-color: #A9A9A9;color: black;text-align:center;width:25%">
+                                            البريد الالكتروني
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 1px;font-size:0.8em;background-color: #DCDCDC;color: black;text-align:center;width:25%">
+                                            <span t-esc="o.partner_id.email"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="margin-top:0px;margin-bottom:0px">و يشار اليه فيما بعد ب (الطرف الثاني ) </p>
+                            <p style="margin-top:0px;margin-bottom:0px;font-weight:bold">تمهيد :- </p>
+                            <p style="margin-top:0px;margin-bottom:0px"> حيث ان الطرف الاول مرخص له بتقديم خدمات العمالة - المنزلية. و لديه الخبرات و الامكانيات اللازمة لتوفير خدمات العمالة المنزلية . و ذلك وفق الانظمة و اللوائح و التعليمات المعمول بها في المملكة العربية السعودية و بما لا يتعارض مع احكام الشريعة الاسلامية , و لحاجة الطرف الثاني لخدمات بعض العمالة المنزلية . فقد اتفق الطرفان و هما بكامل اهليتهما المعتبرة شرعا و نظاما علي ما بلي :  </p>
+                            <p style="font-weight:bold;margin-top:0px;margin-bottom:0px"> اولا : موضوع العقد :- </p>
+                            <p> اتفق الطرفان على ان يقوم الطرف الاول بتوفير عامل منزلي و تقديم خدماته للطرف التاني  , وفقا لما يكلفه به في حدود مجال عمله بمهنة عامله منزلية , و بيانات العامل هي : </p>
+                            <table style="width: 100%;margin-top:0px;" dir="rtl">
+                                <thead>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        الاسم
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        الجنس
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        الجنسسية
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        رقم الاقامة
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        المؤهلات و الخبرات
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        ساعات العمل الفعلية اليومية
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        مدة الخدمة ﻣﺪﺔ ﺍﻟﺨﺪﻣﺔ المطلوبة
+                                    </th>
+                                    <th style=" border: 1px solid black; padding: 1px; font-size:0.8em;font-weight:bold;background-color: #d3d3d3;color: black;text-align:center;width:5%">
+                                        التكلفة الشهرية
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <span t-esc="o.employee_id.name"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <span t-esc="o.employee_id.gender"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <span t-esc="o.employee_id.country_id.name"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <span t-esc="o.employee_id.additional_note"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <t t-if="o.employee_id.is_worker">
+                                                عاملة منزلية
+                                            </t>
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            1
+                                        </td>
+                                        <td style=" border: 1px solid black;padding: 1px; padding-left: 1px;font-size:0.8em;background-color: white;color: black;text-align:center ">
+                                            <span t-esc="o.total_contract_with_vat"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-weight:bold;">ثانيا : مدة العقد </p>
+                            <p> مدة هذا العقد (1) اربعة و عشرون شهرا تبدا من <span t-esc="o.contract_date_from"/> ه  و تنتهي <span t-esc="o.contract_date_to"/> ه قابلة للتجديد لمدة او مدد , مماثلة بموجب إشعار مكتوب من الطرف الثاني للطرف الاول قبل نهاية مدة العقد بشهر علي الاقل ما لم يتم نقل خدمة العامل . </p>
+                            <p style="font-weight:bold"> ثالثا : قيمة العقد </p>
+                            <p> 1. يدفع الطرف الثاني للطرف الاول تكلفة شهرية مقابل تقديم خدمات العامل المنزلي , وفقا للتكلفة الشهرية  <span t-esc="o.total_contract_with_vat"/> المعلنه - في تاريخ التعاقد - بالموقع اللاكتروني  مساند التابع لوزار العمل و ذلك بمبلغ و قدره <span t-esc="o.total_contract_with_vat"/> ريال سعودي , وفقا لما يلي : </p>
+                            <p>* دفعة مقدمة تعادل ثلاثه اشهر من التكلفة الشهرية بواقع مبلغ <span t-esc="o.total_contract_with_vat*3"/> ريال سعودي عند توقيع هذا العقد .</p>
+                            <p> * سداد التكلفة كل ثلاثة اشهر مقدم بواقع مبلغ <span t-esc="o.total_contract_with_vat*3"/> ريال سعودي .</p>
+                            <p>2. يدفع الطرف الثاني عند التوقيع علي هذا العقد مبلغ يعادل تكلفة شهرين بواقع يعادل <span t-esc="o.total_contract_with_vat*2"/> ريال سعودي للطرف الاول كضمان يسترد عند انتهاء هذا العقد او فسخه. و يحق للطرف الاول الخصم منه وفاء للالتزامات الطرف الثاني .</p>
+                            <p> 3.  في حال نقل خدمة العامل المقدمة خدماته فيلتزم الطرف الثاني بدفع تكلفة نقل الخدمة , وفقا للتكلفة المعلنة - في تاريخ نقل طلب نقل الخدمة - بالموقع اللالكتروني مساند التابع لوزارة العمل .</p>
+                            <p> 4. في حال تجديد هذا العقد و موافقة العامل علي الاستمرار في العمل لدي الطرف الثاني . يدفع الطرف الثاني للطرف الاول تكلفة شهرية مقابل تقديم خدمات العامل المنزلي للمدة الجديدة تعادل تكلفة الشهرية السابقة .</p>
+                            <p style="font-weight:bold"> رابعا : التزامات الطرف الاول : </p>
+                            <p> 1. تقديم خدمات العامل المذكور اعلاه للطرف الثاني : </p>
+                            <p> 2.  ضمان  اللياقة الطبية للعامل و خلوه من الامراض المعدية و المزمنة و العاهات الجسيمة و كل ما يكون من شانه عدم القدرة علي تنفيذ العمل المطلوب منه , و تقديم الرعاية الطبية للعامل اثناء سريان هذا العقد بموجب تأمين صحي طبقا لنظام الضمان الصحي التعاوني .</p>
+                            <p> 3 . دفع راتب العامل الشهري له من خلال تحويل بنكي علي الحساب البنكي للعامل , و لا يتحمل الطرف الاول اي مبالغ مصروفة من قبل الطرف الثاني للعامل بشكل مباشر .</p>
+                            <p> 4. الحصول علي الموافقة خطية من العامل للعمل لدي الطرف الثاني , و نقل خدماته اليه و ذلك قبل تقديم خدماته للطرف الثاني .</p>
+                            <p>5. اذا كان العامل بمهنة سائق فبجب ان يتحول رخصة قيادة سعودية سارية المفعول .</p>
+                            <p> 6. تقديم عامل بديل عن العامل المقدم خدماته بنفس المؤهلات و الخبرات . للقبام بنفس العمل الذي طلب من اجله , و ذلك خلال (45) خمسة و اربعين يوما من تاريخ ابلاغ الطرف الثاني للطرف الاول بذلك .</p>
+                            <p>7. عدم استبدال العامل المقدم خدماته الا بعد اخذ الموافقة الكتابية من الطرف الثاني .</p>
+                            <p> 8. تعويض الطرف الثاني مقابل ما يتسبب العامل في فقده او اتلافه او تدميره من ممتلكات الطرف الثاني بعد ثبوت ذلك من الجهات المختصة .</p>
+                            <p>9. ......................................................................................</p>
+                            <p>10. ......................................................................................</p>
+                            <p style="font-weight:bold">خامسا : التزامات الطرف الثاني :</p>
+                            <p>1. سداد التكلفة المتفق عليها بالفقرة (1) من البند ثالثا هذا العقد .</p>
+                            <p>2. ان يعامل العامل بالاحترام اللائق , و ان يمتنع عن كل قول او فعل يمس كرامته و دينه </p>
+                            <p>3. تمكين العامل من الوصول الي اقرب فرع بنك او جهاز صراف الي لاستلام مرتبه الشهري و مساعدته لتحويل اية مبالغ لذويه. </p>
+                            <p>4. ان يكون مسؤولا عن اية تجاوزات تلحق اضرارا بالعامل في مواجهة الطرف الاول و العامل .</p>
+                            <p>5. إشعار الطرف الاول بأية مخالفات او اخطاء يرتكبها العامل لاتخاذ ما يلزم من اجراءات بحقه.</p>
+                            <p>6. عدم تشغيل العامل في اعمال تختلف عن المهنة المرخص له بها سواء بطريقة مباشره او غير مباشرة. </p>
+                            <p>7. يشترط اذا كانت مهنة العامل سائق ان تكون السيارة المسلمة له مؤمن عليها تأمين ضد الغير علي الأقل .</p>
+                            <p>8. توفير السكن المناسب للعامل المقدم خدماته خلال مدة العقد .</p>
+                            <p>9. توفير وسيلة نقل العامل الي اقرب مركز طبي معتمد في شبكة المراكز الطبية لشركة التأمين المعتمدة لدي الطرف الاول اذا كان العامل في حاجة للرعاية الطبية . ﻭﻓﻲ ﺣﺎﻞ ﻋﺪﻢ ﺗﻮﻓﺮ ﻣﺮﺎﻛﺰ ﻃﺒﻴﺔ ﻣﻌﺘﻤﺪﺔ ﻟﺪﻰ ﺷﺮﻛﺔ ﺍﻟﺘﺄﻣﻴﻦ ﻳﺘﻢ ﻋﻼﺞ ﺍﻟﻌﺎﻣﻞ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﻤﺎ ﻳﺘﻮﺎﻓﻖ ﻣﻊ ﻗﻴﻤﺔ ﺑﻮﻟﻴﺼﺔ ﺍﻟﺘﺄﻣﻴﻦ ,  ﻭ ﻃﺒﻘﺎ ﻟﻠﺪﺮﺟﺔ ﺍﻟﻤﺨﺼﺼﺔ ﻟﻠﻌﺎﻣﻞ، ﺑﺤﻴﺚ ﻳﺘﻢ ﺗﻘﺪﻳﻢ ﺃﺻﻮﻞ ﺍﻟﻔﻮﺎﺗﻴﺮ ﻭﺍﻟﺘﻘﺎﺮﻳﺮ ﺍﻟﻄﺒﻴﺔ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ﺧﻼﻞ (30) ﻳﻮﻢ ﻣﻦ ﺗﺎﺮﻳﺦ ﺍﻟﻔﺎﺗﻮﺮﺓ ﻟﺘﻘﺪﻳﻤﻬﺎ ﻟﺸﺮﻛﺔ ﺍﻟﺘﺄﻣﻴﻦ ﻟﻄﻠﺐ ﺍﻟﺘﻌﻮﻳﺾ ﺑﺤﺴﺐ ﺑﻮﻟﻴﺼﺔ ﺷﺮﻛﺔ ﺍﻟﺘﺄﻣﻴﻦ. </p>
+                            <p>10. ﺇﺑﻼﻎ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻛﺘﺎﺑﻴﺎ ﻓﻲ ﺣﺎﻞ ﺗﻐﻴﺐ ﺍﻟﻌﺎﻣﻞ ﻋﻦ ﺍﻟﻌﻤﻞ ﺃﻭ ﺭﻓﻀﻪ ﺍﻟﻌﻤﻞ ﺧﻼﻞ (24) ﺳﺎﻋﺔ ﻣﻦ ﻭﻗﺖ ﺍﻟﺘﻐﻴﺐ ﺃﻭ ﺍﻟﺮﻓﺾ ﺍﻟﻌﻤﺎﻟﺔ ﻣﻊ ﺗﺴﻠﻴﻢ ﺟﻤﻴﻊ ﻣﺘﻌﻠﻘﺎﺖ ﺍﻟﻌﺎﻣﻞ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭﻛﺬﻟﻚ ﻓﻲ ﺣﺎﻞ ﻋﻮﺪﺓ ﺍﻟﻌﺎﻣﻞ ﻳﺸﻌﺮ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻛﺘﺎﺑﻴﺎ ﺑﺎﻟﻌﻮﺪﺓ ﻣﺤﺪﺪﺍ ﺳﺎﻋﺔ ﻭﺗﺎﺮﻳﺦ ﻋﻮﺪﺓ ﺍﻟﻌﺎﻣﻞ.</p>
+                            <p>11. إﻋﺎدﺓ ﺍﻟﻌﺎﻣﻞ ﻋﻨﺪ ﺍﻧﺘﻬﺎء ﻣﺪته ﺗﻘﺪﻳﻢ ﺧﺪﻣﺎﺗﻪ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭ ﻓﻲ ﺣﺎﻞ ﻋﺪﻢ التزام ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺬﻟﻚ ، ﻓﺈﻧﻪ ﻳﻌﻮﺾ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﺑﻤﺎ ﻳﻌﺎﺪﻝ (100) ﻣﺎﺋﺔ ﺭﻳﺎﻞ سعودي ﻋﻦ ﻛﻞ ﻳﻮﻢ ﺗﺄﺧﻴﺮ ﻣﻊ ﻗﻴﻤﺔ ﺍﻟﺘﻜﻠﻔﺔ ﺍﻟﻴﻮﻣﻴﺔ ﻟﻠﻌﺎﻣﻞ ﺍﻟﻤﻘﺪﻣﺔ ﺧﺪﻣﺎﺗﻪ.</p>
+                            <p>12. ......................................................................................</p>
+                            <p>13. ......................................................................................</p>
+                            <p style="font-weight:bold">ﺳﺎﺪﺳﺎ : ﻧﻘﻞ ﺍﻟﺨﺪمة: </p>
+                            <p>ﺍﺗﻔﻖ ﺍﻟﻄﺮﻓﺎﻦ ﻋﻠﻰ ﺃﻧﻪ ﻓﻲ ﺣﺎﻟﺔ ﺭﻏﺒﺔ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻧﻘﻞ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﺇﻟﻴﻪ, ﻓﻴﻠﺘﺰﻢ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ بالتنازل ﻋﻦ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﺧﻼﻞ ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ﻣﻦ ﺗﺎﺮﻳﺦ ﻃﻠﺐ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻟﺬﻟﻚ , ﻭﻓﻖ ﺍﻟﻨﻤﻮﺬﺝ ﺍﻟﻤﻌﺘﻤﺪ ﻣﻦ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ , ﻭﺫﻟﻚ ﻭﻓﻖ ﻟﻤﺎ ﻳﻠﻲ:</p>
+                            <p>    1. ﻳﻠﺘﺰﻢ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ بإبرام ﻋﻘﺪ ﻋﻤﻞ ﻣﻊ ﺍﻟﻌﺎﻣﻞ ﻭﻓﻖ ﺍﻟﻨﻤﻮﺬﺝ ﺍﻟﻤﻌﺪ ﻣﻦ ﻗﺒﻞ ﺍﻟﻮﺰﺍﺭﺓ ، ﻭﺫﻟﻚ للمدة ﺍﻟﻤﺘﺒﻘﻴﺔ ﻣﻦ ﻋﻘﺪ ﺍﻟﻌﻤﻞ لدى ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ، ﻋﻠﻰ ﺃﻻ ﻳﻘﻞ ﺍﻷﺟﺮ ﺍﻟﺸﻬﺮﻲ ﻟﻠﻌﺎﻣﻞ ﻋﻦ ﺍﻷﺟﺮ ﺍﻷﺧﻴﺮ ﺍﻟﺬﻲ ﻳﺪﻓﻌﻪ ﺍﻟﻄﺮﻒ ﺍﻻﻮﻝ ﻟﻠﻌﺎﻣﻞ , ﻭﺫﻟﻚ ﺑﻤﺒﻠﻎ (.............)ﺭﻳﺎﻞ سعودي.
+                            </p>
+                            <p>2. في حال نقل خدمة العامل للطرف الثاني قبل نهاية هذا العقد تكون تكلفة نقل الخدمة للشهر الواحد مبلغ و قدره(..............) ريال سعودي بحيث يدفع الطرف الثاني للطرف الاول مقابل نقل خدمة العامل إليه و فق المعادلة التالية : </p>
+                            <p style="font-weight:bold;font-size:11pt;padding: 30px;padding-bottom: 5px;padding-top: 5px"> عدد الاشهر من العقد * تكلفة نقل الخدمة الشهري </p>
+                            <p>3. ﻓﻲ ﺣﺎﻞ ﻭﺟﻮﺪ ﻣﺒﺎﻟﻎ ﻟﺪﻰ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻣﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻛﺪﻓﻌﺎﺖ ﻣﻘﺪﻣﺔ ﺃﻭ ﺿﻤﺎﻦ ، ﻓﻴﺘﻢ ﻋﻤﻞ ﻣﻘﺎﺻﺔ ﻋﻨﺪ ﻧﻘﻞ ﺍﻟﺨﺪﻣﺔ.</p>
+                            <p>4. ﻳﺘﺤﻤﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺭﺳﻮﻢ ﻧﻘﻞ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻴﺔ ﺇﻟﻴﻪ.</p>
+                            <p>5. ﺗﺨﻀﻊ ﻋﻤﻠﻴﺔ ﻧﻘﻞ ﺍﻟﺨﺪﻣﺎﺖ ﻟﻤﻮﺎﻓﻘﺔ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ ، ﻭ ﺍﻟﺠﻬﺎﺖ ﺍﻟﻤﺨﺘﺼﺔ.</p>
+                            <p>6. ﻻ ﺗﺘﻢ ﻋﻤﻠﻴﺔ ﻧﻘﻞ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﻨﺰﻟﻲ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺇﻻ ﺑﻌﺪ ﻣﻀﻲ ﺗﺴﻌﻴﻦ ﻳﻮﻣﺎ ﻣﻦ ﺗﺎﺮﻳﺦ ﻋﻤﻞ ﺍﻟﻌﺎﻣﻞ ﻟﺪﻳﻪ.</p>
+                            <p style="font-weight:bold"> ﺳﺎﺑﻌﺎ : ﺃﺣﻜﺎﻢ ﻋﺎﻣﺔ: </p>
+                            <p>1. ﻻ ﻳﺠﻮﺰ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺍﻟﻘﻴﺎﻢ ﺑﺈﻋﺎﺪﺓ ﺗﻘﺪﻳﻢ ﺧﺪﻣﺎﺖ ﺍﻟﻌﺎﻣﻞ ﻷﻲ ﻃﺮﻒ ﺁﺧﺮ ﺳﻮﺎﺀ ﺑﻄﺮﻳﻘﺔ ﻣﺒﺎﺷﺮﺔ ﺃﻭ ﻏﻴﺮ ﻣﺒﺎﺷﺮﺔ.</p>
+                            <p>2. ﻳﺮﺗﺒﻂ ﺍﻟﻌﺎﻣﻞ ﻣﻊ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﺑﻌﻘﺪ ﻋﻤﻞ ﻭﻳﻌﻤﻞ ﺗﺤﺖ ﺇﺷﺮﺎﻓﻪ ﻭ ﺇﺩﺍﺭﺗﻪ ﻭﻓـﻘ ًﺎ ﻟﻨﻈﺎﻢ ﺍﻟﻌﻤﻞ ، ﻭﻟﻴﺲ ﻷﻲ ﻣﻨﻬﻤﺎ ﻣﻄﺎﻟﺒﺔ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺄﻲ ﺣﻘﻮﻖ ﻣﺎﻟﻴﺔ ﺃﻭ ﻋﻤﺎﻟﻴﺔ.</p>
+                            <p>3. ﻳﺨﻀﻊ ﺍﻟﻌﺎﻣﻞ ﻟﺘﻌﻠﻴﻤﺎﺖ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ، ﻭﻋﻠﻴﻪ ﺍﻟﺤﻔﺎﻆ ﻋﻠﻰ ﺃﺳﺮﺎﺭ ﺃﻋﻤﺎﻟﻪ ﻭﺃﺳﺮﺎﺭ ﺃﺳﺮﺗﻪ ، ﻭﻳﻜﻮﻦ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺣﻖ ﺗﻮﺟﻴﻬﻪ ﺣﺴﺐ ﻣﻘﺘﻀﻴﺎﺖ ﺍﻟﻌﻤﻞ ﻟﺪﻳﻪ ، ﻭ ﻭﻓﻘﺎ ﻟﻸﻧﻈﻤﺔ ﺍﻟﺴﺎﺮﻳﺔ.</p>
+                            <p>4. ﻳﻠﺘﺰﻢ ﺍﻟﻄﺮﻓﺎﻦ ﺑﺘﻮﺛﻴﻖ ﺍﻟﻌﻼﻗﺔ ﺍﻟﺘﻌﺎﻗﺪﻳﺔ ﺍﻹﻟﻜﺘﺮﻮﻧﻴﺔ ﻭﻓﻖ ﺃﻧﻈﻤﺔ ﻭﺯﺍﺭﺓ ﺍﻟﻌﻤﻞ ﺍﻹﻟﻜﺘﺮﻮﻧﻴﺔ.</p>
+                            <p>5. ﺃﻱ ﺷﺮﻮﻁ ﺇﺿﺎﻓﻴﺔ ﺗﺘﻌﺎﺮﺽ ﻣﻊ ﻧﻈﺎﻢ ﺍﻟﻌﻤﻞ ﺃﻭ ﻻﺋﺤﺘﻪ ﺃﻭ ﺍﻟﻘﺮﺎﺭﺍﺕ ﺍﻟﺼﺎﺪﺭﺓ ﺗﻨﻔﻴﺬﺎ ﻟﻪ ﺗﻌﺘﺒﺮ ﺑﺎﻃﻠﺔ.</p>
+                            <p style="font-weight:bold">ﺛﺎﻣﻨﺎ : ﺍﻟﺨﻼﻓﺎﺖ ﻭ ﺍﻟﻤﻨﺎﺰﻋﺎﺖ: </p>
+                            <p>ﻓﻲ ﺣﺎﻟﺔ ﺣﺪﻮﺙ ﺧﻼﻒ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻳﺘﻢ ﺍﻟﻠﺠﻮء ﻟﻤﻜﺘﺐ ﺍﻟﻌﻤﻞ ﺍﻟﻤﺨﺘﺺ ﻟﻤﺤﺎﻮﻟﺔ ﺍﻟﺘﻮﺻﻞ ﻟﺤﻞ ﻭﺩﻱ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻗﺒﻞ ﺍﻟﻨﻈﺮ ﻓﻴﻪ ﻣﻦ ﺍﻟﻤﺤﻜﻤﺔ ﺍﻟﻤﺨﺘﺼﺔ.</p>
+                            <p style="font-weight:bold"> ﺗﺎﺳﻌﺎ : ﺍﻹﺧﻄﺎﺮﺍﺕ ﻭﺍﻹﺷﻌﺎﺮﺍﺕ: </p>
+                            <p> ﺗﺘﻢ ﺍﻹﺧﻄﺎﺮﺍﺕ ﻭﺍﻹﺷﻌﺎﺮﺍﺕ ﺑﻴﻦ ﺍﻟﻄﺮﻓﻴﻦ ﻛﺘﺎﺑﺔ ﻋﻦ ﻃﺮﻳﻖ ﺍﻟﺒﺮﻳﺪ ﺍﻟﻤﺴﺠﻞ ﺃﻭ ﺍﻟﺒﺮﻳﺪ ﺍﻟﻤﻤﺘﺎﺰ ﺃﻭ ﺍﻟﺒﺮﻳﺪ ﺍﻹﻟﻜﺘﺮﻮﻧﻲ، ﻭﺗـﻮﺟﻪ ﺍﻹﺧـﻄﺎﺮﺍﺕ ﻋﻠـﻲ ﺍﻟﻌـﻨﻮﺎﻥ ﺍﻟﻤﻮﺿـﺢ ﻟـﻜﻞ ﻣـﻦ ﺍﻟﻄﺮﻓـﻴﻦ ﻓـﻲ ﺻـﺪﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ , ﻭﻳﻠﺘﺰﻢ ﻛﻞ ﻃﺮﻒ ﺑﺈﺷﻌﺎﺮ ﺍﻟﻄﺮﻒ ﺍﻵﺧﺮ ﺧﻄﻴﺎ ﻓﻲ ﺣﺎﻞ ﺗﻐﻴﻴﺮﻪ ﻟﻠﻌﻨﻮﺎﻥ ﺍﻟﺨﺎﺺ ﺑﻪ ﻭﺇﻻ ﺍﻋﺘﺒﺮ ﺍﻟﻌﻨﻮﺎﻥ ﺍﻟﻤﺪﻮﻥ ﺃﻋﻼﻪ ﻫﻮ ﺍﻟﻤﻌﻤﻮﻞ ﺑﻪ ﻧﻈﺎﻣﺎ ﺩﻭﻥ ﻏﻴﺮﻪ.</p>
+                            <p style="font-weight:bold"> ﻋﺎﺷﺮﺎ : ﺍﻧﺘﻬﺎء ﺍﻟﻌﻘﺪ ﺃﻭ ﻓﺴﺨﻪ:</p>
+                            <p>1. ﻳﻨﺘﻬﻲ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﺑﺎﻧﺘﻬﺎء ﺍﻟﻤﺪﺔ ﺍﻟﻤﺘﻔﻖ ﻋﻠﻴﻬﺎ.</p>
+                            <p>2. ﻳﺠﻮﺰ ﻟﻠﻄﺮﻓﻴﻦ ﺍﻻﺗﻔﺎﻖ ﻋﻠﻰ ﺇﻧﻬﺎء ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻗﺒﻞ ﺍﻧﺘﻬﺎء ﻣﺪﺗﻪ ﺑﺎﻟﺘﺮﺎﺿﻲ ، ﺑﺸﺮﻂ ﺃﻥ ﻳﻜﻮﻦ ﺍﻻﺗﻔﺎﻖ ﻋﻠﻰ ﺍﻹﻧﻬﺎء ﻣﻜﺘﻮﺐ.</p>
+                            <p>3. ﻳﺤﻖ ﻷﻲ ﻣﻦ ﺍﻟﻄﺮﻓﻴﻦ ﺇﻧﻬﺎء ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻓﻲ ﺣﺎﻞ ﺇﺧﻼﻞ ﺍﻟﻄﺮﻒ ﺍﻵﺧﺮ ﺑﺄﻲ ﺑﻨﺪ ﻣﻦ ﺑﻨﻮﺪﻩ.</p>
+                            <p>4. ﺇﺫﺍ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻋﻦ ﺳﺪﺎﺩ ﻣﺒﻠﻎ ﺍﻟﺘﻜﻠﻔﺔ ﻋﻦ ﺍﻟﻤﻮﻋﺪ ﺍﻟﻤﺤﺪﺪ ﻟﺬﻟﻚ ﺃﻛﺜﺮ ﻣﻦ ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ﻳﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ.</p>
+                            <p>5.ﻓﻲ ﺣﺎﻟﺔ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻋﻦ ﺗﻘﺪﻳﻢ ﺧﺪﻣﺔ ﺍﻟﻌﺎﻣﻞ ﺍﻟﻤﺘﻔﻖ ﻋﻠﻴﻬﺎ ﻓﻲ ﺍﻟﺘﺎﺮﻳﺦ ﺍﻟﻤﺤﺪﺪ ﻟﺴﺮﻳﺎﻦ ﺍﻟﻌﻘﺪ ﻟﻤﺪﺔ ﺃﻗﺼﺎﻫﺎ ﺧﻤﺴﺔ ﻋﺸﺮ ﻳﻮﻣﺎ ، ﻓﻴﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭ ﻳﻠﺘﺰﻢ ﺑﺪﻓﻊ ﺗﻌﻮﻳﻀﺎ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ ، ﻣﻊ ﺇﻋﺎﺪﺓ ﺍﻟﻤﺒﺎﻟﻎ ﺍﻟﻤﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻛﺎﻣﻠﺔ. </p>
+                            <p>6. ﻓﻲ ﺣﺎﻟﺔ ﺗﺄﺧﺮ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ﻋﻦ ﺗﻘﺪﻳﻢ ﺍﻟﻌﺎﻣﻞ ﺍﻟﺒﺪﻳﻞ ﻋﻦ ﺍﻟﻔﺘﺮﺔ ﺍﻟﻤﺤﺪﺪﺓ ﻓﻲ ﺍﻟﻔﻘﺮﺔ (5) ﻣﻦ ﺍﻟﺒﻨﺪ )ﺭﺍﺑﻌﺎ( ، ﻓﻴﻌﺘﺒﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻔﺴﻮﺧﺎ ﺗﻠﻘﺎﺋﻴﺎ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻷﻮﻝ ، ﻭ ﻳﻠﺘﺰﻢ ﺑﺪﻓﻊ ﺗﻌﻮﻳﻀﺎ ﻟﻠﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ ، ﻣﻊ ﺇﻋﺎﺪﺓ ﺍﻟﻤﺒﺎﻟﻎ ﺍﻟﻤﺪﻓﻮﻋﺔ ﻣﻦ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻣﺤﺴﻮﻣﺎ ﻣﻨﻬﺎ ﻣﺎ ﻳﻌﺎﺪﻝ ﺍﻟﺘﻜﻠﻔﺔ ﺍﻟﺸﻬﺮﻳﺔ ﻟﻠﻌﺎﻣﻞ ﺍﻟﻤﻘﺪﻣﺔ ﺧﺪﻣﺎﺗﻪ ﺑﻨﺴﺒﺔ ﻣﺎ ﻗﻀﺎﻪ ﻟﺪﻰ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ</p>
+                            <p>7. ﻓﻲ ﺣﺎﻞ ﻓﺴﺦ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻦ ﻗﺒﻞ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﻭﻷﺳﺒﺎﺐ ﻻ ﺗﻌﻮﺪ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ، ﻓﻴﻠﺘﺰﻢ ﺍﻟﻄﺮﻒ ﺍﻟﺜﺎﻧﻲ ﺑﺪﻓﻊ ﺗﻌﻮﻳﺾ ﻟﻠﻄﺮﻒ ﺍﻷﻮﻝ ﻗﺪﺮﻩ (1000) ﺃﻟﻒ ﺭﻳﺎﻞ ﺳﻌﻮﺪﻱ.</p>
+                            <p style="font-weight:bold">ﺍﻟﺤﺎﺪﻱ ﻋﺸﺮ : ﻧﺴﺦ ﺍﻟﻌﻘﺪ:</p>
+                            <p>ﺣﺮﺮ ﻫﺬﺎ ﺍﻟﻌﻘﺪ ﻣﻦ ﻧﺴﺨﺘﻴﻦ ﺃﺻﻠﻴﺘﻴﻦ ﻭﻗﺪ ﺍﺳﺘﻠﻢ ﻛﻞ ﻃﺮﻒ ﻧـﺴﺨﺔ ﻣﻨﻪ ﻟﻠﻌﻤﻞ ﺑﻤﻮﺟﺒﻪ.</p>
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺍﺳﻢ ﺍﻟﻄﺮﻑ ﺍﻷﻭﻝ : ...........................................................
+                                    </td>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺗﻮﻗﻴﻊ ﺍﻟﻄﺮﻑ ﺍﻷﻭﻝ : ...........................................................
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺍﺳﻢ ﺍﻟﻄﺮﻑ ﺍﻟﺜﺎﻧﻲ : ..........................................................
+                                    </td>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺗﻮﻗﻴﻊ ﺍﻟﻄﺮﻑ ﺍﻟﺜﺎﻧﻲ : ...........................................................
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺍﻟﺼﻔﺔ : .......................................................
+                                    </td>
+                                    <td style="font-weight:bold;font-size:11pt">
+                                        ﺍﻟﺨﺘﻢ :
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record model="report.paperformat" id="paperformat_m_contract_report">
+            <field name="name">paperformat.contract.report</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_right">10</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+        <report id="report_rent_contract_report_temp"
+                model="rent.workers.management"
+                string="طباعة العقد"
+                report_type="qweb-pdf"
+                print_report_name="'Contract- %s' % (object.name)"
+                name="admission_management.rent_contract_report_temp"
+                paperformat="paperformat_m_contract_report"
+                menu="True"/>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="group_send_quick_reply" model="res.groups">
+        <field name="name">Send Quick Reply</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" />
+    </record>
+    <record model="ir.rule" id="sh_send_quick_reply_user_rule">
+        <field name="name">Send Quick Reply</field>
+        <field name="model_id" ref="model_sh_quick_reply" />
+        <field name="global" eval="True" />
+        <field name="domain_force">['|','|',('sh_user_id','in',[user.id]),('sh_user_id','=',False),('commom_for_all','=',True)]</field>
+        <field name="groups" eval="[(4, ref('sh_all_in_one_helpdesk.group_send_quick_reply'))]" />
+    </record>
+</odoo>

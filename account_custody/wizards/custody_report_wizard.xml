@@ -1,0 +1,39 @@
+<odoo>
+    <record model="ir.ui.view" id="custody_report_wizard">
+        <field name="name">Custody Report</field>
+        <field name="model">custom.custody.report.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Custody Report">
+                <group>
+
+                    <group>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="type" widget="radio" />
+                        <field name="employee_id" attrs="{'invisible': [('type', '=', 'all')]}" />
+                    </group>
+
+                </group>
+                <footer>
+                    <button name="get_report" string="Get Report" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+			<act_window id="act_wizard_custody"
+					name="Custody Report"
+					res_model="custom.custody.report.wizard"
+					view_mode="form"
+					view_id="custody_report_wizard"
+					target="new"/>
+
+
+
+    <menuitem action="act_wizard_custody"
+              id="menu_report_wizard"
+              parent="account_custody.custody_report"/>
+</odoo>

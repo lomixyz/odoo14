@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_snippet" name="Dati strutturati prodotti">
+        <!--PRENDO IL BASE URL-->
+        <t t-set="base_url" t-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url')"/>
+        <!--PRENDO TUTTE LE IMG DEL PRODOTTO (DEFAULT + EXTRA MEDIA)-->
+        <t t-if="product_variant" t-set="product_images" t-value="product_variant._get_images() if product_variant else product._get_images()"/>
+        
+        <!--PRENDO TUTTI I RATINGS-->
+        <t t-if="product" t-set="all_ratings" t-value="request.env['rating.rating'].sudo().search([('res_id', '=', product.id)])"/>
+        <t t-if="product">
+
+            <t t-set="current" t-value="datetime.datetime.now()" />
+			<t t-set="current_reduced" t-value="(datetime.datetime.now() - datetime.timedelta(days = 20))" />
+			<t t-if="product.out_date">
+				<t t-set="out_date" t-value="datetime.datetime.strptime(str(product.out_date) + ' 00:00:00.00000', '%Y-%m-%d %H:%M:%S.%f')" />
+			</t>
+				<t t-if="product.product_variant_id.qty_available_now &lt;= 0 and out_date and out_date &gt; current and product.sudo().product_variant_id.inventory_availability in ['always', 'threshold']">
+					<t t-set="status" t-value="'https://schema.org/Discontinued'"/>
+				</t>
+				<t t-else="">
+					<t t-if="out_date">
+						<t t-if="out_date &gt; current">
+							<t t-if="product.product_variant_id.qty_available_now &lt;= 0 and product.sudo().product_variant_id.qty_sum_suppliers &lt;= 0">
+								<t t-set="status" t-value="'https://schema.org/PreOrder'"/>
+							</t>
+						</t>
+					</t>
+					<t t-if="product.product_variant_id.qty_available_now &lt;= 0 and product.sudo().product_variant_id.qty_sum_suppliers &lt;= 0">
+						<t t-if="not out_date or out_date &lt; current">
+							<t t-set="status" t-value="'https://schema.org/OutOfStock'"/>
+						</t>
+					</t>
+					<t t-if="product.product_variant_id.qty_available_now &lt;= 0">
+						<t t-if="product.product_variant_id.qty_available_now &lt;= 0 and product.sudo().product_variant_id.qty_sum_suppliers &gt; 0">
+							<t t-set="status" t-value="'https://schema.org/InStock'"/>
+						</t>
+					</t>
+                    <t t-if="product.product_variant_id.qty_available_now &gt; 0">
+						<t t-set="status" t-value="'https://schema.org/InStock'"/>
+					</t>
+				</t>
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org/",
+                    "@type": "Product",
+                    "name": "<t t-esc="product.name"/>",
+                    "image": [
+                        <t t-if="product_variant">
+                            <t t-set="img_index" t-value="0"/>
+                            <t t-foreach="product_images" t-as="img" >
+                                <t t-set="img_index" t-value="img_index + 1" />
+                                <t t-if="img._name == 'product.image'">
+                                    "<t t-esc="base_url + '/web/image/product.image/' + str(img.id) + '/image_1024/' + str(img.name.replace(' ','%20'))" />"
+                                    <t t-if="img_index != len(product_images)">,</t>
+                                </t>
+                                <t t-else="">
+                                    "<t t-esc="base_url + '/web/image/product.product/' + str(img.id) + '/image_1024/' + str(img.name.replace(' ','%20'))" />"
+                                    <t t-if="img_index != len(product_images)">,</t>
+                                </t>
+                            </t>
+                        </t>
+                    ],
+                    "description": "<t t-esc="product.website_description"/>",
+                    "sku": "<t t-esc="product.barcode"/>",
+                    "mpn": "<t t-esc="product.default_code"/>",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "<t t-esc="product.product_brand_ept_id.name"/>"
+                    },
+                    <t t-if="len(product.reviews_ids) > 0">
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "<t t-esc="product.avg_product_rating"/>",
+                            "reviewCount": "<t t-esc="len(product.reviews_ids)"/>"
+                        },
+                        "review":[
+                            <t t-set="rew_index" t-value="0" />
+                            <t t-foreach="product.reviews_ids" t-as="rating">
+                                <t t-set="rew_index" t-value="rew_index + 1" />
+                                {
+                                    "@type": "Review",
+                                    "reviewBody":"<t t-esc="ratings.short_desc"/>",
+                                    "reviewRating": {
+                                        "@type": "Rating",
+                                        "ratingValue": "<t t-esc="ratings.message_rate"/>",
+                                        "bestRating": "5"
+                                    },
+                                    "author": {
+                                        "@type": "Person",
+                                        "name": " <t t-esc="ratings.customer_id"/>"
+                                    }
+                                } <t t-if="rew_index != len(product.reviews_ids)">,</t>
+                            </t>
+                        ],
+                    </t>
+                    "offers": {
+                        "@type": "Offer",
+                        "availability":"<t t-esc="status"/>",
+                        "url": "<t t-esc="request.httprequest.url"/>",
+                        "priceCurrency": "EUR",
+                        "price": "<t t-esc="combination_info['price']"/>"
+                    }
+                }
+            </script>
+        </t>
+    </template>
+</odoo>

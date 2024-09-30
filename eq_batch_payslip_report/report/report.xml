@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report 
+            id="action_print_batch_payslip"
+            string="Batch Payslip"
+            model="wizard.batch.payslip.report" 
+            report_type="qweb-pdf"
+            file="eq_batch_payslip_report.report_batch_payslip_template"
+            name="eq_batch_payslip_report.report_batch_payslip_template"/>
+
+        <record id="action_print_batch_payslip" model="ir.actions.report">
+            <field name="paperformat_id" ref="hr_holidays.paperformat_hrsummary"/>
+        </record>
+
+    </data>
+</odoo>

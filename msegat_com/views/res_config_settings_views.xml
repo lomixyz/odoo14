@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!--Msegat Configuration-->
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.msegatsms</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Msegat SMS" string="Msegat SMS" data-key="msegat_sms">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <group>
+                                        <field name="msegat_username"/>
+                                        <field name="msegat_api_key"/>
+                                        <field name="msegat_sender"/>
+                                </group>
+                                <group>
+                                    <field name="msegat_balance" readonly="1"/>
+                                    <button name="action_msegat_balance_inquiry" string="Balance Inquiry" class="oe_highlight" type="object" />
+                                </group>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

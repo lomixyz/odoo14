@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sh_ticket_dashboard_kanban_view" model="ir.ui.view">
+        <field name="name">Ticket Dashboard</field>
+        <field name="model">ticket.dashboard</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban create="false">
+                <field name="name" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <section id="dashboard_counter" class="counter-area" style="min-width: 100% !important; width: 100% !important;">
+                            <script type="text/javascript" src="/sh_all_in_one_helpdesk/static/src/js/filter.js" />
+                            <link rel="stylesheet" type="text/css" href="/sh_all_in_one_helpdesk/static/src/css/ticket_dashboard.css" />
+                            <div class="container">
+                                <section class="drop_btn sh_drop_btn">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4" id="leader_div">
+                                                <div class="sh_btn">
+                                                    <div class="dropdown">
+                                                        <select id="team_leader" class="btn btn-primary dropdown-toggle">
+                                                            <option value="0" selected="True">Team Leader</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4" id="team_div">
+                                                <div class="sh_btn">
+                                                    <div class="dropdown">
+                                                        <select id="team" class="btn btn-primary dropdown-toggle">
+                                                            <option value="0" selected="True">Team</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4" id="assign_user_div">
+                                                <div class="sh_btn">
+                                                    <div class="dropdown">
+                                                        <select id="assign_user" class="btn btn-primary dropdown-toggle">
+                                                            <option value="0" selected="True">Assign User</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="sh_btn">
+                                                    <div class="dropdown">
+                                                        <select id="days_filter" class="btn btn-primary dropdown-toggle">
+                                                            <option value="all" selected="True">Select Date</option>
+                                                            <option value="today">Today</option>
+                                                            <option value="yesterday">Yesterday</option>
+                                                            <option value="weekly">Current Week</option>
+                                                            <option value="prev_week">Previous Week</option>
+                                                            <option value="monthly">Current Month</option>
+                                                            <option value="prev_month">Previous Month</option>
+                                                            <option value="cur_year">Current Year</option>
+                                                            <option value="prev_year">Previous Year</option>
+                                                            <option value="custom">Custom</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-4 col-12 col-lg-2">
+                                                <input type="date" id="start_date" name="start_date" class="form-control o_hidden" />
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-12 col-lg-2">
+                                                <input type="date" id="end_date" name="end_date" class="form-control o_hidden" />
+                                            </div>
+                                        </div>
+                                </section>
+                                <br />
+                                <br />
+                                <section id="dashboard_counter" class="counter-area" style="min-width: 100% !important; width: 100% !important;">
+                                    <div id="js_ticket_count_div"></div>
+                                    <br />
+                                    <br />
+                                    <div id="js_ticket_tbl_div"></div>
+                                </section>
+                            </div>
+                        </section>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="sh_action_ticket_dashboard" model="ir.actions.act_window">
+        <field name="name">Ticket Dashboard</field>
+        <field name="res_model">ticket.dashboard</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="sh_ticket_dashboard_kanban_view" />
+    </record>
+	<menuitem id="helpdesk_dashboard_menu" name="Dashboard" parent="helpdesk.menu_helpdesk_root" sequence="1" action="sh_action_ticket_dashboard" />
+</odoo>

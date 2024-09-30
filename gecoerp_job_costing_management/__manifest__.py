@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+
+# Part of GECOERP See LICENSE file for full copyright and licensing details.
+
+{
+    'name': "Administración y Costos de Obras",
+    'version': '2.7.4.17',
+    'depends': [
+                'sale',
+                'project',
+                'hr_timesheet',
+                'purchase',
+                'note', 
+                'stock',
+                'stock_account',
+                'material_purchase_requisitions',
+                ],
+    'category' : 'Projects',
+    'license': 'Other proprietary',
+    'price': 35000.00,
+    'currency': 'MXN',
+    'summary': """Este modulo permite la administracion de obras y costos de servicios y materiales""",
+    'description': """
+   Administraciónn de Obras
+""",
+    'author': "MASTER CONSULTING RESOURCES & CO. S.C.",
+    'website': "https://www.gecoerp.com",
+    'support': 'contact@gecoerp.com',
+    'images': ['static/description/img1.jpeg'],
+    'data':[
+            'security/construction_security.xml',
+            'security/ir.model.access.csv',
+            'data/jobcost_sequence.xml',
+            'wizard/project_user_subtask_view.xml',
+            'views/job_costing_view.xml',
+            'views/project.xml',
+            'views/job_type.xml',
+            'views/job_cost_to_lines.xml',
+            'views/construction_management_view.xml',
+            'views/note_view.xml',
+            'views/product_view.xml',
+            'views/project_report.xml',
+            'views/project_task_view.xml',
+            'views/project_view_construct.xml',
+            'views/purchase_view.xml',
+            'views/report_noteview.xml',
+            'views/report_reg.xml',
+            'views/stock_picking.xml',
+            'views/task_report.xml',
+            'views/order_lines_view.xml',
+            'report/job_costing_report.xml',
+            'views/purchase_requisition_view.xml',
+            'report/purchase_requisition_report.xml',
+    ],
+    'installable' : True,
+    'application' : False,
+    'auto_install' : False,
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate='1'>
+        <record id="saas_kit_trial.saas_purchase_reminder_template" model="mail.template">
+            <field name="name">SaaS Purchase Reminder Template</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="subject">${object.company_id.name} Contract (Ref ${object.name or 'n/a' })</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="saas_kit_trial.model_saas_contract"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.partner_id.name}
+                % set access_url = object.get_subdomain_url() or ''
+                % set access_name = 'Create Your Domain Name'
+
+                % if object.partner_id.parent_id:
+                    (<i>${object.partner_id.parent_id.name}</i>)
+                % endif
+                ,</p>
+                
+                <p>We want to inform you that your trial period for ${object.plan_id.name} Plan is expired.</p>
+
+                <p>
+                    Now free trial period is over, to continue the services of plan please take subscription of plan.
+                </p>
+                
+                <p>
+                    Now plan becomes a subscription based plan which means that the plan would remain active from the date of activation. <br/>
+                    Post the expiration of the plan the Instance will expire.<br/>
+                    To avoid this, please renew your plan before the expiration date.
+                </p>
+                <p>
+                    Commencement Date: ${object.start_date}<br/>
+                    Next Invoice Date: ${object.next_invoice_date}<br/>
+                    Total Number Of Billing Cycles: ${object.total_cycles}<br/>
+                </p>
+                <p>
+                    To Purchase the current plan, Click <a href="${object.get_contract_url()}">Purchase Now</a>
+                </p>
+                <p>
+                    If you have any queries or issues, please contact our support team.
+                </p>
+
+                <br/><br/>
+                <br/>
+
+                <p>Thank you,</p>
+
+                <p style="color:#888888;">
+                % if object.user_id and object.user_id.signature:
+                    ${object.user_id.signature | safe}
+                % endif
+                </p>
+                ]]></field>
+        </record>
+    </data>
+</odoo>

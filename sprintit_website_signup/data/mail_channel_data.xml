@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="mail.channel" id="channel_for_approval_users">
+            <field name="name">User Approval</field>
+            <field name="group_public_id" ref="sprintit_website_signup.group_approval_channel"/>
+            <field name="group_ids" eval="[(4, ref('sprintit_website_signup.group_approval_channel'))]"/>
+            <field name="description">Notifications for user approval.</field>
+        </record>
+
+    </data>
+</odoo>

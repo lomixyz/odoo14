@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="theme_assets_frontend_custom" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <!-- AGGIUNGE IN HEAD IN TUTTO IL SITO --> 
+            <link href="/netaddiction_theme_rewrite/static/src/css/global.css" rel="stylesheet"/>
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/netaddiction_theme_rewrite/static/src/js/custom_search_variant.js"/>
+            <script type="text/javascript" src="/netaddiction_theme_rewrite/static/src/js/check_limit.js"/>
+            <script type="text/javascript" src="/netaddiction_theme_rewrite/static/src/js/custom_button_buy.js"/>
+            <script type="text/javascript" src="/netaddiction_theme_rewrite/static/src/js/popup_add_to_cart_custom.js"/>
+        </xpath>
+    </template>
+    <template id="netaddiction_theme_rewrite_canonical" inherit_id="portal.frontend_layout">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript">
+                var _iub = _iub || [];
+                _iub.csConfiguration = {"lang":"it","siteId":261457,"cookiePolicyId":489188, "banner":{ "position":"bottom" }};
+            </script>
+            <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async="async"></script>
+        </xpath>
+        <xpath expr="//meta[last()]" position="after">
+     
+            <!-- Global site tag (gtag.js) Multiplayer.com -->
+            <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GTM-554WF2X"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'GTM-554WF2X');
+            </script>
+
+            <!-- Global site tag (gtag.js) LEGO -->
+            <script async="async" src="https://www.googletagmanager.com/gtag/js?id=DC-8342968"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'DC-8342968');
+            </script>
+
+            <!-- End of global snippet: Please do not remove -->
+            <t t-if="request.website.isB2B">
+                <meta name="robots" content="noindex, nofollow" />
+            </t>
+        
+            <t t-set="current_url" t-value="website._get_canonical_url(canonical_params=canonical_params).replace('/it_IT/', '/')"/>
+            
+            <!-- AGGIUNGE IN HEAD PER LA HOME --> 
+            <t t-if="(request.env['ir.config_parameter'].sudo().get_param('web.base.url') + '/') == current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/home.css" rel="stylesheet"/>
+            </t>
+            
+            <!-- AGGIUNGE IN HEAD PER LE CATEGORIE -->
+            <t t-if="'/shop/category/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/category.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER I TAG --> 
+            <t t-if="'/tag/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/custom_list.css" rel="stylesheet"/>
+            </t>
+            <t t-if="'/offerte/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/custom_list.css" rel="stylesheet"/>
+            </t>
+            <t t-if="'/promozioni/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/custom_list.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER I TERMINI DI SPEDIZIONE -->
+            <t t-if="'/costi-metodi-spedizione/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/shipping.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD LA PAGINA UTENTE -->
+            <t t-if="request.env['ir.config_parameter'].sudo().get_param('web.base.url') + '/my' == current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_home.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD LA PAGINA ORDINI UTENTE -->
+            <t t-if="'/shop/payment' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/shop_payment.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD LA PAGINA ORDINI UTENTE -->
+            <t t-if="'/my/orders' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_orders.css" rel="stylesheet"/>
+            </t>
+            <t t-if="'/my/purchase' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_orders.css" rel="stylesheet"/>
+            </t>
+            <t t-if="'/my/quotes' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_orders.css" rel="stylesheet"/>
+            </t>
+            <t t-if="'/my/invoices' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_orders.css" rel="stylesheet"/>
+            </t>
+
+            <t t-if="'/my/account' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/user_account.css" rel="stylesheet"/>
+            </t>
+            
+            <!-- AGGIUNGE IN HEAD LA PAGINA PAGAMENTO -->
+            <t t-if="'/shop/payment' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/cart_payment.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER LE RICERCHE -->
+            <t t-if="'/shop?search=' in current_url">
+                <meta name="robots" content="noindex, nofollow" />
+                <link href="/netaddiction_theme_rewrite/static/src/css/search.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER I PRODOTTI --> 
+            <t t-if="'/shop' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/category.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER IL WALLET --> 
+            <t t-if="'/wallet' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/wallet.css" rel="stylesheet"/>
+            </t>
+
+            <!-- AGGIUNGE IN HEAD PER I PRODOTTI --> 
+            <t t-if="'/shop/' in current_url">
+                <link href="/netaddiction_theme_rewrite/static/src/css/product.css" rel="stylesheet"/>
+                    <!-- AGGIUNGE LO SNIPPET PER PRODOTTI -->
+                <t t-call="netaddiction_theme_rewrite.product_snippet"/>
+
+                <t t-if="product">
+                    <t t-if="product.public_categ_ids">
+                        <t t-if="product.public_categ_ids.ids and product.public_categ_ids.ids[0] in [51, 44, 38, 53, 50]">
+                            <script>
+                                gtag("event", "conversion", {
+                                    'allow_custom_scripts': true,
+                                    "u14": "<t t-esc="product.website_url"/>",
+                                    "u19": "Multiplayer.com",
+                                    "u8": "<t t-esc="product.barcode"/>",
+                                    "u9": "<t t-esc="product.name"/>",
+                                    "send_to": "DC-8342968/it-mi0/it_le000+standard"
+                                });
+                            </script>
+                            <noscript>
+                                <img src="https://ad.doubleclick.net/ddm/activity/src=8342968;type=it-mi0;cat=it_le000;u8=[[product_id]];u9=[[product_name]];u14=[URL];u19=[retailer];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt=""/>
+                            </noscript>
+                        </t>
+                    </t>
+                </t>
+
+                <t t-if="product_variant">
+                    <t t-set="product_images" t-value="product_variant._get_images() if product_variant else product._get_images()"/>
+                    <t t-set="img_index" t-value="0"/>
+                    <t t-foreach="product_images" t-as="img" >
+                        <t t-set="img_index" t-value="img_index + 1" />
+                        <t t-if="img._name == 'product.image'">
+                            <link rel="preload" href="base_url + '/web/image/product.image/' + str(img.id) + '/image_1024/' + str(img.name.replace(' ','%20'))" />
+                        </t>
+                        <t t-else="">
+                            <link rel="preload" href="base_url + '/web/image/product.product/' + str(img.id) + '/image_1024/' + str(img.name.replace(' ','%20'))" />
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//link[@rel='canonical']" position="replace">
+            <t t-set="canonical_find" t-value="false"/>
+            <t t-set="current_url" t-value="website._get_canonical_url(canonical_params=canonical_params).replace('/it_IT/', '/')"/>
+
+            <!--SOSTITUISCE IL CANONICAL-->
+            <t t-if="'/shop/category/' in current_url">
+                <!--CATEGORIE: RIMUOVE LA PAGINAZIONE-->
+                <link rel="canonical" t-att-href="website._get_canonical_url(canonical_params=canonical_params).split('/page/')[0]"/>
+                <t t-set="canonical_find" t-value="true"/>
+            </t>
+            <t t-if="'/shop/page/' in current_url">
+                <!--SHOP PAGE: RIMUOVE LA PAGINAZIONE-->
+                <link rel="canonical" t-att-href="website._get_canonical_url(canonical_params=canonical_params).split('/page/')[0]"/>
+                <t t-set="canonical_find" t-value="true"/>
+            </t>
+            <t t-if="'&amp;search=' in current_url">
+                <!--RICERCA: RIMUOVE LA PAGINAZIONE-->
+                <t t-if="'/page/' in current_url">
+                    <t t-set="split_url" t-value="website._get_canonical_url(canonical_params=canonical_params).replace('/it_IT/', '/').split('/page/')" />
+                    <t t-set="split_pagination" t-value="split_url[1].split('?')" />
+                    <link rel="canonical" t-attf-href="{{split_url[0]}}?{{split_pagination[1]}}" />
+                </t>
+                <t t-else="">
+                    <link rel="canonical" t-attf-href="{{current_url}}" />
+                </t>
+                <t t-set="canonical_find" t-value="true"/>
+            </t>
+            <t t-if="canonical_find == false">
+                <!--GLOBALE-->
+                <link rel="canonical" t-attf-href="{{current_url}}" />
+            </t>
+        </xpath>
+        <xpath expr="//title" position="replace">
+            <t t-set="current_url" t-value="website._get_canonical_url(canonical_params=canonical_params).replace('/it_IT/', '/')"/>
+            <t t-if="not '/tool/' in current_url and not '/search/' in current_url">
+                <t t-if="product">
+                    <t t-if="product.name">
+                        <title><t t-esc="product.name"/> | Multiplayer.com</title>
+                    </t>
+                    <t t-else="">
+                        <title>Vendita Figure, Funko Pop, Lego, Model Kit, Gadget Nerd e Videogiochi Online | Multiplayer.com</title>
+                    </t>
+                </t>
+                <t t-if="category">
+                    <t t-if="any(path_part in current_url for path_part in ['/tag/','/offerte/','/promozioni/'])">
+                        <t t-if="offer">
+                            <title><t t-esc="offer.name"/> | Multiplayer.com</title>
+                        </t>
+                        <t t-if="promo">
+                            <title><t t-esc="promo.name"/> | Multiplayer.com</title>
+                        </t>
+                        <t t-if="tag_name">
+                            <title><t t-esc="tag_name.name"/> | Multiplayer.com</title>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <t t-if="category.name">
+                            <title><t t-esc="category.name"/> | Multiplayer.com</title>
+                        </t>
+                        <t t-else="">
+                            <title>Negozio | Multiplayer.com</title>
+                        </t>
+                    </t>
+                </t>
+
+                <t t-if="not category and not product">
+                    <title>Vendita Figure, Funko Pop, Lego, Model Kit, Gadget Nerd e Videogiochi Online | Multiplayer.com</title>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//meta[@name='description']" position="replace">
+            <t t-set="current_url" t-value="website._get_canonical_url(canonical_params=canonical_params).replace('/it_IT/', '/')"/>
+            <t t-if="not '/tool/' in current_url and not '/search/' in current_url">
+                <t t-if="product">
+                    <t t-if="product.website_description and len(product.website_description) &gt; 20">
+                        <t t-set="description" t-value="product.website_description"/>
+                        <meta name="description" t-attf-content="{{env['ir.fields.converter'].text_from_html(description)}}"/>
+                    </t>
+                    <t t-else="">
+                        <meta name="description" content="Benvenuti su Multiplayer.com, negozio online totalmente Italiano attivo ormai da oltre 20 anni dove puoi trovare i migliori Videogiochi, Console, Funko Pop, Action Figure, Model Kit, Lego, Gadget, Statue, Peluche, Giocattoli e Carte Collezionabili e tanti altri tipi di merce da tutto il mondo al miglior prezzo. Inclusi nel nostro catalogo prodotti di genere Cinema, Film e Serie Tv, Giochi, Musica, Anime e Manga, Fumetti e Sport. Portiamo una varietà di prodotti per i collezionisti dai migliori produttori come Funko, Banpresto, Megahouse, Beast Kingdom, Iron Studios, Hasbro, Kotobukiya, Bandai, Mezco, Good Smile, McFarlane, Diamond, Dc, Dark Horse, Prime1, Furyu, Neca
+                    Grazie ai nostri canali d’importazione cerchiamo sempre di portare in Italia i migliori prodotti e le migliori esclusive che sono presenti in altri mercati diverso dal nostro: Collector, Special e Limited Edition di videogiochi Import e non solo, Funko Pop esclusivi. Conoscendo i prodotti limitati che vi andiamo a vendere li spediamo proteggendoli nel miglior modo possibile
+                    Nella home page e in ogni pagina di categoria, ti informiamo anche sulle ultime novità, i più venduti, i preordini e le offerte
+                    In qualità di uno dei più antichi rivenditori Italiani di videogiochi, action figure e funko pop di importazione, siamo a vostra disposizione con la nostra esperienza via e-mail, Facebook e Instagram. Sei anche il benvenuto nel nostro canale Telegram, lasciati convincere dai nostri consigli e dalla nostra straordinaria selezione di articoli da collezione tutti Originali"/>
+                    </t>
+                </t>
+                <t t-if="category">
+                    <t t-if="category.description">
+                        <meta name="description" t-attf-content="{{category.description}}"/>
+                    </t>
+                    <t t-else="">
+                        <meta name="description" content="Benvenuti su Multiplayer.com, negozio online totalmente Italiano attivo ormai da oltre 20 anni dove puoi trovare i migliori Videogiochi, Console, Funko Pop, Action Figure, Model Kit, Lego, Gadget, Statue, Peluche, Giocattoli e Carte Collezionabili e tanti altri tipi di merce da tutto il mondo al miglior prezzo. Inclusi nel nostro catalogo prodotti di genere Cinema, Film e Serie Tv, Giochi, Musica, Anime e Manga, Fumetti e Sport. Portiamo una varietà di prodotti per i collezionisti dai migliori produttori come Funko, Banpresto, Megahouse, Beast Kingdom, Iron Studios, Hasbro, Kotobukiya, Bandai, Mezco, Good Smile, McFarlane, Diamond, Dc, Dark Horse, Prime1, Furyu, Neca
+                    Grazie ai nostri canali d’importazione cerchiamo sempre di portare in Italia i migliori prodotti e le migliori esclusive che sono presenti in altri mercati diverso dal nostro: Collector, Special e Limited Edition di videogiochi Import e non solo, Funko Pop esclusivi. Conoscendo i prodotti limitati che vi andiamo a vendere li spediamo proteggendoli nel miglior modo possibile
+                    Nella home page e in ogni pagina di categoria, ti informiamo anche sulle ultime novità, i più venduti, i preordini e le offerte
+                    In qualità di uno dei più antichi rivenditori Italiani di videogiochi, action figure e funko pop di importazione, siamo a vostra disposizione con la nostra esperienza via e-mail, Facebook e Instagram. Sei anche il benvenuto nel nostro canale Telegram, lasciati convincere dai nostri consigli e dalla nostra straordinaria selezione di articoli da collezione tutti Originali"/>
+                    </t>
+                </t>
+                <t t-if="not category and not product">
+                    <meta name="description" content="Benvenuti su Multiplayer.com, negozio online totalmente Italiano attivo ormai da oltre 20 anni dove puoi trovare i migliori Videogiochi, Console, Funko Pop, Action Figure, Model Kit, Lego, Gadget, Statue, Peluche, Giocattoli e Carte Collezionabili e tanti altri tipi di merce da tutto il mondo al miglior prezzo. Inclusi nel nostro catalogo prodotti di genere Cinema, Film e Serie Tv, Giochi, Musica, Anime e Manga, Fumetti e Sport. Portiamo una varietà di prodotti per i collezionisti dai migliori produttori come Funko, Banpresto, Megahouse, Beast Kingdom, Iron Studios, Hasbro, Kotobukiya, Bandai, Mezco, Good Smile, McFarlane, Diamond, Dc, Dark Horse, Prime1, Furyu, Neca
+                    Grazie ai nostri canali d’importazione cerchiamo sempre di portare in Italia i migliori prodotti e le migliori esclusive che sono presenti in altri mercati diverso dal nostro: Collector, Special e Limited Edition di videogiochi Import e non solo, Funko Pop esclusivi. Conoscendo i prodotti limitati che vi andiamo a vendere li spediamo proteggendoli nel miglior modo possibile
+                    Nella home page e in ogni pagina di categoria, ti informiamo anche sulle ultime novità, i più venduti, i preordini e le offerte
+                    In qualità di uno dei più antichi rivenditori Italiani di videogiochi, action figure e funko pop di importazione, siamo a vostra disposizione con la nostra esperienza via e-mail, Facebook e Instagram. Sei anche il benvenuto nel nostro canale Telegram, lasciati convincere dai nostri consigli e dalla nostra straordinaria selezione di articoli da collezione tutti Originali"/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

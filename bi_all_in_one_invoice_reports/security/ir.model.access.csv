@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_day_wise_product_invoice,access_day_wise_product_invoice,model_invoice_report_wizard,base.group_user,1,1,1,1
+access_invoice_book_day_report,access_invoice_book_day_report,model_invoice_day_book_report,base.group_user,1,1,1,1
+access_invoice_summary,access_invoice_summary,model_invoice_detail_wizard,base.group_user,1,1,1,1
+access_invoice_payment,access_invoice_payment,model_invoice_payment_wizard,base.group_user,1,1,1,1
+access_top_customer,access_top_customer,model_top_customer_wizard,base.group_user,1,1,1,1
+access_update_top_selling_product,access_update_top_selling_product,model_update_top_selling_wizard,base.group_user,1,1,1,1
+access_sale_person,access_sale_person,model_invoice_person_wizard,base.group_user,1,1,1,1
+access_invoice_excel_report,access_invoice_excel_report,model_invoice_excel_report,base.group_user,1,1,1,1
+,,,,,,,
+access_excel_report,access_excel_report,model_excel_report,base.group_user,1,1,1,1
+access_top_selling_wizard,access_top_selling_wizard,model_top_selling_wizard,base.group_user,1,1,1,1
+access_invoice_summary_report_wizard,access_invoice_summary_report_wizard,model_invoice_summary_report_wizard,base.group_user,1,1,1,1

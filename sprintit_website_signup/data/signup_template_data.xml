@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_user_signup_approval" model="mail.template">
+        <field name="name">Signup: Odoo Account Signup Approval</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="email_from">"${object.company_id.name|safe}" &lt;${(object.company_id.email or user.email)|safe}&gt;</field>
+        <field name="email_to">${ctx['email_to']}</field>
+        <field name="subject">New User ${object.name} has Signup waiting for Approval</field>
+        <field name="body_html" type="html">
+            <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777">
+                <p>Dear Approval Team,</p>
+                <p>
+                    New user <strong>${object.name}</strong> with email <strong>${object.email}</strong> is signup.Review his profile and take appropriate action.
+                </p>
+            </div>
+        </field>
+    </record>
+
+    <record id="mail_template_user_signup_account_approved" model="mail.template">
+        <field name="name">Signup: Odoo Account Approved</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="email_from">"${object.company_id.name|safe}" &lt;${(object.company_id.email or user.email)|safe}&gt;</field>
+        <field name="email_to">${object.email|safe}</field>
+        <field name="subject">Welcome to ${object.company_id.name}!</field>
+        <field name="body_html" type="html">
+            <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777">
+                <p>Dear ${object.name},</p>
+                <p>
+                    Your account has been approved!
+                </p>
+                <div style="text-align: center; margin-top: 16px;">
+                    <a href="/web/login?${ctx['auth_login']}"
+                       style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px">
+                        Go to My Account
+                    </a>
+                </div>
+                <p>Best regards,</p>
+            </div>
+        </field>
+    </record>
+
+    <record id="mail_template_user_signup_account_rejected" model="mail.template">
+        <field name="name">Signup: Odoo Account Reject</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="email_from">"${object.company_id.name|safe}" &lt;${(object.company_id.email or user.email)|safe}&gt;</field>
+        <field name="email_to">${object.email|safe}</field>
+        <field name="subject">Account Rejected</field>
+        <field name="body_html" type="html">
+            <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777">
+                <p>Dear ${object.name},</p>
+                <p>
+                    Your account has been Rejected! , For more detail contact us.
+                </p>
+                <p>Best regards,</p>
+            </div>
+        </field>
+    </record>
+</odoo>

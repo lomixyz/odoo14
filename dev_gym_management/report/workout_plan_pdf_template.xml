@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <template id="main_workout_plan_pdf_template">
+        <t t-call="web.external_layout">
+            <div class="page" style="font-size:14px;">
+                <h3>
+                    <center>
+                        <span t-esc="o.name"/>
+                    </center>
+                </h3>
+                <span t-if="o.day_id">
+                    <span style="font-weight: bold;font-size: 14px;margin-bottom: 5px;margin-top: 25px;">Workout Days</span>&#160;:&#160;<span t-esc="get_days(o.day_id)"/>
+                </span>
+                <!--details-->
+                <span t-if="o.workout_line_ids">
+                    <p style="font-weight: bold;font-size: 20px;margin-bottom: 5px;margin-top: 25px;">
+                        Exercise List
+                    </p>
+                    <table width="100%" style="font-size: 14px;table-layout: fixed;margin-top: 10px;" class="table table-condensed">
+                        <tr style="word-wrap: break-word;line-height: 12px;">
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Exercise</th>
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Body Part</th>
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Equipment</th>
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Sets</th>
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Repeat</th>
+                            <th style="width: 12%;border-bottom: 2px solid black;border-top: 1px solid white;">Weight(kgs)</th>
+                        </tr>
+                        <tr t-foreach="o.workout_line_ids" t-as="line" style="font-size: 12px;word-wrap: break-word;line-height: 10px;">
+                            <td>
+                                <span t-esc="line.exercise_id.name or ''"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.body_part_id.name or ''"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.equipment_id.name or ''"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.sets"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.repeat"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.weight"/>
+                            </td>
+                        </tr>
+                    </table>
+                </span>
+            </div>
+        </t>
+    </template>
+
+    <template id="workout_plan_pdf_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="dev_gym_management.main_workout_plan_pdf_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

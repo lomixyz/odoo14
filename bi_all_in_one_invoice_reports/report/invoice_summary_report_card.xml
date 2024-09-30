@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="invoice_detail_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <center>
+                        <br></br>
+                        <h1 style="width:100%; text-align:center;">
+                            <strong>Product Invoice Summary Report</strong>
+                        </h1>
+                        <h5>
+                            <strong>Companies :
+                                <t t-esc="date[2]" />
+                            </strong>
+                        </h5>
+                    </center>
+                    <div style="width:100%;" class="row">
+                        <div style="width:50%; text-align:left;" class="column">
+                            <h5>
+                                <strong>Start Date :
+                                    <t t-esc="date[0]" />
+                                </strong>
+                                <br />
+                                <strong>Status :
+                                    <t t-esc="date[3]" />
+                                </strong>
+                            </h5>
+                        </div>
+                        <div style="width:50%;" class="column">
+                            <div style="float:right;">
+                                <h5><strong>
+                                    <span>End Date :</span>
+                                    <t t-esc="date[1]" />
+                                    <br />
+                                    <span>Invoice Channel :</span>
+                                    <t t-esc="date[4]" /></strong>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <table class="table table-bordered">
+                        <thead>
+                            <h4>
+                                <strong>Products</strong>
+                            </h4>
+                            <tr style="font-weight: bold">
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="product" t-foreach="invoice_data">
+                                <td>
+                                    <t t-esc="product[0]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="product[1]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="product[2]"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table class="table table-bordered">
+                        <thead>
+                            <h4>
+                                <strong>Payments</strong>
+                            </h4>
+                            <tr style="font-weight: bold">
+                                <th>Name</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="name" t-foreach="payments">
+                                <td>
+                                    <t t-esc="name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="'%.2f'% payments[name]"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table class="table table-bordered">
+                        <thead>
+                            <h4>
+                                <strong>Taxes</strong>
+                            </h4>
+                            <tr style="font-weight: bold">
+                                <th>Name</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="product" t-foreach="taxes">
+                                <td>
+                                    <t t-esc="product"/>
+                                </td>
+                                <td>
+                                    <t t-esc="'%.2f'% taxes[product]"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

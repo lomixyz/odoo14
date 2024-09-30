@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data>
+        <record id="saas_trial_contract_inherit_form" model="ir.ui.view">
+            <field name="name">saas.trial.contract.inherit.form</field>
+            <field name="model">saas.contract</field>
+            <field name="inherit_id" ref="odoo_saas_kit.saas_contract_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='extend_contract']" position='after'>
+                   <field name="trial_data_enabled" invisible='1' />
+                   <button string="Send Purchase Reminder" type="object" name="send_reminder" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'trial_expired'), ('purchase_reminder_sent', '=', True)]}" />
+                    <button string="Send Purchase Reminder" type="object" name="send_reminder" attrs="{'invisible': ['|', '|', ('state', '!=', 'trial_expired'), ('purchase_reminder_sent', '=', False), ('is_trial_enabled', '!=', True)]}"/>
+                    <button string="Set Trial Data" type="object" name="update_trial_data" class="oe_highlight" attrs="{'invisible': ['|', ('trial_data_enabled', '=', False), ('state', '!=', 'confrim')]}" />
+                </xpath>
+                <xpath expr="//field[@name='trial_period']" position='before'>
+                    <field name="reminder_show" invisible='True' />
+                    <field name="purchase_reminder_sent" invisible='True' />
+                    <field name="is_trial_enabled" invisible="1"/>
+                    <field name="converted_contract_id" attrs="{'invisible': [('converted_contract_id', '=', False)]}"/>
+                    <label for="trial_started_date" string="Trial Period" attrs="{'invisible': [('is_trial_enabled', '=', False), ('trial_started_date', '=', False)]}" />
+                    <div attrs="{'invisible': [('is_trial_enabled', '=', False), ('trial_started_date', '=', False)]}">
+                        <field name="trial_started_date" class="oe_inline" readonly="1"/>
+                             <span attrs="{'invisible': [('is_trial_enabled', '=', False), ('trial_started_date', '=', False)]}"> To </span>
+                        <field name="start_date" class="oe_inline" readonly="1"/>           
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='user_data_updated']" position="before">
+                    <div class="ribbon ribbon-top-right o_widget"  attrs="{'invisible': [('is_trial_enabled', '=', False)]}">
+                        <span class="bg-success" attrs="{'invisible':[ '|', ('state', '=', 'trial_expired'), ('state', '=' ,'trial_converted')]}">Trial</span>
+                        <span class="bg-danger" attrs="{'invisible':[('state', '!=' ,'trial_expired')]}">Trial Expired</span>
+                        <span class="bg-info" style="font-size:15px;" attrs="{'invisible':[('state', '!=' ,'trial_converted')]}">Trial Closed</span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

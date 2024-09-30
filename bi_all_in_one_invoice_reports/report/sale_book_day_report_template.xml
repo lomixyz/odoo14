@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+	<template id="sales_daybook_report_document">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="web.external_layout">
+					<br/>
+					<div class="page">
+						<br/>
+						<center>
+							<h1><b>Sales Day Book Report</b></h1>
+							<h3><b><span t-esc="data['start_date']"/> To <span t-esc="data['end_date']"/> </b></h3>
+							<div class="row">
+								<table width='100%' class='table table-condensed' style='border:1px solid black'>
+									<thead style="font-size: 15px">
+										<t t-set="header" t-value="get_header()"/>
+										<t t-set="ref" t-value="get_ref()"/>
+										<t t-set="tot" t-value="get_total(data)"/>
+										<t t-set="count" t-value="6"/>
+										<tr>
+											<t t-foreach="header" t-as="l">
+												<th t-esc="l"/>
+											</t>
+										</tr>
+									</thead>
+									<span t-foreach="get_detail(data)" t-as="l">
+										<tr t-foreach="get_data(l)" t-as="line" style="font-size: 15px">
+											<td><span t-esc="line.get('date')"/></td>
+											<td><span t-esc="line.get('number')"/></td>
+											<td><span t-esc="line.get('acc_code')"/></td>
+											<td><span t-esc="line.get('customer')"/></td>
+											<td><span t-esc="line.get('name')"/></td>
+											<td><span t-esc="line.get('total')"/></td>
+											
+											<t t-foreach="ref" t-as="h">
+												<td><span t-esc="line.get(h)" t-options='{"widget": "float", "precision": 2}'/></td>
+											</t>
+											<td><span t-esc="line.get('tax')" t-options='{"widget": "float", "precision": 2}'/></td>
+										</tr>
+									</span>
+									<tr>
+										<p></p>
+									</tr>
+									<tr>
+										<p></p>
+									</tr>
+									<tr style="border:1px solid black; font-size: 15px">
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td style="border:1px solid black; font-weight:bold; font-size: 18px">
+											Taxes included
+											<span t-esc="get_inv_tot(data)" t-options='{"widget": "float", "precision": 2}'/>
+										</td>
+										<t t-foreach="ref" t-as="h">
+										<td style="border:1px solid black;font-weight:bold; font-size: 18px"><span t-esc="tot.get(h)" t-options='{"widget": "float", "precision": 2}'/></td>
+										</t>
+										<td style="border:1px solid black;font-weight:bold; font-size: 18px">
+											<span t-esc="get_total_tax()" t-options='{"widget": "float", "precision": 2}'/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</center>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+		
+	</data>
+</odoo>

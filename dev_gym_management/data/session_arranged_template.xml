@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="template_special_session_arranged" model="mail.template">
+        <field name="name">Special Session is Arranged</field>
+        <field name="subject">Special Session is Arranged</field>
+        <field name="email_from">${(object.company_id and object.company_id.email  or '') | safe}</field>
+        <field name="model_id" ref="dev_gym_management.model_special_session"/>
+        <field name="body_html"><![CDATA[
+            <div style="background-color:#F3F5F6;color:#515166;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                % set start_at = object.user_timezone_start_at()
+                % set end_at = object.user_timezone_end_at()
+                <p>Hello,</p>
+                <p>We are very pleased to announce that we have organized <strong> ${object.name} </strong> session
+                between <strong>${start_at}</strong> and <strong>${end_at}</strong>
+                </p>
+                <p>Details of session are as below</p>
+                <p>"${object.description}"</p>
+                <p>Thank You<p/>
+            </div>
+        ]]></field>
+    </record>
+</odoo>

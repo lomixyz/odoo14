@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="checklist_task_progress_restriction_form" model="ir.ui.view">
+        <field name="name">project.task.type.form</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fold']" position="after">  
+                <field name="task_progress_restriction" invisible="1"/> 
+                <field name = "checklist_task_progress_restriction" attrs="{'invisible':[('task_progress_restriction', '!=', 'restriction')]}"/>
+            </xpath>        
+        </field>
+    </record>
+</odoo>
+
+
+
+

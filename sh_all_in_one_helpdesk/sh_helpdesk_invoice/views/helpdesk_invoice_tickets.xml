@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_helpdesk_ticket_invoice_inherited_view_form" model="ir.ui.view">
+        <field name="name">sh.helpdesk.invoice.inherited.view.form</field>
+        <field name="model">account.move</field>
+        <field name="groups_id" eval="[(4, ref('sh_all_in_one_helpdesk.helpdesk_group_user'))]"/>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <button class="btn btn-primary" name="action_create_ticket" type="object" string="Create Ticket" groups="sh_all_in_one_helpdesk.sh_helpdesk_ticket_invoice" attrs="{'invisible':[('move_type','in',['out_refund','in_invoice','in_refund'])]}" />
+            </field>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="ticket_counts" type="object" class="oe_stat_button" icon="fa-ticket" attrs="{'invisible':['|',('ticket_count','=',0),('move_type','in',['out_refund','in_invoice','in_refund'])]}" context="{'partner_id': partner_id}" groups="sh_all_in_one_helpdesk.sh_helpdesk_ticket_invoice">
+                    <div class="o_stat_info">
+                        <field name="ticket_count" class="o_stat_value" />
+                        <span class="o_stat_text">Tickets</span>
+                    </div>
+                </button>
+            </xpath>
+            <field name="payment_reference" position="after">
+                <field name="ticket_ids" widget="many2many_tags" invisible="1" />
+            </field>
+        </field>
+    </record>
+    <record id="sh_helpdesk_tickets_invoice_inherited_view_form" model="ir.ui.view">
+        <field name="name">sh.helpdesk.tickets.so.view.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="inherit_id" ref="sh_all_in_one_helpdesk.helpdesk_ticket_form_view" />
+        <field name="arch" type="xml">
+            <field name="stage_id" position="before">
+                <button class="btn btn-primary" name="action_create_invoice" icon="fa-pencil-square-o" type="object" string="Create Invoice" groups="sh_all_in_one_helpdesk.sh_helpdesk_ticket_invoice" />
+            </field>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="invoice_counts" type="object" class="oe_stat_button" icon="fa-pencil-square-o" attrs="{'invisible':[('invoice_count','=',0)]}" context="{'partner_id': partner_id}" groups="sh_all_in_one_helpdesk.sh_helpdesk_ticket_invoice">
+                    <div class="o_stat_info">
+                        <field name="invoice_count" class="o_stat_value" />
+                        <span class="o_stat_text">Invoices</span>
+                    </div>
+                </button>
+            </xpath>
+            <field name="product_ids" position="after">
+                <field name="sh_invoice_ids" string="Invoices" widget="many2many_tags" invisible="1" />
+            </field>
+        </field>
+    </record>
+    <record id="sh_helpdesk_tickets_inherited_view_invoice_search" model="ir.ui.view">
+        <field name="name">sh.helpdesk.tickets.invoice.view.search</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="inherit_id" ref="sh_all_in_one_helpdesk.helpdesk_ticket_search_view" />
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="sh_invoice_ids" />
+            </field>
+            <xpath expr="//filter[last()]" position="after">
+                <filter string="Invoice" name="helpdesk_invoice" domain="[('sh_invoice_ids','!=',False)]" />
+            </xpath>
+        </field>
+    </record>
+    <record id="sh_helpdesk_invoice_inherited_view_search" model="ir.ui.view">
+        <field name="name">sh.helpdesk.invoice.view.search</field>
+        <field name="model">account.move</field>
+        <field name="groups_id" eval="[(4, ref('sh_all_in_one_helpdesk.helpdesk_group_user'))]"/>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="ticket_ids" />
+            </field>
+            <xpath expr="//filter[1]" position="after">
+                <filter string="Helpdesk Ticket" name="helpdesk_ticket" domain="[('ticket_ids','!=',False)]" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

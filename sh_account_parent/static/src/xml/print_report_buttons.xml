@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name="AccountPrintReports.buttons">
+        <button id="export_pdf" type="button" class='btn btn-primary btn-sm sh_account_report_pdf'>PRINT PDF</button>
+        <button id="export_treeview_xls" type="button" class='btn btn-primary btn-sm sh_account_report_xlsx'>PRINT XLS</button>
+    </t>
+
+</templates>

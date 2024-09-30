@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend" name="Webkul Addons">
+        <xpath expr='.' position="inside">
+            <link rel="stylesheet" href="/wk_saas_tool/static/src/css/trial_information.css" />
+            <script type="text/javascript" src="/wk_saas_tool/static/src/js/trial_information.js"></script>
+        </xpath>
+    </template>
+    <!-- <template id="assests_frontend" inherit_id="website.assets_frontend"> -->
+        <!-- <xpath expr="." position="inside"> -->
+            <!-- <link rel="stylesheet" href="/wk_saas_tool/static/src/css/trial_information.css" /> -->
+            <!-- <script type="text/javascript" src="/wk_saas_tool/static/src/js/information_website.js"></script> -->
+        <!-- </xpath> -->
+    <!-- </template> -->
+    <!-- <template id="saas_client" inherit_id="website.layout" name="layout"> -->
+        <!-- <xpath expr="." position="inside"> -->
+            <!-- <t t-set='client_data' t-value="env['ir.config_parameter'].sudo().get_config_data()"/> -->
+            <!-- <div class='trial_info' id='trial_info' -->
+            <!-- t-att-data-is_trial_enabled="client_data['trial.is_trial_enabled']" -->
+            <!-- t-att-data-purchase_link="client_data['trial.purchase_link']" -->
+            <!-- t-att-data-trial_period="client_data['trial.trial_period']" -->
+            <!-- /> -->
+        <!-- </xpath> -->
+    <!-- </template> -->
+</odoo>

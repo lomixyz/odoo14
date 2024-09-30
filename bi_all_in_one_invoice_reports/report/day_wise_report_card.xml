@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="day_wise_invoice_report_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <br></br>
+                <br></br>
+                <div class="oe_structure"/>
+                <h1 style="width:100%; text-align:center;">
+                    <strong>Invoice Order - Product Invoice Day Wise</strong>
+                </h1>
+                <div class="column" style="text-align:center;">
+                    <h5>
+                        <strong>Companies : </strong>
+                        <t t-esc="data[3]"/>
+                    </h5>
+                </div>
+                <br/>
+                <div class="row" style="width:100%;">
+                    <div class="column" style="width:50%; text-align:center;">
+                        <h4>
+                            <strong>Start Date : </strong>
+                            <t t-esc="data[2][0]"/>
+                        </h4>
+                    </div>
+                    <div class="column" style="width:50%; text-align:center;">
+                        <h4>
+                            <strong>End Date : </strong>
+                            <t t-esc="data[2][1]"/>
+                        </h4>
+                    </div>
+                </div>
+                <br/>
+                <table class="table table-bordered" style="width:90%; margin-left:auto; margin-right: auto;">
+                    <tr>
+                        <th style="text-align:center;">
+                            <b>Product Name</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Monday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Tuesday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Wednesday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Thursday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Friday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Saturday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Sunday</b>
+                        </th>
+                        <th style="text-align:center;">
+                            <b>Total</b>
+                        </th>
+                    </tr>
+                    <t t-foreach="data[0].keys()" t-as="o">
+                        <tr>
+                            <td style="text-align:center;">
+                                <t t-esc="o"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][0]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][1]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][2]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][3]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][4]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][5]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][6]"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="data[0][o][7]"/>
+                            </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td style="text-align:center;">
+                            <b>Total</b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][0]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][1]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][2]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][3]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][4]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][5]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="data[1][6]"/>
+                            </b>
+                        </td>
+                        <td style="text-align:center;">
+                            <b>
+                                <t t-esc="sum(data[1])"/>
+                            </b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="template_daily_product_invoice_report">
+        <t t-call="web.html_container">
+            <t t-call="bi_all_in_one_invoice_reports.day_wise_invoice_report_template"/>
+        </t>
+    </template>
+</odoo>

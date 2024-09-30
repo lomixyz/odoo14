@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<odoo>
+    <record id="pos_theme_pos_config_view_form_inherit" model="ir.ui.view">
+        <field name="name">pos.config.form</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//div[@class='row mt16 o_settings_container'][2]" position="after">
+                <h2 name="pos_extra_utilities">POS Divine Theme</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="enable_pos_theme"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="enable_pos_theme" string="Enable Pos Theme"/>
+                            <div class="text-muted">
+                                Theme will be applied on POS.
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-12 col-lg-6 o_setting_box" id="theme_color">
+						<div class="o_setting_right_pane">
+							<label for="theme_color" string="Theme Color"/>
+							<div class="text-muted">
+								Select Theme Color from the selection
+							</div>
+							<div class="content-group">
+								<div class="mt4">
+									<field name="theme_color" required="1" class="o_light_label"/>
+								</div>
+								<field name="color_option_1" widget="color" attrs="{'invisible':[('theme_color','!=','#FC4078')]}"  readonly="1"/>
+								<field name="color_option_2" widget="color" attrs="{'invisible':[('theme_color','!=','#1CCEF4')]}"  readonly="1"/>
+								<field name="color_option_3" widget="color" attrs="{'invisible':[('theme_color','!=','#F15F6B')]}"  readonly="1"/>
+								<field name="color_option_4" widget="color" attrs="{'invisible':[('theme_color','!=','#FE7D35')]}"  readonly="1"/>
+								<field name="color_option_5" widget="color" attrs="{'invisible':[('theme_color','!=','#18DB70')]}"  readonly="1"/>
+								<field name="color_option_6" widget="color" attrs="{'invisible':[('theme_color','!=','#755FFF')]}"  readonly="1"/>
+								<field name="color_option_7" widget="color" attrs="{'invisible':[('theme_color','!=','#0FDDFF')]}"  readonly="1"/>
+								<field name="color_option_8" widget="color" attrs="{'invisible':[('theme_color','!=','#9757D7')]}"  readonly="1"/>
+								<field name="color_option_9" widget="color" attrs="{'invisible':[('theme_color','!=','#27C499')]}"  readonly="1"/>
+								<field name="color_option_10" widget="color" attrs="{'invisible':[('theme_color','!=','#FF592C')]}"  readonly="1"/>
+								<field name="color_option_11" widget="color" attrs="{'invisible':[('theme_color','!=','#D3AC5F')]}"  readonly="1"/>
+								<field name="color_option_12" widget="color" attrs="{'invisible':[('theme_color','!=','#78A660')]}"  readonly="1"/>
+								<field name="color_option_13" widget="color" attrs="{'invisible':[('theme_color','!=','#FF1A27')]}"  readonly="1"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('enable_pos_theme', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="drawer_closed"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="drawer_closed" string="Keep Side Drawer Closed"/>
+                            <div class="text-muted">
+                                Keep Side Drawer Closed on the start of POS.
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-12 col-lg-6 o_setting_box" id="product_background_color">
+						<div class="o_setting_right_pane">
+							<label for="product_background_color" string="Product Background Color"/>
+							<div class="text-muted">
+								Select Product Background Color from the selection
+							</div>
+							<div class="content-group">
+								<div class="mt4">
+									<field name="product_background_color" required="1" class="o_light_label"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('enable_pos_theme', '=', False)]}">
+						<div class="o_setting_right_pane">
+							<label for="wk_max_order_shows"/>
+							<div class="text-muted">
+								If number of orders limit exceed then order will be shown in dropdown list
+							</div>
+							<div class="content-group mt16">
+								<field name="wk_max_order_shows"/>
+							</div>
+						</div>
+					</div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" title="Choose discount from the given list that you wishes to make available in current POS Session.">
+                        <div class="o_setting_right_pane">
+                            <label for="discount_ids" string="Select Discounts"/>
+                            <div class="text-muted">
+                                Choose discounts from the given list for current POS
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="discount_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-12 col-md-6 o_setting_box" title="Only users with Manager access rights for PoS app can modify the product prices on orders.">
+						<div class="o_setting_left_pane">
+							<field name="allow_custom_discount"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_custom_discount" string="Allow Customize Discount"/>
+							<div class="text-muted">
+								Check here to allow customize discount in current POS 
+							</div>
+						</div>
+					</div>
+					<!-- <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible':[('allow_custom_discount','=',False)]}" title="Only users with Manager access rights for PoS app can modify the product prices on orders.">
+						<div class="o_setting_left_pane">
+							<field name="allow_security_pin"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_security_pin" string="Allow Security Pin"/>
+							<div class="text-muted">
+								Check here to ask pin whenever seller click on custom discount button
+							</div>
+						</div>
+					</div> -->
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pos_custom_dicount_inherit_pos_form_inherit" model="ir.ui.view">
+			<field name="name">pos.order</field>
+			<field name="model">pos.order</field>
+			<field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='price_subtotal_incl']" position="after">	
+ 					<field name='custom_discount_reason'/>
+ 				</xpath>
+			</field>
+		</record>
+
+		<record id="pos_discount_form_view" model="ir.ui.view">
+			<field name="name">pos.custom.discount</field>
+			<field name="model">pos.custom.discount</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form session">
+					<sheet>	
+						<group>
+							<field name="name" id="name" placeholder="Discount Name"/>
+							<field style="width:50%" name='discount_percent'/>
+						</group>
+						<group>
+							<field name="available_in_pos" widget="many2many_tags"/>
+							<field name="description" id="discription" placeholder="Description for Internal Purpose"/>
+						</group>	
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="pos_discount_tree_view" model="ir.ui.view">
+			<field name="name">pos.custom.discount</field>
+			<field name="model">pos.custom.discount</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree session">
+					<field name="name"/>
+					<field name="discount_percent"/>
+					<field name="description"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="pos_discount_form_view_action" model="ir.actions.act_window">
+			<field name="name">POS Custom Discount</field>
+			<field name="res_model">pos.custom.discount</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="wk_pos_discount_menu" name="POS Discount" parent="point_of_sale.menu_point_config_product" action="pos_discount_form_view_action"/>
+
+
+</odoo>

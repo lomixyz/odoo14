@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <!-- SMS views -->
+        <record id="view_sms_form" model="ir.ui.view">
+            <field name="name">sms.view.form</field>
+            <field name="model">msegat.sms</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" />
+                        <button name="action_send_sms" states="draft,fail" string="Send" type="object" />
+                        <button name="action_calculate_cost" states="draft,fail" string="Calculate Cost" type="object" />
+                        <button string="Cancel" states="fail,sent" class="oe_highlight" name="action_cancel" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="numbers" attrs="{'required': True}" />
+                            <group>
+                                <field name="message" attrs="{'required': True}" />
+                                <field name="message_log" attrs="{'readonly': True,'invisible': [('state','!=','fail')] }" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sms_tree" model="ir.ui.view">
+            <field name="name">sms.view.tree</field>
+            <field name="model">msegat.sms</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state == 'sent'" decoration-danger="state == 'fail'" >
+                    <field name="message"/>
+                    <field name="state"/>
+                    <field name="message_log"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Menu Actions -->
+        <record id="action_sms_view_tree" model="ir.actions.act_window">
+            <field name="name">Msegat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">msegat.sms</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_sms_tree"/>
+        </record>
+
+        <!-- Main Menu SMS -->
+        <menuitem id="menu_sms_gateway_main"
+            name="Msegat"
+            sequence="110"
+            action="action_sms_view_tree"
+            />
+        <menuitem id="menu_sms_gateway"
+            name="SMS"
+            parent="menu_sms_gateway_main"
+            />
+    </data>
+</odoo>

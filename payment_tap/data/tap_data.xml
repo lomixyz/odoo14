@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="payment_icon_cc_mada" model="payment.icon">
+            <field name="name">MADA</field>
+            <field name="image" type="base64" file="payment_tap/static/img/mada.png"/>
+        </record>
+        <record id="payment_acquirer_tap" model="payment.acquirer">
+            <field name="name">Tap</field>
+            <field name="image_128" type="base64" file="payment_tap/static/description/icon.png" />
+            <field name="provider">tap</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="state">disabled</field>
+            <field name="view_template_id" ref="tap_acquirer_button" />
+            <field name="registration_view_template_id" ref="tap_s2s_form"/>
+            <field name="module_id" ref="base.module_payment_tap" />
+            <field name="tap_secret_key">sk_test_XKokBfNWv6FIYuTMg5sLPjhJ</field>
+            <field name="tap_publishable_key">pk_test_EtHFV4BuPQokJT6jiROls87Y</field>
+            <field name="payment_icon_ids" eval='[(6, 0, [ref("payment.payment_icon_cc_mastercard"),
+                                                        ref("payment.payment_icon_cc_visa"),
+                                                        ref("payment.payment_icon_cc_american_express"),
+                                                        ref("payment.payment_icon_cc_visa"),
+                                                        ref("payment_tap.payment_icon_cc_mada")])]'/>
+            <field name="description" type="html">
+                <p>
+                    A payment gateway to accept online payments via credit cards.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Online Payment</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Subscriptions</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Save Cards</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Payment Status Tracking</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>KNET Payment</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>BENEFIT Payment</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Apple Pay</li>
+                </ul>
+            </field>
+        </record>
+    </data>
+</odoo>

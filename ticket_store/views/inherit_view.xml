@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="purchase_order_form_inh_tic" model="ir.ui.view">
+            <field name="name">purchase.order.form.inhtic</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="ticket_id" domain="[('is_purchase', '=',False )]"/>
+                    <field name="is_ticket" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_form_inh_tic" model="ir.ui.view">
+            <field name="name">sale.order.form.inh.tic</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="ticket_id" domain="[('is_sale', '=',False )]"/>
+                    <field name="is_ticket" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_move_form_inh_tic" model="ir.ui.view">
+            <field name="name">account.move.form.inh.tic</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='journal_div']" position="after">
+                    <field name="ticket_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

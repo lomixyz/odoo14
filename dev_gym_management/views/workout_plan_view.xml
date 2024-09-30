@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_workout_plan" model="ir.ui.view">
+        <field name="name">form.workout.plan</field>
+        <field name="model">workout.plan</field>
+        <field name="arch" type="xml">
+            <form string="Workout Plan Form View">
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="o_row">
+                            <field name="name" required="1" attrs="{'readonly': [('is_only_member', '=', True)]}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="day_id" widget="many2many_tags" attrs="{'readonly': [('is_only_member', '=', True)]}"/>
+                            <field name="is_only_member" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Exercise List" name="exercises_list">
+                            <field name="workout_line_ids" attrs="{'readonly': [('is_only_member', '=', True)]}">
+								<tree editable="bottom">
+									<field name="workout_plan_id" invisible="1"/>
+									<field name="exercise_id" options="{'no_create': True}"/>
+									<field name="body_part_id" options="{'no_create': True}" force_save="1" readonly="1"/>
+									<field name="equipment_id" options="{'no_create': True}" force_save="1" readonly="1"/>
+									<field name="sets"/>
+									<field name="repeat"/>
+									<field name="weight"/>
+								</tree>
+							</field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--tree-->
+    <record id="tree_workout_plan" model="ir.ui.view">
+        <field name="name">tree.workout.plan</field>
+        <field name="model">workout.plan</field>
+        <field name="arch" type="xml">
+            <tree string="Workout Plan Tree View">
+                <field name="name"/>
+                <field name="is_only_member" invisible="1"/>
+                <field name="day_id" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Search-->
+    <record id="search_workout_plan" model="ir.ui.view">
+        <field name="name">Workout Plan - Search</field>
+        <field name="model">workout.plan</field>
+        <field name="arch" type="xml">
+            <search string="Workout Plan Search">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="action_workout_plan" model="ir.actions.act_window">
+        <field name="name">Workout Plan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">workout.plan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Menus-->
+    <menuitem name="Workout Plan"
+              id="menu_workout_plan"
+              parent="menu_gym_management_workout"
+              action="action_workout_plan"
+              sequence="2"/>
+</odoo>

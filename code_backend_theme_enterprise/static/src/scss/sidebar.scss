@@ -1,0 +1,405 @@
+#sidebar_panel {
+    height: calc(100% - 0%);
+	position: fixed;
+    top: 0px;
+    background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    display: none;
+    width: 200px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+    z-index: 999;
+}
+#sidebar_panel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+.sidebar_panel .sidebar {
+    padding: 0;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+.sidebar_panel .sidebar_close {
+    text-align: end;
+    display: none;
+    position: sticky;
+    height: 35px;
+    padding-top: 5px;
+    top: 0;
+    background: #2a3042;
+    z-index: 1;
+}
+.sidebar_panel .sidebar_close a#closeSidebar {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ffffff;
+    opacity: .3;
+}
+.sidebar_panel .sidebar_close a#closeSidebar img {
+    width: 15px;
+}
+.sidebar_panel .sidebar .sidebar_logo {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.sidebar_panel .sidebar .sidebar_logo img {
+    max-width: 150px;
+}
+
+.sidebar_panel .sidebar .sidebar_head {
+    padding-top: 20px;
+    padding-left: 15px;
+    color: white;
+    font-size: 14px;
+}
+
+.sidebar_panel .sidebar .sidebar_menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_panel .sidebar .sidebar_menu li {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    display: block;
+}
+
+.sidebar_panel .sidebar .sidebar_menu li a {
+    margin: 0;
+    border: 0px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 8px 10px 8px 25px;
+    color: #ffffff;
+    font-size: 14px;
+    transition:.3s all;
+}
+.sidebar_panel .sidebar .sidebar_menu li:hover  a {
+    background: #1e2230;
+    color: #fff;
+}
+.sidebar_panel .nav-link {
+	opacity: .7;
+    transition:.3s all;
+}
+.sidebar_panel .sidebar a.nav-link.active {
+    color: #fff !important;
+	opacity: 1;
+}
+
+.sidebar_panel .sidebar .sidebar_menu li a .sidebar_img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+
+@font-face {
+    font-family: "bukra";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/code_backend_theme_enterprise/static/src/fonts/29ltbukraregular.otf) format("opentype"), url(/code_backend_theme_enterprise/static/src/fonts/29ltbukralight.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "bukra";
+    font-style: normal;
+    font-weight: 700;
+    src: url(/code_backend_theme_enterprise/static/src/fonts/29ltbukrabold.otf) format("opentype"), url(/code_backend_theme_enterprise/static/src/fonts/alfont_com_خط-بكرا-عريض.ttf) format("truetype");
+}
+
+.rtl *:not(.fa),
+.o_rtl *:not(.fa) {
+    font-family: "bukra", serif !important;
+}
+
+body {
+    font-family: "bukra", serif !important;
+}
+
+@media screen and (max-width: 319px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 240px!important;
+                .sidebar{
+                    .sidebar_menu{
+                        li{
+                            a{
+                                span{
+                                    font-size: 12px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) and (min-device-height: 751px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) and (max-device-height: 750px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) and (max-device-height: 600px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 767px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .o_web_client{
+        header{
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 896px) and (max-width: 1024px) and (max-device-height: 768px) {}
+
+@media screen and (min-width: 700px) and (max-width: 950px) and (max-device-height: 550px) {}
+
+@media screen and (max-width: 699px) and (max-device-height: 550px) {}
+
+@media screen and (max-width: 699px) and (max-device-height: 319px) {}
+
+@media screen and (min-width: 768px) and (max-width: 895px) and (min-device-height: 1200px) {}
+
+@media screen and (min-width: 993px) and (max-width: 1024px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 202px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 230px!important;
+                .sidebar{
+                    .sidebar_menu{
+                        li{
+                            a{
+                                img{
+                                    width: 20px!important;
+                                }
+                                span{
+                                    font-size: 13px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 225px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 220px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 250px!important;
+                .sidebar{
+                    .sidebar_menu{
+                        li{
+                            a{
+                                img{
+                                    width: 18px!important;
+                                }
+                                span{
+                                    font-size: 13px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 245px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1365px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 220px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 250px!important;
+                .sidebar{
+                    .sidebar_menu{
+                        li{
+                            a{
+                                img{
+                                    width: 18px!important;
+                                }
+                                span{
+                                    font-size: 13px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 245px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1599px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 242px!important;
+                }
+                .o_menu_sections{
+                    margin-inline-start: auto!important;
+                }
+            }
+            #sidebar_panel{
+                width: 270px!important;
+                .sidebar{
+                    .sidebar_menu{
+                        li{
+                            a{
+                                img{
+                                    width: 18px!important;
+                                }
+                                span{
+                                    font-size: 13px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 265px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 255px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 277px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 255px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 280px!important;
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 277px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 280px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 300px!important;
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 302px!important;
+        }
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .o_web_client{
+        header{
+            .o_main_navbar.small_nav{
+                .top_heading.sidebar_margin{
+                    margin-inline-start: 310px!important;
+                }
+            }
+            #sidebar_panel{
+                width: 330px!important;
+            }
+        }
+        .o_action_manager.sidebar_margin{
+            margin-inline-start: 330px!important;
+        }
+    }
+}

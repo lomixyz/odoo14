@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--tree-->
+	<record id="tree_trainer_attendance" model="ir.ui.view">
+		<field name="name">tree.trainer.attendance</field>
+		<field name="model">trainer.attendance</field>
+		<field name="arch" type="xml">
+		    <tree string="Trainer Attendance Tree" editable="bottom">
+                <field name="trainer_id" options="{'no_create': True}" domain="[('state','=','joined')]" required="1"/>
+				<field name="check_in" required="1"/>
+				<field name="check_out" required="1"/>
+				<field name="time_difference"/>
+ 		    </tree>
+		</field>
+	</record>
+
+    <!--Search-->
+    <record id="search_trainer_attendance" model="ir.ui.view">
+        <field name="name">Gym Trainer attendance - Search</field>
+        <field name="model">trainer.attendance</field>
+        <field name="arch" type="xml">
+            <search string="Gym Trainer attendance">
+                <group expand="0" string="Group By">
+                    <filter name="trainer_id" string="Trainer" context="{'group_by':'trainer_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+	<!--Action-->
+	<record id="action_trainer_attendance" model="ir.actions.act_window">
+        <field name="name">Trainer Attendance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">trainer.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_trainer_attendance"/>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Trainer Attendance"
+              id='menu_trainer_attendance'
+              parent="dev_gym_management.menu_gym_management_attendance"
+              action="action_trainer_attendance"
+              sequence="2"
+			  groups="dev_gym_management.gym_trainer"/>
+</odoo>

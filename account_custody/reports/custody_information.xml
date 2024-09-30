@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="custody_report_id"
+            model="account.custody"
+            string="Custody Detail"
+            report_type="qweb-pdf"
+            name="account_custody.doc_custody_detail_report"
+
+    />
+
+    <template id="custody_detail_report">
+<!--        <t t-set="data_report_margin_top" t-value="30"/>-->
+<!--        <t t-set="data_report_header_spacing" t-value="22"/>-->
+<!--        <t t-set="data_report_dpi" t-value="130"/>-->
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <div class="text-center" style="padding:35px;text-decoration: underline; ">
+                        <h5>Custody Detail Report</h5>
+                        <span t-field="o.name"/>
+                    </div>
+
+
+
+                    <table class="table table-sm">
+                        <tr>
+                            <td>
+                                <strong>Description</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.description"/>
+                            </td>
+                            <td>
+                                <strong>Journal</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.journal_id"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Amount</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.amount"/>
+                            </td>
+                            <td>
+                                <strong>Account</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.account_id"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Employee</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id"/>
+                            </td>
+                            <td>
+                                <strong>Date</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.pay_date"/>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                     <div class="text-left" style="padding:15px;text-decoration: underline; ">
+                        <h5>Custody Lines</h5>
+                    </div>
+<!--                    <h5>Custody Lines</h5>-->
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Account</th>
+                                <th>Entry</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.line_ids" t-as="line">
+                                <td><span t-field="line.product_id"/></td>
+                                <td><span t-field="line.name"/></td>
+                                <td><span t-esc="line.amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                                <td><span t-esc="line.date"/></td>
+                                <td><span t-field="line.account_id"/></td>
+                                <td><span t-field="line.move_id"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="table table-sm" style="padding:50px;">
+
+                        <tr>
+                            <td><strong>Create By</strong></td>
+                            <td><span t-field="user.name"/></td>
+                            <td><strong>Date</strong></td>
+                            <td><span t-field="user.create_date"/></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </t>
+
+    </template>
+    <template id="doc_custody_detail_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="account_custody.custody_detail_report" t-att-data-oe-lang="o and o.env.context.get('lang')"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

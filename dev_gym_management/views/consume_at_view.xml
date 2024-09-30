@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--tree-->
+	<record id="tree_consume_at" model="ir.ui.view">
+		<field name="name">tree.consume.at</field>
+		<field name="model">consume.at</field>
+		<field name="arch" type="xml">
+		    <tree string="Consume Tree" editable="bottom">
+                <field name="name" placeholder="e.g. Morning : 8pm"/>
+ 		    </tree>
+		</field>
+	</record>
+
+	<!--Action-->
+	<record id="action_consume_at" model="ir.actions.act_window">
+        <field name="name">Consume At</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">consume.at</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_consume_at"/>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Consume At"
+              id='menu_consume_at'
+              parent="dev_gym_management.menu_gym_management_configuration"
+              action="action_consume_at"
+              sequence="6"/>
+</odoo>

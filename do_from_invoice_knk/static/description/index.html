@@ -1,0 +1,639 @@
+        <div class="oe_styling_v8">
+                        <div class="d-none d-xl-block">
+            <div class="row shadow-lg my-5 o_gradient overflow-hidden" style="border-radius:7px; margin:10px -10vw; max-width:100vw">
+                <div class="col-lg-6 pt-5 pb-5" style="color:white">
+                    <div class="row ml-5" style="margin-top:2vw; margin-left:115px !important">
+                        <h1 style="color:white; font-weight:400; font-size:45px">
+                             <strong>Create Delivery Order From Customer Invoice</strong>
+                        </h1>
+                        <!-- COVER ICON start -->
+                        <div class="col-6 media mt-4 pl-0 pr-0">
+                            <div class="d-flex mr-4">
+                                <div style="background-color:rgba(0, 0, 0, 0.1)" class="badge border-0 rounded-circle p-3">
+                                    <i class="fa fa-file-text" style="height:2rem; width:2rem; font-size:2rem; line-height:2rem"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h4 style="color:#fff" class="mb-0 mt-1">Update Invoice lines</h4>
+                                <small style="color:#fff; font-size:14px" class="mb-4">When user update invoice line, another picking order created.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 media mt-4 pl-0 pr-0">
+                            <div class="d-flex mr-4">
+                                <div style="background-color:rgba(0, 0, 0, 0.1)" class="badge border-0 rounded-circle p-3">
+                                    <i class="fa fa-truck" style="height:2rem; width:2rem; font-size:2rem; line-height:2rem"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h4 style="color:#fff" class="mb-0 mt-1">Validated Delivery Order</h4>
+                                <small style="color:#fff; font-size:14px" class="mb-4">Delivery order is created in done state.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 media mt-4 pl-0 pr-0">
+                            <div class="d-flex mr-4">
+                                <div style="background-color:rgba(0, 0, 0, 0.1)" class="badge border-0 rounded-circle p-3">
+                                    <i class="fa fa-retweet" style="height:2rem; width:2rem; font-size:2rem; line-height:2rem"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h4 style="color:#fff" class="mb-0 mt-1">Picking and Return Picking Button</h4>
+                                <small style="color:#fff; font-size:14px" class="mb-4">This module having a button of picking and return picking to create delivery order.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 media mt-4 pl-0 pr-0">
+                            <div class="d-flex mr-4">
+                                <div style="background-color:rgba(0, 0, 0, 0.1)" class="badge border-0 rounded-circle p-3">
+                                    <i class="fa fa-fax" style="height:2rem; width:2rem; font-size:2rem; line-height:2rem"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h4 style="color:#fff" class="mb-0 mt-1">Draft State invoice</h4>
+                                <small style="color:#fff; font-size:14px" class="mb-4">User can create delivery order, when invoice is in draft state.</small>
+                            </div>
+                        </div>
+                        <!-- COVER ICON END -->
+                    </div>
+                </div>
+                <!-- COVER IMAGE -->
+                <div class="col-lg-6 text-right pt128" style="padding-right:0px">
+                    <img src="png.png" alt="Odoo Inbox" class="img img-fluid" style="max-width:80%; padding-bottom:155px" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div style="border-radius:7px; background-color:white; margin-top:-75px !important; border:1px solid #e8e8e8 !important" class="row shadow-lg my-5 p-3 overflow-hidden">
+            <div class="col-lg-12">
+                <div class="mt-3 text-center">
+                    <span class="fa fa-handshake-o" style="font-size:20px; padding:14px 15px; padding-top:16px; background-color:rgba(176, 109, 154, 0.301); border-radius:50px; color:#985e88; padding-right:18px">
+                    </span>
+                    <h1 class="text-center mb-1 mt-2 d-none" style="">Create Delivery Order From Customer Invoice</h1>
+                    <div class="s_animated_headline">
+                        <h1 class="mt4 ml4 mb0">
+                            <div class="s_animated_headline_wrapper" style="color:#985e88">
+                                <span class="s_animated_headline_content">
+                                    <b class="s_animated_headline_hidden" style="opacity: 1;"><i class="out">C</i><i class="out">r</i><i class="out">e</i><i class="out">a</i><i class="out">t</i><i class="out">e</i><i class="out"> </i><i class="out">D</i><i class="out">e</i><i class="out">l</i><i class="out">i</i><i class="out">v</i><i class="out">e</i><i class="out">r</i><i class="out">y</i><i class="out"> </i><i class="out">O</i><i class="out">r</i><i class="out">d</i><i class="out">e</i><i class="out">r</i></b>
+                                    <b class="s_animated_headline_hidden" style="opacity: 1;"><i class="out">R</i><i class="out">e</i><i class="out">t</i><i class="out">u</i><i class="out">r</i><i class="out">n</i><i class="out"> </i><i class="out">P</i><i class="out">i</i><i class="out">c</i><i class="out">k</i><i class="out">i</i><i class="out">n</i><i class="out">g</i></b>
+                                    <b class="s_animated_headline_visible" style="opacity: 1;"><i class="in">V</i><i class="in">a</i><i class="in">l</i><i class="in">i</i><i class="out">d</i><i class="out">a</i><i class="out">t</i><i class="out">e</i><i class="out">d</i><i class="out"> </i><i class="out">D</i><i class="out">e</i><i class="out">l</i><i class="out">i</i><i class="out">v</i><i class="out">e</i><i class="out">r</i><i class="out">y</i><i class="out"> </i><i class="out">O</i><i class="out">r</i><i class="out">d</i><i class="out">e</i><i class="out">r</i></b>
+                                    <b class="s_animated_headline_hidden" style="opacity: 1;"><i class="out">R</i><i class="out">e</i><i class="out">v</i><i class="out">e</i><i class="out">r</i><i class="out">s</i><i class="out">e</i><i class="out"> </i><i class="out">T</i><i class="out">r</i><i class="out">a</i><i class="out">n</i><i class="out">s</i><i class="out">f</i><i class="out">e</i><i class="out">r</i></b>
+                                    <b class="s_animated_headline_hidden" style="opacity: 1;"><i class="out">I</i><i class="out">n</i><i class="out">c</i><i class="out">o</i><i class="out">m</i><i class="out">i</i><i class="out">n</i><i class="out">g</i><i class="out">/</i><i class="out">O</i><i class="out">u</i><i class="out">t</i><i class="out">g</i><i class="out">o</i><i class="out">i</i><i class="out">n</i><i class="out">g</i><i class="out"> </i><i class="out">D</i><i class="out">e</i><i class="out">l</i><i class="out">i</i><i class="out">v</i><i class="out">e</i><i class="out">r</i><i class="out">y</i><i class="out"> </i><i class="out">O</i><i class="out">r</i><i class="out">d</i><i class="out">e</i><i class="out">r</i></b>
+                                </span>
+                            </div>
+                        </h1>
+                        <h3 style="color:#34495e; font-weight:400">Create Delivery Order From Customer Invoice</h3>
+                    </div>
+                    <hr class="d-none">
+                    <p class="mb-4" style="text-align:center; color:rgba(52, 73, 94, 0.86); font-family:lato; font-weight:400">
+                        Create Delivery Order From Customer Invoice is used to create picking from invoice when invoice is in draft state, if user update invoice line another picking order created.
+                        <b style="color:#935c8c; font-weight:900; font-size:15px; margin-top:10px; display:block">It helps to generate Delivery order of invoices in Draft State.</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5" style="margin:0px">
+            <div class="col-12 text-center position-relative my-3 p-0">
+                <hr class="position-absolute" style="width:100%; border-width:1px; border-color:#b4b4b4; margin-top:31px">
+                <h1 class="position-relative" style="font-weight:400; margin-bottom:15px; display:inline-block; background-color:#f2f2f2; padding:7px 28px">Key Features </h1>
+            </div>
+            <div class="col-md-3 mb-0 p-0">
+                <div class="ml-3 h-30">
+                    <ul class="list-group text-left w-100 mr-3 text-center d-flex h-100 justify-content-between">
+                        <li class="list-group-item mb-3 shadow-sm border" style="border:1px solid rgba(0 0 0, 0.11) !important; border-top:3px solid #329455 !important; font-size:14px">
+                            <a href="https://www.youtube.com/watch?v=2hCPqDPEm44" target="_blank" style="display:block; text-align:left" class="d-flex justify-content-between align-items-center">
+                                <span style="color:#283238; font-family:'Montserrat'; font-weight:700">
+                                    Create Picking in Draft State
+                                </span>
+                                <i class="fa fa-play float-right" style="color:#ffffff; width:40px; height:40px; background-color:#329455; padding:10px 7px 6px 12px; font-size:12px; border-radius:25px; border:5px solid #cfd6fb"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item mb-3 shadow-sm border" style="border:1px solid rgba(0 0 0, 0.11) !important; border-top:3px solid #329455 !important; font-size:14px">
+                            <a href="https://www.youtube.com/watch?v=IbXI4hBySOU" target="_blank" style="display:block; text-align:left" class="d-flex justify-content-between align-items-center">
+                                <span style="color:#283238; font-family:'Montserrat'; font-weight:700">
+                                    Update Invoice Lines
+                                </span>
+                                <i class="fa fa-play float-right" style="color:#ffffff; width:40px; height:40px; background-color:#329455; padding:10px 7px 6px 12px; font-size:12px; border-radius:25px; border:5px solid #cfd6fb"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item mb-3 shadow-sm border" style="border:1px solid rgba(0 0 0, 0.11) !important; border-top:3px solid #329455 !important; font-size:14px">
+                            <a href="https://www.youtube.com/watch?v=zoeAnCKaoyg" target="_blank" style="display:block; text-align:left" class="d-flex justify-content-between align-items-center">
+                                <span style="color:#283238; font-family:'Montserrat'; font-weight:700">
+                                    Return Picking in Posted State
+                                </span>
+                                <i class="fa fa-play float-right" style="color:#ffffff; width:40px; height:40px; background-color:#329455; padding:10px 7px 6px 12px; font-size:12px; border-radius:25px; border:5px solid #cfd6fb"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 d-flex p-0 border-left shadow-sm" style="border-top:3px solid #329455">
+                <div class="container row no-gutters mt-5 mr-5 ml-5">
+                    <div class="col-md-12 border-bottom align-items-top">
+                        <h4>
+                            Steps of Picking Creation in Draft State.
+                        </h4>
+                        <h1>Invoicing:-</h1>
+                        <p class="mb-4">
+                            This is used to create picking from invoice when invoice is in draft state and create return picking of invoice in posted state.
+                        </p>
+                        <img src="image_2021_02_06T11_02_17_865Z.png" class="img img-fluid  bg-white" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-left:-30px; margin-right:-30px">
+            <div class="col-12 col-md-12 col-lg-12 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important; height:100%">
+                    <div class="card-body text-center position-relative" style="background-color:rgb(71, 187, 192) !important; display:flex">
+                        <span class="position-absolute" style="background-color:#fff; height:273%; width:178%; margin:auto; display:inline-block; border-radius:100%; margin-left:-100%; margin-top:-16%">
+                        </span>
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <h2 style="color:#34495e; margin-top:10px">Create Picking in Draft State</h2>
+                                <div>
+                                    <small class="" style="color:#34495e; font-family:lato; font-weight:400">
+                                         Create invoice in Draft State.
+                                    </small>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=2hCPqDPEm44" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:rgb(71, 187, 192); border-radius:33px; margin:14px 0px; font-weight:400">
+                            <i class="fa fa-play-circle" style="padding-right:3px"> </i> See it in action
+                        </a>
+                            </div>
+                            <div class="col-lg-8"> <img class="img-fluid img-thudmbnail position-relative shadow" src="image_2021_02_06T11_02_17_865Z.png" style="border-radius:3px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#5b76fb !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Create Picking</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="1.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#f44336 !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Delivery Order</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="3.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-12 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#f44336 !important">
+                        <span class="position-absolute" style="background-color:#fff; height:120%; width:160%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Update Invoice Lines</h4>
+                            <div>
+                                <small class="" style="color:#34495e; font-family:lato; font-weight:400">
+                                    If user Update Invoice Line and create Picking for draft invoice then Updated outgoing shipment create.
+                                </small>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=IbXI4hBySOU" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#f44336; border-radius:33px; margin:14px 0px; font-weight:400">
+                                <i class="fa fa-play-circle" style="padding-right:3px"> </i> See it in action
+                            </a>
+                            <br>
+                            <img class="img-fluid img-thudmbnail shadow" src="5.png" style="border-radius:3px; width:85%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#47c0b5 !important">
+                        <span class="position-absolute" style="background-color:#fff; height:90%; width:160%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Updated Outgoing Shipments</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="6.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#6ba68c !important">
+                        <span class="position-absolute" style="background-color:#fff; height:90%; width:160%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Delivery Order</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="7.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-12 col-md-12 col-lg-12 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px;background-color:transparent !important;height:100%;width: 1140px;margin-left: 1px;">
+                    <div class="card-body text-center position-relative" style="background-color:rgb(71, 187, 192) !important; display:flex">
+                        <span class="position-absolute" style="background-color:#fff; height:273%; width:178%; margin:auto; display:inline-block; border-radius:100%; margin-left:-100%; margin-top:-16%">
+                        </span>
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <h2 style="color:#34495e; margin-top:10px">Create Return picking in Posted State</h2>
+                                <div>
+                                    <small class="" style="color:#34495e; font-family:lato; font-weight:400">
+                                         After Posting a invoice return picking button will be show for incoming delivery order.
+                                    </small>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=zoeAnCKaoyg" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:rgb(71, 187, 192); border-radius:33px; margin:14px 0px; font-weight:400">
+                            <i class="fa fa-play-circle" style="padding-right:3px"> </i> See it in action
+                        </a>
+                            </div>
+                            <div class="col-lg-8"> <img class="img-fluid img-thudmbnail position-relative shadow" src="8.png" style="border-radius:3px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#5b76fb !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Create Return Picking</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="10.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#f44336 !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px">Incoming Delivery Order</h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="11.png" style="border-radius:3px; width:100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12 text-center position-relative mt-4 mb-2 p-0">
+                <hr class="position-absolute" style="width:97%; border-width:1px; border-color:#b4b4b4; margin-top:31px">
+                <h1 class="position-relative" style="font-weight:400; margin-bottom:15px; display:inline-block; background-color:#f2f2f2; padding:7px 28px">All Features </h1>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex p-0 border-left shadow-sm bg-white p-3" style="border-top:3px solid #5c77fb">
+                    <span style="display:block; text-align:left" class="d-flex align-items-center w-100">
+                        <i class="fa fa-edit align-items-center justify-content-center d-flex" style="color:#ffffff; background-color:#5c77fb; padding:12px; border-radius:25px; border:5px solid #cfd6fb; margin-right:15px; font-size:14px"></i><span>
+                            <div style="color:#283238; font-family:'Montserrat'; font-weight:700">Create Delivery Order</div>
+                            <small class="text-muted d-block">Create Delivery Order, When invoice is in draft state.</small>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex p-0 border-left shadow-sm bg-white p-3" style="border-top:3px solid #5c77fb">
+                    <span style="display:block; text-align:left" class="d-flex align-items-center w-100">
+                        <i class="fa fa-inbox align-items-center justify-content-center d-flex" style="color:#ffffff; background-color:#5c77fb; padding:12px; border-radius:25px; border:5px solid #cfd6fb; margin-right:15px; font-size:14px"></i><span>
+                            <div style="color:#283238; font-family:'Montserrat'; font-weight:700">Picking/Return Picking Button</div>
+                            <small class="text-muted d-block">User can see Create Picking button in Draft State and Return Picking button in Posting State of invoice.</small>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex p-0 border-left shadow-sm bg-white p-3" style="border-top:3px solid #5c77fb">
+                    <span style="display:block; text-align:left" class="d-flex align-items-center w-100">
+                        <i class="fa fa-clock-o align-items-center justify-content-center d-flex" style="color:#ffffff; background-color:#5c77fb; padding:12px; border-radius:25px; border:5px solid #cfd6fb; margin-right:15px; font-size:14px"></i><span>
+                            <div style="color:#283238; font-family:'Montserrat'; font-weight:700">Update Invoice Line</div>
+                            <small class="text-muted d-block">When User update invoice line, another Picking order created when invoice is in draft state.</small>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex p-0 border-left shadow-sm bg-white p-3" style="border-top:3px solid #5c77fb">
+                    <span style="display:block; text-align:left" class="d-flex align-items-center w-100">
+                        <i class="fa fa-star align-items-center justify-content-center d-flex" style="color:#ffffff; background-color:#5c77fb; padding:12px; border-radius:25px; border:5px solid #cfd6fb; margin-right:15px; font-size:14px"></i><span>
+                            <div style="color:#283238; font-family:'Montserrat'; font-weight:700">Post Invoice</div>
+                            <small class="text-muted d-block">After posting of invoice create return picking button will be show and user is able to do reverse transfer of products.</small>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex p-0 border-left shadow-sm bg-white p-3" style="border-top:3px solid #5c77fb">
+                    <span style="display:block; text-align:left" class="d-flex align-items-center w-100">
+                        <i class="fa fa-share align-items-center justify-content-center d-flex" style="color:#ffffff; background-color:#5c77fb; padding:12px; border-radius:25px; border:5px solid #cfd6fb; margin-right:15px; font-size:14px"></i><span>
+                            <div style="color:#283238; font-family:'Montserrat'; font-weight:700">Incoming/Outgoing Delivery order</div>
+                            <small class="text-muted d-block">Incoming delivery order is create for return picking and outgoing delivery order is create for picking of invoice.</small>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative mb-5 w-100">
+            <div class="row mb-3 shadow-sm bg-white" style="margin:0px">
+                <div class="col-md-12 p-0 overflow-hidden">
+                    <ul class="nav o_tab_nav o_tab_nav_small o_tab_nav_has_hr mt32" style="margin-top:0px !important; text-align:center; margin:auto" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a href="#dep3" role="tab" data-toggle="tab" class="nav-link show active" title="" aria-selected="true"><span class="fa fa-question"> </span> Why We Can Create Delivery Order From Customer Invoice</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#dep4" role="tab" data-toggle="tab" class="nav-link" title="" aria-selected="false"><span class="fa fa-book">
+                                </span> Documentation</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#dep6" role="tab" data-toggle="tab" class="nav-link" title="" aria-selected="false"><span class="fa fa-laptop">
+                                </span> Demo</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#change_log" role="tab" data-toggle="tab" class="nav-link" title="" aria-selected="false"><span class="fa fa-history"> </span> Change Log</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#dep5" role="tab" data-toggle="tab" class="nav-link" title="" aria-selected="false"><span class="fa fa-question-circle"> </span> FAQs</a>
+                        </li>
+                    </ul>
+                    <hr class="mt0">
+                    <div class="content tab-content o-screen-tooltips mt32 mb32 text-left px-3 px-md-5">
+                        <div class="tab-pane screen fade active show" id="dep3" role="tabpanel">
+                            <div class="row o_v_align_col_sm">
+                                <div class="col-sm-12">
+                                    <h3><i class="fa fa-question-circle" style="color:#00A09D"> </i> Why We Can Create Delivery Order From Customer Invoice</h3>
+                                    <p class="lead" style="margin-right:0px; margin-bottom:10.5px; margin-left:0px; font-family:lato; font-weight:400">
+                                        Create Delivery Order From Customer Invoice is very useful app to create picking from invoice when invoice is in draft state, when user update invoice line another picking order created in draft state of invoice and create return picking when invoice is in posting state.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane screen fade" id="dep4" role="tabpanel">
+                            <div class="row o_v_align_col_sm">
+                                <div class="col-sm-5">
+                                    <h3> <i class="fa fa-book" style="color:#00A09D"> </i> Full Documentation </h3>
+                                    <p stye="font-family: 'Montserrat';font-weight: 400;">We would like explain each and every feature of our Create Delivery Order From Customer Invoice that's why we have created detailed documentation. We are constantly improving and adding new content and videos.
+                                    </p>
+                                    <div class="alert alert-warning">
+                                        <i class="fa fa-exclamation-triangle fa-3x pull-left pt-2"> </i> A full documentation
+                                        can be accessed after purchasing the module. It is available in <b>/docs</b> folder of docs module.
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-sm-offset-1">
+                                    <h1>Coming Soon...</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane screen fade" id="dep6" role="tabpanel">
+                            <div class="row o_v_align_col_sm">
+                                <div class="col-sm-8">
+                                    <h3> <i class="fa fa-laptop" style="color:#00A09D"> </i> Here See Demo Video:- <a href="https://www.youtube.com/watch?v=rlhtcx088pQ&feature=youtu.be" target="new" class="btn btn-primary btn-sm" style="background-color: rgb(6, 65, 107); font-size: 20px; position: relative; overflow: hidden;"><span class="o_ripple d-block position-absolute rounded-circle" style="height: 149.219px; width: 149.219px; top: -63.6095px; left: 7.49988px;"></span>Demo Video</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane screen fade" id="change_log" role="tabpanel">
+                            <div class="row o_v_align_col_sm">
+                                <div class="col-sm-12">
+                                    <section>
+                                        <div class="my-5 p-3 pb-2 overflow-hidden">
+                                            <div style="border:1px solid; border-color:#f1f1f1" class="col-12 pt-1">
+                                                <h2 class="h4 pb-2" style="background-color:#f1f1f18a">
+                                                    <span style="color:#06416b">v1.0 -</span><span class="pl-2">January 22nd, 2021</span>
+                                                </h2>
+                                                <ul class="list-unstyled">
+                                                    <li class="d-flex align-items-start">
+                                                        <span class="font-size-sm pt-1" style="font-weight:500">First version to release.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane screen fade" id="dep5" role="tabpanel">
+                            <div class="row o_v_align_col_sm">
+                                <div class="col-sm-12">
+                                    <section class="s_faq">
+                                        <div class="accordion mb0 shadow" role="tablist" aria-multiselectable="true">
+                                            <div class="card" style="border:1px solid #e5e5e5">
+                                                <h4 class="card-header" style="border:0px" role="tab" id="heading_buyer_faq_01">
+                                                    <a style="font-weight:600; color:#291a1a" role="button" class="collapsed" data-toggle="collapse" href="#buyer_faq_01" aria-expanded="false" aria-controls="buyer_faq_01">Is this app compatible with Odoo Enterprise?</a>
+                                                </h4>
+                                                <div id="buyer_faq_01" class="collapsed collapse" role="tabpanel" aria-labelledby="heading_buyer_faq_01" aria-expanded="true" style="">
+                                                    <div class="card-body" style="background-color:#f1f1f1 !important">
+                                                        <p> Yes, our app works with Odoo Enterprise as well as Community.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="border:1px solid #e5e5e5">
+                                                <h4 class="card-header" style="border:0px" role="tab" id="heading_buyer_faq_02">
+                                                    <a style="font-weight:600; color:#291a1a" role="button" class="collapsed" data-toggle="collapse" href="#buyer_faq_02" aria-expanded="false" aria-controls="buyer_faq_02">Is this app compatible with Windows or Ubuntu?</a>
+                                                </h4>
+                                                <div id="buyer_faq_02" class="collapse" role="tabpanel" aria-labelledby="heading_buyer_faq_02" aria-expanded="false">
+                                                    <div class="card-body" style="background-color:#f1f1f1 !important">
+                                                        <p>
+                                                            Yes, our app works with Windows or Ubuntu operating system.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="border:1px solid #e5e5e5">
+                                                <h4 class="card-header" style="border:0px" role="tab" id="heading_buyer_faq_03">
+                                                    <a style="font-weight:600; color:#291a1a" role="button" class="collapsed" data-toggle="collapse" href="#buyer_faq_03" aria-expanded="false" aria-controls="buyer_faq_03">Is this app required any additional configuration?</a>
+                                                </h4>
+                                                <div id="buyer_faq_03" class="collapse" role="tabpanel" aria-labelledby="heading_buyer_faq_03" aria-expanded="false">
+                                                    <div class="card-body" style="background-color:#f1f1f1 !important">
+                                                        <p>No, install module and use this features.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="border:1px solid #e5e5e5">
+                                                <h4 class="card-header" style="border:0px" role="tab" id="heading_buyer_faq_06">
+                                                    <a style="font-weight:600; color:#291a1a" role="button" class="collapsed" data-toggle="collapse" href="#buyer_faq_06" aria-expanded="false" aria-controls="buyer_faq_06">Can i resell or distribute the Module?</a>
+                                                </h4>
+                                                <div id="buyer_faq_06" class="collapse" role="tabpanel" aria-labelledby="heading_buyer_faq_06" aria-expanded="false">
+                                                    <div class="card-body" style="background-color:#f1f1f1 !important">
+                                                        <p>No! You can not resell or distribute this module. This module can only used for your Odoo ERP System.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-left:-30px; margin-right:-30px">
+            <div class="col-12 text-center position-relative mt-3 mb-1 p-0">
+                <hr class="position-absolute" style="width:97%; border-width:1px; border-color:#b4b4b4; margin-top:31px">
+                <h1 class="position-relative" style="font-weight:400; margin-bottom:15px; display:inline-block; background-color:#f2f2f2; padding:7px 28px">Suggested Apps</h1>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#5b76fb !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px" class="mt-2 mb-3"> Email CC BCC </h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="2.jpg" style="border-radius:3px; width:90%" loading="lazy">
+                            <div>
+                                <a href="https://apps.odoo.com/apps/modules/8.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#ff817a; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        8.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/9.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#7ab5ff; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        9.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/10.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#56bb2c; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        10.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/11.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#092792; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        11.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/12.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#772b5c; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        12.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/13.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#ccc620; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        13.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/14.0/email_cc_bcc/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#e257aa; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        14.0
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important; height:341px;">
+                    <div class="card-body text-center position-relative" style="background-color:#6ba68c !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px" class="mt-2 mb-3"> POS Product BOM(Ingredients) </h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="1.jpg" style="border-radius:3px; width:90%" loading="lazy">
+                            <div>
+                                <a href="https://apps.odoo.com/apps/modules/12.0/pos_product_bom/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#8e68c5; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        12.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/13.0/pos_product_bom/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#6b9dbc; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        13.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/14.0/pos_product_bom/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#ff817a; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        14.0
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 text-center mt-3 mt-3 mb-3">
+                <div class="card shadow-lg border-0 overflow-hidden" style="border-radius:7px; background-color:transparent !important">
+                    <div class="card-body text-center position-relative" style="background-color:#955c85 !important">
+                        <span class="position-absolute" style="background-color:#fff; height:100%; width:161%; margin:auto; display:inline-block; border-radius:100%; margin-left:-80%; margin-top:-39%">
+                        </span>
+                        <div class="position-relative">
+                            <h4 style="color:#34495e; margin-top:10px" class="mt-2 mb-3"> Paytrail Payment Acquirer </h4>
+                            <img class="img-fluid img-thudmbnail shadow" src="3.jpg" style="border-radius:3px; width:90%" loading="lazy">
+                            <div>
+                                <a href="https://apps.odoo.com/apps/modules/8.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#6ba68c; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        8.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/9.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#8e68c5; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        9.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/10.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#d24e1b; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        10.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/11.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#f706ad; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        11.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/12.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#ffd401e0; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        12.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/13.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#22967b; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        13.0
+                                    </span>
+                                </a>
+                                <a href="https://apps.odoo.com/apps/modules/14.0/payment_paytrail/" target="_blank" style="color:white; font-size:14px; font-family:lato; padding:5px 18px; display:inline-block; background-color:#2030e4; border-radius:33px; margin:14px 0px; font-weight:400">
+                                    <span>
+                                        14.0
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row shadow-lg my-5 o_gradient overflow-hidden" style="border-radius:7px">
+            <div class="col-12">
+                <div class="" style="color:white; padding:20px; padding-bottom:0">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h1 style="font-family:lato; color:#fff" class="mt-4"> Need Any Support? </h1>
+                            <h4 style="font-family:lato; font-weight:400; color:#fff; margin-bottom:25px"> We are just one
+                                click away.
+                                <br>
+                                Visit: <strong> www.kanakinfosystems.com</strong></h4>
+                            <div class="row text-center">
+                                <div class="col-12 col-md-4 text-center">
+                                    <span style="margin-bottom:25px; border:1px solid rgb(253 253 253); display:block; border-radius:7px; padding:15px; width:100%">
+                                        <b style="display:block; color:#fff; font-size:19px"><i class="fa fa-comments-o" style="font-size:27px; margin-right:10px"></i>
+                                            Request Customization</b>
+                                    </span>
+                                </div>
+                                <div class="col-12 col-md-4 text-center">
+                                    <span style="margin-bottom:25px; border:1px solid rgb(252 252 252); display:block; border-radius:7px; padding:15px; width:100%">
+                                        <b style="display:block; color:#fff; font-size:19px"><i class="fa fa-envelope-o" style="font-size:27px; margin-right:10px"></i>Email Us</b>
+                                    </span>
+                                </div>
+                                <div class="col-12 col-md-4 text-center">
+                                    <span style="margin-bottom:25px; border:1px solid rgb(253 253 253); display:block; border-radius:7px; padding:15px; width:100%">
+                                        <b style="display:block; color:#fff; font-size:19px"><i class="fa fa-phone" style="font-size:27px; margin-right:10px"></i>Contact Us </b>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>

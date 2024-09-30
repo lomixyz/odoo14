@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sh_rr_external_layout_standard">
+         
+        <div class="header">
+      
+            <div class="row">
+                <div class="col-xs-3 mb4">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
+                </div>
+                <div class="col-xs-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+            </div>
+ 
+            <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+   
+            <div class="row">
+                <div class="col-xs-12" style="border-bottom: 1px solid black; display:inline-block;" name="company_address">
+                    <span t-field="company.partner_id"
+                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                        />
+                </div>
+            </div>
+        </div>
+   
+        <div class="article o_report_layout_standard">
+            <t t-raw="0" />
+        </div>
+   <!-- 	
+        <div class="footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+         
+				  <table>
+				  	<tr>
+				    	<td t-if="company.phone">Phone: <span t-field="company.phone"/> </td>
+				    	<td t-if="company.email">Email: <span t-field="company.email"/> </td>
+				    	<td t-if="company.website">Web: <span t-field="company.website"/> </td>
+                    	<td t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></td>				  
+				  	</tr>
+				  </table>    
+				          		              
+				  <div class="row">
+				    <div t-if="company.phone" class="col-xs-4">Phone: <span t-field="company.phone"/> </div>
+				    <div t-if="company.email" class="col-xs-4">Email: <span t-field="company.email"/> </div>
+				    <div t-if="company.website" class="col-xs-3">Web: <span t-field="company.website"/> </div>
+                    <div t-if="company.vat" class="col-xs-3"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></div>				  
+				  </div>                
+
+                <ul class="list-inline mb4">
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/> </li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/> </li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/> </li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                </ul>
+
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div class="text-muted">
+                    Page: <span class="page"/> / <span class="topage"/>
+                </div>
+               
+            </div>
+             
+        </div>
+         -->
+    </template>
+
+
+
+
+    <!-- Assets for reports -->   
+
+    <template id="sh_rr_external_layout">
+        
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <t t-call="sh_receipt_reports.sh_rr_external_layout_standard"><t t-raw="0"/></t>
+    </template>
+
+</odoo>

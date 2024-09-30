@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="web.assets_frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss"
+                  href="/ks_curved_backend_theme/static/src/scss/pages/ks_login.scss"/>
+        </xpath>
+    </template>
+</odoo>

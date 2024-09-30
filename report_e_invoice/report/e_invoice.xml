@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_e_invoice" model="report.paperformat">
+            <field name="name">A4 for E-Invoice</field>
+            <field name="default" eval="False"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+        </record>
+
+        <template id="report_e_invoice_header">
+            <div class="header">
+                <t t-foreach="docs" t-as="o">
+
+                </t>
+            </div>
+        </template>
+
+        <template id="report_e_invoice_footer"
+                  name="report_e_invoice_footer">
+            <t t-foreach="docs" t-as="o">
+                <div class="footer">
+                </div>
+            </t>
+        </template>
+
+        <!--Header footer for english report-->
+        <template id="report_e_invoice_header_footer">
+            <t t-call="report_e_invoice.report_e_invoice_header"/>
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id">
+                <t t-raw="0"/>
+            </div>
+            <t t-call="report_e_invoice.report_e_invoice_footer"/>
+        </template>
+        <template id="report_e_invoice">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report_e_invoice.report_e_invoice_header_footer">
+                        <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                        <!-- <div class="e_invoice_logo">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 style="max-height: 45px;" alt="Logo"/>
+                        </div> -->
+                        <div style="background: #3f5d7e;" class="row">
+                            <table cellpadding="2" cellspacing="2"
+                                   class="table table-borderless e_invoice_header"
+                                   dir="rtl">
+                                <tr>
+                                    <td style="text-align: right">
+                                        <br/>
+                                        <br/>
+                                        تاريخ الاصدار:
+                                        <span t-field="o.invoice_date"/>
+                                    </td>
+                                    <td>
+                                        <b>
+                                            Tax Invoice
+                                        </b>
+                                        <h1>
+                                            فاتورة ضريبية
+                                        </h1>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <br/>
+                                        <br/>
+                                        Issue Date:
+                                        <span t-field="o.invoice_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">تاريخ التوريد:
+                                        <t t-if="o.picking_delivery_date">
+                                            <span t-field="o.picking_delivery_date"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="o.invoice_date_due"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <h4 class="e_invoice_sub_title">
+                                            <t t-if="o.move_type == 'out_invoice'">
+                                                مبيعات - Sale
+                                            </t>
+                                            <t t-if="o.move_type == 'out_refund'">
+                                                اشعار دائن - Credit Note
+                                            </t>
+                                            <t t-if="o.move_type == 'in_invoice'">
+                                                مشتريات - Purchase
+                                            </t>
+                                            <t t-if="o.move_type == 'in_refund'">
+                                                اشعار مدين - Refund
+                                            </t>
+                                        </h4>
+                                    </td>
+                                    <td style="text-align: left">Date of Supply:
+                                        <t t-if="o.picking_delivery_date">
+                                            <span t-field="o.picking_delivery_date"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="o.invoice_date_due"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="page">
+                            <div class="row odex-row">
+                                <table class="table table-borderless e_invoice_name" dir="rtl">
+                                    <tr>
+                                        <td class="info_right">
+                                            <strong>رقم الفاتورة</strong>
+                                        </td>
+                                        <td class="info_center">
+                                            <strong>
+                                                <span t-field="o.name"/>
+                                            </strong>
+                                        </td>
+                                        <td class="info_left">
+                                            <strong>Invoice Number</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.move_type in ['in_refund','out_refund']">
+                                        <td class="info_right">
+                                            <strong>الرقم الفاتورة المصدر</strong>
+                                        </td>
+                                        <td class="info_center">
+                                            <strong>
+                                                <span t-field="o.reversed_entry_id.name"/>
+                                            </strong>
+                                        </td>
+                                        <td class="info_left">
+                                            <strong>Source Invoice Number</strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <table class="table table-borderless e_invoice_header_info"
+                                       dir="rtl">
+                                    <thead class="e_invoice_info">
+                                        <tr>
+                                            <td class="e_invoice_sub_title">
+                                                <h4>
+                                                    من - From
+                                                </h4>
+                                            </td>
+                                            <td class="e_invoice_sub_title"/>
+                                            <td class="e_invoice_sub_title">
+                                                <h4>
+                                                    الى - TO
+                                                </h4>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="e_border_outline">
+                                        <tr>
+                                            <td class="info_left">
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span t-field="o.company_id.partner_id.name"/>
+                                                </t>
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span t-field="o.partner_id.name"/>
+                                                </t>
+                                            </td>
+                                            <td class="title">
+                                                <strong>الاسم - Name</strong>
+                                            </td>
+                                            <td class="info_right">
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span t-field="o.company_id.partner_id.name"/>
+                                                </t>
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span t-field="o.partner_id.name"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info_left">
+                                                <!--  -->
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <!--                                                    <address t-field="o.company_id.partner_id"-->
+                                                    <!--                                                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>-->
+                                                    <t t-if="o.company_id.partner_id.street">
+                                                        <span t-field="o.company_id.partner_id.street"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.company_id.partner_id.city">
+                                                        <span t-field="o.company_id.partner_id.city"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.company_id.partner_id.state_id">
+                                                        <span t-field="o.company_id.partner_id.state_id"/>
+                                                        -
+                                                    </t>
+                                                    <span t-field="o.company_id.partner_id.country_id"/>
+                                                </t>
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <t t-if="o.partner_id.street">
+                                                        <span t-field="o.partner_id.street"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.partner_id.city">
+                                                        <span t-field="o.partner_id.city"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.partner_id.state_id">
+                                                        <span t-field="o.partner_id.state_id"/>
+                                                        -
+                                                    </t>
+                                                    <span t-field="o.partner_id.country_id"/>
+                                                    <!--                                                    <address t-field="o.partner_id"-->
+                                                    <!--                                                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>-->
+                                                </t>
+                                            </td>
+                                            <td class="title">
+                                                <strong>العنوان - Address</strong>
+                                            </td>
+                                            <td class="info_right">
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <t t-if="o.company_id.partner_id.street">
+                                                        <span t-field="o.company_id.partner_id.street"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.company_id.partner_id.city">
+                                                        <span t-field="o.company_id.partner_id.city"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.company_id.partner_id.state_id">
+                                                        <span t-field="o.company_id.partner_id.state_id"/>
+                                                        -
+                                                    </t>
+                                                    <span t-field="o.company_id.partner_id.country_id"/>
+                                                    <!--                                                    <address t-field="o.company_id.partner_id"-->
+                                                    <!--                                                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>-->
+                                                </t>
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <t t-if="o.partner_id.street">
+                                                        <span t-field="o.partner_id.street"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.partner_id.city">
+                                                        <span t-field="o.partner_id.city"/>
+                                                        -
+                                                    </t>
+                                                    <t t-if="o.partner_id.state_id">
+                                                        <span t-field="o.partner_id.state_id"/>
+                                                        -
+                                                    </t>
+                                                    <span t-field="o.partner_id.country_id"/>
+                                                    <!--                                                    <address t-field="o.partner_id"-->
+                                                    <!--                                                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>-->
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info_left">
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span t-field="o.company_id.partner_id.vat"/>
+                                                </t>
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span t-field="o.partner_id.vat"/>
+                                                </t>
+                                            </td>
+                                            <td class="title">
+                                                <strong>الرقم الضريبي - VAT</strong>
+                                            </td>
+                                            <td class="info_right">
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span t-field="o.company_id.partner_id.vat"/>
+                                                </t>
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span t-field="o.partner_id.vat"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info_left">
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span>السجل التجاري</span>
+                                                </t>
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <t t-if="o.partner_id.company_type == 'person'">
+                                                        <t t-if="o.partner_id.other_id_type == 'id_card'">
+                                                            <span>الهوية</span>
+                                                        </t>
+                                                        <t t-if="o.partner_id.other_id_type == 'passport'">
+                                                            <span>الجواز</span>
+                                                        </t>
+                                                        <t t-if="o.partner_id.other_id_type == 'cr'">
+                                                            <span>السجل التجاري</span>
+                                                        </t>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>السجل التجاري</span>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                            <td class="title">
+                                                <strong>معرف آخر - Other ID</strong>
+                                            </td>
+                                            <td class="info_right">
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span>السجل التجاري</span>
+                                                </t>
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <t t-if="o.partner_id.company_type == 'person'">
+                                                        <t t-if="o.partner_id.other_id_type == 'id_card'">
+                                                            <span>الهوية</span>
+                                                        </t>
+                                                        <t t-if="o.partner_id.other_id_type == 'passport'">
+                                                            <span>الجواز</span>
+                                                        </t>
+                                                        <t t-if="o.partner_id.other_id_type == 'cr'">
+                                                            <span>السجل التجاري</span>
+                                                        </t>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>السجل التجاري</span>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info_left">
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <t t-if="o.partner_id.company_type == 'person'">
+                                                        <span t-field="o.partner_id.id_number"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span t-field="o.partner_id.commercial_register"/>
+                                                    </t>
+                                                </t>
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <span t-field="o.company_id.company_registry"/>
+                                                </t>
+
+                                            </td>
+                                            <td class="title">
+                                                <strong>رقم المعرف - NUM I</strong>
+                                            </td>
+                                            <td class="info_right">
+                                                <t t-if="o.move_type in ['out_invoice','in_refund']">
+                                                    <t t-if="o.partner_id.company_type == 'person'">
+                                                        <span t-field="o.partner_id.id_number"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span t-field="o.partner_id.commercial_register"/>
+                                                    </t>
+                                                </t>
+                                                <t t-if="o.move_type in ['in_invoice','out_refund']">
+                                                    <span t-field="o.company_id.company_registry"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row odex-row">
+                                <table class="table table-borderless" dir="rtl">
+                                    <tbody>
+                                        <tr style="text-align: right;"
+                                            t-if="o.move_type in ['in_invoice','out_invoice'] and o.invoice_origin != ''">
+                                            <td>
+                                                <strong t-if="o.move_type == 'in_invoice'">رقم امر الشراء:</strong>
+                                                <strong t-if="o.move_type == 'out_invoice'">رقم امر البيع:</strong>
+                                            </td>
+                                            <td>
+                                                <strong t-field="o.invoice_origin"/>
+                                            </td>
+                                            <td width="50%"/>
+                                        </tr>
+                                        <tr style="text-align: right;"
+                                            t-if="o.move_type in ['in_refund','out_refund']">
+                                            <td style="color: #60cada;">
+                                                <strong>سبب اصدار الاشعار:</strong>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.reversal_reason"/>
+                                            </td>
+                                            <td width="50%"/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row odex-row">
+
+                                <table class="table table-bordered e_invoice_line" dir="rtl">
+                                    <thead>
+                                        <tr>
+                                            <th width="25%">
+                                                <span>الوصف
+                                                    <br/>
+                                                    Description
+                                                </span>
+                                            </th>
+                                            <th width="10%">
+                                                <span>السعر
+                                                    <br/>
+                                                    Price
+                                                </span>
+                                            </th>
+                                            <th width="10%">
+                                                <span>الكمية
+                                                    <br/>
+                                                    Quantity
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span>السعر قبل الضريبة
+                                                    <br/>
+                                                    Taxable Amount
+                                                </span>
+                                            </th>
+                                            <th width="10%">
+                                                <span>الضريبة
+                                                    <br/>
+                                                    VAT Rate
+                                                </span>
+                                            </th>
+                                            <th width="12%">
+                                                <span>الخصم
+                                                    <br/>
+                                                    Discount
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span>الاجمالي
+                                                    <br/>
+                                                    Amount
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="invoice_tbody">
+                                        <t t-set="current_subtotal" t-value="0"/>
+                                        <t t-set="lines"
+                                           t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+                                        <t t-foreach="lines" t-as="line">
+                                            <tr>
+                                                <!--											<td>-->
+                                                <!--												<span t-field="line.product_id.name" t-options="{'widget': 'text'}"/>-->
+                                                <!--											</td>-->
+                                                <td>
+                                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                                </td>
+                                                <td>
+                                                    <span class="text-nowrap" t-field="line.price_unit"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.quantity"/>
+                                                    <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.price_subtotal"/>
+                                                </td>
+                                                <td t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"
+                                                          id="line_tax_ids"/>
+                                                </td>
+                                                <td
+                                                        t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                                    <span class="text-nowrap" t-field="line.discount"/>
+                                                </td>
+                                                <td>
+                                                    <strong>
+                                                        <span class="text-nowrap" t-field="line.price_total"/>
+                                                    </strong>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="clearfix" dir="rtl">
+                                <div id="total" class="row">
+                                    <div class="col-4">
+                                        <div style="width:150px;height:150px;">
+                                            <span t-field="o.qr_image" t-options='{"widget": "image"}'/>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <table class="table" style="page-break-inside: avoid;">
+                                            <tr>
+                                                <td style="border-top: none; text-align: right;">
+                                                    <table class="table table-borderless e_invoice_total_title">
+                                                        <tr>
+                                                            <td>
+                                                                الاجمالي بدون ضريبة
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                قيمة الضريبة
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h3>
+                                                                    الاجمالي
+                                                                </h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border-top: none;" width="40%">
+                                                    <table class="table table-bordered e_invoice_total">
+                                                        <tr>
+                                                            <td>
+                                                                <span t-field="o.amount_untaxed"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span t-field="o.amount_tax"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="e_invoice_td_total">
+                                                                <span class="text-nowrap" t-field="o.amount_total"/>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border-top: none;">
+                                                    <table class="table table-borderless e_invoice_total_title">
+                                                        <tr>
+                                                            <td>
+                                                                Total Without VAT
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                VAT
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h3>
+                                                                    Total
+                                                                </h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="account_e_invoices" model="ir.actions.report">
+            <field name="name">E-Invoices</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">report_e_invoice.report_e_invoice</field>
+            <field name="report_file">report_e_invoice.report_e_invoice</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')
+            </field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice')),
+                                            (4, ref('account.group_account_readonly'))]"/>
+            <field name="paperformat_id" ref="report_e_invoice.paperformat_e_invoice"/>
+        </record>
+    </data>
+</odoo>

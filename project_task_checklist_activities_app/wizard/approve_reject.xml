@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+      <record model="ir.ui.view" id="skip_record_view">
+      <field name="name">approve.reject</field>
+      <field name="model">approve.reject</field>
+      <field name="arch" type="xml">
+         <form>
+          <h3 style="color:#737CA1">Approve / Reject Bulk Task Checklist Activity</h3>
+            <group>
+              <field name="skip_record"/>
+            </group>
+            <footer>
+              <button name="mark_complete" type="object" string="Mark Completed" style="color:green" class="fa fa-chevron-circle-down"/>
+              <button name="mark_cancel" type="object" string="Mark Cancelled" style="color:red" class="fa fa-close"/>
+              <button string="Cancel" class="btn-secondary" special="cancel"/>
+            </footer>
+         </form> 
+    </field>
+    </record>   
+    <record id="action_skip_record" model="ir.actions.act_window">
+      <field name="name">approve.reject</field>
+      <field name="res_model">approve.reject</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="skip_record_view"/>
+      <field name="target">new</field>
+    </record>
+    </data>
+</odoo>
+
+

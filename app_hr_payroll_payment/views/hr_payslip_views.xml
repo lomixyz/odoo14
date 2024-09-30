@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+        <record id="confirm_order_line_action_order" model="ir.actions.server">
+            <field name="name">Register Payment</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_payment()
+            </field>
+        </record>
+
+        <record id="view_hr_payslip_form_inherit_uae_payroll" model="ir.ui.view">
+            <field name="name">hr.payslip.form.inherit</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="/form/header/button[@name='refund_sheet']" position="before">
+                    <button name="%(app_hr_payroll_payment.hr_payslip_sheet_register_payment_wizard_action)d" states="done" type="action" string="Register Payment" class="oe_highlight o_expense_sheet_pay" context="{'default_amount': net_amount}" groups="account.group_account_manager"/>
+               </xpath>
+               <xpath expr="/form/header/field[@name='state']" position="replace">
+                   <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done,paid"/>
+                   <field name="net_amount" invisible="1"/>
+               </xpath>
+            </field>
+        </record>
+
+        <record id="hr_payslip_run_form_inherit" model="ir.ui.view">
+            <field name="name">hr.payslip.run.form.inherit</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                        <button name="%(app_hr_payroll_payment.hr_payslip_batchwise_sheet_register_payment_wizard_action)d" states="close" type="action" string="Register Payment" class="oe_highlight o_expense_sheet_pay" context="{'default_amount': remaining_amount}" groups="account.group_account_manager"/>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                     <group class="oe_subtotal_footer oe_right" >
+                         <field name="net_amount" class="oe_subtotal_footer_separator" widget="monetary" modifiers="{'readonly': true}"/>
+                         <field name="remaining_amount" groups="account.group_account_manager" class="oe_subtotal_footer_separator" widget="monetary" modifiers="{'readonly': true}"/>
+                     </group>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_payments" class="oe_stat_button" icon="fa-money" groups="account.group_account_manager" type="object" help="Payments" attrs="{'invisible': [('payment_count', '=', 0)]}">
+                        <div class="o_field_widget o_stat_info" >
+                            <span class="o_stat_value"><field name="payment_count"/></span>
+                            <span class="o_stat_text">Payments</span>
+                         </div>
+                    </button>
+                </xpath>
+                <xpath expr="/form/header/field[@name='state']" position="replace">
+                   <field name="state" widget="statusbar" statusbar_visible="draft,confirm,close,paid"/>
+                   <field name="net_amount" invisible="1"/>
+               </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

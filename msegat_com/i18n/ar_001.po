@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msegat_com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-15 16:17+0000\n"
+"PO-Revision-Date: 2020-11-15 16:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: msegat_com
+#: model_terms:ir.ui.view,arch_db:msegat_com.res_config_settings_view_form
+msgid "Balance Inquiry"
+msgstr "الاستعلام عن الرصيد"
+
+#. module: msegat_com
+#: model_terms:ir.ui.view,arch_db:msegat_com.view_sms_form
+msgid "Calculate Cost"
+msgstr "حساب التكلفة"
+
+#. module: msegat_com
+#: model_terms:ir.ui.view,arch_db:msegat_com.view_sms_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: msegat_com
+#: model:ir.model,name:msegat_com.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الإعدادات"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__message
+msgid "Content"
+msgstr "محتوى الرسالة"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: msegat_com
+#: model:ir.model.fields.selection,name:msegat_com.selection__msegat_sms__state__draft
+msgid "Draft"
+msgstr "مبدئية"
+
+#. module: msegat_com
+#: model:ir.model.fields.selection,name:msegat_com.selection__msegat_sms__state__fail
+msgid "Failed"
+msgstr "فشل"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms____last_update
+msgid "Last Modified on"
+msgstr "تاريخ اخر تعديل"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__write_uid
+msgid "Last Updated by"
+msgstr "تاريخ اخر تعديل"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__write_date
+msgid "Last Updated on"
+msgstr "تاريخ اخر تعديل"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__message_log
+msgid "Message Log"
+msgstr "سجل العملية"
+
+#. module: msegat_com
+#: model:ir.actions.act_window,name:msegat_com.action_sms_view_tree
+#: model:ir.ui.menu,name:msegat_com.menu_sms_gateway_main
+msgid "Msegat"
+msgstr "مسجات"
+
+#. module: msegat_com
+#: model_terms:ir.ui.view,arch_db:msegat_com.res_config_settings_view_form
+msgid "Msegat SMS"
+msgstr "مسجات"
+
+#. module: msegat_com
+#: model:ir.model,name:msegat_com.model_msegat_sms
+msgid "Msegat SMS Odoo Integration"
+msgstr "ربط نظام اودو مع بوابة مسجات"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_res_config_settings__msegat_username
+msgid "Msegat Username"
+msgstr "اسم المستخدم"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_res_config_settings__msegat_api_key
+msgid "Msegat api key"
+msgstr "مفتاح واجهة التطبيقات "
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_res_config_settings__msegat_balance
+msgid "Msegat balance"
+msgstr "رصيد مسجات"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_res_config_settings__msegat_sender
+msgid "Msegat sender"
+msgstr "اسم المرسل"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__numbers
+msgid "Partners"
+msgstr "جهات الاتصال"
+
+#. module: msegat_com
+#: model:ir.ui.menu,name:msegat_com.menu_sms_gateway
+msgid "SMS"
+msgstr "الرسائل النصية القصيرة"
+
+#. module: msegat_com
+#: model_terms:ir.ui.view,arch_db:msegat_com.view_sms_form
+msgid "Send"
+msgstr "إرسال"
+
+#. module: msegat_com
+#: model:ir.model.fields.selection,name:msegat_com.selection__msegat_sms__state__sent
+msgid "Sent"
+msgstr "تم الارسال"
+
+#. module: msegat_com
+#: model:ir.model.fields,field_description:msegat_com.field_msegat_sms__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: msegat_com
+#: code:addons/msegat_com/models/msegat.py:0
+#: code:addons/msegat_com/models/msegat.py:0
+#, python-format
+msgid "please fill the destination numbers"
+msgstr "الرجاء إدخال رقم\\ارقام المرسل إليه"
+
+#. module: msegat_com
+#: code:addons/msegat_com/models/msegat.py:0
+#, python-format
+msgid ""
+"total numbers : %s number\n"
+"total cost : %s point"
+msgstr ""
+"إجمالي الارقام : %s رقم\n"
+"إجمالي التكلفة : %s نقطة"

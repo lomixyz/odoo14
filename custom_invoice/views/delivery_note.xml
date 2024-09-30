@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="report_delivery_note">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size: 12px;font-family:Janna LT;direction:rtl;">
+
+
+                        <h6>
+                            <center style="text-decoration: underline;margin-top:0em;!important;">
+                                <strong>Delivery Note / سند تسليم</strong>
+                            </center>
+                        </h6>
+
+                        <table style="width: 100%; direction:rtl;">
+                            <tbody>
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%; text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>إسم العميل :</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.partner_id"/>
+                                        </center>
+
+                                    </td>
+                                    <td style="width: 25%;background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>: Customer Name</strong>
+                                        </span>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%;text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>رقم العميل :</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.partner_id.ref"/>
+                                        </center>
+
+                                    </td>
+                                    <td style="width: 25%;background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>: Customer Code</strong>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%;text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>عنوان العميل :</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.partner_id.street"/>
+                                        </center>
+
+                                    </td>
+
+                                    <td style="width: 25%;background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>: Customer address</strong>
+                                        </span>
+                                    </td>
+                                </tr>
+
+
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%; text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>رقم الاستلام : -</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.name"/>
+                                        </center>
+
+                                    </td>
+                                    <td style="width: 25%;background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>-: Delivery Number</strong>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%; text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>تاريخ التسليم : -</strong>
+                                        </span>
+
+                                    </td>
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.date_done"/>
+                                        </center>
+
+                                    </td>
+                                    <td style="background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>-: Delivery Date</strong>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr style="border-bottom: thin solid;">
+                                    <td style="width: 25%; text-align: right;padding:2px;">
+                                        <span>
+                                            <strong>رقم أمر البيع :-</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td colspan="2">
+                                        <center>
+                                            <span t-field="o.origin"/>
+                                        </center>
+
+                                    </td>
+                                    <td style="width: 25%;background-color:white; text-align: left;padding:2px;">
+                                        <span>
+                                            <strong>-:# Sales Order</strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <br/>
+                            </tbody>
+                        </table>
+                        <br/>
+
+
+                        <table style="width: 100%; table-layout: fixed; direction:ltr">
+
+                            <thead class="thead-light">
+
+
+                                <tr>
+                                    <th class="text-center" style="width:10%;!important;" rowspan="1">Item #</th>
+                                    <th class="text-left" style="width:30%;!important; padding:2px;" colspan="1">Item
+                                        Name
+                                    </th>
+                                    <th class="text-center" style="width:10%;!important;" colspan="1">Ordered</th>
+                                    <th class="text-center" style="width:10%;!important;" colspan="1">Deliveried</th>
+
+
+                                </tr>
+                                <tr>
+                                    <th class="text-center" rowspan="1">رقم الصنف</th>
+                                    <th class="text-left" style=" padding:2px;" colspan="1">اسم الصنف</th>
+                                    <th class="text-center" colspan="1">الكمية المطلوبة</th>
+                                    <th class="text-center" colspan="1">الكمية المستلمة</th>
+
+                                </tr>
+
+
+                            </thead>
+                            <tbody class="delivery_body">
+
+                                <tr t-foreach="o.move_line_ids_without_package" t-as="line"
+                                    style="border-bottom: thin solid;">
+
+                                    <td style="vertical-align : middle;text-align:center">
+                                        <span t-esc="line.product_id.default_code"/>
+                                    </td>
+                                    <!--  ++++++++++++++++++++++++++++++++++++++++++++ -->
+                                    <td style="width:30%;text-align: left;">
+                                        <div style="width:10.5cm;height:auto; text-align: left;padding:2px;">
+                                            <span t-field="line.product_id.name" class="text-center"/>
+                                        </div>
+                                    </td>
+                                    <!--  ++++++++++++++++++++++++++++++++++++++++++++ -->
+                                    <td style="vertical-align : middle;text-align:center">
+                                        <span t-field="line.product_uom_qty"/>
+                                    </td>
+                                    <!--  ++++++++++++++++++++++++++++++++++++++++++++ -->
+                                    <td style="vertical-align : middle;text-align:center; background-color:white;">
+                                        <span t-field="line.qty_done"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <br/>
+
+
+                        <table class=" table table-borderless table-condensed table-hover " style="direction:ltr;">
+                            <tbody>
+                                <tr>
+
+                                    <td style="width:50%;text-align: left; border-style: hidden">
+
+                                        <span>Customer Receipt</span>
+
+                                    </td>
+                                    <td style="width:50%;text-align: center; border-style: hidden;background-color:white;">
+
+                                        <span>Issused by</span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- <td style="width:10%">
+                                              </td> -->
+                                    <td style="width:50%;text-align: left; border-style: hidden">
+
+                                        <span>استلام العميــــــــــــل</span>
+
+                                    </td>
+                                    <td style="width:50%;text-align: center; border-style: hidden;background-color:white;">
+
+                                        <span>أعدت بواسطة</span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" style="border:none !important;direction:ltr;">
+                            <tr>
+                                <td align="left">
+                                    <span>name</span>
+                                    <span>...................................................................</span>
+                                    <span>اﻹسم</span>
+                                </td>
+
+                                <td style="background-color:white; text-align: center;">
+                                    <span>name</span>
+                                    <span>...................................................................</span>
+                                    <span>اﻹسم</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="left">
+                                    <span>Signature</span>
+                                    <span>............................................................</span>
+                                    <span>التوقيع</span>
+                                </td>
+
+                                <td style="background-color:white; text-align: center;">
+                                    <span>Signature</span>
+                                    <span>..............................................................</span>
+                                    <span>التوقيع</span>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:white; text-align: left;">
+                                    <span>phone</span>
+                                    <span>.................................................................</span>
+                                    <span>الجوال</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="background-color:white; text-align: left;">
+                                    <span>Date</span>
+                                    <span>...................................................................</span>
+                                    <span>التاريخ</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <!--Report for quot details -->
+    <report id="report_custom_picking"
+            model="stock.picking"
+            string="Delivery Note "
+            name="custom_invoice.report_delivery_note"
+            file="custom_invoice.report_delivery_note"
+            report_type="qweb-pdf"/>
+</odoo>

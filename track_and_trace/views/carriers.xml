@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Carriers Form View-->
+        <record id="carriers_view_form" model="ir.ui.view">
+            <field name="name">Carriers</field>
+            <field name="model">track.and.trace.carriers</field>
+            <field name="arch" type="xml">
+                <form string="Carriers">
+                    <sheet>
+                        <group string="Carriers Info">
+                            <group><field name="number"/></group>
+                            <group><field name="name"/></group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Carriers Tree View-->
+        <record id="carriers_view_tree" model="ir.ui.view">
+            <field name="name">Carriers</field>
+            <field name="model">track.and.trace.carriers</field>
+            <field name="arch" type="xml">
+                <tree string="Carriers">
+                    <field name="number"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Carriers Search View-->
+        <record id="carriers_view_search" model="ir.ui.view">
+            <field name="name">Carriers</field>
+            <field name="model">track.and.trace.carriers</field>
+            <field name="arch" type="xml">
+                <search string="Carriers">
+                    <field name="number"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <!-- Carriers Action View-->
+        <record id="carriers_view_action" model="ir.actions.act_window">
+            <field name="name">Carriers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">track.and.trace.carriers</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Carriers Menu -->
+        <menuitem id="carriers_menu" name="Carriers" parent="track_and_trace_menu_root" action="carriers_view_action" sequence="2"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="form_assign_diet_member" model="ir.ui.view">
+        <field name="name">form.assign.diet.member</field>
+        <field name="model">assign.diet.member</field>
+        <field name="arch" type="xml">
+            <form string="Assign Diet Plan">
+                <gorup>
+                    <group>
+                        <field name="diet_plan_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </gorup>
+                <footer>
+                    <button string="Assign" name="assign_diet_plans" type="object" class="oe_highlight" icon="fa-print"/>&#160;&#160;
+                    <button string="Close Window" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_assign_diet_member" model="ir.actions.act_window">
+        <field name="name">Assign Diet Plan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">assign.diet.member</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="dev_gym_management.model_gym_member"/>
+    </record>
+</odoo>

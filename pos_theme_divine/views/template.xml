@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<odoo>
+    <template id="assets_pos" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductItemTheme.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/PosDrawer.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductListScreenWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductLine.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/PosActionPadWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/OrderCartWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/CartSummaryWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/CartOrderline.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductsWidgetControlPanel.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/HeaderButtonTheme.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/PaymentCartSummary.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/PaymentListenerWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/PaymentScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ClientListScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/OrderSelectorButtons.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductAddScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ProductFormScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ClientLine.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ClientDetailScreenWidget.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/OrderlinePriceUpdatePopup.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ClientEditScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/ClientAddScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/OrderlineDiscountPopup.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/FloorScreen.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/EditBarTheme.js"></script>
+            <script type="text/javascript" src="/pos_theme_divine/static/src/js/RestaurantChrome.js"></script>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+	<!-- ASSETS -->
+    <template id="push_notification_asset_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+			<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-messaging.js"></script>
+			<script type="text/javascript" src="/sh_backend_base/static/src/lib/pyeval.js"></script>	
+			<script type="text/javascript" src="/sh_backend_base/static/src/js/systray_activity_menu.js"></script>	
+			<script type="text/javascript" src="/sh_backend_base/static/src/js/firebase.js"></script>
+			<link href="/sh_backend_base/static/src/scss/notification.scss" rel="stylesheet" type="text/scss"/>	
+			<link href="/sh_backend_base/static/src/scss/light_icon/style.css" rel="stylesheet" type="text/scss"/>
+			<link href="/sh_backend_base/static/src/scss/regular_icon/style.css" rel="stylesheet" type="text/scss"/>
+			<link href="/sh_backend_base/static/src/scss/thin_icon/style.css" rel="stylesheet" type="text/scss"/>							
+        </xpath>
+    </template>
+
+</odoo>

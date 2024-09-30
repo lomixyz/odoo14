@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="project_report_id">
+          <t t-foreach="docs" t-as="doc">
+            <t t-call="web.html_container">
+             <t t-call="web.internal_layout">
+                <div class="page">
+                     <div>
+                         <h3>
+                             <strong><span t-field="doc.name"/></strong> 
+                         </h3>
+                         <h4>
+                             <table class="table table-responsive" name="table_1">
+                                <tr>
+                                    <td><strong>Cliente</strong></td>
+                                    <td><strong>Gerente de Proyecto</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><span t-field="doc.partner_id.name"/></td>
+                                    <td><span t-field="doc.user_id.name"/></td>
+                                </tr>
+                             </table>
+                         </h4>
+                         <h3>
+                             <strong>Detalle del Sitio de Construcción:</strong>
+                         </h3>
+                         <h4>
+                             <table class="table table-responsive" name="table_2">
+                                <tr>
+                                    <td><strong>Tipos de Construcción</strong></td>
+                                    <td><strong>Locación</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><span t-field="doc.type_of_construction"/></td>
+                                    <td>
+                                        <div name="invoice_address">
+                                            <address t-field="doc.location_id"
+                                                t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                                        </div>
+                                    </td>
+                                </tr>
+                             </table>
+                         </h4>
+                         <h3>
+                             <strong>Tareas:</strong>
+                         </h3>
+                         <table class="table table-responsive" name="table_3">
+                            <tr style="border: 2px solid black;">
+                                <th>Tarea</th>
+                                <th>Horas Planeadas</th>
+                                <th>Horas Esperadas</th>
+                                <th>Horas Restantes</th>
+                                <th>Asignado a</th>
+                                <th>Fecha de Asignación</th>
+                                <th>Plazo</th>
+                                <th>Estado</th>
+                            </tr>
+                            <t t-foreach="doc.task_ids" t-as="task">
+                                <tr style="border: 2px solid black;">
+                                    <td><span t-field="task.name"/></td>
+                                    <td><span t-field="task.planned_hours" /></td>
+                                    <td><span t-field="task.effective_hours" /></td>
+                                    <td><span t-field="task.remaining_hours" /></td>
+                                    <td><span t-field="task.user_id.name"/></td>
+                                    <td><span t-field="task.date_assign"/></td>
+                                    <td><span t-field="task.date_deadline"/></td>
+                                    <td><span t-field="task.stage_id.name"/></td>
+                                </tr>
+                            </t>
+                         </table>
+                     </div>
+                </div>
+              </t>
+              </t>
+          </t>
+        </template>
+        
+    </data>
+</openerp>

@@ -1,0 +1,2243 @@
+@media screen and (max-width: 319px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #0e1f3e;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 12px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(19, 43, 91) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 50%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 25%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.o_button_more{
+      width: 100%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item{
+      width: 100%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i{
+      width: 20%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i::before{
+      font-size: 18px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 13px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #0e153e;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 14px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 98% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 50%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 25%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.o_button_more{
+      width: 100%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item{
+      width: 50%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i{
+      width: 20%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i::before{
+      font-size: 18px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 14px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 421px) and (max-width: 767px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 14px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 98% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 50%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 25%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.o_button_more{
+      width: 100%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item{
+      width: 50%!important;
+      height: 50px!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i{
+      width: 20%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item i::before{
+      font-size: 18px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_value{
+      font-size: 11px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .o_dropdown_more .btn.oe_stat_button.dropdown-item .o_form_field .o_stat_text{
+      font-size: 11px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 14px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 98% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 18px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 896px) and (max-width: 1024px) and (min-device-height: 1250px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content {
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 25%!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 30%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 13px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 13px!important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action.o_view_controller .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 98% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 25%!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 30%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 13px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 13px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 22px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 1201px) and (max-width: 1599px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 98% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button{
+      width: 25%!important;
+      border: 1px solid #e8e8e8!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 30%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 13px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 13px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete input{
+      font-size: 26px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Top Buttons*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button i{
+      width: 25%!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_value{
+      font-size: 12px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_button_box .btn.oe_stat_button .o_form_field .o_stat_text{
+      font-size: 12px!important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      height: auto!important;
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view {
+      /*Employees*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 20px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+@media screen and (min-width: 3840px) {
+    body.o_home_menu_background {
+      background-image: url(../img/image.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .o_web_client header .o_main_navbar {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      /*Menu Toggle*/
+      /*Selection Apps*/
+      /*Nav Left ul*/
+      /*Nav Right ul*/
+    }
+    .o_web_client header .o_main_navbar a.o_menu_toggle {
+      background-color: #29479b;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar a.o_menu_brand:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a {
+      color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li a:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show a {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_sections li.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_MessagingMenu a.o_MessagingMenu_toggler span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item a.o-no-caret span {
+      background-color: black;
+      border-color: black;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_mail_systray_item.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret {
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret:hover {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu a.o-no-caret span {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show a.o-no-caret {
+      background-color: #0831a0;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu {
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a {
+      color: #0831a0;
+      background-color: white;
+    }
+    .o_web_client header .o_main_navbar ul.o_menu_systray li.o_user_menu.show div.dropdown-menu a:hover {
+      color: white;
+      background-color: #0831a0;
+    }
+    .o_web_client .o_home_menu {
+      /*search section*/
+      /*apps section*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable {
+      /*apps container*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps {
+      /*app*/
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app:hover .o_app_icon {
+      box-shadow: none !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_app_icon {
+      background-size: contain !important;
+    }
+    .o_web_client .o_home_menu .o_home_menu_scrollable .o_apps .o_app .o_caption {
+      font-size: 30px !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_control_panel .o_cp_top .o_cp_top_right .o_cp_searchview .o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+      background-color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content {
+      /*Apps Module*/
+      /*accounting module-invoice*/
+      /*Setting Module*/
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section header.o_search_panel_section_header i {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header span {
+      color: black !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active label {
+      color: white;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_search_panel .o_search_panel_section ul.o_search_panel_field li header.active span {
+      color: white !important;
+    }
+
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .o_kanban_record .o_kanban_card_conten .o_kanban_card_upper_content .o_kanban_primary_bottom{
+      width: 100%!important;
+      padding-inline-start: 30px!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-secondary {
+      color: #0831a0;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%)!important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action button.btn-primary:hover {
+      background-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_module_vignette .oe_module_desc .oe_module_action a.btn-info {
+      color: white;
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+      border-color: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%);
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_kanban_view .oe_kanban_global_click .oe_kanban_details .o_kanban_record_top .o_kanban_record_headings .o_kanban_record_title span {
+      font-weight: bold !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view {
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg {
+      overflow: unset !important;
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    /*Accounting - Suppliers - Title*/
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title{
+      width: 90%;
+      max-width: 90%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_form_sheet_bg .o_form_sheet .oe_title h1 .o_field_partner_autocomplete{
+      width: 100%;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view .o_FormRenderer_chatterContainer {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_control_panel {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container {
+      width: 100% !important;
+    }
+    .o_web_client .o_action_manager .o_action .o_content .o_form_view.oe_form_configuration.o_base_settings.o_form_nosheet.o_form_editable .o_setting_container .settings .app_settings_block h2 {
+      background: linear-gradient(270deg, rgb(14, 30, 62) 0%, rgb(4, 44, 135) 75%) !important;
+      color: white !important;
+      font-weight: 500 !important;
+    }
+}
+/*Human Resources Absence div*/
+.o_kanban_view.o_kanban_dashboard .o_kanban_record .o_kanban_card_header + .container.o_kanban_card_content .o_kanban_primary_bottom {
+  width: 100%!important;
+  padding-inline-start: 30px!important;
+}
+
+/*Employee Login Background*/
+.o_web_client .o_action_manager .o_action .o_content .o_home_menu_background{
+  background-image: url(../img/image.jpg)!important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*Dropdown menu headings bg color*/
+.o_main_navbar > ul > li.o_extra_menu_items.show > ul > li > a.dropdown-toggle {
+    background-color: #0831a0 !important;
+}/*# sourceMappingURL=backend_dashboard.css.map */

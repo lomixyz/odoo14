@@ -1,0 +1,395 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* boraq_gosi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210419\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 10:33+0000\n"
+"PO-Revision-Date: 2021-11-09 10:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__age
+msgid "AGE"
+msgstr "العمر"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: boraq_gosi
+#: model_terms:ir.actions.act_window,help:boraq_gosi.action_view_employee_gosi
+msgid "Create new record"
+msgstr "إنشاء سجل جديد"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__dob
+msgid "Date Of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__birthday
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__department
+msgid "Department"
+msgstr "القسم"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__display_name
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_payslip__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__limit
+msgid "Eligible For GOSI"
+msgstr "يستحق التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model,name:boraq_gosi.model_hr_employee
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: boraq_gosi
+#: model_terms:ir.ui.view,arch_db:boraq_gosi.gosi_payslip3
+msgid "Employee Details"
+msgstr "تفاصيل الموظف"
+
+#. module: boraq_gosi
+#: model:ir.actions.act_window,name:boraq_gosi.action_view_employee_gosi
+msgid "Employee GOSI"
+msgstr "موظف التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (العملاء)"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:hr.salary.rule.category,name:boraq_gosi.GOSI
+msgid "GOSI"
+msgstr "التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_GOSI_COMP
+msgid "GOSI 9% Company Cont. for Saudi Emp."
+msgstr "%اشتراك التأمينات الاجتماعية على الشركة للسعوديين 9"
+
+#. module: boraq_gosi
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_GOSI
+msgid "GOSI 9% Subscription For Saudi Emp."
+msgstr "%اشتراك التأمينات الاجتماعية على الموظف للسعوديين 9"
+
+#. module: boraq_gosi
+#: model_terms:ir.ui.view,arch_db:boraq_gosi.gosi_payslip3
+msgid "GOSI Details"
+msgstr "تفاصيل التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model_terms:ir.ui.view,arch_db:boraq_gosi.hr_employee_inherited_form_view
+msgid "GOSI Information"
+msgstr "بيانات التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__gos_numb
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__gosi_number
+msgid "GOSI Number"
+msgstr "رقم التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model,name:boraq_gosi.model_gosi_payslip
+msgid "GOSI Record"
+msgstr "قيد التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_payslip__gosi_no
+msgid "GOSI Reference"
+msgstr "مرجع  التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.ui.menu,name:boraq_gosi.gosi_employee
+msgid "GOSI Register"
+msgstr "سجيل التأمينات الاجتماعية"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__id
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__id
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_payslip__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_needaction
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_has_error
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__issued_dat
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__issue_date
+msgid "Issued Date"
+msgstr "تاريخ البداية"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__position
+msgid "Job Position"
+msgstr "المنصب"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip____last_update
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_payslip____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: boraq_gosi
+#: code:addons/boraq_gosi/models/gosi.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_type_id
+msgid "Next Activity Type"
+msgstr "وع النشاط التالي"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ التسليم"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: boraq_gosi
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_HZRD_COMP
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_HZRD_COMP_
+msgid "Occup. Hazards 2% - Cont. Company"
+msgstr "أخطار مهنية - على الشركة %2"
+
+#. module: boraq_gosi
+#: model:hr.salary.rule.category,name:boraq_gosi.PAIDLEAVE
+msgid "Paid Leave"
+msgstr "متأخر"
+
+#. module: boraq_gosi
+#: model:ir.model,name:boraq_gosi.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال المرتب"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_SANED_COMP
+msgid "Saned 1% Compay Cont. Jobless Support For Saudi Emp."
+msgstr "بدل بطالة 1% (ساند) على الشركة"
+
+#. module: boraq_gosi
+#: model:hr.salary.rule,name:boraq_gosi.hr_rule_SANED
+msgid "Saned 1% Jobless Support For Saudi Emp."
+msgstr "بدل بطالة 1% (ساند) على الموظف"
+
+#. module: boraq_gosi
+#: model:ir.model.fields.selection,name:boraq_gosi.selection__hr_employee__type__saudi
+msgid "Saudi"
+msgstr "سعودي"
+
+#. module: boraq_gosi
+#: model_terms:ir.ui.view,arch_db:boraq_gosi.gosi_payslip3
+#: model_terms:ir.ui.view,arch_db:boraq_gosi.view_gosisaudi
+msgid "Service Execute"
+msgstr "تنفيذ الخدمة"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__type_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_hr_employee__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الغير مقروءة"
+
+#. module: boraq_gosi
+#: model:ir.model.fields,field_description:boraq_gosi.field_gosi_payslip__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: boraq_gosi
+#: model:ir.model.fields,help:boraq_gosi.field_gosi_payslip__website_message_ids
+msgid "Website communication history"
+msgstr ""

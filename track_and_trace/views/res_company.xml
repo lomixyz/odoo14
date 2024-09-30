@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Res Company Form View to Modify it -->
+        <record id="inherit_res_company_view_form" model="ir.ui.view">
+            <field name="name">inherit.res.company</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_info']" position="after">
+                    <page string="Track And Trace" name="track_and_trace">
+                        <group string="Credential Info">
+                            <group><field name="track_and_trace_user_name"/></group>
+                            <group><field name="track_and_trace_password" password="True"/></group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

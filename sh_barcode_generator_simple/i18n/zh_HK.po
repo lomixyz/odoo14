@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_barcode_generator_simple
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-15 10:12+0000\n"
+"PO-Revision-Date: 2020-10-15 10:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_barcode_generator_simple
+#: model:res.groups,name:sh_barcode_generator_simple.group_barcode_generator
+msgid "Barcode Generator"
+msgstr "条码生成器"
+
+#. module: sh_barcode_generator_simple
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_barcode_generator_res_config_settings_form
+msgid "Barcode Generator Configuration"
+msgstr "条码生成器配置"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_product__sh_product_barcode_img
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_template__sh_product_barcode_img
+msgid "Barcode Image"
+msgstr "条码图片"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_company__sh_barcode_type
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_config_settings__sh_barcode_type
+msgid "Barcode-Type (Product)"
+msgstr "条形码类型（产品）"
+
+#. module: sh_barcode_generator_simple
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_form_product_product_generate_barcode_form_view
+msgid "Cancel"
+msgstr "取消"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__code128
+msgid "Code 128"
+msgstr "代码128"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__code39
+msgid "Code 39"
+msgstr "代码39"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model,name:sh_barcode_generator_simple.model_res_company
+msgid "Companies"
+msgstr "公司介绍"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model,name:sh_barcode_generator_simple.model_res_config_settings
+msgid "Config Settings"
+msgstr "配置设置"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__create_uid
+msgid "Created by"
+msgstr "由...制作"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__create_date
+msgid "Created on"
+msgstr "创建于"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__display_name
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_product__display_name
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_template__display_name
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_company__display_name
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__ean
+msgid "EAN"
+msgstr "东盟"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__ean13
+msgid "EAN-13"
+msgstr "EAN-13"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__ean14
+msgid "EAN-14"
+msgstr "EAN-14"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__ean8
+msgid "EAN-8"
+msgstr "EAN-8"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.actions.act_window,name:sh_barcode_generator_simple.sh_action_proudct_product_generte_barcode
+#: model:ir.actions.act_window,name:sh_barcode_generator_simple.sh_action_proudct_template_generte_barcode
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_form_product_product_generate_barcode_form_view
+msgid "Generate Barcode"
+msgstr "产生条形码"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model,name:sh_barcode_generator_simple.model_generate_product_barcode
+msgid "Generate Product Barcode"
+msgstr "生成产品条形码"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_company__generate_barcode_on_product
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_config_settings__generate_barcode_on_product
+msgid "Generate Product Barcode On Product Create?"
+msgstr "在创建产品时生成产品条形码？"
+
+#. module: sh_barcode_generator_simple
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_product_product_form_view
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_product_template_form_view
+msgid "Generate the Barcode"
+msgstr "生成条形码"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__id
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_product__id
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_template__id
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_company__id
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_config_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__isbn10
+msgid "ISBN10"
+msgstr "书号10"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__isbn13
+msgid "ISBN13"
+msgstr "书号13"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__issn
+msgid "ISSN"
+msgstr "ISSN"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__jan
+msgid "JAN"
+msgstr "一月"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode____last_update
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_product____last_update
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_product_template____last_update
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_company____last_update
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "最后修改时间"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__write_uid
+msgid "Last Updated by"
+msgstr "最后更新者"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间："
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields,field_description:sh_barcode_generator_simple.field_generate_product_barcode__overwrite_existing
+msgid "Overwrite Barcode If Exists"
+msgstr "覆盖条码（如果存在）"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__pzn
+msgid "PZN"
+msgstr "PZN"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model,name:sh_barcode_generator_simple.model_product_product
+msgid "Product"
+msgstr "产品"
+
+#. module: sh_barcode_generator_simple
+#: model_terms:ir.ui.view,arch_db:sh_barcode_generator_simple.sh_form_product_product_generate_barcode_form_view
+msgid "Product Barcode"
+msgstr "产品条码"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model,name:sh_barcode_generator_simple.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: sh_barcode_generator_simple
+#: model:res.groups,comment:sh_barcode_generator_simple.group_barcode_generator
+msgid "This user will be able to generate barcode for product"
+msgstr "该用户将能够为产品生成条形码"
+
+#. module: sh_barcode_generator_simple
+#: model:ir.model.fields.selection,name:sh_barcode_generator_simple.selection__res_company__sh_barcode_type__upca
+msgid "UPCA"
+msgstr "UPCA"
+
+#. module: sh_barcode_generator_simple
+#: code:addons/sh_barcode_generator_simple/models/product_barcode_generator.py:0
+#, python-format
+msgid "You don't have rights to generate product barcode"
+msgstr "您无权生成产品条形码"
+
+#. module: sh_barcode_generator_simple
+#: code:addons/sh_barcode_generator_simple/models/product_barcode_generator.py:0
+#, python-format
+msgid "python-barcode is not installed. Please install it."
+msgstr "未安装python-barcode。请安装它。"

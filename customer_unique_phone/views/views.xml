@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="customer_unique_phone.list">
+      <field name="name">customer_unique_phone list</field>
+      <field name="model">customer_unique_phone.customer_unique_phone</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="customer_unique_phone.action_window">
+      <field name="name">customer_unique_phone window</field>
+      <field name="res_model">customer_unique_phone.customer_unique_phone</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="customer_unique_phone.action_server">
+      <field name="name">customer_unique_phone server</field>
+      <field name="model_id" ref="model_customer_unique_phone_customer_unique_phone"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="customer_unique_phone" id="customer_unique_phone.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="customer_unique_phone.menu_1" parent="customer_unique_phone.menu_root"/>
+    <menuitem name="Menu 2" id="customer_unique_phone.menu_2" parent="customer_unique_phone.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="customer_unique_phone.menu_1_list" parent="customer_unique_phone.menu_1"
+              action="customer_unique_phone.action_window"/>
+    <menuitem name="Server to list" id="customer_unique_phone" parent="customer_unique_phone.menu_2"
+              action="customer_unique_phone.action_server"/>
+-->
+  </data>
+</odoo>

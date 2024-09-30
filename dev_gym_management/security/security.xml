@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--group category-->
+    <record model="ir.module.category" id="gym_management_user_category">
+        <field name="name">Gym</field>
+        <field name="sequence">0</field>
+    </record>
+
+    <!--access group hierarchy-->
+	<record id="gym_member" model="res.groups">
+        <field name="name">Member</field>
+        <field name="category_id" ref="dev_gym_management.gym_management_user_category"/>
+    </record>
+    <record id="gym_trainer" model="res.groups">
+        <field name="name">Trainer</field>
+        <field name="implied_ids" eval="[(4, ref('gym_member'))]"/>
+        <field name="category_id" ref="dev_gym_management.gym_management_user_category"/>
+    </record>
+    <record id="gym_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="implied_ids" eval="[(4, ref('gym_trainer'))]"/>
+        <field name="category_id" ref="dev_gym_management.gym_management_user_category"/>
+    </record>
+
+
+    <!--record rules of member table-->
+    <!--Member-->
+    <record id="rule_of_gym_member" model="ir.rule">
+        <field name="name">Gym Member : Own Records</field>
+        <field ref="dev_gym_management.model_gym_member" name="model_id"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_member'))]"/>
+    </record>
+    <!--Trainer-->
+    <record id="rule_of_gym_trainer" model="ir.rule">
+        <field name="name">Gym Trainer : Own and his members</field>
+        <field ref="dev_gym_management.model_gym_member" name="model_id"/>
+        <field name="domain_force">[('trainer_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_trainer'))]"/>
+    </record>
+    <!--Gym Manger-->
+    <record id="rule_of_gym_manager" model="ir.rule">
+        <field name="name">Gym Manager : All Members</field>
+        <field ref="dev_gym_management.model_gym_member" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_manager'))]"/>
+    </record>
+
+
+    <!--record rules of trainer table-->
+    <!--Trainer-->
+    <record id="rule_of_gym_trainer_own" model="ir.rule">
+        <field name="name">Gym Trainer : Own Records</field>
+        <field ref="dev_gym_management.model_gym_trainer" name="model_id"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_trainer'))]"/>
+    </record>
+    <!--Gym Manger-->
+    <record id="rule_of_gym_trainer_all" model="ir.rule">
+        <field name="name">Gym Manager : All Trainers</field>
+        <field ref="dev_gym_management.model_gym_trainer" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_manager'))]"/>
+    </record>
+
+
+    <!--record rules of activity table-->
+    <!--Member-->
+    <record id="rule_of_gym_member_activity" model="ir.rule">
+        <field name="name">Gym Member : Own Activity</field>
+        <field ref="dev_gym_management.model_gym_activity" name="model_id"/>
+        <field name="domain_force">[('member_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_member'))]"/>
+    </record>
+    <!--Trainer-->
+    <record id="rule_of_gym_trainer_activity" model="ir.rule">
+        <field name="name">Gym Trainer : Own and his members activity</field>
+        <field ref="dev_gym_management.model_gym_activity" name="model_id"/>
+        <field name="domain_force">[('trainer_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_trainer'))]"/>
+    </record>
+    <!--Gym Manger-->
+    <record id="rule_of_gym_manager_activity" model="ir.rule">
+        <field name="name">Gym Manager : All Activity</field>
+        <field ref="dev_gym_management.model_gym_activity" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_manager'))]"/>
+    </record>
+
+
+    <!--record rules of member attendance table-->
+    <!--Member-->
+    <record id="rule_of_gym_member_attendance_own" model="ir.rule">
+        <field name="name">Gym Member : Own Attendance</field>
+        <field ref="dev_gym_management.model_member_attendance" name="model_id"/>
+        <field name="domain_force">[('member_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_member'))]"/>
+    </record>
+    <!--Trainer-->
+    <record id="rule_of_gym_member_attendance_related" model="ir.rule">
+        <field name="name">Gym Trainer : Own and his members attendance</field>
+        <field ref="dev_gym_management.model_member_attendance" name="model_id"/>
+        <field name="domain_force">[('trainer_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_trainer'))]"/>
+    </record>
+    <!--Gym Manger-->
+    <record id="rule_of_gym_member_attendance_all" model="ir.rule">
+        <field name="name">Gym Manager : All Member Attendance</field>
+        <field ref="dev_gym_management.model_member_attendance" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_manager'))]"/>
+    </record>
+
+    <!--record rules of trainer attendance table-->
+    <!--Trainer-->
+    <record id="rule_of_gym_trainer_attendance_own" model="ir.rule">
+        <field name="name">Gym Trainer : Own Attendance</field>
+        <field ref="dev_gym_management.model_trainer_attendance" name="model_id"/>
+        <field name="domain_force">[('trainer_id.user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_trainer'))]"/>
+    </record>
+    <!--Gym Manger-->
+    <record id="rule_of_gym_trainer_attendance_all" model="ir.rule">
+        <field name="name">Gym Manager : All Trainer Attendance</field>
+        <field ref="dev_gym_management.model_trainer_attendance" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('dev_gym_management.gym_manager'))]"/>
+    </record>
+</odoo>

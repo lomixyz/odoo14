@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="pos_config_view_form" model="ir.ui.view">
+            <field name="name">pos.config.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <sheet position='inside'>
+                    <group name="dotmatrix_printer" string="Dotmatrix Printer">
+                        <field name="allow_dotmatrix_printer"/>
+                        <field name="dotmatrix_printers_ip"/>
+                     <!--    <field name="receipt_printing_state"/>
+                        <field name="show_dotmatrix_receipt"/> -->
+                        <!-- <field name="headnote"/> -->
+                        <field name="footnote"/>
+                    </group>
+                </sheet>
+            </field>
+        </record>
+    </data>
+</odoo>

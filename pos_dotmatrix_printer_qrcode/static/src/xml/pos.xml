@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PosTicketFormat" t-inherit="pos_dotmatrix_printer.PosTicketFormat" t-inherit-mode="extension" owl="1">
+        <xpath expr="//pre//div[hasclass('qrcode-matrix')]" position="inside">
+            <t if="receipt.is_gcc_country"><div style="width: 50%; height: 100px; float: left;"><div t-if="receipt.qr_code" id="qrcode" class="pos-receipt-logo"/></div><div style="margin-left: 50%; height: 100px;"><center><span id="title_english">Simplified Tax Invoice</span></center><center><span id="title_arabic">فاتورة ضريبية مبسطة</span></center></div></t>
+        </xpath>
+    </t>
+</templates>

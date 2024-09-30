@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="update_top_selling_wizard_form" model="ir.ui.view">
+        <field name="name">update.top.selling.wizard.form</field>
+        <field name="model">update.top.selling.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Wizard">
+                <group>
+                    <field name="report_type" widget="radio" />
+                </group>
+                <group>
+                    <group>
+                        <field name="from_date"  required="1"/>
+                        <field name="to_date"  required="1"/>
+                        <field name="no_item" />
+                    </group>
+                    <group>
+                        <field name="compare_from_date"
+                            attrs="{'invisible':[('report_type','!=','compare')],'required':[('report_type','=','compare')]}" />
+                        <field name="compare_to_date"
+                            attrs="{'invisible':[('report_type','!=','compare')],'required':[('report_type','=','compare')]}" />
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="total_qty_sold" />
+                        <field name="invoices_channel_ids" />
+                        <field name="company_ids" widget="many2many_tags" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="update_top_selling_pdf_report" class="btn btn-primary" string="Print Report"
+                        type="object" />
+                    <button name="update_top_selling_xls_report" class="btn btn-primary"
+                        string="Print Xls" type="object" />
+                    <button special="cancel" string="Cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_top_selling_action" model="ir.actions.act_window">
+        <field name="name">Update Top Selling Product</field>
+        <field name="res_model">update.top.selling.wizard</field>
+        <field name="view_id" ref="update_top_selling_wizard_form" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="products_top_selling_wizard" model="ir.ui.view">
+        <field name="name">products.top.selling.wizard.tree.view</field>
+        <field name="model">top.selling.wizard</field>
+        <field name="arch" type="xml">
+            <tree string="Top Selling Products">
+                <field name="product_id"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+    <record id="top_selling_product_action" model="ir.actions.server">
+        <field name="name">Top Selling Product</field>
+        <field name="model_id" ref="bi_all_in_one_invoice_reports.model_top_selling_wizard" />
+        <field name="state">code</field>
+        <field name="code">action = model.product_details()</field>
+
+    </record>
+    <!-- <menuitem name="Top Selling Product" id="top_selling_product_id" parent="my_account_new_menu"
+        sequence="6" /> -->
+    <menuitem action="top_selling_product_action" id="menu_top_selling_action_id"
+        parent="my_account_new_menu" name="Highest Selling Product Analysis" groups="bi_all_in_one_invoice_reports.report_menu_group"  sequence="6"/>
+
+    <menuitem action="update_top_selling_action" id="menu_top_selling_id"
+        parent="my_account_new_menu" name="Highest Selling Product Report" groups="bi_all_in_one_invoice_reports.report_menu_group"  sequence="5"/>
+</odoo>

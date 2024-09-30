@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<report id="act_report_oi_excel_export" model="oi_excel_export" string="Excel (Qweb)" report_type="qweb-pdf"
+		name="oi_excel_export.report_oi_excel_export" file="oi_excel_export.report_oi_excel_export" />
+
+</odoo>

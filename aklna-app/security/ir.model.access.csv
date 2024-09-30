@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aklna-app_aklna-app,aklna-app.aklna-app,model_aklna-app_aklna-app,base.group_user,1,1,1,1

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+ 	<menuitem name ="Gym Managemet"
+              id="menu_gym_management"
+              sequence="0"
+			  groups="dev_gym_management.gym_member"/>
+
+ 	<menuitem name="Gym Members"
+              id="menu_gym_management_members"
+              parent="menu_gym_management"
+              sequence="1"/>
+
+	<menuitem name="Gym Workout"
+              id="menu_gym_management_workout"
+              parent="menu_gym_management"
+              sequence="2"/>
+
+	<menuitem name="Diet"
+              id="menu_gym_management_diet"
+              parent="menu_gym_management"
+              sequence="3"/>
+
+	<menuitem name="Membership"
+              id="menu_gym_management_membership"
+              parent="menu_gym_management"
+              sequence="4"/>
+
+	<menuitem name="Attendance"
+              id="menu_gym_management_attendance"
+              parent="menu_gym_management"
+              sequence="5"/>
+
+	<menuitem name="Special Session"
+              id="menu_gym_management_session"
+              parent="menu_gym_management"
+              sequence="6"/>
+
+	<menuitem name="Reporting"
+              id="menu_gym_management_reporting"
+              parent="menu_gym_management"
+              sequence="7"
+			  groups="dev_gym_management.gym_trainer"/>
+
+	<menuitem name="Configuration"
+              id="menu_gym_management_configuration"
+              parent="menu_gym_management"
+              sequence="50"
+			  groups="dev_gym_management.gym_trainer"/>
+</odoo>

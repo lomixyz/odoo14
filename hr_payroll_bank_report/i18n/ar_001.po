@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_bank_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210419\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 06:48+0000\n"
+"PO-Revision-Date: 2021-11-09 06:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model,name:hr_payroll_bank_report.model_res_bank
+msgid "Bank"
+msgstr "البنك"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model,name:hr_payroll_bank_report.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "الحسابات البنكية"
+
+#. module: hr_payroll_bank_report
+#: model:ir.ui.menu,name:hr_payroll_bank_report.menu_bank_excel_report
+msgid "Bank Excel Report"
+msgstr "تقرير إكسل للبنك"
+
+#. module: hr_payroll_bank_report
+#: model:ir.actions.act_window,name:hr_payroll_bank_report.action_bank_reporting_excel
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bank_report.view_bank_report_view_form
+msgid "Bank Report"
+msgstr "تقرير البنك"
+
+#. module: hr_payroll_bank_report
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bank_report.view_bank_report_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__create_date
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__display_name
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__display_name
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_bank__display_name
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_partner_bank__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_payroll_bank_report
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bank_report.view_bank_excel
+msgid "Download Your Bank Here"
+msgstr "قم بتنزيل البنك الخاص بك هنا"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__file_download
+msgid "Download bank"
+msgstr "تحميل البنك"
+
+#. module: hr_payroll_bank_report
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bank_report.view_bank_report_view_form
+msgid "Export"
+msgstr "يصدر"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__name
+msgid "File Name"
+msgstr "اسم الملف"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__id
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__id
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_bank__id
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_partner_bank__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel____last_update
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz____last_update
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_bank____last_update
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_partner_bank____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_excel__write_date
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__bank_check
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_bank__main_bank
+msgid "Main Bank"
+msgstr "البنك الرئيسي"
+
+#. module: hr_payroll_bank_report
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bank_report.view_bank_report_view_form
+msgid "Or"
+msgstr "أو"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_account_setup_bank_manual_config__payment_account
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_res_partner_bank__payment_account
+msgid "Payment Account"
+msgstr "حساب الدفع"
+
+#. module: hr_payroll_bank_report
+#: model:ir.model.fields,field_description:hr_payroll_bank_report.field_bank_report_wiz__batch_id
+msgid "Payslip Batch"
+msgstr "دفعة قسيمة الراتب"
+
+#. module: hr_payroll_bank_report
+#: code:addons/hr_payroll_bank_report/models/models.py:0
+#, python-format
+msgid "You can't have more than one Main Bank!"
+msgstr "لا يمكن أن يكون لديك أكثر من بنك رئيسي واحد!"
+
+#. module: hr_payroll_bank_report
+#: code:addons/hr_payroll_bank_report/models/models.py:0
+#, python-format
+msgid "You can't have more than one Payment Account!"
+msgstr "لا يمكن أن يكون لديك أكثر من حساب دفع واحد!"
+
+#. module: hr_payroll_bank_report
+#: code:addons/hr_payroll_bank_report/wizard/bank_report.py:0
+#, python-format
+msgid "bank report.xlsx"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model,name:hr_payroll_bank_report.model_bank_report_excel
+msgid "bank.report.excel"
+msgstr ""
+
+#. module: hr_payroll_bank_report
+#: model:ir.model,name:hr_payroll_bank_report.model_bank_report_wiz
+msgid "bank.report.wiz"
+msgstr ""

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <report
+            id="report_admission"
+            string="تقرير تفاصيل الاستقدام"
+            model="admission.management.report"
+            report_type="qweb-pdf"
+            name="admission_management.admission_report_template"
+            file="admission_management.admission_report_template"
+        />
+
+
+<template id="admission_report_template">
+    <style type="text/css">
+</style>
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="object">
+		    <t t-call="web.external_layout">
+            <style type="text/css"> 
+                            @font-face {
+                            font-family: 'VIP_Hakm_Bold_VIP_Hakm'; 
+                            src: local('VIP_Hakm_Bold_VIP_Hakm'), local('VIP_Hakm_Bold_VIP_Hakm'),
+                            url('/admission_management/static/fonts/VIP_Hakm_Bold_VIP_Hakm.ttf') format('truetype');
+                            } 
+                            *{
+                            font-family: VIP Hakm;
+                            }
+                        </style>
+            <div class="page">
+                <div class="header" >
+                                 <img t-if="object.company.logo" t-att-src="'data:image/png;base64,%s' % object.company.logo" style="width: 160px; hieght: 160px;"/>
+                </div>
+
+		        <div style="font-family: 'Droid Arabic Naskh', Ubuntu, sans-serif; font-size: 14px; color: rgb(34, 34, 34); background-color: #FFF;" class="page">
+
+                    <h2 align="center"> مكتب الاستقدام</h2>
+                    <h3 align="center"> Recruitment  office </h3> 
+                    <br/>
+					<h3 align="center"> تقرير تفاصيل الاستقدام </h3>
+					
+                    <br/>
+                    <table align="center" border="1" cellpadding="1" cellspacing="1"
+                                   class="table table-bordered" style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td ><span t-field="object.date_from"/></td>
+                                        <td style="width: 25%;">من تاريخ:</td>
+                                        <td  style="width: 25%;"><span t-field="object.report_type"/></td>
+                                        <td  style="width: 25%;">نوع التقرير:</td>
+                                    </tr>
+                                    <tr>
+                                        <td  rowspan="1"><span t-field="object.date_to"/></td>
+                                        <td  rowspan="1">الي تاريخ:</td>
+                                        <td><span t-field="object.customer_id.name"/></td>
+                                        <td >العميل:</td>
+                                    </tr>
+                                    <tr>
+                                        <td  rowspan="1"><span t-field="object.total_amount_contracts_with_vat"/></td>
+                                        <td  rowspan="1"> الاجمالي مع الضريبة:</td>
+                                        <td ><span t-field="object.total_amount_of_VAT"/></td>
+                                        <td >مبلغ الضريبة:</td>
+                                    </tr>
+                                    <tr>
+                                        <td ><span t-field="object.total_Paid"/></td>
+                                        <td >اجمالي المدفوع:</td>
+                                        <td ><span t-field="object.total_remain"/></td>
+                                        <td >اجمالي المتبقي:</td>
+                                    </tr>
+                                  
+
+                                </tbody>
+                            </table>
+
+                    <table class="table table-bordered" >
+                         <thead style="background-color: #FAEBD7;">
+                        <tr>
+
+                            <th  style="text-align: center;" scope="col">
+                                <div>العميل</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>رقم العقد </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>تكلفة العقد الاجماليه </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الضريبة </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>المدفوع </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>المتبقي </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الخصم</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الاضافات</div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div>العامل</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>حالة الاستقدام</div>
+                            </th>
+                        </tr>
+
+                    </thead>
+                            <t t-foreach="object.contract_ids" t-as="line">
+						        <tr align="center">
+                                    <td>
+								        <span t-esc="line.partner_id.name"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.contract_no"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_contract_with_vat"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.contract_vat_amount"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_paid"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_remain"/>
+							        </td>
+                                     <td>
+                                        <span t-esc="line.discount"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.additions"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.worker_inarabic"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.state"/>
+                                    </td>
+                                </tr>
+                            </t>
+                    </table>
+                </div>
+                </div>
+		    </t>
+		</t>
+	</t>
+</template>
+
+
+<report
+            id="rent_report_admission_id"
+            string="تقرير تفاصيل الايجار"
+            model="admission.management.report"
+            report_type="qweb-pdf"
+            name="admission_management.rent_report_template"
+            file="admission_management.rent_report_template"
+        />
+
+
+<template id="rent_report_template">
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="object">
+		    <t t-call="web.external_layout">
+            <style type="text/css"> 
+                            @font-face {
+                            font-family: 'VIP_Hakm_Bold_VIP_Hakm'; 
+                            src: local('VIP_Hakm_Bold_VIP_Hakm'), local('VIP_Hakm_Bold_VIP_Hakm'),
+                            url('/admission_management/static/fonts/VIP_Hakm_Bold_VIP_Hakm.ttf') format('truetype');
+                            } 
+                            *{
+                            font-family: VIP Hakm;
+                            }
+                        </style>
+            <div class="page">
+                <div class="header" >
+                                 <img t-if="object.company.logo" t-att-src="'data:image/png;base64,%s' % object.company.logo" style="width: 160px; hieght: 160px;"/>
+                </div>
+
+		        <div style="font-family: 'Droid Arabic Naskh', Ubuntu, sans-serif; font-size: 14px; color: rgb(34, 34, 34); background-color: #FFF;" class="page">
+
+                    <h2 align="center"> مكتب الاستقدام</h2>
+                    <h3 align="center"> Recruitment  office </h3>
+                    <br/>
+					<h3 align="center"> تقرير تفاصيل الايجار </h3>
+					
+                    <br/>
+                    <table align="center" border="1" cellpadding="1" cellspacing="1"
+                                   class="table table-bordered" style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td ><span t-field="object.date_from"/></td>
+                                        <td  style="width: 25%;">من تاريخ:</td>
+                                        <td  style="width: 25%;"><span t-field="object.report_type"/></td>
+                                        <td  style="width: 25%;">نوع التقرير:</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="1"><span t-field="object.date_to"/></td>
+                                        <td rowspan="1">الي تاريخ:</td>
+                                        <td ><span t-field="object.customer_id.name"/></td>
+                                        <td >العميل:</td>
+                                    </tr>
+                                    <tr>
+                                        <td  rowspan="1"><span t-field="object.total_amount_contracts_with_vat"/></td>
+                                        <td  rowspan="1"> الاجمالي مع الضريبة:</td>
+                                        <td ><span t-field="object.total_amount_of_VAT"/></td>
+                                        <td >مبلغ الضريبة:</td>
+                                    </tr>
+                                    <tr>
+                                        <td ><span t-field="object.total_Paid"/></td>
+                                        <td >اجمالي المدفوع:</td>
+                                        <td ><span t-field="object.total_remain"/></td>
+                                        <td>اجمالي المتبقي:</td>
+                                    </tr>
+                                  
+
+                                </tbody>
+                            </table>
+
+                    <table class="table table-bordered" >
+                         <thead style="background-color: #FAEBD7;">
+                        <tr>
+
+                            <th  style="text-align: center;" scope="col">
+                                <div>العميل</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>من تاريخ</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الي تاريخ</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>رقم العقد </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>تكلفة العقد الاجماليه </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الضريبة </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>المدفوع </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>المتبقي </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الخصم</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>الاضافات</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>العامل</div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>حالة الايجار</div>
+                            </th>
+                        </tr>
+
+                    </thead>
+                            <t t-foreach="object.rent_contract_ids" t-as="line">
+						        <tr align="center">
+                                    <td>
+								        <span t-esc="line.partner_id.name"/>
+							        </td>
+                                     <td>
+								        <span t-esc="line.date_from"/>
+							        </td>
+                                     <td>
+								        <span t-esc="line.date_to"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.contract_no"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_contract_with_vat"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.contract_vat_amount"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_paid"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.total_remain"/>
+							        </td>
+                                     <td>
+                                        <span t-esc="line.discount"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.additions"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.employee_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.state"/>
+                                    </td>
+                                </tr>
+                            </t>
+                    </table>
+                </div>
+                </div>
+		    </t>
+		</t>
+	</t>
+</template>
+
+
+
+<report
+            id="workers_report_admission_id"
+            string="تقرير تفاصيل العمالة"
+            model="admission.management.report"
+            report_type="qweb-pdf"
+            name="admission_management.workers_report_template"
+            file="admission_management.workers_report_template"
+        />
+
+
+<template id="workers_report_template">
+    <style type="text/css">
+</style>
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="object">
+		    <t t-call="web.external_layout">
+            <div class="page">
+                <div class="header" >
+                                 <img t-if="object.company.logo" t-att-src="'data:image/png;base64,%s' % object.company.logo" style="width: 160px; hieght: 160px;"/>
+                </div>
+
+		        <div style="font-family: 'Droid Arabic Naskh', Ubuntu, sans-serif; font-size: 14px; color: rgb(34, 34, 34); background-color: #FFF;" class="page">
+
+                    <h2 align="center"> مكتب الاستقدام</h2>
+                    <h3 align="center"> Recruitment  office </h3>  
+                    <br/>
+					<h3 align="center"> تقرير تفاصيل العمالة </h3>
+					
+                    <br/>
+                    
+                    <table class="table table-bordered" >
+                         <thead style="background-color: #FAEBD7;">
+                        <tr>
+
+                            <th style="text-align: center;" scope="col">
+                                <div>العامل</div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div> الجنسية- الدولة</div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div>الإقامة </div>
+                            </th>
+                            <th  style="text-align: center;" scope="col">
+                                <div>رقم الجواز </div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div>النوع </div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div>تاريخ الميلاد </div>
+                            </th>
+                            <th style="text-align: center;" scope="col">
+                                <div>حاله العامل</div>
+                            </th>
+                        </tr>
+
+                    </thead>
+                            <t t-foreach="object.workers_ids" t-as="line">
+						        <tr align="center">
+                                    <td>
+								        <span t-esc="line.employee_id"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.employee_nationality"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.identification_id"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.passport_id"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.gender"/>
+							        </td>
+                                    <td>
+								        <span t-esc="line.birthday"/>
+							        </td>
+                                     <td>
+                                        <span t-esc="line.status"/>
+                                    </td>
+                                
+                                </tr>
+                            </t>
+                    </table>
+                </div>
+                </div>
+		    </t>
+		</t>
+	</t>
+</template>
+
+</odoo>

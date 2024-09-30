@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+    <template id="member_card_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-12">
+                            <!--front-->
+                            <div t-attf-style="width:300px;height:500px;border:1px solid black;float:left;margin-left:10px;page-break-inside: avoid;z-index:-10;margin-top:10px;">
+                                <!-- Company Logo -->
+                                <div t-attf-style="opacity:1;position:absolute;margin-top:15px;display: block; height: 25px; text-align:center; line-height:25px;width:300px">
+                                    <img t-att-src="'data:image/png;base64,%s'  % to_text(o.company_id.logo)" t-attf-style="width:150px;"/>
+                                </div>
+
+                                <!--Member Photo-->
+                                <div t-attf-style="opacity:1;position:absolute;margin-top:90px;display: block; height: 25px; text-align:center; line-height:25px;width:300px">
+                                    <img t-att-src="'data:image/png;base64,%s'  % to_text(o.photo)" t-attf-style="width:100px;border-radius:75%"/>
+                                </div>
+
+                                <!--Member Name-->
+                                <div t-attf-style="opacity:1;position:absolute;font-size:20px;margin-top:200px;display: block; height: 25px;line-height:25px;width:300px;text-align:center;">
+                                    <b>
+                                        <span t-esc="o.name"/>
+                                    </b>
+                                </div>
+
+                                <!--Member Details-->
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:20px;margin-top:250px;display: block; height: 25px;line-height:25px;width:300px">
+                                    Member ID
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:110px;margin-top:250px;display: block; height: 25px;line-height:25px;width:300px">
+                                    :
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:125px;margin-top:250px;display: block; height: 25px;line-height:25px;width:300px">
+                                    <span t-esc="o.member_sequence"/>
+                                </div>
+
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:20px;margin-top:280px;display: block; height: 25px;line-height:25px;width:300px">
+                                    Gender
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:110px;margin-top:280px;display: block; height: 25px;line-height:25px;width:300px">
+                                    :
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:125px;margin-top:280px;display: block; height: 25px;line-height:25px;width:300px">
+                                    <span t-if="o.gender=='male'">
+                                        Male
+                                    </span>
+                                    <span t-if="o.gender=='female'">
+                                        Female
+                                    </span>
+                                    <span t-if="o.gender=='other'">
+                                        Other
+                                    </span>
+                                </div>
+
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:20px;margin-top:310px;display: block; height: 25px;line-height:25px;width:300px">
+                                    Membership
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:110px;margin-top:310px;display: block; height: 25px;line-height:25px;width:300px">
+                                    :
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:125px;margin-top:310px;display: block; height: 25px;line-height:25px;width:300px">
+                                    <span t-esc="o.membership_id.name"/>
+                                </div>
+
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:20px;margin-top:340px;display: block; height: 25px;line-height:25px;width:300px">
+                                    Trainer
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:110px;margin-top:340px;display: block; height: 25px;line-height:25px;width:300px">
+                                    :
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:125px;margin-top:340px;display: block; height: 25px;line-height:25px;width:300px">
+                                    <span t-esc="o.trainer_id.name"/>
+                                </div>
+
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:20px;margin-top:370px;display: block; height: 25px;line-height:25px;width:300px">
+                                    Mobile
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:110px;margin-top:370px;display: block; height: 25px;line-height:25px;width:300px">
+                                    :
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:15px;margin-left:125px;margin-top:370px;display: block; height: 25px;line-height:25px;width:300px">
+                                    <span t-esc="o.mobile"/>
+                                </div>
+                                <!--Barcode-->
+                                <div t-attf-style="opacity:1;position:absolute;margin-top:425px;display: block; height: 25px;line-height:25px;width:300px;text-align:center;">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.member_sequence, 300, 100)"
+                                         t-attf-style="width:270px;height:50px"/>
+                                    <br/>
+                                </div>
+                            </div>
+
+                            <!--back-->
+                            <div t-attf-style="width:300px;height:500px;border:1px solid black;float:left;margin-left:10px;page-break-inside: avoid;z-index:-10;margin-top:10px;">
+                                <!-- Company Logo -->
+                                <div t-attf-style="opacity:1;position:absolute;margin-top:15px;display: block; height: 25px; text-align:center; line-height:25px;width:300px">
+                                    <img t-att-src="'data:image/png;base64,%s'  % to_text(o.company_id.logo)" t-attf-style="width:150px;"/>
+                                </div>
+
+                                <div t-attf-style="opacity:1;position:absolute;font-size:20px;margin-top:100px;display: block; height: 25px;line-height:25px;width:300px;text-align:center;">
+                                    <b>Member Address</b>
+                                </div>
+                                <div t-attf-style="opacity:1;position:absolute;font-size:16px;margin-top:130px;display: block; height: 25px;line-height:25px;width:300px;text-align:center;">
+                                    <span t-if="o.street">
+                                        <span t-field="o.street"/>
+                                        <br/>
+                                    </span>
+                                    <span t-if="o.street2">
+                                        <span t-field="o.street2"/>
+                                        <br/>
+                                    </span>
+                                    <span t-if="o.city">
+                                        <span t-field="o.city"/>
+                                        <span t-if="o.zip">- <span t-esc="o.zip"/></span>
+                                        <br/>
+                                    </span>
+                                    <span t-if="o.state_id">
+                                        <span t-field="o.state_id.name"/>
+                                        <br/>
+                                    </span>
+                                    <span t-if="o.country_id">
+                                        <span t-field="o.country_id.name"/>
+                                        <br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

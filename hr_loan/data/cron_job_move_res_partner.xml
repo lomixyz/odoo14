@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="move_partner_to_payment" model="ir.cron">
+			<field name="name">Loan: Backward Compatibility - Copy Employee.User.Partner to Payment and its JE</field>
+			<field name="priority">1000</field>
+			<field name="doall">False</field>
+			<field name="active">False</field>
+			<field name="numbercall">0</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="model_id" ref="model_hr_loan" />
+			<field name="state">code</field>
+			<field name="code">model.move_res_partner_to_payment()</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,67 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_trainer_skill,Trainer Skill,model_trainer_skill,dev_gym_management.gym_member,1,1,1,0
+delete_trainer_skill,Trainer Skill,model_trainer_skill,dev_gym_management.gym_manager,1,1,1,1
+
+access_body_part,Body Part,model_body_part,dev_gym_management.gym_member,1,1,1,0
+delete_body_part,Body Part,model_body_part,dev_gym_management.gym_manager,1,1,1,1
+
+access_gym_equipment,Gym Equipment,model_gym_equipment,dev_gym_management.gym_member,1,1,1,0
+delete_gym_equipment,Gym Equipment,model_gym_equipment,dev_gym_management.gym_manager,1,1,1,1
+
+access_workout_day,Workout Day,model_workout_day,dev_gym_management.gym_member,1,1,1,0
+delete_workout_day,Workout Day,model_workout_day,dev_gym_management.gym_manager,1,1,1,1
+
+access_gym_trainer,Gym Trainer,model_gym_trainer,dev_gym_management.gym_member,1,1,1,0
+delete_gym_trainer,Gym Trainer,model_gym_trainer,dev_gym_management.gym_manager,1,1,1,1
+
+access_gym_member,Gym Member,model_gym_member,dev_gym_management.gym_member,1,1,1,0
+delete_gym_member,Gym Member,model_gym_member,dev_gym_management.gym_manager,1,1,1,1
+
+access_gym_exercise,Gym Exercise,model_gym_exercise,dev_gym_management.gym_member,1,1,1,0
+delete_gym_exercise,Gym Exercise,model_gym_exercise,dev_gym_management.gym_manager,1,1,1,1
+
+access_workout_plan,Workout Plan,model_workout_plan,dev_gym_management.gym_member,1,1,1,0
+delete_workout_plan,Workout Plan,model_workout_plan,dev_gym_management.gym_manager,1,1,1,1
+
+access_workout_plan_line,Workout Plan Line,model_workout_plan_line,dev_gym_management.gym_member,1,1,1,0
+delete_workout_plan_line,Workout Plan Line,model_workout_plan_line,dev_gym_management.gym_manager,1,1,1,1
+
+access_diet_food,Diet Food,model_diet_food,dev_gym_management.gym_member,1,1,1,0
+delete_diet_food,Diet Food,model_diet_food,dev_gym_management.gym_manager,1,1,1,1
+
+access_consume_at,Consume At,model_consume_at,dev_gym_management.gym_member,1,1,1,0
+delete_consume_at,Consume At,model_consume_at,dev_gym_management.gym_manager,1,1,1,1
+
+access_diet_plan,Diet Plan,model_diet_plan,dev_gym_management.gym_member,1,1,1,0
+delete_diet_plan,Diet Plan,model_diet_plan,dev_gym_management.gym_manager,1,1,1,1
+
+access_diet_plan_line,Diet Plan Line,model_diet_plan_line,dev_gym_management.gym_member,1,1,1,0
+delete_diet_plan_line,Diet Plan Line,model_diet_plan_line,dev_gym_management.gym_manager,1,1,1,1
+
+access_member_diet_details,Member Diet Details,model_member_diet_detail,dev_gym_management.gym_member,1,1,1,0
+delete_member_diet_details,Member Diet Details,model_member_diet_detail,dev_gym_management.gym_manager,1,1,1,1
+
+access_member_workout_details,Member Workout Details,model_member_workout_detail,dev_gym_management.gym_member,1,1,1,0
+delete_member_workout_details,Member Workout Details,model_member_workout_detail,dev_gym_management.gym_manager,1,1,1,1
+
+access_gym_membership,Gym Membership,model_gym_membership,dev_gym_management.gym_member,1,1,1,0
+delete_gym_membership,Gym Membership,model_gym_membership,dev_gym_management.gym_manager,1,1,1,1
+
+access_delete_activity,Gym Activity,model_gym_activity,dev_gym_management.gym_member,1,1,1,1
+
+access_delete_member_attendance,Member Attendance,model_member_attendance,dev_gym_management.gym_member,1,1,1,1
+
+access_delete_trainer_attendance,Trainer Attendance,model_trainer_attendance,dev_gym_management.gym_trainer,1,1,1,1
+
+access_delete_special_session,Special Session,model_special_session,dev_gym_management.gym_trainer,1,1,1,1
+
+access_delete_member_analysis,Member Analysis,model_member_analysis,dev_gym_management.gym_trainer,1,1,1,1
+
+access_assign_workout_member,assign_workout_member,model_assign_workout_member,base.group_user,1,1,1,1
+access_assign_workout,assign_workout,model_assign_workout,base.group_user,1,1,1,1
+access_session_cancel,session_cancel,model_session_cancel,base.group_user,1,1,1,1
+access_attendance_report_window,attendance_report_window,model_attendance_report_window,base.group_user,1,1,1,1
+access_assign_diet_member,diet_member,model_assign_diet_member,base.group_user,1,1,1,1
+access_assign_diet,assign_diet,model_assign_diet,base.group_user,1,1,1,1
+access_activity_report_window,activity_report_window,model_activity_report_window,base.group_user,1,1,1,1

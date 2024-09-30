@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="draft_validate_order_id" model="ir.ui.view">
+            <field name="model">return.invoice.qty</field>
+            <field name="arch" type="xml">
+               <form string="Reverse Transfer">
+                    <group>
+                        <group>
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="bottom" create="0">
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="price_unit"/>
+                                    <field name="quantity"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="create_returns" string="Return" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="draft_validate_wizard_id" model="ir.actions.act_window">
+            <field name="name">Reverse Transfer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">return.invoice.qty</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="draft_validate_order_id"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

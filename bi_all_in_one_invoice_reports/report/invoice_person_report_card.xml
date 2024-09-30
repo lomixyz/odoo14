@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice_person_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure" />
+                    <br></br>
+                    <h1 style="width:100%; text-align:center;">
+                        <strong>Invoice Report By Sale Person</strong>
+                    </h1>
+                    <div class="column" style="text-align:center;">
+                        <h5>
+                            <strong>Companies :
+                                <t t-esc="doc_ids.company_record()"/></strong>
+                        </h5>
+                    </div>
+
+                    <div style="width:100%;" class="row">
+                        <div style="width:50%; text-align:left;" class="column">
+                            <h5>
+                                <strong>Start Date :
+                                    <t t-esc="doc_ids.start_date" /></strong><br/>
+                                <strong>Status :<t t-esc="doc_ids.status_record()" /></strong>
+                            </h5>
+                        </div>
+                        <div style="width:50%; text-align:right;" class="column">
+                            <h5>
+                                <strong>End Date :
+                                    <t t-esc="doc_ids.end_date" /></strong>
+                            </h5>
+                        </div>
+                    </div>
+                    <br />
+                    <t t-as="person" t-foreach="data['invoice_details'].keys()">
+                        <h5 style="text-align: center; margin-bottom:5px;">
+                            <strong>
+                                Sale Person :
+                                <t t-esc="person" />
+                            </strong>
+                        </h5>
+                        <table style="width:90%; margin-left:auto; margin-right: auto;"
+                            class="table table-bordered">
+                            <tr>
+                                <th style="text-align:center;">
+                                    <b>Order Number</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Order Date</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Customer</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Total</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Amount Invoiced</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Amount Paid</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Amount Due</b>
+                                </th>
+                            </tr>
+                            <t t-as="invoice" t-foreach="invoice_details[person]['lines']">
+                                <tr>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[0]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[1]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[2]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[3]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[4]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[6]" />
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="invoice[5]" />
+                                    </td>
+                                </tr>
+                            </t>
+                            <td />
+                            <td />
+                            <td style="text-align:center;">
+                                <span>
+                                    <strong>Total</strong>
+                                </span>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% invoice_details[person]['total'][0]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% invoice_details[person]['total'][1]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% invoice_details[person]['total'][3]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% invoice_details[person]['total'][2]" />
+                            </td>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+

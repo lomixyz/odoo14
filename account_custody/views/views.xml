@@ -1,0 +1,156 @@
+<odoo>
+    <data>
+        <record id="action_custody_payment" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">Register Payment</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_account_custody"/>
+            <field name="code">action = record.open_payment_form()</field>
+        </record>
+
+        <record id="custody_view_form" model="ir.ui.view">
+            <field name="name">account.custody.form</field>
+            <field name="model">account.custody</field>
+            <field name="arch" type="xml">
+                <form string="Custody">
+                    <header>
+                        <button name="action_submit" string="Submit" type="object" states="draft" class="oe_highlight"/>
+                        <button name="action_post" string="Register Payment" type="object" states="submit"
+                                class="oe_highlight" groups="account_custody.custody_first_posting"/>
+                        <button name="action_wait" type="object" string="Wait Clearance" states="posted"
+                                groups="account_custody.custody_first_posting"/>
+                        <button name="%(custody_add_line_wizard_action)d" type="action" states="w_clear"
+                                string="Return Amount" context="{'return_amount': True}"/>
+                        <button name="action_last_approve" string="Approval" type="object" states="w_clear"
+                                class="oe_highlight" groups="account_custody.last_approve"/>
+                        <button name="action_line_post" type="object" string="Custody Line Post" states="approve"
+                                groups="account_custody.custody_line_second_posting"/>
+                        <button name="action_close" type="object" string="Clear" states="post2"
+                                groups="account_custody.custody_line_second_posting"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="General">
+                                <field name="description"/>
+                                <field name="amount"/>
+                                <field name="date"/>
+                                <field name="employee_id"/>
+                            </group>
+
+                            <group string="Accounting"
+                                   groups="account_custody.custody_first_posting,account_custody.custody_line_second_posting,account_custody.last_approve">
+                                <field name="journal_id"/>
+                                <field name="account_id" options="{'no_create': True, 'no_open': True}"
+                                       context="{'active_test': False}"
+                                       domain="[('internal_type','=','receivable'),('deprecated', '=', False)]"/>
+                                <field name="pay_date"/>
+                                <field name="analytic_account_id"/>
+                                <field name="analytic_tag_ids"/>
+                                <field name="cus_journal_id"/>
+                                <field name="move_id"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids" context="{'default_custody_id': id}"/>
+                            </page>
+
+                        </notebook>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="activity_ids" widget="mail_activity"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="custody_view_tree" model="ir.ui.view">
+            <field name="name">account.custody.tree</field>
+            <field name="model">account.custody</field>
+            <field name="arch" type="xml">
+                <tree string="Custody">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                    <field name="amount" sum="Total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="custody_line_view_form" model="ir.ui.view">
+            <field name="name">account.custody.line.form</field>
+            <field name="model">account.custody.line</field>
+            <field name="arch" type="xml">
+                <form string="Custody Line">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="name"/>
+                                <field name="amount"/>
+                                <field name="date"/>
+                                <field name="attachment_id" widget="many2many_binary" colspan="2" string="Upload Files"
+                                       nolabel="1"/>
+                                <field name="custody_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="account_id" domain="[('deprecated', '=', False)]"
+                                       groups="account_custody.custody_line_second_posting"/>
+                                <field name="analytic_account_id" groups="account_custody.custody_line_second_posting"/>
+                                <field name="move_id" groups="account_custody.custody_line_second_posting"/>
+                                <field name="currency_id" groups="account_custody.custody_line_second_posting"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="custody_line_view_tree" model="ir.ui.view">
+            <field name="name">account.custody.line.tree</field>
+            <field name="model">account.custody.line</field>
+            <field name="arch" type="xml">
+                <tree string="Custody Line">
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="amount" sum="Total Amount"/>
+                    <field name="date"/>
+                    <field name="attachment_id" widget="many2many_binary" colspan="2" string="Upload Files"
+                           nolabel="1"/>
+                    <field name="account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]"
+                           groups="account_custody.custody_line_second_posting"/>
+                    <field name="analytic_account_id" groups="account_custody.custody_line_second_posting"/>
+                    <field name="move_id" groups="account_custody.custody_line_second_posting"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="custody_action" model="ir.actions.act_window">
+            <field name="name">Custodies</field>
+            <field name="res_model">account.custody</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="custody_view_tree"/>
+        </record>
+        <menuitem id="custody_root_menu" name="Custodies"
+                  web_icon="account_custody,static/description/icon.png"/>
+        <menuitem id="custody_menu" name="Custodies" action="custody_action" parent="custody_root_menu" sequence="10"/>
+        <menuitem id="custody_report" name="Report" parent="custody_root_menu"
+                  groups="account_custody.custody_line_second_posting,account_custody.custody_first_posting"
+                  sequence="10"/>
+
+    </data>
+</odoo>

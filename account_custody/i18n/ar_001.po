@@ -1,0 +1,733 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-12 10:54+0000\n"
+"PO-Revision-Date: 2021-12-12 10:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Account</strong>"
+msgstr "<strong>الحساب</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Amount</strong>"
+msgstr "<strong>الحساب</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Create By</strong>"
+msgstr "<strong>انشئ بواسطة</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Date</strong>"
+msgstr "<strong>تاريخ</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Description</strong>"
+msgstr "<strong>الوصف</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "<strong>Employee Name :</strong>"
+msgstr "<strong>اسم الموظف :</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Employee</strong>"
+msgstr "<strong>الموظف</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "<strong>Journal</strong>"
+msgstr "<strong>اليومية</strong>"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "<strong>Total</strong>"
+msgstr "<strong>المجموع</strong>"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__account_id
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "Account"
+msgstr "الحساب"
+
+#. module: account_custody
+#: model:ir.module.category,name:account_custody.custody_security_category_id
+msgid "Account Custody"
+msgstr "العـــهد"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Accounting"
+msgstr "الحسابات"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__move_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__move_id
+msgid "Accounting Entry"
+msgstr "القيود المحاسبية"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__custom_custody_report_wizard__type__all
+msgid "All Employee"
+msgstr "كل الموظفين"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__amount
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__amount
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__amount
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Amount"
+msgstr "القيمة"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "Amount Can't be 0"
+msgstr "القيمة لا يمكن ان تكون صفر"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__analytic_account_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "الوسوم التحليلية"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Approval"
+msgstr "الموافقة"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__approve
+msgid "Approve"
+msgstr "يعتمد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__balance
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__can_reset
+msgid "Can Reset"
+msgstr "يمكن اعادة الضبط"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_wizard_form
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_report_wizard
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "clear"
+msgstr "تصفية"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__cleared
+msgid "Cleared"
+msgstr "تمت تصفيتها"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__company_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__create_uid
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__create_uid
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__create_uid
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__create_date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__create_date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__create_date
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__currency_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__currency_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: account_custody
+#: model:ir.actions.act_window,name:account_custody.custody_action
+#: model:ir.ui.menu,name:account_custody.custody_menu
+#: model:ir.ui.menu,name:account_custody.custody_root_menu
+msgid "Custodies"
+msgstr "العـــهد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__custody_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__custody_id
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_tree
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Custody"
+msgstr "عهدة
+
+#. module: account_custody
+#: model:ir.actions.report,name:account_custody.custody_report_id
+msgid "Custody Detail"
+msgstr "تفاصيل العهدة"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "Custody Detail Report"
+msgstr "تقرير تفصيل العهدة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__cus_journal_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__cus_journal_id
+msgid "Custody Journal"
+msgstr "يومية العهدة"
+
+#. module: account_custody
+#: model:res.groups,name:account_custody.last_approve
+msgid "Custody Last Approve"
+msgstr "الموافقة الأخيرة للعهدة"
+
+#. module: account_custody
+#: model:ir.actions.act_window,name:account_custody.custody_add_line_wizard_action
+#: model:ir.model,name:account_custody.model_account_custody_line
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_view_tree
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_wizard_form
+msgid "Custody Line"
+msgstr "بنود العـــهد"
+
+#. module: account_custody
+#: model:res.groups,name:account_custody.custody_line_second_posting
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Custody Line Post"
+msgstr "ترحيل بنود العهدة"
+
+#. module: account_custody
+#: model:ir.model,name:account_custody.model_account_custody_line_wizard
+msgid "Custody Line Wizard"
+msgstr "بند العهدة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__line_ids
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "Custody Lines"
+msgstr "بنود العـــهدة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__name
+msgid "Custody Reference"
+msgstr "مرجع العهدة"
+
+#. module: account_custody
+#: model:ir.actions.act_window,name:account_custody.act_wizard_custody
+#: model:ir.actions.report,name:account_custody.action_custom_report_custody
+#: model:ir.ui.menu,name:account_custody.menu_report_wizard
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_report_wizard
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Custody Report"
+msgstr "تقرير العهد"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "Custody is not fully paid!"
+msgstr "العهدة لم تدفع بالكامل!"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__date
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__account_id
+msgid "Debit Account (Expense)"
+msgstr "حساب المدين"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__description
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__name
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__name
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Description"
+msgstr "الوصف"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__display_name
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__display_name
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__display_name
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__display_name
+#: model:ir.model.fields,field_description:account_custody.field_report_account_custody_report_custody_view__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__draft
+msgid "Draft"
+msgstr "الابتدائية"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__employee_id
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__employee_id
+#: model:ir.model.fields.selection,name:account_custody.selection__custom_custody_report_wizard__type__specific
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__date_end
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "Entry"
+msgstr "القــيد"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Entry Number"
+msgstr "رقم القــيد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__attachment_id
+msgid "Files"
+msgstr "الملفات"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعين (القنوات)"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "General"
+msgstr "عام"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_report_wizard
+msgid "Get Report"
+msgstr "احصل على تقرير"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__id
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__id
+#: model:ir.model.fields,field_description:account_custody.field_report_account_custody_report_custody_view__id
+msgid "ID"
+msgstr "رقم تعريفي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "ايقونة للإشارة الى نشاط مستثنى"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_needaction
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_has_error
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__journal_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__journal_id
+msgid "Journal"
+msgstr "يومــية"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody____last_update
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line____last_update
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard____last_update
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard____last_update
+#: model:ir.model.fields,field_description:account_custody.field_report_account_custody_report_custody_view____last_update
+msgid "Last Modified on"
+msgstr "اخر تعديل على"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__write_uid
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__write_uid
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__write_uid
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__write_date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__write_date
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__write_date
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل على"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Lines"
+msgstr "البنود"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: account_custody
+#: model:res.groups,name:account_custody.user_dm_validate
+msgid "Manager"
+msgstr "المدير"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Name"
+msgstr "الإسم"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: account_custody
+#: model:res.groups,name:account_custody.group_account_custody_user
+msgid "Officer"
+msgstr "موظف العهد"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__pay_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "Please set Custody's account!"
+msgstr "من فضلك ادخل حساب العهدة!"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "Please set line's account!"
+msgstr "من فضلك ادخل الحساب"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__post2
+msgid "Post"
+msgstr "ترحيل"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__product_id
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line_wizard__product_id
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_detail_report
+msgid "Product"
+msgstr "بند العهدة"
+
+#. module: account_custody
+#: model:ir.actions.server,name:account_custody.action_custody_payment
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__posted
+#: model:res.groups,name:account_custody.custody_first_posting
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Register Payment"
+msgstr "تسجيل الدفعية"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.report_custody_view
+msgid "Remaining Amount"
+msgstr "القيمة المتبقية"
+
+#. module: account_custody
+#: model:ir.ui.menu,name:account_custody.custody_report
+msgid "Report"
+msgstr "تقرير"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__activity_user_id
+msgid "Responsible User"
+msgstr "المسئول"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Return Amount"
+msgstr "المبلغ المرتجع"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "Sorry, you are not allowed to process this document."
+msgstr "عذرا ، لا يسمح لك لمعالجة هذا المستند."
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__date_start
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__state
+#: model:ir.model.fields,field_description:account_custody.field_account_custody_line__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_wizard_form
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Submit"
+msgstr "ارسال"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__submit
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "The Employee  '  {}  '  Does not have a Private Address"
+msgstr ""
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "The Journal \"%s\" has not properly configured the Credit Account!"
+msgstr "اليومية \"%s\" لم يتم انشاء الحساب الدائن بشكل صحيح"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_tree
+msgid "Total"
+msgstr "المجموع"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_view_tree
+msgid "Total Amount"
+msgstr "الاجمالي"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_custom_custody_report_wizard__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الإستثناء المسجل"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_view_tree
+msgid "Upload Files"
+msgstr "تحميل الملفات"
+
+#. module: account_custody
+#: model:ir.model.fields.selection,name:account_custody.selection__account_custody__state__w_clear
+msgid "Wait Clear"
+msgstr "في انتظار التصفية"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_view_form
+msgid "Wait Clearance"
+msgstr "انتظر التصفية"
+
+#. module: account_custody
+#: model:ir.model.fields,field_description:account_custody.field_account_custody__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: account_custody
+#: model:ir.model.fields,help:account_custody.field_account_custody__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ تواصل الموقع الإلكتروني"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "You can not delete an custody line if not in draft state "
+msgstr "لا تستطيع مسح بنود العهدة اذا كانت حالتها مسودة"
+
+#. module: account_custody
+#: code:addons/account_custody/models/models.py:0
+#, python-format
+msgid "You can not delete an custody line if the custody line is in approved"
+msgstr "لا تستطيع مسح بنود العهدة اذا كانت حالتها تمت الموافقة عليها"
+
+#. module: account_custody
+#: model:ir.model,name:account_custody.model_account_custody
+msgid "account.custody"
+msgstr "العهد"
+
+#. module: account_custody
+#: model:ir.model,name:account_custody.model_custom_custody_report_wizard
+msgid "company Report"
+msgstr "تقرير الشركة"
+
+#. module: account_custody
+#: model_terms:ir.ui.view,arch_db:account_custody.custody_line_wizard_form
+msgid "or"
+msgstr "أو"
+
+#. module: account_custody
+#: model:ir.model,name:account_custody.model_report_account_custody_report_custody_view
+msgid "report.account_custody.report_custody_view"
+msgstr ""

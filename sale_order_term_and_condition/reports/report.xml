@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_contract_internal_layout">
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+        </template>
+
+        <template id="report_contract">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-set="lang" t-value="'en_US'"/>
+                    <t t-set="o" t-value="doc.with_context(lang=lang)" />
+                    <t t-if="user_lang == 'en_US'">
+                        <div class="header" t-att-style="report_header_style" style="direction: ltr">
+                            <div class="o_boxed_header" style="direction: ltr;margin-top:10px;padding-top:10px;">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="40%">
+                                            <div name="company_address" style="vertical-align:top;">
+                                                <span class="company_address" t-field="doc.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                                                <span t-if="doc.company_id.vat" class="mt16">
+                                                    <t t-esc="'Tax ID'"/>
+:                                                    <span t-field="doc.company_id.vat"/>
+                                                </span>
+                                            </div>
+                                        </td>
+
+                                        <td width="20%" style="vertical-align:top;">
+                                            <span t-field="doc.company_id.logo" t-options='{"widget": "image"}' />
+                                        </td>
+
+                                        <td width="40%" style="vertical-align:top;">
+                                            <t t-set="ar_o" t-value="doc.with_context(lang='ar_AA')" />
+                                            <div name="company_address" class="text-right">
+                                                <span class="company_address" t-field="ar_o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                                                <span t-if="doc.company_id.vat" class="mt16">
+                                                    <t t-esc="'الرقم الضريبي'"/>
+:                                                    <span t-field="doc.company_id.vat"/>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="header" t-att-style="report_header_style" style="direction: rtl;">
+                            <div class="o_boxed_header" style="margin-top:10px;padding-top:10px;">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="40%">
+                                            <t t-set="ar_o" t-value="doc.with_context(lang='ar_AA')" />
+                                            <div name="company_address" style="vertical-align:top;">
+                                                <span class="company_address" t-field="ar_o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                                                <span t-if="doc.company_id.vat" class="mt16">
+                                                    <t t-esc="'الرقم الضريبي'"/>
+:                                                    <span t-field="doc.company_id.vat"/>
+                                                </span>
+                                            </div>
+                                        </td>
+
+                                        <td width="20%" style="vertical-align:top;">
+                                            <span t-field="doc.company_id.logo" t-options='{"widget": "image"}' />
+                                        </td>
+                                        <td width="40%" style="vertical-align:top;">
+                                            <div name="company_address" style="text-align:left;">
+                                                <span class="company_address" t-field="doc.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                                                <span t-if="doc.company_id.vat" class="mt16">
+                                                    <t t-esc="'Tax ID'"/>
+:                                                    <span t-field="doc.company_id.vat"/>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-call="sale_order_term_and_condition.report_contract_internal_layout" style="margin-top:0px;padding-top:0px;display:inline;">
+                        <div class="page" style="margin-top:0px;padding-top:0px;">
+                            <div>
+                                <h6>
+                                    <center>
+                                        <strong>عقد الحجز</strong>
+                                    </center>
+                                </h6>
+                            </div>
+                            <div>
+                                <h6>
+                                    <center>
+                                        <strong>
+                                            <span t-field="doc.name"></span>
+                                            <span>رقم</span>
+                                        </strong>
+                                    </center>
+                                </h6>
+                            </div>
+                            <br/>
+                            <div >
+
+                                <center>
+                                    <span style="direction: rtl;">تم إبرام هذا العقد بين </span>
+                                </center>
+                                <br/>
+                            </div>
+                            <table width="100%" class="table table-sm table-bordered" style="direction: rtl;table-layout: fixed; width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>الطرف اﻷول</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.company_id.partner_id.name"></span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>عنوان الشركة</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:center; word-wrap: break-word">
+                                            <b t-field="doc.company_id.partner_id.street"></b> -
+                                            <b t-field="doc.company_id.partner_id.street2"></b> - 
+                                            <b t-field="doc.company_id.partner_id.city"></b> -
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>رقم هاتف الشركة</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.company_id.partner_id.phone"></span>
+                                            -<span t-field="doc.company_id.partner_id.mobile"></span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>سجل المؤسسة</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.company_id.company_registry"></span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>الطرف الثاني</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.partner_id.name"/>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>عنوان العميل</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                           <b t-field="doc.partner_id.street"></b> -
+                                            <b t-field="doc.partner_id.street2"></b> - 
+                                            <b t-field="doc.partner_id.city"></b> -
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>رقم هاتف العميل</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.partner_id.phone"></span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span>رقم جوال العميل</span>
+                                        </td>
+                                        <td style="width: 25%; text-align:right;">
+                                            <span t-field="doc.partner_id.mobile"></span>
+                                        </td>
+                                    </tr>
+                                    <!-- div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="city" placeholder="City" class="o_address_city" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                            </div> -->
+                                </tbody>
+                            </table>
+
+                            <br/>
+                            <div style="text-align:right; direction: rtl;">
+                                وافق الطرفان علي إقامة حفل زواج في القاعات الموضحة فى (<span t-field="doc.name"></span>),
+                                وذلك يوم
+                                <span t-field="doc.date_day"/>
+                                <span t-field="doc.date_new"/>
+
+
+                                الموافق
+                                <span t-field="doc.hijiri_date"/>
+                                بمبلغ قدره
+                                <span t-if="doc.currency_id" t-esc="doc.currency_id.amount_to_text(doc.amount_total)"/>
+                                ,
+                                <span t-field="doc.amount_total"/>
+
+                            </div>
+                            <div>
+                                <br/>
+                                <br/>
+
+                                <p>
+                                    <strong>
+                                        <center>الشروط والاحكام</center>
+                                    </strong>
+                                    <strong style="direction: rtl;">
+                                        <center t-field="doc.notes"/>
+                                    </strong>
+                                </p>
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <span>توقيع الطرف الأول</span>
+                                        <br/>
+                                        <strong>
+                                            <span t-field="doc.company_id.partner_id.name"></span>
+                                        </strong>
+                                        <br/>
+                                        <span>............................</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span>الختم</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span>توقيع الطرف الثانى</span>
+                                        <br/>
+                                        <strong>
+                                            <span t-field="doc.partner_id.name"/>
+                                        </strong>
+                                        <br/>
+                                        <span>............................</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report id="report_sale_contract" model="sale.order" string="Contract Report" report_type="qweb-pdf" name="sale_order_term_and_condition.report_contract" file="sale_order_term_and_condition.report_contract"/>
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<data>
+
+		<record id="invoice_day_book_report_form_view" model="ir.ui.view">
+			<field name="name">invoice.day.book.report.view</field>
+			<field name="model">invoice.day.book.report</field>
+			<field name="arch" type="xml">
+				<form string="Invoice Day Book Report">
+					<group col='4'>
+						<field name="start_date" class="oe_inline" />
+						<field name="end_date" class="oe_inline"/>
+					</group>
+					<footer>
+						<button string="Print PDF" name="invoice_day_book_pdf_report" type="object" class="oe_highlight"/>
+						<button string="Print XLS" name="invoice_day_book_xls_report" type="object" class="oe_highlight"/>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+			   </form>
+			</field>
+		</record>
+
+		<record id="invoice_book_day_report_form_action" model="ir.actions.act_window">
+			<field name="name">Invoice Day Book Report</field>
+			<field name="res_model">invoice.day.book.report</field>
+			<field name="binding_view_types">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="invoice_book_day_report_form_action" name="Invoice Day Book Report" id="invoice_day_book_detail"
+        parent="my_account_new_menu"  groups="bi_all_in_one_invoice_reports.report_menu_group" sequence="2" />
+
+		<!-- <menuitem 
+			id="invoice_book_day_report_menu"
+			name="Invoice Day Book Report"
+			action="invoice_book_day_report_form_action" 
+			parent="advance_invoice_report_menu"
+			groups="bi_all_in_one_invoice_reports.invoice_reports_group"
+			sequence="3"
+		/> -->
+
+	</data>
+</odoo>

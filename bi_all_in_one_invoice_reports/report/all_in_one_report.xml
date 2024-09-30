@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+      <!--  Report PaperFormat -->
+        <record id="paperformat_sale_reports" model="report.paperformat">
+            <field name="name">Invoice Reports</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!-- Invoice Day Book Report Paper Format -->
+        <record id="invoice_day_book_paper_format" model="report.paperformat">
+            <field name="name">Invoice Day Book Report</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">200</field>
+            <field name="page_width">300</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False" />
+            <field name="orientation">Portrait</field>
+            <field name="header_spacing">40</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <!--         day wise invoice report -->
+        <record id="action_day_wise_invoice_report" model="ir.actions.report">
+            <field name="name">DayWise Invoice Report</field>
+            <field name="model">invoice.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.template_daily_product_invoice_report</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.template_daily_product_invoice_report</field>
+            <field name="print_report_name">'Day Wise Invoice Report- %s'</field>
+            <field name="binding_model_id" ref="model_invoice_report_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+
+        <!--         invoice details report -->
+        <record id="action_invoice_details_report" model="ir.actions.report">
+            <field name="name">Invoice Detail Report</field>
+            <field name="model">invoice.detail.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.invoice_detail_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.invoice_detail_template</field>
+            <field name="print_report_name">'Invoice Details Report- %s'</field>
+            <field name="binding_model_id" ref="model_invoice_detail_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+      
+
+
+        <!--         invoice_person report -->
+        <record id="action_invoice_person_report" model="ir.actions.report">
+            <field name="name">Invoice Person Report</field>
+            <field name="model">invoice.person.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.invoice_person_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.invoice_person_template</field>
+            <field name="print_report_name">'Invoice Report by SalePerson- %s'</field>
+            <field name="binding_model_id" ref="model_invoice_person_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+     
+
+        <!--         invoice payment report -->
+        <record id="action_invoice_payment_report" model="ir.actions.report">
+            <field name="name">Invoice Payment Report</field>
+            <field name="model">invoice.payment.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.invoice_payment_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.invoice_payment_template</field>
+            <field name="print_report_name">'Invoice Payment Report- %s'</field>
+            <field name="binding_model_id" ref="model_invoice_payment_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+      
+        <!--         top customer action -->
+        <record id="action_top_customer_report" model="ir.actions.report">
+            <field name="name">Top Customer Report</field>
+            <field name="model">top.customer.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.top_customer_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.top_customer_template</field>
+            <field name="print_report_name">'Top Customer Report'</field>
+            <field name="binding_model_id" ref="model_top_customer_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+     
+        <!-- Top Selling Product Action -->
+        <record id="action_top_selling_product_report" model="ir.actions.report">
+            <field name="name">Update Top Selling Product Report</field>
+            <field name="model">update.top.selling.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.update_selling_product_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.update_selling_product_template</field>
+            <field name="print_report_name">'Top Selling Product Report'</field>
+            <field name="binding_model_id" ref="model_update_top_selling_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+
+      
+         <!-- Invoice Day Book Report -->
+        <record id="invoice_day_book_report_template" model="ir.actions.report">
+            <field name="name">Invoice Day Book Report</field>
+            <field name="model">invoice.day.book.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.invoice_book_report</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.invoice_book_report</field>
+            <field name="print_report_name">'Invoice Day Book Report'</field>
+            <field name="binding_model_id" ref="model_invoice_day_book_report"/>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.invoice_day_book_paper_format"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!--Invoice Summary report -->
+        <record id="action_invoice_summary_report" model="ir.actions.report">
+            <field name="name">Invoice Summary Report</field>
+            <field name="model">invoice.summary.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_all_in_one_invoice_reports.invoice_summary_report_template</field>
+            <field name="report_file">bi_all_in_one_invoice_reports.invoice_summary_report_template</field>
+            <field name="print_report_name">'Invoice Summary Report'</field>
+            <field name="binding_model_id" ref="model_invoice_summary_report_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="bi_all_in_one_invoice_reports.paperformat_sale_reports"/>
+        </record>
+</odoo>

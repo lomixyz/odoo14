@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_track_and_trace,track.and.trace,model_track_and_trace,base.group_user,1,1,1,1
+access_track_and_trace_scan_line,track.and.trace.scan.line,model_track_and_trace_scan_line,base.group_user,1,1,1,1
+access_track_and_trace_carriers,track.and.trace.carriers,model_track_and_trace_carriers,base.group_user,1,1,1,1

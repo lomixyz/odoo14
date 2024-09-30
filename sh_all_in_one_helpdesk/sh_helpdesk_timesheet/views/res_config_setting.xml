@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_helpdesk_timesheet_config_setting_view" model="ir.ui.view">
+        <field name="name">res.config.settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sh_all_in_one_helpdesk.helpdesk_config_setting_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='manage_products_div']" position="after">
+                <h2 id="ticket_timer">Ticket Timesheet Configuration</h2>
+                <div class="row mt16 o_settings_container" id="ticket_timer_div_1">
+                    <div class="col-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="sh_default_description" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="sh_default_description" />
+                        </div>
+                    </div>
+                    <div class="col-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="sh_multiple_ticket_allowed" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="sh_multiple_ticket_allowed" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container" id="ticket_timer_div_2">
+                    <div class="col-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="project_id" />
+                            <br />
+                            <field name="project_id" class="oe_inline" />
+                        </div>
+                        <div class="o_setting_left_pane"></div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

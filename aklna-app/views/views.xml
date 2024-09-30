@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="aklna-app.list">
+      <field name="name">aklna-app list</field>
+      <field name="model">aklna-app.aklna-app</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="aklna-app.action_window">
+      <field name="name">aklna-app window</field>
+      <field name="res_model">aklna-app.aklna-app</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="aklna-app.action_server">
+      <field name="name">aklna-app server</field>
+      <field name="model_id" ref="model_aklna-app_aklna-app"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="aklna-app" id="aklna-app.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="aklna-app.menu_1" parent="aklna-app.menu_root"/>
+    <menuitem name="Menu 2" id="aklna-app.menu_2" parent="aklna-app.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="aklna-app.menu_1_list" parent="aklna-app.menu_1"
+              action="aklna-app.action_window"/>
+    <menuitem name="Server to list" id="aklna-app" parent="aklna-app.menu_2"
+              action="aklna-app.action_server"/>
+-->
+  </data>
+</odoo>

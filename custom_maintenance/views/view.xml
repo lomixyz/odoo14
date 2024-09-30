@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="hr_equipment_request_view_form_inh" model="ir.ui.view">
+            <field name="name">equipment.request.form.inh</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='maintenance_type']" position="after">
+                    <field name="cost" attrs="{'invisible': [('state', 'not in', ['in_progress','close'])]}"
+                           groups="custom_maintenance.group_maintenance"/>
+                    <field name="type_of_maintenance"
+                           attrs="{'invisible': [('state', 'not in', ['in_progress','close'])]}"
+                           groups="custom_maintenance.group_maintenance"/>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="replace">
+                    <field name="state" widget="statusbar"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <!--  //////////////////////////////////////////////-->
+                <!--                <xpath expr="//field[@name='owner_user_id']" position="after">-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='equipment_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button string="Confirm" name="action_confirm" type="object"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}" class="oe_highlight"/>
+                    <button string="Confirm" name="action_preview" type="object"
+                            attrs="{'invisible': [('state', '!=', 'preview')]}" class="oe_highlight"
+                            groups="custom_maintenance.group_maintenance"/>
+                    <button string="Approve" name="action_approve" type="object"
+                            attrs="{'invisible': [('state', '!=', 'status')]}" class="oe_highlight"
+                            groups="custom_maintenance.group_maintenance"/>
+                    <button string="Reject" name="action_reject" type="object"
+                            attrs="{'invisible': [('state', '!=', 'status')]}" class="oe_highlight"
+                            groups="custom_maintenance.group_maintenance"/>
+                    <button string="Confirm" name="action_evaluation" type="object"
+                            attrs="{'invisible': [('state', '!=', 'in_progress')]}" class="oe_highlight"
+                            groups="custom_maintenance.group_maintenance"/>
+                    <button string="Close" name="action_close" type="object"
+                            attrs="{'invisible': [('state', '!=', 'evaluation')]}" class="oe_highlight"
+                            groups="custom_maintenance.group_maintenance"/>
+                </xpath>
+                <xpath expr="//button[@name='archive_equipment_request']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='kanban_state']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='reset_equipment_request']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page name="new" string="New Request">
+                            <group>
+                                <field name="new_attachment_ids" widget="many2many_binary"/>
+                                <field name="new_note"/>
+                            </group>
+                        </page>
+                        <page name="status" string="Order Status"
+                              attrs="{'invisible': [('state', 'not in', ['status','preview','in_progress','close'])]}"
+                              groups="custom_maintenance.group_maintenance">
+                            <group>
+                                <group>
+                                    <field name="reject_reason"
+                                           attrs="{'invisible': [('reject_reason_fl', '=', False)]}"/>
+                                    <field name="reject_reason_fl" invisible="1"/>
+                                </group>
+                                <field name="status_note"
+                                       attrs="{'invisible': [('state', 'not in', ['status','preview','in_progress','close'])]}"/>
+                            </group>
+                        </page>
+                        <page name="preview" string="Preview"
+                              attrs="{'invisible': [('state', 'not in', ['preview','in_progress','close'])]}"
+                              groups="custom_maintenance.group_maintenance">
+                            <group>
+                                <group>
+                                    <field name="damage_type"/>
+                                    <field name="date_preview"
+                                           attrs="{'invisible': [('state', 'not in', ['preview','in_progress','close'])]}"/>
+                                </group>
+                                <field name="preview_note"/>
+                            </group>
+                        </page>
+                        <page name="in_progress" string="In Progress"
+                              attrs="{'invisible': [('state', 'not in', ['in_progress','close'])]}"
+                              groups="custom_maintenance.group_maintenance">
+                            <group>
+                                <group>
+                                    <field name="date_in_progress"/>
+                                    <field name="partner_id"/>
+                                    <field name="product_id"/>
+                                    <field name="warranty"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="evaluation" string="Evaluation"
+                              attrs="{'invisible': [('state', 'not in', ['evaluation','close'])]}">
+                            <group>
+                                <group>
+                                    <field name="priority" widget="priority"/>
+                                </group>
+                                <field name="evaluation"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <!--  //////////////////////////////////////////////-->
+                <xpath expr="//field[@name='maintenance_team_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'invisible': [('state', 'not in', ['preview', 'in_progress', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'invisible': [('state', 'not in', ['preview', 'in_progress', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+                </xpath>
+                <xpath expr="//field[@name='schedule_date']" position="attributes">
+                    <attribute name="attrs">{
+                        'invisible': [('state', 'not in', ['preview', 'in_progress', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priority']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email_cc']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='duration']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'not in', ['in_progress', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+
+                </xpath>
+                <xpath expr="//sheet/group/group[2]/div" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'not in', ['in_progress', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+
+                </xpath>
+                <xpath expr="//field[@name='close_date']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'not in', ['evaluation', 'close'])]}</attribute>
+                    <attribute name="groups">custom_maintenance.group_maintenance</attribute>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_equipment_request_view_pivot_inh" model="ir.ui.view">
+            <field name="name">equipment.request.pivot.inh</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_pivot"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='color']" position="after">
+                    <field name="cost" type="row"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="maintenance_request_view_form_inherit_hr_inh" model="ir.ui.view">
+            <field name="name">maintenance.request.view.form.inherit.hr.inh</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="hr_maintenance.maintenance_request_view_form_inherit_hr"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <field name="employee_id" position="after">
+                    <field name="location_id" attrs="{'invisible': [('state', 'not in', ['draft','close'])]}"/>
+                </field>
+
+
+            </field>
+        </record>
+
+        <record id="hr_equipment_request_view_tree_inh" model="ir.ui.view">
+            <field name="name">equipment.request.tree.inh</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='stage_id']" position="replace">
+                    <field name="state"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="hr_equipment_request_view_kanban_inh" model="ir.ui.view">
+            <field name="name">equipment.request.kanban.inh</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="." position="replace">
+
+                    <kanban default_group_by="state" quick_create="false">
+                        <field name="state"/>
+                        <field name="color"/>
+                        <field name="priority"/>
+                        <field name="equipment_id"/>
+                        <field name="user_id"/>
+                        <field name="owner_user_id"/>
+                        <field name="category_id"/>
+                        <field name="kanban_state"/>
+                        <field name="activity_ids"/>
+                        <field name="activity_state"/>
+<!--                        <progressbar field="kanban_state" colors='{"close": "success"}'/>-->
+                        <templates>
+                            <t t-name="kanban-tooltip">
+                                <ul class="oe_kanban_tooltip">
+                                    <li t-if="record.category_id.raw_value"><b>Category:</b> <t
+                                            t-esc="record.category_id.value"/></li>
+                                    <li t-if="record.user_id.raw_value"><b>Request to:</b> <t
+                                            t-esc="record.user_id.value"/></li>
+                                </ul>
+                            </t>
+                            <t t-name="kanban-box">
+                                <div t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
+                                    <div class="o_dropdown_kanban dropdown">
+
+<!--                                        <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown"-->
+<!--                                           data-display="static" href="#" aria-label="Dropdown menu"-->
+<!--                                           title="Dropdown menu">-->
+<!--                                            <span class="fa fa-ellipsis-v"/>-->
+<!--                                        </a>-->
+                                        <div class="dropdown-menu" role="menu">
+                                            <t t-if="widget.editable"><a role="menuitem" type="edit"
+                                                                         class="dropdown-item">Edit...</a></t>
+                                            <t t-if="widget.deletable"><a role="menuitem" type="delete"
+                                                                          class="dropdown-item">Delete</a></t>
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </div>
+                                    </div>
+                                    <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                        <div class="o_kanban_record_top">
+                                            <b class="o_kanban_record_title"><field name="name"/></b>
+                                        </div>
+                                        <div class="o_kanban_record_body">
+                                            <span name="owner_user_id" t-if="record.owner_user_id.raw_value">Requested
+                                                by : <field name="owner_user_id"/><br/></span>
+                                            <span class="oe_grey" t-if="record.equipment_id.raw_value"><field
+                                                    name="equipment_id"/><br/></span>
+                                            <span t-if="record.category_id.raw_value"><field name="category_id"/></span>
+                                        </div>
+                                        <div class="o_kanban_record_bottom">
+                                            <div class="oe_kanban_bottom_left">
+                                                <field name="priority" widget="priority"/>
+                                                <div class="o_kanban_inline_block ml4 mr4">
+                                                    <field name="activity_ids" widget="kanban_activity"/>
+                                                </div>
+                                            </div>
+                                            <div class="oe_kanban_bottom_right">
+                                                <field name="state" widget="state_selection"/>
+                                                <field name="user_id" widget="many2one_avatar_user"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

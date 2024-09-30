@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--tree-->
+	<record id="tree_gym_activity" model="ir.ui.view">
+		<field name="name">tree.gym.activity</field>
+		<field name="model">gym.activity</field>
+		<field name="arch" type="xml">
+		    <tree string="Gym Activity Tree" editable="bottom">
+                <field name="member_id" options="{'no_create': True}" domain="[('state','=','joined')]" required="1"/>
+                <field name="date" required="1"/>
+                <field name="exercise_id" options="{'no_create': True}" required="1"/>
+                <field name="equipment_id" options="{'no_create': True}" required="1"/>
+				<field name="sets"/>
+				<field name="repeat"/>
+				<field name="weight"/>
+				<field name="trainer_id" invisible="1"/>
+ 		    </tree>
+		</field>
+	</record>
+
+
+	<!--Search-->
+    <record id="search_gym_activity" model="ir.ui.view">
+        <field name="name">Gym Activity - Search</field>
+        <field name="model">gym.activity</field>
+        <field name="arch" type="xml">
+            <search string="Gym Activity Search">
+                <group expand="0" string="Group By">
+		         	<filter name="member_id_search" string="Member" context="{'group_by':'member_id'}"/>
+		         	<filter name="exercise_id_search" string="Exercise" context="{'group_by':'exercise_id'}"/>
+		         	<filter name="equipment_id_search" string="Equipment" context="{'group_by':'equipment_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+	<!--Action-->
+	<record id="action_gym_activity" model="ir.actions.act_window">
+        <field name="name">Gym Activity</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gym.activity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_gym_activity"/>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Gym Activity"
+              id='menu_gym_activity'
+              parent="dev_gym_management.menu_gym_management_workout"
+              action="action_gym_activity"
+              sequence="3"/>
+</odoo>

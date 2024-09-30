@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    Track And Trace Form    -->
+        <record id="track_and_trace_view_form" model="ir.ui.view">
+            <field name="name">Track And Trace</field>
+            <field name="model">track.and.trace</field>
+            <field name="arch" type="xml">
+                <form string="Track And Trace">
+                    <sheet>
+                        <group string="Shipment Info">
+                            <group>
+                                <field name="carrier_id"/>
+                                <field name="country_code"/>
+                            </group>
+                            <group>
+                                <field name="bar_code"/>
+                            </group>
+                            <group></group>
+                            <group>
+                                <button name="get_shipment_data" class="btn btn-primary" string="Get Shipment Data"
+                                        type="object" style="margin-left:380px"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="shipment_details" string="Shipment Details">
+                                <group>
+                                    <group>
+                                        <field name="carrier"/>
+                                        <field name="carrier_weight"/>
+                                        <field name="customer_reference"/>
+                                        <field name="delivery_date"/>
+                                        <field name="information_source"/>
+                                        <field name="lang_code"/>
+                                    </group>
+                                    <group>
+                                        <field name="order_number"/>
+                                        <field name="original_carrier"/>
+                                        <field name="package_number"/>
+                                        <field name="pickUp_date"/>
+                                        <field name="product"/>
+                                        <field name="weight"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="receiver_details" string="Receiver Details">
+                                <group>
+                                    <group>
+                                        <field name="address"/>
+                                        <field name="business_name"/>
+                                        <field name="city"/>
+                                    </group>
+                                    <group>
+                                        <field name="contact_name"/>
+                                        <field name="country"/>
+                                        <field name="zip"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="scans_details" string="Scans Details">
+                                <field name="scan_ids">
+                                    <tree editable="bottom">
+                                        <field name="scan_code"/>
+                                        <field name="location"/>
+                                        <field name="scan_date"/>
+                                        <field name="scan_text"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="sender_details" string="Sender Details">
+                                <group>
+                                    <group>
+                                        <field name="senders_reference"/>
+                                        <field name="signature_image"/>
+                                    </group>
+                                    <group>
+                                        <field name="signature_name"/>
+
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--    Track And Trace Tree    -->
+        <record id="track_and_trace_view_tree" model="ir.ui.view">
+            <field name="name">Track And Trace</field>
+            <field name="model">track.and.trace</field>
+            <field name="arch" type="xml">
+                <tree string="Track And Trace">
+                    <field name="bar_code"/>
+                    <field name="carrier"/>
+                    <field name="carrier_weight"/>
+                    <field name="customer_reference"/>
+                    <field name="business_name"/>
+                    <field name="address"/>
+                    <field name="product"/>
+                    <field name="order_number"/>
+                    <field name="delivery_date"/>
+                    <field name="city"/>
+                </tree>
+            </field>
+        </record>
+        <!--    Track And Trace Search    -->
+        <record id="track_and_trace_view_search" model="ir.ui.view">
+            <field name="name">Track And Trace</field>
+            <field name="model">track.and.trace</field>
+            <field name="arch" type="xml">
+                <search string="Track And Trace">
+                    <field name="carrier_id"/>
+                    <field name="country_code"/>
+                    <field name="bar_code"/>
+                    <field name="carrier"/>
+                    <field name="carrier_weight"/>
+                    <field name="customer_reference"/>
+                    <field name="delivery_date"/>
+                    <field name="information_source"/>
+                    <field name="lang_code"/>
+                    <field name="order_number"/>
+                    <field name="original_carrier"/>
+                    <field name="package_number"/>
+                    <field name="pickUp_date"/>
+                    <field name="product"/>
+                    <field name="weight"/>
+                    <field name="address"/>
+                    <field name="business_name"/>
+                    <field name="city"/>
+                    <field name="contact_name"/>
+                    <field name="country"/>
+                    <field name="zip"/>
+                    <field name="city"/>
+                    <field name="senders_reference"/>
+                    <field name="signature_name"/>
+                </search>
+            </field>
+        </record>
+        <!--    Track And Trace Action    -->
+        <record id="track_and_trace_action" model="ir.actions.act_window">
+            <field name="name">Track And Trace</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">track.and.trace</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--    Track And Trace Menu    -->
+        <menuitem id="track_and_trace_menu" name="Track And Trace" parent="track_and_trace_menu_root"
+                  action="track_and_trace_action" sequence="1"/>
+    </data>
+</odoo>

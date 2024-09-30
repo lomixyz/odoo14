@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_orders_custom" inherit_id="sale.portal_my_orders">
+        <xpath expr="//t[@t-foreach='orders']" position="replace">
+            <t t-foreach="orders" t-as="order">
+                <tr class="row_container_header">
+                    <td colspan="4">
+                        <div class="d-block mb-2 order_product_image_container">
+                            <t t-foreach="order.order_line" t-as="order_line">
+                                <t t-if="order_line.product_id.type != 'service'">
+                                    <div class="order_product_image mr-2">
+                                        <img t-attf-src="data:image/png;base64,{{order_line.product_id.image_128}}"/>
+                                    </div>
+                                </t>
+                            </t> 
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row_container_footer border-bottom">
+                    <td>
+                        <a t-att-href="order.get_portal_url()">
+                            <t t-esc="order.name"/>
+                        </a>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="order.date_order" t-options="{'widget': 'date'}"/>&amp;nbsp;
+                        <span class='d-none d-md-inline' t-field="order.date_order" t-options="{'time_only': True}"/>
+                    </td>
+                    <td class="text-center">
+                        <span t-if="order.state == 'done'"  class="badge badge-pill badge-success">
+                            <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/>Done
+                        </span>
+                    </td>
+                    <td class="text-right"><span t-field="order.amount_total"/></td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="custom_tax" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//tbody[hasclass('sale_tbody')]" position="replace">
+            <tbody class="sale_tbody">
+                <t t-set="current_subtotal" t-value="0"/>
+                <t t-foreach="sale_order.order_line" t-as="line">
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <t t-if="not line.display_type">
+                            <td id="product_name">
+                                <t t-if="line.product_id.type != 'service'">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="p-1">
+                                            <img style="width:60px; height:60px; object-fit:contain;" t-attf-src="data:image/png;base64,{{line.product_id.image_128}}"/>
+                                        </div>
+                                        <div class="p-1">
+                                            <a target="_blank" t-attf-href="{{line.product_id.website_url}}"><small t-esc="line.product_id.name[:50] + '..'"/></a>
+                                            <t t-set="current" t-value="datetime.date.today()"/>
+                                            <t t-if="line.product_id.out_date">
+                                                <t t-set="out_date" t-value="line.product_id.out_date"/>
+                                            </t>
+                                            
+                                            <t t-set="in_stock" t-value="False"/>
+                                            <t t-if="line.move_ids">
+                                                <t t-if="line.move_ids[-1].forecast_availability &gt; 0">
+                                                    <t t-if="line.move_ids[-1].forecast_expected_date">
+                                                        <br/>
+                                                        <div class="mt-2">
+                                                            <small>Uscita prevista:</small>
+                                                            <t t-if="line.product_id.out_date">
+                                                                <small style="font-size:11px;" class="order-details-btn mx-auto"><t t-esc="line.product_id.out_date.strftime('%d / %m / %Y')"/></small>
+                                                            </t>
+                                                        </div>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <t t-set="in_stock" t-value="True"/>
+                                                        <br/>
+                                                        <div class="mt-2">
+                                                            <small style="font-size:11px; border-color:#28a745; color:#28a745 !important;" class="order-details-btn mx-auto">Disponibile</small>
+                                                        </div>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                            <t t-if="out_date and out_date &gt; current and not in_stock and not line.move_ids[-1].forecast_expected_date">
+                                                <br/>
+                                                <div class="mt-2">
+                                                    <small>Uscita prevista:</small>
+                                                    <t t-if="line.product_id.out_date">
+                                                        <small style="font-size:11px;" class="order-details-btn mx-auto"><t t-esc="line.product_id.out_date.strftime('%d / %m / %Y')"/></small>
+                                                    </t>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="line.name"/>
+                                </t>
+                            </td>
+                            <td class="text-right">
+                                <div id="quote_qty">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom"/>
+                                </div>
+                            </td>
+                            <td t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                <div
+                                    t-if="line.discount &gt;= 0"
+                                    t-field="line.price_unit"
+                                    t-att-style="line.discount and 'text-decoration: line-through' or None"
+                                    t-att-class="(line.discount and 'text-danger' or '') + ' text-right'"
+                                />
+                                <div t-if="line.discount">
+                                    <t t-esc="(1-line.discount / 100.0) * line.price_unit" t-options='{"widget": "float", "decimal_precision": "Product Price"}'/>
+                                </div>
+                            </td>
+                            <td t-if="display_discount" t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                <strong t-if="line.discount &gt; 0" class="text-info">
+                                    <t t-esc="((line.discount % 1) and '%s' or '%d') % line.discount"/>%
+                                </strong>
+                            </td>
+                            <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+                            </td>
+                            <td class="text-right">
+                                <span class="oe_order_line_price_subtotal" t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <span class="oe_order_line_price_total" t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                            </td>
+                        </t>
+                        <t t-if="line.display_type == 'line_section'">
+                            <td colspan="99">
+                                <span t-field="line.name"/>
+                            </td>
+                            <t t-set="current_section" t-value="line"/>
+                            <t t-set="current_subtotal" t-value="0"/>
+                        </t>
+                        <t t-if="line.display_type == 'line_note'">
+                            <td colspan="99">
+                                <span t-field="line.name"/>
+                            </td>
+                        </t>
+                    </tr>
+
+                    <t t-if="current_section and (line_last or sale_order.order_line[line_index+1].display_type == 'line_section')">
+                        <tr class="is-subtotal text-right">
+                            <td colspan="99">
+                                <strong class="mr16">Subtotal</strong>
+                                <span
+                                    t-esc="current_subtotal"
+                                    t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'
+                                />
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </tbody>
+        </xpath>
+    </template>
+
+    <template id="custom_order_consegna" inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock">
+        <xpath expr="//div[hasclass('o_sale_stock_picking')]" position="replace">
+            <t t-set="current" t-value="datetime.date.today()"/>
+            <t t-set="existing_date" t-value="True"/>
+            <t t-foreach="sale_order.order_line" t-as="line">
+                <t t-if="line.product_id.out_date">
+                    <t t-set="out_date" t-value="line.product_id.out_date"/>
+                </t>
+                <t t-set="in_stock" t-value="False"/>
+                <t t-if="line.move_ids and  len(line.move_ids) &gt; 0">
+                    <t t-if="line.move_ids[-1].forecast_availability &gt; 0">
+                        <t t-if="line.move_ids[-1].forecast_expected_date">
+                            <t t-set="existing_date" t-value="False"/>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <t t-set="in_stock" t-value="True"/>
+                    </t>
+
+                    <t t-if="out_date and out_date &gt; current and not in_stock and not line.move_ids[-1].forecast_expected_date">
+                        <t t-if="line.product_id.out_date">
+                            <t t-set="existing_date" t-value="False"/>
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <t t-set="in_stock" t-value="False"/>
+                </t>
+            </t>
+            <table class="w-100 mt-3">
+                <tbody>
+                    <tr class="d-flex flex-wrap col-12 0 border-bottom mb-3">
+                        <td class="p-2"><span>Ordine # </span><strong><span t-esc="sale_order.name"/></strong></td>
+                        <td class="p-2"> 
+                            <t t-if="existing_date">
+                                <div class="small d-lg-inline-block">Spedizione pianificata il:
+                                    <span class="text-muted text-primary" t-field="i.date_done" t-options="{'date_only': True}"/>
+                                    <span t-if="i.state in ['draft', 'waiting', 'confirmed', 'assigned']" class="text-muted" t-field="i.scheduled_date" t-options="{'date_only': True}"/>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="small d-lg-inline-block text-primary">Verrà spedito appena i prodotti saranno disponibili in magazzino</div>
+                            </t>
+                        </td>
+                        <td class="p-2">
+                            <span t-if="i.state == 'done'" class="small badge badge-success orders_label_text_align" style="border-radius:3px;"><i class="fa fa-fw fa-truck"/> <b>Spedito</b></span>
+                            <span t-if="i.state == 'sale'" class="small badge badge-success orders_label_text_align" style="border-radius:3px;"><i class="fa fa-fw fa-check"/> <b>Confermato</b></span>
+                        </td>
+                    
+                        <td t-if="i.carrier_tracking_ref" class="small d-lg-inline-block p-2 col text-right">
+                            <t t-if="sale_order.sudo().is_in_a_pickup">
+                                <t t-set="multiple_carrier_tracking" t-value="i.get_multiple_carrier_tracking()"/>
+                                <t t-set="brt" t-value="request.env.ref('netaddiction_warehouse.carrier_brt').sudo().id"/>
+                                <t t-if="multiple_carrier_tracking">
+                                    <t t-foreach="multiple_carrier_tracking" t-as="line">
+                                        <t t-if="line.carrier_tracking_ref">
+                                            <t t-if="line.carrier_id.id == brt">
+                                                <a class="order-details-btn m-1" t-attf-href="https://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&amp;ChiSono={{line.carrier_tracking_ref}}" target="_blank">
+                                                    Traccia pacco
+                                                </a>
+                                            </t>
+                                            <t t-else="">
+                                                <a class="order-details-btn m-1" t-attf-href="https://www.mysda.it/SDAServiziEsterniWeb2/faces/SDAElencoSpedizioni.jsp?user=NETA20&amp;idritiro={{lline.carrier_tracking_ref}}" target="_blank">
+                                                    Traccia pacco
+                                                </a>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <t t-if="i.carrier_tracking_ref">
+                                        <t t-if="i.carrier_id.id == brt">
+                                            <a class="order-details-btn" t-attf-href="https://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&amp;ChiSono={{i.carrier_tracking_ref}}" target="_blank">
+                                                Traccia pacco
+                                            </a>
+                                        </t>
+                                        <t t-else="">
+                                            <a class="order-details-btn" t-attf-href="https://www.mysda.it/SDAServiziEsterniWeb2/faces/SDAElencoSpedizioni.jsp?user=NETA20&amp;idritiro={{i.carrier_tracking_ref}}" target="_blank">
+                                                Traccia pacco
+                                            </a>
+                                        </t>
+                                    </t>
+                                </t>
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+
+   <template id="custom_order_fattura" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//div[@t-if='invoices']" position="replace">
+            
+        </xpath>
+    </template>   
+
+
+    <template id="custom_payment_info_wallet" inherit_id="sale.sale_order_portal_content_totals_table">
+        <xpath expr="//table" position="before">
+            <t t-if="sale_order.is_wallet">
+                <div class="py-3 d-block">
+                    <strong class="text-primary h4">Credito Utilizzato:</strong><strong class="ml-2 h4"><t t-esc="sale_order.wallet_used"/> €</strong>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

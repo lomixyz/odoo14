@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="invoice_summary_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <center>
+                        <br></br>
+                        <h1 style="width:100%; text-align:center;">
+                            <strong>Invoice Summary Report</strong>
+                        </h1>
+                        <h4>
+                            <strong>Companies : 
+                                <t t-esc="date[2]" />
+                            </strong>
+                        </h4>
+                    </center>
+                    <div style="width:100%;" class="row">
+                        <div style="width:50%; text-align:left;" class="column">
+                            <h5>
+                                <strong>Start Date :
+                                    <t t-esc="date[0]" />
+                                </strong>
+                                <br />
+                                <strong>Status :
+                                    <t t-esc="date[3]" />
+                                </strong>
+                            </h5>
+                        </div>
+                        <div style="width:50%;" class="column">
+                            <div style="float:right;">
+                                <h5><strong>
+                                    <span>End Date :</span>
+                                    <t t-esc="date[1]"/></strong>
+                               </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <table width='100%' class='table table-bordered' style='border:1px solid black'>
+                        <thead>
+                            <tr style="font-weight: bold">
+                                <th>Invoice Number</th>
+                                <th>Customer</th>
+                                <th>Invoice Date</th>
+                                <th>Invoice Amount</th>
+                                <th>Invoice Currency</th>
+                                <th>Amount in Company Currency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="line" t-foreach="invoice_data">
+                                <td>
+                                    <t t-esc="line[0]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line[1]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line[2]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line[3]"/>
+                                </td>
+                                 <td>
+                                    <t t-esc="line[4]"/>
+                                </td>
+                                <td>
+                                    <t t-esc="round(line[5], 2)"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="text-align:right"></td>
+                                <td>
+                                    <t t-esc="round(sum(line[5] for line in invoice_data), 2)"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

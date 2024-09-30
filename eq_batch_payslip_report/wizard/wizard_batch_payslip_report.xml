@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_batch_payslip_report_view_form" model="ir.ui.view">
+        <field name="name">wizard.batch.payslip.report.form</field>
+        <field name="model">wizard.batch.payslip.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <group invisible="1">
+                    <field name="state"/>
+                    <field name="name"/>
+                    <field name="batch_id"/>
+                </group>
+                <group states="choose">
+                    <h4>* Click button to print Batch Payslip Report.</h4>
+                </group>
+                <group>
+                    <field name="xls_file" readonly="1" filename="name" states="download"/>
+                </group>
+                <footer>
+                    <button name="print_report_xls" string="Print Excel"
+                        type="object" class="oe_highlight" states="choose"/>
+                    <button name="print_report_pdf" string="Print PDF"
+                        type="object" class="oe_highlight" states="choose"/>
+                    <button name="action_go_back" string="Back"
+                        type="object" class="oe_highlight" states="download"/>
+                    or
+                    <button string="Close" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_wizard_batch_payslip_report"
+        name="Batch Payslip Report"
+        res_model="wizard.batch.payslip.report"
+        binding_model="hr.payslip.run"
+        view_mode="form"
+        target="new"/>
+
+</odoo>

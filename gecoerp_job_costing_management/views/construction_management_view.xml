@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="open_view_project_job_all_config" model="ir.actions.act_window">
+            <field name="name">Proyecto</field>
+            <field name="res_model">project.project</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear un nuevo proyecto de construcción.
+                </p><p>
+                    Organize your activities (plan tasks, track issues, invoice timesheets) for internal, personal or customer construction projects.
+                </p>
+            </field>
+    </record>
+        
+   <record id="action_view_job_orders" model="ir.actions.act_window">
+        <field name="name">Órdenes de Trabajo</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
+        <field name="context">{'search_default_my_tasks': 1}</field>
+        <field name="search_view_id" ref="project.view_task_search_form"/>
+        <field name="help" type="html">
+            <p>
+                Odoo's Job Orders management allows you to manage the pipeline of your Jobs efficiently. You can track progress, discuss on jobs, attach documents, etc.
+            </p>
+        </field>
+    </record>
+    
+    
+    <record id="action_picking_tree_all_const" model="ir.actions.act_window">
+            <field name="name">Requisición de Materiales / Listado de Cantidades</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,form,calendar</field>
+            <field name="domain">[('picking_type_id.code','=','outgoing')]</field>
+            <field name="context">{
+                    'picking_type_id.code': 'outgoing',
+            }
+            </field>
+            <field name="search_view_id" ref="stock.view_picking_internal_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click here to create a new transfer.
+              </p><p>
+                You can either do it immediately or mark it as Todo for future processing. Use your scanner to validate the transferred quantity quicker.
+              </p>
+            </field>
+    </record>
+    
+    <record id="action_partner_contractor_form" model="ir.actions.act_window">
+        <field name="name">Contratistas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[]</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1}</field>
+        <field name="filter" eval="True"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a contact in your address book.
+          </p><p>
+            Odoo helps you easily track all activities related to
+            a supplier: discussions, history of purchases,
+            documents, etc.
+          </p>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_material_purchase_requisition_job_costing">
+        <field name="name">Requisición de Materiales / BOQ</field>
+        <field name="res_model">material.purchase.requisition</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_job_managmt" web_icon="gecoerp_job_costing_management,static/description/icon.png" name="Adm. Obras" groups="project.group_project_user"/>
+    <menuitem id="menu_job_cost_managmt" parent="menu_job_managmt" name="Costos de Trabajo" sequence="1" groups="project.group_project_manager"/>
+    <menuitem id="menu_sub_job_costing" parent="menu_job_cost_managmt" name="Hojas de Costo de Tabajo" action="action_job_costing" sequence="1"/>
+    
+    <menuitem id="menu_job_cost_project" parent="menu_job_managmt" name="Proyectos" sequence="2"/>
+    <menuitem id="menu_job_projects" name="Proyectos" parent="menu_job_cost_project" action="open_view_project_job_all_config" sequence="1" />
+
+    <menuitem id="menu_job_cost_orders" parent="menu_job_managmt" name="Ordenes de Trabajo" sequence="3"/>
+    <menuitem id="menu_job_cost_order" name="Ordenes de Trabajo" parent="menu_job_cost_orders" action="action_view_job_orders" sequence="1" />
+
+    <menuitem id="job_cost_sub_contractors" parent="menu_job_managmt" name="Subcontratistas" sequence="4"/>
+    <menuitem id="menu_item_contractors" name="Subcontratistas" parent="job_cost_sub_contractors" action="action_partner_contractor_form" sequence="7"/>
+    
+    <menuitem id="menu_materials" parent="menu_job_managmt" name="Materiales / Listado de Cantidades" sequence="5"/>
+    <menuitem id="menu_job_cost_material" name="Materiales" parent="menu_materials" action="product.product_normal_action" sequence="1" />
+    <menuitem id="menu_job_cost_mat_req" name="Requisición de Materiales / BOQ" parent="menu_materials" action="action_material_purchase_requisition_job_costing" sequence="2" />
+    
+    <menuitem id="menu_job_cost_configuration" parent="menu_job_managmt" name="Configuración" groups="project.group_project_manager" sequence="6"/>
+    <menuitem id="menu_stages" name="Etapas" parent="menu_job_cost_configuration" action="project.open_task_type_form" sequence="1"/>
+    <menuitem id="menu_job_type" parent="menu_job_cost_configuration" name="Tipo de Trabajo" action="action_job_type" sequence="2"/>
+    
+    </data>
+</odoo>

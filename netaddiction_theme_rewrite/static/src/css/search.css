@@ -1,0 +1,12 @@
+.oe_website_sale{
+    width:100%;
+}
+.te_pc_style_main .te_slider_filter_main{
+    padding:0 !important;
+}
+
+@media only screen and (min-width: 920px) {
+    #products_grid_before{
+        top:100px !important;
+    }
+}

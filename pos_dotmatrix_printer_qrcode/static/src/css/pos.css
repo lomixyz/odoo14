@@ -1,0 +1,10 @@
+.centered-content{
+	right: 0 !important;
+	left: 0 !important;
+}
+
+.receipt-screen .default-view .pos-receipt-container {
+    flex: 0 1 900px;
+    overflow: auto;
+}
+

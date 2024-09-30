@@ -1,0 +1,42 @@
+<odoo>
+
+    <record id="custody_line_wizard_form" model="ir.ui.view">
+        <field name="name">custody.line.wizard.form</field>
+        <field name="model">account.custody.line.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Custody Line">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <!-- <field name="journal_id"/>
+                            <field name="account_id" domain="[('deprecated', '=', False)]"/> -->
+                            <field name="currency_id" invisible="1"/>
+
+                            <field name="custody_id" invisible="1"/>
+                        </group>
+                    </group>
+                <footer>
+                    <button string='Submit' name="action_add_line" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="custody_add_line_wizard_action" model="ir.actions.act_window">
+        <field name="name">Custody Line</field>
+        <field name="res_model">account.custody.line.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="custody_line_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

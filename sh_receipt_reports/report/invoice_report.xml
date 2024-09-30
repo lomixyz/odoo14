@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+          
+            
+        <report
+            id="action_sh_rr_invoice_report"
+            model="account.move"
+            string="Invoices TAX Receipt"
+            report_type="qweb-pdf"
+            name="sh_receipt_reports.sh_rr_invoice_receipt"
+            file="sh_receipt_reports.sh_rr_invoice_receipt"
+            />
+
+        <record id="action_sh_rr_invoice_report" model="ir.actions.report">
+            <field name="paperformat_id" ref="sh_receipt_reports.sh_rr_paperformat"/>
+        </record>  
+
+
+        <!-- <report
+        id="account_invoices_zakat_tax_authority"
+        model="account.move"
+        string="Tax Invoices"
+        report_type="qweb-pdf"
+        name="qr_code_invoice_app.report_invoice_zakat_tax_authority"
+        file="qr_code_invoice_app.report_invoice_zakat_tax_authority"
+        attachment="(object.state in ('open','posted')) and ('INV'+(object.name or '').replace('/','')+'.pdf')"
+        print_report_name="(object._get_report_base_filename())"
+        /> -->
+        
+    </data>
+</odoo>

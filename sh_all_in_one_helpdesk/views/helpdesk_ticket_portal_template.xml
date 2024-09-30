@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="sh_portal_assets" inherit_id="portal.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sh_all_in_one_helpdesk/static/src/js/portal.js" />
+            <link rel="stylesheet" href="/sh_all_in_one_helpdesk/static/src/css/bootstrap-multiselect.min.css" type="text/css"/>
+            <script type="text/javascript" src="/sh_all_in_one_helpdesk/static/src/js/bootstrap-multiselect.min.js"></script>
+        </xpath>
+    </template>
+    <template id="portal_helpdesk_ticket" inherit_id="helpdesk.portal_helpdesk_ticket" active="True" customize_show="True">
+    <xpath expr="//t[@t-call='portal.portal_searchbar']" position="replace">
+        <t t-call="portal.portal_searchbar">
+                <t t-set="title">Tickets</t>
+                <div class="form-inline ml-lg-4">
+                    <a id="new_request" class="btn btn-success btn-sm" name="new_request" title="Create Support Request" aria-label="Create Support Request" role="button"><i class="fa fa-plus" /> Create New</a>
+                </div>
+            </t>
+    </xpath>
+    <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+       <div id="createticketModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Create Helpdesk Ticket</h4>
+                            <button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/portal-create-ticket" id="form_id" method="POST" class="form-horizontal mt32" enctype="multipart/form-data">
+                            	<input type="hidden" name="sh_file_size" id="sh_file_size" t-att-value="request.env.company.sh_file_size"/>
+                                <t t-if="request.env.user.has_group('base.group_portal') and request.env.user.sh_portal_user_access or not request.env.user.has_group('base.group_portal')">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="control-label" for="partner">Partner:</label>
+                                            <input class="form-control" list="partner_ids" name="partner" id="partner" />
+                                            <input type="hidden" name="partner_id" id="partner_id" />
+                                            <datalist id="partner_ids"> </datalist>
+                                        </div>
+                                    </div>
+                                </t>
+                                <div class="row">
+                                    <t t-if="request.env.user.has_group('base.group_portal') and not request.env.user.sh_portal_user_access">
+                                        <div class="col-6">
+                                            <div t-attf-class="form-group #{error and 'portal_contact_name' in error and 'has-error' or ''}">
+                                                <label class="control-label" for="portal_contact_name">Name</label>
+                                                <input type="text" class="form-control" id="portal_contact_name" name="portal_contact_name" t-att-value="request.env.user.partner_id.name" readonly="True" />
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div name="portal_email_from_container" t-attf-class="form-group #{error and 'portal_email' in error and 'has-error' or ''}">
+                                                <label class="control-label" for="portal_email">Email</label>
+                                                <input type="email" class="form-control" id="portal_email" name="portal_email" t-att-value="request.env.user.partner_id.email" readonly="True" />
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="col-6">
+                                            <div t-attf-class="form-group #{error and 'portal_contact_name' in error and 'has-error' or ''}">
+                                                <label class="control-label" for="portal_contact_name">Name</label>
+                                                <input type="text" class="form-control" id="portal_contact_name" name="portal_contact_name" required="True" />
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div name="portal_email_from_container" t-attf-class="form-group #{error and 'portal_email' in error and 'has-error' or ''}">
+                                                <label class="control-label" for="portal_email">Email</label>
+                                                <input type="email" class="form-control" id="portal_email" name="portal_email" required="True" />
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                                <t t-if="request.env.user.sh_portal_user_access and request.env.user.sh_portal_user_access=='manager'">
+                                    <div class="row">
+                                    	<t t-if="request.env.company.sh_display_multi_user">
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_team">Team</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_team" name="portal_team">
+	                                                    <option value="team">Select Team</option>
+	                                                    <t t-foreach="request.env['helpdesk.team'].sudo().search([])" t-as="team">
+	                                                        <option t-att-value="team.id"><t t-esc="team.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_user">Assign To</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_assign_user" name="portal_assign_user">
+	                                                    <option value="user">Select Assign User</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_multi_user">Assign Multi Users</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" multiple="multiple" id="portal_assign_multi_user" name="portal_assign_multi_user">
+	                                                    <option value="users">Select Multi Users</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+                                        </t>
+                                        <t t-if="not request.env.company.sh_display_multi_user">
+	                                        <div class="col-6">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_team">Team</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_team" name="portal_team">
+	                                                    <option value="team">Select Team</option>
+	                                                    <t t-foreach="request.env['helpdesk.team'].sudo().search([])" t-as="team">
+	                                                        <option t-att-value="team.id"><t t-esc="team.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-6">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_user">Assign To</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_assign_user" name="portal_assign_user">
+	                                                    <option value="user">Select Assign User</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="request.env.user.sh_portal_user_access and request.env.user.sh_portal_user_access=='leader'">
+                                    <div class="row">
+                                    	<t t-if="request.env.company.sh_display_multi_user">
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_team">Team</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_team" name="portal_team">
+	                                                    <option value="team">Select Team</option>
+	                                                    <t t-foreach="request.env['helpdesk.team'].sudo().search(['|',('team_head','=',request.env.user.id),('team_members','in',[request.env.user.id])])" t-as="team">
+	                                                        <option t-att-value="team.id"><t t-esc="team.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_user">Assign To</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_assign_user" name="portal_assign_user">
+	                                                    <option value="user">Select Assign User</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-4">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_multi_user">Assign Multi Users</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" multiple="multiple" id="portal_assign_multi_user" name="portal_assign_multi_user">
+	                                                    <option value="users">Select Assign User</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                     </t>
+	                                     <t t-if="not request.env.company.sh_display_multi_user">
+	                                        <div class="col-6">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_team">Team</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_team" name="portal_team">
+	                                                    <option value="team">Select Team</option>
+	                                                    <t t-foreach="request.env['helpdesk.team'].sudo().search(['|',('team_head','=',request.env.user.id),('team_members','in',[request.env.user.id])])" t-as="team">
+	                                                        <option t-att-value="team.id"><t t-esc="team.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-6">
+	                                            <div t-attf-class="form-group">
+	                                                <label class="control-label" for="portal_assign_user">Assign To</label>
+	                                                <select class="form-control form-field o_website_form_required_custom" id="portal_assign_user" name="portal_assign_user">
+	                                                    <option value="user">Select Assign User</option>
+	                                                    <t t-foreach="request.env['res.users'].sudo().search(['|',('share','=',False),('sh_portal_user_access','!=',False)])" t-as="user">
+	                                                        <option t-att-value="user.id"><t t-esc="user.name" /></option>
+	                                                    </t>
+	                                                </select>
+	                                            </div>
+	                                        </div>
+	                                     </t>
+                                    </div>
+                                </t>
+                                <t t-if="request.env.company.category and not request.env.company.sub_category">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div t-attf-class="form-group">
+                                                <label class="control-label" for="portal_category">Category</label>
+                                                <select class="form-control form-field o_website_form_required_custom" id="portal_category" name="portal_category">
+                                                    <option value="category">Select Category</option>
+                                                    <t t-foreach="request.env['helpdesk.category'].sudo().search([])" t-as="category">
+                                                        <option t-att-value="category.id"><t t-esc="category.name" /></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="not request.env.company.category and request.env.company.sub_category">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div t-attf-class="form-group">
+                                                <label class="control-label" for="portal_subcategory">Sub Category</label>
+                                                <select class="form-control form-field o_website_form_required_custom" id="portal_subcategory" name="portal_subcategory">
+                                                    <option value="sub_category">Select Sub Category</option>
+                                                    <t t-foreach="request.env['helpdesk.subcategory'].sudo().search([])" t-as="subcategory">
+                                                        <option t-att-value="subcategory.id"><t t-esc="subcategory.name" /></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="request.env.company.category and request.env.company.sub_category">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div t-attf-class="form-group">
+                                                <label class="control-label" for="portal_category">Category</label>
+                                                <select class="form-control form-field o_website_form_required_custom" id="portal_category" name="portal_category">
+                                                    <option value="category">Select Category</option>
+                                                    <t t-foreach="request.env['helpdesk.category'].sudo().search([])" t-as="category">
+                                                        <option t-att-value="category.id"><t t-esc="category.name" /></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div t-attf-class="form-group">
+                                                <label class="control-label" for="portal_subcategory">Sub Category</label>
+                                                <select class="form-control form-field o_website_form_required_custom" id="portal_subcategory" name="portal_subcategory">
+                                                    <option value="sub_category">Select Sub Category</option>
+                                                    <t t-foreach="request.env['helpdesk.subcategory'].sudo().search([])" t-as="subcategory">
+                                                        <option t-att-value="subcategory.id"><t t-esc="subcategory.name" /></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div t-attf-class="form-group">
+                                            <label class="control-label" for="portal_subject">Subject</label>
+                                            <select class="form-control form-field o_website_form_required_custom" id="portal_subject" name="portal_subject">
+                                                <option value="subject">Select Subject</option>
+                                                <t t-foreach="request.env['helpdesk.sub.type'].sudo().search([])" t-as="subject">
+                                                    <option t-att-value="subject.id"><t t-esc="subject.name" /></option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div t-attf-class="form-group #{error and 'portal_description' in error and 'has-error' or ''}">
+                                            <label class="control-label" for="portal_description">Description</label>
+                                            <textarea id="description" name="portal_description" class="form-control form-field o_website_form_required_custom" placeholder="Description" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div t-attf-class="form-group">
+                                            <label class="control-label" for="portal_priority">Priority</label>
+                                            <select class="form-control form-field o_website_form_required_custom" id="portal_priority" name="portal_priority">
+                                                <option value="priority">Select Priority</option>
+                                                <t t-foreach="request.env['helpdesk.priority'].sudo().search([])" t-as="priority">
+                                                    <option t-att-value="priority.id"><t t-esc="priority.name" /></option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div name="portal_file_container" t-attf-class="form-group #{error and 'portal_file' in error and 'has-error' or ''}">
+                                            <label class="control-label" for="portal_file">Attachments</label>
+                                            <label class="custom-file">
+                                                <input name="portal_file" id="portal_file" type="file" multiple="multiple" />
+                                                <span class="custom-file-control" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="text-align: right;">
+                                    <div class="col-12">
+                                        <button type="submit" id="create_helpdesk_ticket" class="btn btn-primary">Create Ticket</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </xpath>
+        <!-- <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Tickets</t>
+            </t>
+            <div t-if="not grouped_tickets" class="alert alert-info">
+                There are currently no Ticket for your account.
+            </div>
+            <t t-else="">
+                <t t-call="portal.portal_table">
+                    <t t-foreach="grouped_tickets" t-as="tickets">
+                        <thead>
+                            <tr t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                                <th class="text-left">Ref</th>
+                                <th t-if="groupby == 'none'" class="w-100">Description</th>
+                                <th t-else="">
+                                    <em class="font-weight-normal text-muted">Tickets in stage:</em>
+                                    <span t-field="tickets[0].stage_id.name"/></th>
+                                <th/>
+                                <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                            </tr>
+                        </thead>
+                        <t t-foreach="tickets" t-as="ticket">
+                            <tr>
+                                <td class="text-left"><a t-attf-href="/helpdesk/ticket/#{ticket.id}"><small>#</small><t t-esc="ticket.id"/></a></td>
+                                <td><a t-attf-href="/helpdesk/ticket/#{ticket.id}"><span t-field="ticket.name"/></a></td><td/>
+                                <td t-if="groupby != 'stage'" class="text-center"><span class="badge badge-pill badge-info" t-field="ticket.stage_id.name"/></td>
+                            </tr>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </t> -->
+    </template>
+    <!-- <template id="portal_helpdesk_ticket" inherit="helpdesk.portal_helpdesk_ticket">
+        <xpath expr="//div[0]" position="after">
+            <div>dddddd</div>
+        </xpath>
+    </template> -->
+    <!-- <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Ticketssssss</t>
+            </t>
+            <div t-if="not grouped_tickets" class="alert alert-info">
+                There are currently no Ticket for your account.
+            </div>
+            <t t-else="">
+                <t t-call="portal.portal_table">
+                    <t t-foreach="grouped_tickets" t-as="tickets">
+                        <thead>
+                            <tr t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                                <th class="text-left">Ref</th>
+                                <th t-if="groupby == 'none'" class="w-100">Description</th>
+                                <th t-else="">
+                                    <em class="font-weight-normal text-muted">Tickets in stage:</em>
+                                    <span t-field="tickets[0].stage_id.name"/></th>
+                                <th/>
+                                <th t-if="groupby != 'stage'" class="text-center">Stage</th>
+                            </tr>
+                        </thead>
+                        <t t-foreach="tickets" t-as="ticket">
+                            <tr>
+                                <td class="text-left"><a t-attf-href="/helpdesk/ticket/#{ticket.id}"><small>#</small><t t-esc="ticket.id"/></a></td>
+                                <td><a t-attf-href="/helpdesk/ticket/#{ticket.id}"><span t-field="ticket.name"/></a></td><td/>
+                                <td t-if="groupby != 'stage'" class="text-center"><span class="badge badge-pill badge-info" t-field="ticket.stage_id.name"/></td>
+                            </tr>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </t> -->
+
+</odoo>
+    

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_picking_form_inh_knk">
+        <field name="name">stock.picking.form.inh.knk</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="invoice_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button type="object" name="action_view_invoice" class="oe_stat_button" icon="fa-pencil-square-o" options="{}" attrs="{'invisible': [('invoice_id', '=', False)]}" string="Invoice">
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice_payment_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure" />
+                    <br></br>
+                    <br></br>
+                    <h1 style="width:100%; text-align:center;">
+                        <strong>Payment Report for Invoice/Sales</strong>
+                    </h1><br/>
+                    <div class="column" style="text-align:center;">
+                        <h5>
+                            <strong>Companies :
+                            <t t-esc="data[2]"/></strong>
+                        </h5>
+                    </div>
+                    <div style="width:100%;" class="row">
+                        <div style="width:33%; text-align:left;" class="column">
+                            <h5>
+                                <strong>Start Date :
+                                    <t t-esc="data[1][0]" /></strong><br/>
+                            </h5>
+                        </div>
+                        <div style="width:33%; text-align:right;" class="column">
+                            <h5>
+                                <strong>End Date :
+                                    <t t-esc="data[1][1]" /></strong>
+                            </h5>
+                        </div>
+                        <div style="width:33%; text-align:right;" class="column">
+                            <h5>
+                                <strong>Status :<t t-esc="data[3]" /></strong>
+                            </h5>
+                        </div>
+                    </div>
+                    <br/>
+                    <t t-as="person" t-foreach="data[0].keys()">
+                        <h5 style="text-align: center; margin-bottom:5px;">
+                            <strong>
+                                Sale Person :
+                                <t t-esc="person" />
+                            </strong>
+                        </h5>
+                        <table style="width:100%; margin-left:auto; margin-right: auto;"
+                            class="table table-bordered">
+                            <tr>
+                                <th style="text-align:center;">
+                                    <b>Invoice</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Invoice Date</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>SalePerson</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Customer</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Bank</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Cash</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Amount Due</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Total</b>
+                                </th>
+                            </tr>
+                            <t t-as="order" t-foreach="data[0][person][0]">
+
+                                <tr>
+                                    <t t-if="order[0][0]== 'R'">
+                                        <td style="text-align:center;">
+
+                                            <span style="color: red;">
+                                                <t t-esc="order[0]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[1]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[2]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[3]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[5]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[6]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[4]" />
+                                            </span>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <span style="color: red;">
+                                                <t t-esc="order[7]" />
+                                            </span>
+                                        </td>
+                                    </t>
+                                    <t t-if="order[0][0]!= 'R'">
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[0]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[1]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[2]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[3]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[5]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[6]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[4]" />
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <t t-esc="order[7]" />
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                            <td />
+                            <td />
+                            <td />
+                            <td style="text-align:center;">
+                                <span>
+                                    <strong>Total</strong>
+                                </span>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% data[0][person][1][0]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% data[0][person][1][1]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% data[0][person][1][3]" />
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% data[0][person][1][2]" />
+                            </td>
+                        </table>
+                        <br/>
+                    </t>
+                    <table class="table table-condensed">
+                        <thead>
+                            <h4>Payments</h4>
+                            <tr style="font-weight: bold">
+                                <th>Name</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="total" t-foreach="data[1][2]">
+                                <td>
+                                    <t t-esc="total" />
+                                </td>
+                                <td>
+                                    <t t-esc="'%.2f'% data[1][2][total]" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+

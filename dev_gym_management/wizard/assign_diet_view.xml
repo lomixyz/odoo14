@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="form_assign_diet" model="ir.ui.view">
+        <field name="name">form.assign.diet</field>
+        <field name="model">assign.diet</field>
+        <field name="arch" type="xml">
+            <form string="Assign Diet Plan">
+                <gorup>
+                    <group>
+                        <field name="member_ids" widget="many2many_tags" domain="[('state','=','joined')]" options="{'no_create': True}"/>
+                        <field name="diet_plan_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </gorup>
+                <footer>
+                    <button string="Assign" name="assign_diet_plans" type="object" class="oe_highlight" icon="fa-print" />&#160;&#160;
+                    <button string="Close Window" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--action-->
+	<record id="action_assign_diet" model="ir.actions.act_window">
+        <field name="name">Assign Diet Plan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">assign.diet</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_assign_diet"/>
+        <field name="target">new</field>
+    </record>
+
+    <!--Menus-->
+ 	<menuitem name="Assign Diet Plan"
+              id="menu_assign_diet"
+              parent="menu_gym_management_diet"
+              action="action_assign_diet"
+              sequence="2"
+              groups="dev_gym_management.gym_trainer"/>
+</odoo>

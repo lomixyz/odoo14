@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <template id="main_gym_exercise_pdf_template">
+        <t t-call="web.external_layout">
+            <div class="page" style="font-size:14px;">
+                <h3>
+                    <center>
+                        <span t-esc="o.name"/>
+                    </center>
+                </h3>
+                <span style="font-weight: bold;font-size: 14px;margin-bottom: 5px;margin-top: 25px;">Body Part</span>&#160;:&#160;<span t-esc="o.body_part_id.name or ''"/>
+                <br/>
+                <span style="font-weight: bold;font-size: 14px;margin-bottom: 5px;margin-top: 25px;">Equipment</span>&#160;:&#160;<span t-esc="o.equipment_id.name or ''"/>
+                <!--steps-->
+                <span t-if="o.steps">
+                    <p style="font-weight: bold;font-size: 20px;margin-bottom: 5px;margin-top: 25px;">
+                        Steps
+                    </p>
+                    <p>
+                        <span t-raw="o.steps"/>
+                    </p>
+                </span>
+                <!--benefits-->
+                <span t-if="o.benefits">
+                    <p style="font-weight: bold;font-size: 20px;margin-bottom: 5px;margin-top: 25px;">
+                        Benefits
+                    </p>
+                    <p>
+                        <span t-raw="o.benefits"/>
+                    </p>
+                </span>
+            </div>
+        </t>
+    </template>
+
+    <template id="gym_exercise_pdf_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="dev_gym_management.main_gym_exercise_pdf_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

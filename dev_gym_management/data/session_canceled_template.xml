@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="template_special_session_canceled" model="mail.template">
+        <field name="name">Special Session is Canceled</field>
+        <field name="subject">Special Session is Canceled</field>
+        <field name="email_from">${(object.company_id and object.company_id.email  or '') | safe}</field>
+        <field name="model_id" ref="dev_gym_management.model_special_session"/>
+        <field name="body_html"><![CDATA[
+            <div style="background-color:#F3F5F6;color:#515166;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                <p>Hello,</p>
+                <p>We are very sorry to announce that organized session <strong> ${object.name} </strong>
+                is canceled
+                </p>
+                <p>Reason of cancel is as below</p>
+                <p>"${object.cancel_reason}"</p>
+                <p>Thank You<p/>
+            </div>
+        ]]></field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+
+        <!-- Banks Form -->
+        <record id="res_bank_form_inh" model="ir.ui.view">
+          <field name="name">Bank Main</field>
+          <field name="model">res.bank</field>
+          <field name="inherit_id" ref="base.view_res_bank_form"/>
+          <field name="arch" type="xml">
+                <field name="name" position="after">
+                  <field name="main_bank"/>
+                </field>
+          </field>
+      </record>
+
+      <record id="view_partner_bank_form_inherited" model="ir.ui.view">
+              <field name="name">view.partner.bank.form.inherited</field>
+              <field name="model">res.partner.bank</field>
+              <field name="inherit_id" ref="base.view_partner_bank_form"/>
+              <field name="arch" type="xml">
+                    <field name="acc_number" position="after">
+                      <field name="payment_account"/>
+                    </field>
+              </field>
+        </record>
+
+  </data>
+</odoo>

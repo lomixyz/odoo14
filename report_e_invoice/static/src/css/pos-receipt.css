@@ -1,0 +1,56 @@
+.pos .pos-receipt-container > div {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+.pos  .pos-receipt {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+.pos .pos-receipt .emph{
+    font-size: 14px;
+    margin:5px;
+    font-weight: bold;
+}
+
+.e-receipt-info-table tr {
+    border-bottom: 1px solid black;
+}
+
+.pos  .pos-receipt .th-color{
+    background:#3E5D7F !important;
+    text-align:center !important;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    color: white;
+}
+
+.pos  .pos-receipt .oth-color{
+    background:#3E5D7F !important;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    color: white;
+}
+
+.label-color {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    color: #3E5D7F;
+}
+
+@media print {
+    .th-color{
+        background:#3E5D7F !important;
+    }
+
+    .label-color{
+        color:#3E5D7F;
+    }
+
+    .oth-color{
+        background:#3E5D7F !important;
+        color: white;
+    }
+}
+

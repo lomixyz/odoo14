@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <template id="main_activity_template">
+        <t t-call="web.external_layout">
+            <div class="page" style="font-size:14px;">
+                <div style="margin-top: 5px;">
+                    &#160;
+                </div>
+                <h3>
+                    <center>Gym Activity Report</center>
+                </h3>
+                <div class="row">
+                    <div class="col-6 pull left">
+                        <b>From</b>&#160;:&#160;
+                        <span t-esc="date_conversion(o.start_date)"/>
+                    </div>
+                    <div class="col-6 text-right" style="font-size: 14px;">
+                        <b>To</b>&#160;:&#160;
+                        <span t-esc="date_conversion(o.end_date)"/>
+                    </div>
+                </div>
+                <span t-set="data" t-value="get_activity_data(o)"/>
+                <table width="100%" style="font-size: 14px;table-layout: fixed;margin-top: 10px;" class="table table-condensed">
+                    <tr style="word-wrap: break-word;line-height: 12px;">
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Member</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Date</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Exercise</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Equipment</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Sets</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Repeat</th>
+                        <th style="border-bottom: 2px solid black;border-top: 1px solid white;">Weight(kg)</th>
+                    </tr>
+                    <tr t-foreach="data" t-as="line" style="font-size: 12px;word-wrap: break-word;line-height: 10px;">
+                        <td>
+                            <span t-esc="line['member']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['date']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['exercise']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['equipment']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['sets']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['repeat']"/>
+                        </td>
+                        <td>
+                            <span t-esc="line['weight']"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="activity_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="dev_gym_management.main_activity_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

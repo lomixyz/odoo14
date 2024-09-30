@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <!--define a view tree -->
+         <record model="ir.ui.view" id="view_mark_s_tree">
+            <field name="name">marks.tree</field>
+            <field name="model">marks</field>
+            <field name="arch" type="xml">
+                <tree  multi_edit="1"    string="level"  decoration-success="percentage &gt; 0.50" decoration-danger="percentage &lt; 0.50">
+                  <header>
+                        <button name="make_generate_records" type="object" string="Generate Records" class="btn btn-primary"/>
+                    </header>
+                  <field name="student_id"/>
+                    <field name="office_year" widget="text"/>
+                    <field name="education_record_id" invisible="1"/>
+                    <field name="subject_id"/>
+                    <field name="oral_mark"/>
+                    <field name="term_mark"/>
+                    <field name="final_mark"/>
+                    <field name="total_mark"/>
+                    <field name="percentage" widget="percentage"/>
+                    <field name="degree" widget="badge" decoration-success="degree in 'excellent,a'"
+                           decoration-warning="degree in 'good,c'" decoration-info="degree in 'very_good,b'"
+                           decoration-muted="degree in 'pass,d'" decoration-danger="degree in 'fall,f'"/>
+                    <field name="state" decoration-success="state == 'confirm'" decoration-info="state == 'draft'"
+                           widget="badge"/>
+                </tree>
+
+            </field>
+        </record>
+        <!--define a view form -->
+        <record id="mark_view_2_form" model="ir.ui.view">
+            <field name="name">Marks Form</field>
+            <field name="model">marks</field>
+            <field name="arch" type="xml">
+                <form string="mark_form" attrs="{'readonly':[('state','=','confirm')]}">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object"
+                                data-hotkey="F" states="draft" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" nolabel="1"
+                               statusbar_visible="draft,confirm"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="office_year" force_save="1" required="1"
+                                       attrs="{'readonly':[('is_readonly','=',True)]}"/>
+                                <field name="subject_id" options="{'no_open': True, 'no_create': True}" required="1"
+                                       attrs="{'readonly':[('is_readonly','=',True)]}"/>
+                                <field name="student_id" options="{'no_open': True, 'no_create': True}" required="1"
+                                       attrs="{'readonly':[('is_readonly','=',True)]}"/>
+                                <field name="sitting_number"/>
+                                <field name="is_readonly" invisible="1"/>
+                                <field name="education_record_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="oral_mark" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="term_mark" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="final_mark" attrs="{'readonly':[('state','=','confirm')]}"/>
+                                <field name="total_mark"/>
+                                <field name="percentage" widget="percentage"/>
+                                <field name="degree"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--define a view search -->
+        <record model="ir.ui.view" id="view_marks_search">
+            <field name="name">Marks Search</field>
+            <field name="model">marks</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="0" string="Group By">
+                        <filter string="Office Year" name="group_by_education_record_id"
+                                context="{'group_by': 'education_record_id'}"/>
+                        <filter string="Subject" name="group_by_subject_id"
+                                context="{'group_by': 'subject_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--define a view action -->
+        <record id="mark_action" model="ir.actions.act_window">
+            <field name="name">Marks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">marks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context"
+                   eval="{'search_default_group_by_education_record_id': 1, 'search_default_group_by_subject_id': 1,}"/>
+        </record>
+    </data>
+</odoo>
+
+

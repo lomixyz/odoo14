@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="report_menu_group" model="res.groups">
+            <field name="name">Show Invoice Custom report</field>
+        </record>
+        <record id="select_user_group" model="res.groups">
+            <field name="name">Show Salesperson field in Invoice Payment Report</field>
+        </record>
+    </data>
+</odoo>

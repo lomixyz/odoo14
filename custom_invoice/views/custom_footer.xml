@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_boxed_inherit"
+                  inherit_id="web.external_layout_boxed">
+            <xpath expr="//div/div[hasclass('text-center')]" position="replace">
+                <div class="text-center">
+                    <ul class="list-inline">
+                        <li t-if="company.website" class="list-inline-item">
+                            <span t-field="company.website"/>
+                        </li>
+                        <li t-if="company.email" class="list-inline-item">
+                            <span t-field="company.email"/>
+                        </li>
+                        <li t-if="company.phone" class="list-inline-item">
+                            <span class="o_force_ltr" t-field="company.phone"/>
+                        </li>
+
+
+                    </ul>
+                    <div t-field="company.report_footer"/>
+                    <div t-if="report_type == 'pdf'">
+                        Page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

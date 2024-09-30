@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!-- Inherit Form View to Modify it -->
+<record id="inherit_view_picking_form" model="ir.ui.view">
+    <field name="name">stock.picking.inherit.form</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form"/>
+    <field name="arch" type="xml">
+
+        <xpath expr="//group/group" position="inside">
+            <!-- Add your fields or attributes here -->
+          <field name="is_transfer"/>
+          <field name="picking_type_transfer_id" attrs="{'invisible': [('is_transfer','=',False)]}"/>
+        </xpath>
+
+    </field>
+</record>
+  </data>
+</odoo>

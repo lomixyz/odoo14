@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_membership" model="ir.ui.view">
+        <field name="name">form.membership</field>
+        <field name="model">gym.membership</field>
+        <field name="arch" type="xml">
+            <form string="Membership Form View">
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="o_row">
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="months" required="1"/>
+                            <field name="fees"/>
+                        </group>
+                        <group>
+                            <field name="product_id" options="{'no_create': True}" required="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                            <field name="details"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--tree-->
+    <record id="tree_membership" model="ir.ui.view">
+        <field name="name">tree.membership</field>
+        <field name="model">gym.membership</field>
+        <field name="arch" type="xml">
+            <tree string="Membership Tree View">
+                <field name="name"/>
+                <field name="months"/>
+                <field name="fees"/>
+                <field name="product_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Search-->
+    <record id="search_membership" model="ir.ui.view">
+        <field name="name">Gym Membership - Search</field>
+        <field name="model">gym.membership</field>
+        <field name="arch" type="xml">
+            <search string="Gym Trainer Search">
+                <field name="name"/>
+                <group expand="0" string="Group By">
+		         	<filter name="membership_product" string="Membership Product" context="{'group_by':'product_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="action_membership" model="ir.actions.act_window">
+        <field name="name">Membership</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">gym.membership</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Menus-->
+    <menuitem name="Membership"
+              id="menu_membership"
+              parent="menu_gym_management_membership"
+              action="action_membership"
+              sequence="1"
+              groups="dev_gym_management.gym_trainer"/>
+</odoo>

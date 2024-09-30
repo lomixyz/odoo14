@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <template id="journal_entry_template_report_view">
+            <t t-set="data_report_margin_top" t-value="30"/>
+            <t t-set="data_report_header_spacing" t-value="22"/>
+             <t t-set="data_report_dpi" t-value="130"/>
+            <t t-call="web.external_layout">
+                <div class="page" >
+                 <h5 class="text-center" style="padding:35px;text-decoration: underline; ">Journal Entry</h5>
+                <p/>
+
+
+
+                        <table  class="table table-sm">
+                            <tr>
+                                <td>Entry No <span t-field="o.name"/></td>
+                                <td>Date  <span t-field="o.date"/></td>
+                            </tr>
+                            <tr>
+                                <td>Journal  <span t-field="o.journal_id.name"/></td>
+                                <td>Reference <span t-field="o.ref"/></td>
+                            </tr>
+                        </table>
+
+
+                        <table  class="table table-sm" style="padding:50px;">
+                            <thead>
+                                <tr>
+                                    <th>Account</th>
+                                    <th>Date</th>
+                                    <th>Partner</th>
+                                    <th>Label</th>
+                                    <th>Analytic Account</th>
+                                    <th>Debit</th>
+                                    <th>Credit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="total" t-value="0.0"/>
+                                <t t-set="total1" t-value="0.0"/>
+                                <t t-foreach="o.line_ids" t-as="line">
+                                    <tr>
+                                        <td><span t-field="line.account_id.name"/></td>
+                                        <td><span t-field="line.date"/></td>
+                                        <td><span t-field="line.partner_id.name"/></td>
+                                        <td><span t-field="line.name"/></td>
+                                        <td><span t-field="line.analytic_account_id.name"/></td>
+                                        <td><span t-field="line.debit"/></td>
+                                        <td><span t-field="line.credit"/></td>
+                                    </tr>
+                                    <t t-set="total" t-value="total + line.debit"/>
+                                    <t t-set="total1" t-value="total1 + line.credit"/>
+                                </t>
+
+                                 <tr class="border-black o_total">
+                                    <td><strong>Total:</strong></td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td width="10%"><strong><t t-esc="total" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></strong></td>
+                                    <td width="10%"><strong><t t-esc="total1" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></strong></td></tr>
+                         </tbody>
+                        </table>
+                    </div>
+            </t>
+        </template>
+
+        <template id="journal_entry_report_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="invoice_custom.journal_entry_template_report_view"
+                       t-att-data-oe-lang="o and o.env.context.get('lang')"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo> 
+

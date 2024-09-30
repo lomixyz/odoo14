@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="task_checklist_tree_view" model="ir.ui.view">
+        <field name="name">task.checklist.tree</field>
+        <field name="model">task.checklist</field>
+        <field name="arch" type="xml">
+            <tree string = "Product">
+              <field name = "name"/>
+              <field name = "description"/>
+              <field name = "project_id"/>
+            </tree>
+        </field>
+      </record>
+
+    <record id="task_checklist_form_view" model="ir.ui.view">
+        <field name="name">task.checklist.form</field>
+        <field name="model">task.checklist</field>
+        <field name="arch" type="xml">
+          <form string="Checklist Stages">
+            <sheet>
+              <div class="oe_title">
+                <h1>
+                    <field name="name" placeholder="Task Checklist"/>
+                </h1>
+              </div>
+                <group> 
+                  <group>          
+                    <field name = "description"/>
+                  </group>
+                  <group>
+                    <field name = "project_id"/>
+                  </group>
+                </group>
+              <notebook>
+                <page string = "Checklist Items" >
+                  <field name = "activities_ids" >
+                    <tree editable="bottom">
+                      <field name = "task_checklist_id" invisible="1"/>
+                      <field name = "name"/>
+                      <field name = "description"/>
+                      <field name = "stage_id"/>
+                      </tree>
+                  </field>
+                </page>                
+              </notebook>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_task_checklist">
+      <field name="name">Checklist Activity</field>
+      <field name="res_model">task.checklist</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
+

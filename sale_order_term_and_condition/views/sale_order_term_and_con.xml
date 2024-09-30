@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_inhert_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale.order.rental</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="sale_renting.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Term And Conditions" string="Term And Conditions"
+                     data-key="sale_renting">
+                <h2>Term And Conditions</h2>
+                    <div class="row mt16">
+                        <div class="col-12 col-lg-6 o_setting_box" name="rental_delay_costs">
+                            <div class="o_setting_left_pane">
+                        </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="use_terms">
+                                <div class="o_setting_left_pane">
+                                    <field name="use_terms"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="use_terms"/>
+                                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific."  role="img"/>
+                                    <div class="text-muted">
+                                        Show standard terms &amp; conditions on invoices/orders
+                                    </div>
+                                    <div class="content-group" attrs="{'invisible': [('use_terms','=',False)]}">
+                                        <div class="mt16">
+                                            <field name="note" placeholder="Insert your terms &amp; conditions here..."/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--                        <div class="o_setting_right_pane">-->
+<!--                            <label for="use_terms"/>-->
+<!--                            <span class="o_form_label"></span>-->
+<!--                            <div class="text-muted"-->
+<!--                                 title="Those values are applied to any new rental product and can be changed on product forms.">-->
+<!--                                Term And Conditions-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="content-group">-->
+<!--                            <div class="row mt16">-->
+<!--                                <label for="note" class="col-lg-3 o_light_label"/>-->
+<!--                                                          <field name="note" class="col-lg-2 p-0"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+            <!-- Inherit Form View to Modify it -->
+            <record id="sale_renting_inherit_form_view" model="ir.ui.view">
+                <field name="name">sale.order.renting.inherit.form</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale_renting.rental_order_primary_form_view"/>
+                <field name="arch" type="xml">
+
+                    <xpath expr="//page[@name='customer_signature']" position="after">
+                        <page string="Term and Condition">
+                            <field name="notes"/>
+                        </page>
+                        <!-- Add your fields or attributes here -->
+                    </xpath>
+
+                </field>
+    </record>
+
+    <!--  <record id="action_rental_config_settings" model="ir.actions.act_window">-->
+    <!--      <field name="name">Settings</field>-->
+    <!--      <field name="type">ir.actions.act_window</field>-->
+    <!--      <field name="res_model">res.config.settings</field>-->
+    <!--      <field name="view_id" ref="res_config_settings_view_form"/>-->
+    <!--      <field name="view_mode">form</field>-->
+    <!--      <field name="target">inline</field>-->
+    <!--      <field name="context">{'module' : 'sale_renting'}</field>-->
+    <!--  </record>-->
+
+    <!--  <menuitem id="menu_rental_settings"-->
+    <!--      name="Settings"-->
+    <!--      parent="menu_rental_config"-->
+    <!--      sequence="0"-->
+    <!--      action="action_rental_config_settings"-->
+    <!--      groups="base.group_system"/>-->
+</odoo>

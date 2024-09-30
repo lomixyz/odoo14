@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="invoice_person_wizard_form" model="ir.ui.view">
+        <field name="name">invoice.person.wizard.form</field>
+        <field name="model">invoice.person.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Wizard">
+                <group>
+                    <group>
+                        <field name="start_date"  required="1"/>
+                        <field name="end_date"  required="1"/>
+                    </group>
+                    <group>
+                        <field name="select_state" />
+                        <field name="company_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                    </group>
+                </group>
+                <field name="user_ids" nolabel="1">
+                    <tree create="true" delete="true">
+                        <field name="name" string="Name"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="invoice_person_pdf_report" class="btn btn-primary" string="Print"
+                        type="object" />
+                    <button name="invoice_person_xls_report" class="btn btn-primary" string="Print Xls"
+                        type="object" />
+                    <button special="cancel" string="Cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="invoice_person_detail_action" model="ir.actions.act_window">
+        <field name="name">Invoice Report by Salesperson</field>
+        <field name="res_model">invoice.person.wizard</field>
+        <field name="view_id" ref="invoice_person_wizard_form" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Invoice Report By Salesperson" action="invoice_person_detail_action"
+        id="invoice_person_detail_wizard"  groups="bi_all_in_one_invoice_reports.report_menu_group"  parent="my_account_new_menu" sequence="3" />
+
+</odoo>

@@ -1,0 +1,132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* job_costing_cost_actual
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-16 07:47+0000\n"
+"PO-Revision-Date: 2021-11-16 07:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Base"
+msgstr ""
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Cantidad"
+msgstr "كمية"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Cantidad Actual de Compras"
+msgstr "كمية المشتريات الحالية"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Cantidad Actual ya Facturado"
+msgstr "المبلغ الحالي الذي تم دفعه بالفعل"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line__actual_purchase_cost
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Costo Actual de Compras"
+msgstr "التكلفة الفعلية للمشتريات"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line__actual_vendor_cost
+msgid "Costo Actual de Facturas de Proveedor"
+msgstr "التكلفة الحالية لفواتير البائع"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line__actual_timesheet_cost
+msgid "Costo Actual de Horas"
+msgstr "التكلفة الحالية للساعات"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Costo Actual de Labores"
+msgstr "التكلفة الحالية للعمالة"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Costo Actual ya Facturado"
+msgstr " فاتورة التكلفة الحالية بالفعل"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Descripción"
+msgstr "الوصف"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Fecha"
+msgstr "التاريخ"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Gastos Generales (Costo Actual)"
+msgstr "المصاريف العامة (التكلفة الفعلية)"
+
+#. module: job_costing_cost_actual
+#: model:ir.model,name:job_costing_cost_actual.model_job_cost_line
+msgid "Hoja de Costos"
+msgstr "ورقة التكلفة"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Horas"
+msgstr "الساعات"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Labores Directas (Costo Actual)"
+msgstr "العمالة المباشرة (التكلفة الفعلية)"
+
+#. module: job_costing_cost_actual
+#: model:ir.model.fields,field_description:job_costing_cost_actual.field_job_cost_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Materiales Directos (Costo Actual)"
+msgstr "المواد المباشرة (التكلفة الفعلية)"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Producto"
+msgstr "المنتج"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Produto"
+msgstr "المنتج"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Tipo de Trabajo"
+msgstr "نوع العمل"
+
+#. module: job_costing_cost_actual
+#: model_terms:ir.ui.view,arch_db:job_costing_cost_actual.report_job_costing_cost
+msgid "Total"
+msgstr "المجموع"

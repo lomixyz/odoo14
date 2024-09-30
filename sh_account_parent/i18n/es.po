@@ -1,0 +1,199 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_account_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-06 06:17+0000\n"
+"PO-Revision-Date: 2022-07-06 06:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_account_account
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__hierarchy_based_on__account
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: sh_account_parent
+#: model:ir.actions.client,name:sh_account_parent.sh_display_account_hierarchy
+msgid "Account Hierarchy"
+msgstr "Jerarquía de cuentas"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account Hierarchy Not found"
+msgstr "Jerarquía de cuentas no encontrada"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Account Hierarchy Report for"
+msgstr "Informe de jerarquía de cuentas para"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_account_account_type
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__hierarchy_based_on__account_type
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: sh_account_parent
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__target_moves__all_entries
+msgid "All Entries"
+msgstr "Todas las entradas"
+
+#. module: sh_account_parent
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__sh_account_hierarchy_wizard__target_moves__all_posted_entries
+msgid "All Posted Entries"
+msgstr "Todas las entradas publicadas"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__auto_unfold
+msgid "Auto Unfold"
+msgstr "Desplegarse automáticamente"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Balance"
+msgstr "Balance"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_wizard_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sh_account_parent
+#: model:ir.actions.act_window,name:sh_account_parent.sh_account_hierarchy_wizard_action
+#: model:ir.ui.menu,name:sh_account_parent.sh_account_hierarchy_wizard_menu
+msgid "Chart of Accounts Hierarchy"
+msgstr "Cuadro de la jerarquía de cuentas"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Code"
+msgstr "Código"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_wizard_view_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: sh_account_parent
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Debit"
+msgstr "Débito"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__end_date
+msgid "End Date"
+msgstr "Fecha final"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__hierarchy_based_on
+msgid "Hierarchy Based On"
+msgstr "Jerarquía basada en"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__id
+msgid "ID"
+msgstr "IDENTIFICACIÓN"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__include_zero_amount_transaction
+msgid "Include Zero Amount Transaction"
+msgstr "Incluir transacción de cantidad cero"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: sh_account_parent
+#. openerp-web
+#: code:addons/sh_account_parent/static/src/xml/print_report_buttons.xml:0
+#, python-format
+msgid "PRINT PDF"
+msgstr "Imprimir PDF"
+
+#. module: sh_account_parent
+#. openerp-web
+#: code:addons/sh_account_parent/static/src/xml/print_report_buttons.xml:0
+#, python-format
+msgid "PRINT XLS"
+msgstr "Imprimir XLS"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_account_account__sh_parent_id
+msgid "Parent Account"
+msgstr "Cuenta para padres"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_sh_account_hierarchy_wizard__target_moves
+msgid "Target Moves"
+msgstr "Movimientos objetivo"
+
+#. module: sh_account_parent
+#: model:ir.model.fields,help:sh_account_parent.field_account_account_type__type
+msgid ""
+"The 'Internal Type' is used for features available on different types of "
+"accounts: liquidity type is for cash or bank accounts, payable/receivable is"
+" for vendor/customer accounts."
+msgstr "Endor/cuentas de clientes."
+
+#. module: sh_account_parent
+#: model:ir.model.fields,field_description:sh_account_parent.field_account_account_type__type
+#: model_terms:ir.ui.view,arch_db:sh_account_parent.sh_account_hierarchy_report
+msgid "Type"
+msgstr "Escribe"
+
+#. module: sh_account_parent
+#: model:account.account.type,name:sh_account_parent.data_account_type_view
+#: model:ir.model.fields.selection,name:sh_account_parent.selection__account_account_type__type__view
+msgid "View"
+msgstr "Vista"
+
+#. module: sh_account_parent
+#: model:ir.model,name:sh_account_parent.model_sh_account_hierarchy_wizard
+msgid "sh.account.hierarchy.wizard"
+msgstr "sh.account.hierarchy.wizard"

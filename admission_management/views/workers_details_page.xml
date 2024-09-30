@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+ <record id="menu_partner_form_new" model="website.menu">
+            <field name="name">Worker Request</field>
+            <field name="url">/customer/form</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">22</field>
+        </record>
+  
+  <template id="tmp_customer_form" name="Partner Form">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <form action="/customer/form/submit">
+                            <div  class="form-group">
+                                <label for="name">your Name</label>
+                                <input type="text" class="form-control" name="name" id="name" style="width:30%%"  required="true" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" style="width:30%%" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Phone number</label>
+                                <input type="text" class="form-control" name="phone" id="phone" style="width:30%%" required="true" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Request</button>
+                        </form>
+                    </div>
+                </div>
+              </div>
+          </t>
+    </template>
+
+    <template id="tmp_customer_form_success1" name="Customer Form Successfully Submitted">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <form action="/web/my_workers_details">
+                            <br/>
+                            <br/>
+                            <div><h5>to select the worker press botton bellow</h5></div>
+                            <br/>
+                            <button type="submit" class="btn btn-primary">Select your worker</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="tmp_customer_form_success" name="Customer Form Successfully Submitted">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="alert alert-success">
+                            your request sent successfully soon will reply to you .
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    
+
+
+
+<template id="workers_details_page" name="workers Details">
+   <t t-call="website.layout">
+    <div class="oe_structure">
+      <div class="container">
+        <br />
+        <center><h3>workers Details</h3></center>
+        <br />
+          <form action="/web/post/my_workers_details">
+          <table class="table-striped table">
+            <thead style="font-size: 23px;">
+           <tr>
+                  <th>worker Image</th>
+                  <th>worker name</th>
+                  <th>country</th>
+                  <th>last contract day</th>
+                  <th>gender</th>
+                  <th>birthday</th>
+            </tr>
+            </thead>
+            <tbody>
+
+              <t t-foreach="my_details" t-as="order">
+              <tr>
+              <td><img t-att-src="'data:image/png;base64,%s' % to_text(order.image)" style="max-height:60px; max-width:60px;"/></td>
+              <td><span t-esc="order.name"/></td>
+              <td><span t-esc="order.country_id.name"/></td>
+              <td><span t-esc="order.rent_contract_date_to"/></td>
+              <td><span t-esc="order.gender"/></td>
+              <td><span t-esc="order.birthday"/></td>
+              </tr>
+              </t>
+            </tbody>
+          </table>
+            <select class="form-control" name="employee_name" required="true">
+                <t t-foreach="my_details" t-as="employee_name">
+                    <option t-attf-value="#{employee_name.id}"><t t-esc="employee_name.name" style="width:30%%"/></option>
+                </t>
+            </select>
+            <br/>
+          <button style="width:10%%" type="submit" class="btn btn-primary">select</button>
+          </form>
+          </div>
+    </div>
+</t>
+</template>
+</data>
+</odoo>

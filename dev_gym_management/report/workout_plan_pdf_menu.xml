@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <report id="menu_workout_plan_pdf_print"
+            model="workout.plan"
+            string="Workout Plan"
+            report_type="qweb-pdf"
+            name="dev_gym_management.workout_plan_pdf_template"
+            file="dev_gym_management.workout_plan_pdf_template"
+            groups="dev_gym_management.gym_trainer"
+            >
+    </report>
+
+    <record id="paperformat_workout_plan_pdf" model="report.paperformat">
+        <field name="name">Workout Plan PDF</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">45</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="dev_gym_management.menu_workout_plan_pdf_print" model="ir.actions.report">
+        <field name="paperformat_id" ref="dev_gym_management.paperformat_workout_plan_pdf" />
+    </record>
+</odoo>

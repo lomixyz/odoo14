@@ -1,0 +1,41 @@
+.drg_domain_builder {
+    min-height: 250px;
+    .pill_container {
+        // border-radius: $border-radius;
+        display: flex;
+        flex-wrap: wrap;
+        .badge {
+            position: relative;
+            overflow: hidden;
+            .pill_remove {
+                background: rgba(0, 0, 0, 0.1);
+                position: absolute;
+                padding: 6px 4px;
+                right: 0px;
+                top: 0;
+                bottom: 0;
+                &:hover {
+                    background: rgba(0, 0, 0, 0.3);
+                    cursor: pointer;
+                }
+            }
+        }
+        .db_input_value{
+            &:focus {
+                outline: none;
+            }
+            flex: 1 0 60px;
+            width: 60px;
+        }
+    }
+}
+.ui-autocomplete .ui-menu-item {
+    > a.ui-state-active {
+        background-color: palette-theme-color('primary');
+        border-color: palette-theme-color('primary');
+        color: #fff;
+    }
+    > .ui-menu-item-wrapper {
+        display: block;
+    }
+}

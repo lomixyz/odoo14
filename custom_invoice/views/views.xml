@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="include_vat_number" inherit_id="web.external_layout_boxed">
+            <xpath expr="//div" position="replace">
+                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                    <div class="o_boxed_header">
+                        <div class="row mb4">
+                            <div class="col-6 text-left mb4">
+                                <h4 class="mt0" t-field="company.report_header"/>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="float-left mb4" name="company_address"
+                                                 style="margin-top:15px;font-size:15px;font-family:Janna LT;">
+                                                <strong>
+                                                    <t t-esc="company.name"/>
+                                                </strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="float-left mb4" name="company_vat"
+                                                 style="margin-top:5px;font-size:12px;font-family:Janna LT;!important;">
+                                                <bdi>
+                                                    <strong>CR # :- رقم السجل التجاري # :-
+                                                        <t t-esc="company.company_registry"/>
+                                                    </strong>
+                                                </bdi>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="float-left mb4" name="company_cr"
+                                                 style="margin-top:5px;font-size:12px;font-family:Janna LT;!important;">
+                                                <bdi>
+                                                    <strong>VAT # :- رقم الضريبى # :-
+                                                        <t t-esc="company.vat"/>
+
+                                                    </strong>
+                                                </bdi>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6 text-right">
+                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
+        </template>
+        <record id="view_company_partner_bank_form_way_inh" model="ir.ui.view">
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="account.view_company_partner_bank_form"/>
+            <field name="arch" type="xml">
+                <field name="acc_number" position="after">
+                    <field name="iban_num"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_form_way_inh" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_ids" position="replace">
+                    <field name="bank_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="acc_holder_name"/>
+                            <field name="bank_id"/>
+                            <field name="acc_number"/>
+                            <field name="iban_num"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

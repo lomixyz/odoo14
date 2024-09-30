@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="checklist_alltask_activity_tree_view" model="ir.ui.view">
+            <field name="name">checklist.master.tree</field>
+            <field name="model">checklist.master</field>
+            <field name="arch" type="xml">
+                <tree string = "Activity" decoration-danger="stage_sequence == 11" decoration-success="stage_sequence == 10 or stage_sequence == 9" decoration-info="stage_sequence != 11 and stage_sequence != 10 and stage_sequence != 1 and stage_sequence != 9">
+                    <field name = "name"/>
+                    <field name = "project_task_id"/>
+                    <field name = "project_id"/>
+                    <field name = "user_id"/>
+                    <field name = "stage" invisible="1"/>
+                    <field name = "stage_sequence" invisible="1"/>
+                    
+                    <button name="is_check" type="object" 
+                          class="fa fa-check text-success" attrs="{'invisible': ['|','|',('stage_sequence', '=',11),('stage_sequence', '=', 10),('stage_sequence', '=',9)]}"/>
+                    <button name="is_right" type="object"
+                                class="fa fa-chevron-circle-down text-success" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=', 10)]}"/>
+                    <button name="is_close" type="object"
+                    class="fa fa-close text-danger" attrs="{'invisible': ['|',('stage_sequence', '=', 11),('stage_sequence', '=', 10)]}"/>
+                    <button name="is_refresh" type="object"
+                                class="fa fa-refresh text-warning" attrs="{'invisible': ['|',('stage_sequence', '!=', 11),('stage_sequence', '=', 10)]}"/>
+                    <field name = "stage_id"/>
+                </tree>
+            </field>
+      </record>
+
+        <record id="checklist_alltask_activity_form_view" model="ir.ui.view">
+          <field name="name">checklist.master.form</field>
+          <field name="model">checklist.master</field>
+          <field name="arch" type="xml">
+          <form string="Activities">     
+            <sheet>
+              <div class="oe_title">
+                <h1>
+                    <field name="name" placeholder="Activities"/>
+                </h1>
+              </div>
+              <group> 
+                  <group>
+                    <field name = "project_task_id"/>
+                  </group>
+                  <group>
+                    <field name = "project_id"/>
+                  </group> 
+                  <group>
+                    <field name = "stage_id"/>
+                    <field name = "stage" invisible="1"/>
+                  </group>
+                  <group>
+                    <field name = "user_id"/>
+                  </group>  
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+    <record id="alltask_activity_filter" model="ir.ui.view">
+      <field name="name">checklist.master.select</field>
+      <field name="model">checklist.master</field>
+      <field name="arch" type="xml">
+        <search>  
+          <field name="user_id"/> 
+          <separator/>
+          <filter string="TODO" name="TODO"
+              domain="[('stage_sequence', '=',1)]"/>
+          <filter string="Approved" name="Approved"
+              domain="[('stage_sequence', '=', 9)]"/>
+          <filter string="Completed" name="Completed"
+              domain="[('stage_sequence', '=', 10)]"/>
+          <filter string="Cancelled" name="Cancelled"
+              domain="[('stage_sequence', '=', 11)]"/>
+          <filter string="Custom Filter" name="custom_filter"
+              domain="[('stage_sequence', '!=', 11),('stage_sequence', '!=', 10),('stage_sequence', '!=', 1),('stage_sequence', '!=',9)]"/>
+                    
+          <group expand="0" string="Group By">
+            <filter string="Stage" name="stage" context="{'group_by':'stage'}"/>
+            <filter string="Task" name="Task" context="{'group_by':'project_task_id'}"/>
+            <filter string="Project" name="Project" context="{'group_by':'project_id'}"/>  
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <act_window
+            id="action_complete_cancel_activity"
+            name="Mass Complete &amp; Cancel Activity"
+            res_model="approve.reject"
+            binding_model="checklist.master"
+            view_mode="form"
+            target="new"
+    />
+
+    <record model="ir.actions.act_window" id="action_checklist_alltask_activities">
+        <field name="name">Task Checklist Activities</field>
+        <field name="res_model">checklist.master</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

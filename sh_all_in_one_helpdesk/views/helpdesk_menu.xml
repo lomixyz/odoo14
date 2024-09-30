@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="helpdesk_main_menu" name="Helpdesk" web_icon="sh_all_in_one_helpdesk,static/description/icon.png" />
+    <menuitem id="helpdesk_reporting_menu" name="Reporting" parent="helpdesk_main_menu" sequence="3" />
+    <menuitem id="helpdesk_config_menu" name="Configuration" parent="helpdesk_main_menu" sequence="5" groups="sh_all_in_one_helpdesk.helpdesk_group_manager" />
+</odoo>
+<!-- helpdesk_menu_config -->

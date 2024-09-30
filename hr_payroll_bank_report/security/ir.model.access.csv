@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bank_wizard_report_user,bank_wizard_report_payroll_user,model_bank_report_wiz,hr_payroll.group_hr_payroll_user,1,1,1,1
+bank_report_excel_report_user,bank_report_excel_payroll_user,model_bank_report_excel,hr_payroll.group_hr_payroll_user,1,1,1,1
+bank_report_excel_report_manager,bank_report_excel_payroll_manager,model_bank_report_excel,hr_payroll.group_hr_payroll_manager,1,1,1,1

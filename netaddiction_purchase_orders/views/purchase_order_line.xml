@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="netaddiction_purchase_order_form">
+        <field name="name">netaddiction.purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+	    <xpath expr="//field[@name='order_line']//field[@name='product_id']" position="attributes" >
+                <attribute name='domain'>[('purchase_ok', '=', True), ('seller_ids.name.id', '=', parent.partner_id)]</attribute>
+	    </xpath>
+        </field>
+    </record>
+</odoo>

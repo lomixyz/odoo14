@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_checklist_manager,task.checklist.manager,model_task_checklist,project.group_project_manager,1,1,1,1
+access_task_checklist_user,task.checklist.user,model_task_checklist,project.group_project_user,1,1,1,0
+access_checklist_activity_stage_manager,checklist.activity.stage.manager,model_checklist_activity_stage,project.group_project_manager,1,1,1,1
+access_checklist_activity_stage_user,checklist.activity.stage.user,model_checklist_activity_stage,project.group_project_user,1,1,1,0
+access_checklist_activity_manager,checklist.activity.manager,model_checklist_activity,project.group_project_manager,1,1,1,1
+access_checklist_activity_user,checklist.activity.user,model_checklist_activity,project.group_project_user,1,1,1,0
+access_checklist_master_manager,checklist.master.manager,model_checklist_master,project.group_project_manager,1,1,1,1
+access_checklist_master_user,checklist.master.user,model_checklist_master,project.group_project_user,1,1,1,0
+
+access_approve_reject,access_approve_reject,model_approve_reject,base.group_user,1,1,1,1
+

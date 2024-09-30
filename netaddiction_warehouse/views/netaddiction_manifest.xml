@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="netaddiction_warehouse_manifest_tree_2" model="ir.ui.view">
+        <field name="name">netaddiction.warehouse.manifest.tree</field>
+        <field name="model">netaddiction.manifest</field>
+        <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="carrier_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="netaddiction_warehouse_manifest_form_2" model="ir.ui.view">
+        <field name="name">netaddiction.warehouse.manifest.form</field>
+        <field name="model">netaddiction.manifest</field>
+        <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <form string="settings_mail form">
+                <header>
+                    <button name="send_manifest" class="btn-primary" type="object" string="Invia Manifest" />
+                    <button name="create_manifest" class="btn-primary" type="object" string="Crea Manifest" />
+                    <button name="compute_manifest_file1_check" type="object" string="Force Manifest Check"/>
+                </header>
+                <sheet>
+                    <group col="3">
+                        <group>
+                            <field name="carrier_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date_sent" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="manifest_file1"
+                                   filename="manifest_file1_name"
+                                   readonly="1"/>
+                            <field name="manifest_file1_name" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="manifest_file2"
+                                   filename="manifest_file2_name"
+                                   readonly="1"/>
+                            <field name="manifest_file2_name" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="deliveries" string="Deliveries">
+                            <field name="delivery_ids" nolabel="1">
+                                <tree name="delivery" >
+                                    <field name="name"/>
+                                    <field name="origin"/>
+                                    <field name="partner_id"/>
+                                    <field name="carrier_id"/>
+                                    <field name="delivery_barcode"/>
+                                    <field name="delivery_read_manifest"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="check_manifest_1" string="Check Manifest"
+                              attrd="{'invisible': [('manifest_file1', '=', False)]}">
+                            <field name="manifest_file1_check" nolabel="1"
+                                   style="font-family: monospace, monospace;"
+                                   />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="netaddiction_warehouse_manifest_action" model="ir.actions.act_window">
+        <field name="name">Manifest</field>
+        <field name="res_model">netaddiction.manifest</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
